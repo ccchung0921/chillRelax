@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hkonline/application/auth/authenticate_bloc.dart';
 import 'package:hkonline/application/auth/sign_in_form/sign_in_form_bloc.dart';
-import 'package:hkonline/application/quest/quest_bloc.dart';
 import 'package:hkonline/presentation/routes/router.gr.dart';
 
 class SignInForm extends StatefulWidget {
@@ -35,7 +34,7 @@ class _SignInFormState extends State<SignInForm> {
             ExtendedNavigator.of(context).replace(Routes.mapScreen);
             // context.bloc<QuestBloc>().add(const QuestEvent.detectSetUp());
             context
-                .bloc<AuthenticateBloc>()
+                .read<AuthenticateBloc>()
                 .add(const AuthenticateEvent.authCheck());
           }),
         );
@@ -46,11 +45,9 @@ class _SignInFormState extends State<SignInForm> {
           child: ListView(
             children: [
               const SizedBox(height: 75),
-              const Text(
-                'HKOnline',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    letterSpacing: 2.0, fontSize: 50.0, color: Colors.white),
+              const Image(
+                image: AssetImage('assets/appLogo.png'),
+                height: 130,
               ),
               const SizedBox(
                 height: 20,
@@ -168,7 +165,7 @@ class _SignInFormState extends State<SignInForm> {
                                         ? setState(() {
                                             register = !register;
                                           })
-                                        : context.bloc<SignInFormBloc>().add(
+                                        : context.read<SignInFormBloc>().add(
                                             const SignInFormEvent
                                                 .signInWithEmailAndPasswordPressed());
                                   },

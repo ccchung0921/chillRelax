@@ -8,7 +8,7 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber[500],
+      backgroundColor: const Color(0xff28bef0),
       resizeToAvoidBottomInset: false,
       body: BlocProvider(
         create: (context) => getIt<SignInFormBloc>(),

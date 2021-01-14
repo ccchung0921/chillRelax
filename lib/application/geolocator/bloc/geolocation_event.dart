@@ -9,6 +9,9 @@ abstract class GeolocationEvent with _$GeolocationEvent {
   const factory GeolocationEvent.searchPlace(String input) = SearchPlace;
   const factory GeolocationEvent.markerPressed(Place place) = MarkerPressed;
   const factory GeolocationEvent.getDistance() = GetDistance;
+  const factory GeolocationEvent.autoComplete(
+      String input, String sessionToken) = AutoComplete;
+  const factory GeolocationEvent.suggestionPressed(
+      String sessionToken, String placeid) = SuggestionPressed;
   const factory GeolocationEvent.clear() = Clear;
-  const factory GeolocationEvent.getAirticket() = GetAirticket;
 }

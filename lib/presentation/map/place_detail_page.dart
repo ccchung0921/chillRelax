@@ -1,11 +1,15 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:hkonline/application/geolocator/bloc/geolocation_bloc.dart';
 import 'package:hkonline/infrastructure/googlePlace/place.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PlaceDetailPage extends StatelessWidget {
   final Place place;
-  const PlaceDetailPage({@required this.place});
+  const PlaceDetailPage({Key key, this.place}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,16 +21,13 @@ class PlaceDetailPage extends StatelessWidget {
               children: [
                 Stack(
                   children: [
-                    Hero(
-                      tag: 'hero',
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.transparent,
-                            image: DecorationImage(
-                                fit: BoxFit.fill,
-                                image: NetworkImage(place.photoReference))),
-                        height: MediaQuery.of(context).size.height * 0.3,
-                      ),
+                    Container(
+                      decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image: NetworkImage(place.photoReference))),
+                      height: MediaQuery.of(context).size.height * 0.3,
                     ),
                     Container(
                       height: MediaQuery.of(context).size.height * 0.3,
@@ -85,6 +86,36 @@ class PlaceDetailPage extends StatelessWidget {
                         fontSize: 18,
                       )),
                 ),
+                if (place.phoneNumber.isNotEmpty)
+                  ListTile(
+                    onTap: () async {
+                      await launch("tel:${place.phoneNumber}");
+                    },
+                    leading: const Icon(
+                      Icons.phone,
+                    ),
+                    title: Text(place.phoneNumber,
+                        style: const TextStyle(
+                          fontSize: 18,
+                        )),
+                  )
+                else
+                  Container(),
+                if (place.openingHours.isNotEmpty)
+                  if (place.openingHours.length == 7)
+                    ExpansionTile(
+                        leading: const Icon(Icons.access_alarm),
+                        title: Text(place
+                            .openingHours[DateTime.now().weekday - 1]
+                            .toString()),
+                        children: dayList(getToday(place.openingHours)))
+                  else
+                    ExpansionTile(
+                        leading: const Icon(Icons.access_alarm),
+                        title: Text(place.openingHours.first.toString()),
+                        children: dayList(place.openingHours))
+                else
+                  Container()
               ],
             ),
           ),
@@ -105,4 +136,19 @@ class PlaceDetailPage extends StatelessWidget {
       ]),
     );
   }
+}
+
+List<dynamic> getToday(List<dynamic> dayList) {
+  final List<dynamic> copyDayList = dayList;
+  final int index = DateTime.now().weekday;
+  copyDayList.removeAt(index - 1);
+  return copyDayList;
+}
+
+List<Widget> dayList(List<dynamic> list) {
+  final List<Widget> widgetList = [];
+  for (int i = 0; i < list.length; i++) {
+    widgetList.add(Text(list[i].toString()));
+  }
+  return widgetList;
 }

@@ -26,7 +26,7 @@ class SkyscannerAPI {
   }
 
   Future<List<Airticket>> getJapanTicket(DateTime day) async {
-    final DateTime tomorrow = day.add(const Duration(days: 1));
+    final DateTime tomorrow = day.add(const Duration(days: 7));
     final parseDate = DateTime.parse(tomorrow.toString());
     final reformatDate =
         "${parseDate.year}-${parseDate.month}-${parseDate.day < 10 ? '0' + parseDate.day.toString() : parseDate.day}";
@@ -40,7 +40,6 @@ class SkyscannerAPI {
     if (response.statusCode == 200 && response2.statusCode == 200) {
       final data = convert.jsonDecode(response.body);
       final data2 = convert.jsonDecode(response2.body);
-      print(data2);
       final quotes = data['Quotes'] + data2['Quotes'] as List;
       final carriers = data['Carriers'] + data2['Carriers'] as List<dynamic>;
       final places = data['Places'] + data2['Places'] as List<dynamic>;

@@ -53,13 +53,24 @@ class _$GeolocationEventTearOff {
   }
 
 // ignore: unused_element
-  Clear clear() {
-    return const Clear();
+  AutoComplete autoComplete(String input, String sessionToken) {
+    return AutoComplete(
+      input,
+      sessionToken,
+    );
   }
 
 // ignore: unused_element
-  GetAirticket getAirticket() {
-    return const GetAirticket();
+  SuggestionPressed suggestionPressed(String sessionToken, String placeid) {
+    return SuggestionPressed(
+      sessionToken,
+      placeid,
+    );
+  }
+
+// ignore: unused_element
+  Clear clear() {
+    return const Clear();
   }
 }
 
@@ -78,8 +89,9 @@ mixin _$GeolocationEvent {
     @required Result searchPlace(String input),
     @required Result markerPressed(Place place),
     @required Result getDistance(),
+    @required Result autoComplete(String input, String sessionToken),
+    @required Result suggestionPressed(String sessionToken, String placeid),
     @required Result clear(),
-    @required Result getAirticket(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -90,8 +102,9 @@ mixin _$GeolocationEvent {
     Result searchPlace(String input),
     Result markerPressed(Place place),
     Result getDistance(),
+    Result autoComplete(String input, String sessionToken),
+    Result suggestionPressed(String sessionToken, String placeid),
     Result clear(),
-    Result getAirticket(),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -103,8 +116,9 @@ mixin _$GeolocationEvent {
     @required Result searchPlace(SearchPlace value),
     @required Result markerPressed(MarkerPressed value),
     @required Result getDistance(GetDistance value),
+    @required Result autoComplete(AutoComplete value),
+    @required Result suggestionPressed(SuggestionPressed value),
     @required Result clear(Clear value),
-    @required Result getAirticket(GetAirticket value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -115,8 +129,9 @@ mixin _$GeolocationEvent {
     Result searchPlace(SearchPlace value),
     Result markerPressed(MarkerPressed value),
     Result getDistance(GetDistance value),
+    Result autoComplete(AutoComplete value),
+    Result suggestionPressed(SuggestionPressed value),
     Result clear(Clear value),
-    Result getAirticket(GetAirticket value),
     @required Result orElse(),
   });
 }
@@ -193,8 +208,9 @@ class _$GetCurrentPosition
     @required Result searchPlace(String input),
     @required Result markerPressed(Place place),
     @required Result getDistance(),
+    @required Result autoComplete(String input, String sessionToken),
+    @required Result suggestionPressed(String sessionToken, String placeid),
     @required Result clear(),
-    @required Result getAirticket(),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -203,8 +219,9 @@ class _$GetCurrentPosition
     assert(searchPlace != null);
     assert(markerPressed != null);
     assert(getDistance != null);
+    assert(autoComplete != null);
+    assert(suggestionPressed != null);
     assert(clear != null);
-    assert(getAirticket != null);
     return getCurrentPosition();
   }
 
@@ -218,8 +235,9 @@ class _$GetCurrentPosition
     Result searchPlace(String input),
     Result markerPressed(Place place),
     Result getDistance(),
+    Result autoComplete(String input, String sessionToken),
+    Result suggestionPressed(String sessionToken, String placeid),
     Result clear(),
-    Result getAirticket(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -239,8 +257,9 @@ class _$GetCurrentPosition
     @required Result searchPlace(SearchPlace value),
     @required Result markerPressed(MarkerPressed value),
     @required Result getDistance(GetDistance value),
+    @required Result autoComplete(AutoComplete value),
+    @required Result suggestionPressed(SuggestionPressed value),
     @required Result clear(Clear value),
-    @required Result getAirticket(GetAirticket value),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -249,8 +268,9 @@ class _$GetCurrentPosition
     assert(searchPlace != null);
     assert(markerPressed != null);
     assert(getDistance != null);
+    assert(autoComplete != null);
+    assert(suggestionPressed != null);
     assert(clear != null);
-    assert(getAirticket != null);
     return getCurrentPosition(this);
   }
 
@@ -264,8 +284,9 @@ class _$GetCurrentPosition
     Result searchPlace(SearchPlace value),
     Result markerPressed(MarkerPressed value),
     Result getDistance(GetDistance value),
+    Result autoComplete(AutoComplete value),
+    Result suggestionPressed(SuggestionPressed value),
     Result clear(Clear value),
-    Result getAirticket(GetAirticket value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -329,8 +350,9 @@ class _$GetPlace with DiagnosticableTreeMixin implements GetPlace {
     @required Result searchPlace(String input),
     @required Result markerPressed(Place place),
     @required Result getDistance(),
+    @required Result autoComplete(String input, String sessionToken),
+    @required Result suggestionPressed(String sessionToken, String placeid),
     @required Result clear(),
-    @required Result getAirticket(),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -339,8 +361,9 @@ class _$GetPlace with DiagnosticableTreeMixin implements GetPlace {
     assert(searchPlace != null);
     assert(markerPressed != null);
     assert(getDistance != null);
+    assert(autoComplete != null);
+    assert(suggestionPressed != null);
     assert(clear != null);
-    assert(getAirticket != null);
     return getPlace();
   }
 
@@ -354,8 +377,9 @@ class _$GetPlace with DiagnosticableTreeMixin implements GetPlace {
     Result searchPlace(String input),
     Result markerPressed(Place place),
     Result getDistance(),
+    Result autoComplete(String input, String sessionToken),
+    Result suggestionPressed(String sessionToken, String placeid),
     Result clear(),
-    Result getAirticket(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -375,8 +399,9 @@ class _$GetPlace with DiagnosticableTreeMixin implements GetPlace {
     @required Result searchPlace(SearchPlace value),
     @required Result markerPressed(MarkerPressed value),
     @required Result getDistance(GetDistance value),
+    @required Result autoComplete(AutoComplete value),
+    @required Result suggestionPressed(SuggestionPressed value),
     @required Result clear(Clear value),
-    @required Result getAirticket(GetAirticket value),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -385,8 +410,9 @@ class _$GetPlace with DiagnosticableTreeMixin implements GetPlace {
     assert(searchPlace != null);
     assert(markerPressed != null);
     assert(getDistance != null);
+    assert(autoComplete != null);
+    assert(suggestionPressed != null);
     assert(clear != null);
-    assert(getAirticket != null);
     return getPlace(this);
   }
 
@@ -400,8 +426,9 @@ class _$GetPlace with DiagnosticableTreeMixin implements GetPlace {
     Result searchPlace(SearchPlace value),
     Result markerPressed(MarkerPressed value),
     Result getDistance(GetDistance value),
+    Result autoComplete(AutoComplete value),
+    Result suggestionPressed(SuggestionPressed value),
     Result clear(Clear value),
-    Result getAirticket(GetAirticket value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -465,8 +492,9 @@ class _$GetCinema with DiagnosticableTreeMixin implements GetCinema {
     @required Result searchPlace(String input),
     @required Result markerPressed(Place place),
     @required Result getDistance(),
+    @required Result autoComplete(String input, String sessionToken),
+    @required Result suggestionPressed(String sessionToken, String placeid),
     @required Result clear(),
-    @required Result getAirticket(),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -475,8 +503,9 @@ class _$GetCinema with DiagnosticableTreeMixin implements GetCinema {
     assert(searchPlace != null);
     assert(markerPressed != null);
     assert(getDistance != null);
+    assert(autoComplete != null);
+    assert(suggestionPressed != null);
     assert(clear != null);
-    assert(getAirticket != null);
     return getCinema();
   }
 
@@ -490,8 +519,9 @@ class _$GetCinema with DiagnosticableTreeMixin implements GetCinema {
     Result searchPlace(String input),
     Result markerPressed(Place place),
     Result getDistance(),
+    Result autoComplete(String input, String sessionToken),
+    Result suggestionPressed(String sessionToken, String placeid),
     Result clear(),
-    Result getAirticket(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -511,8 +541,9 @@ class _$GetCinema with DiagnosticableTreeMixin implements GetCinema {
     @required Result searchPlace(SearchPlace value),
     @required Result markerPressed(MarkerPressed value),
     @required Result getDistance(GetDistance value),
+    @required Result autoComplete(AutoComplete value),
+    @required Result suggestionPressed(SuggestionPressed value),
     @required Result clear(Clear value),
-    @required Result getAirticket(GetAirticket value),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -521,8 +552,9 @@ class _$GetCinema with DiagnosticableTreeMixin implements GetCinema {
     assert(searchPlace != null);
     assert(markerPressed != null);
     assert(getDistance != null);
+    assert(autoComplete != null);
+    assert(suggestionPressed != null);
     assert(clear != null);
-    assert(getAirticket != null);
     return getCinema(this);
   }
 
@@ -536,8 +568,9 @@ class _$GetCinema with DiagnosticableTreeMixin implements GetCinema {
     Result searchPlace(SearchPlace value),
     Result markerPressed(MarkerPressed value),
     Result getDistance(GetDistance value),
+    Result autoComplete(AutoComplete value),
+    Result suggestionPressed(SuggestionPressed value),
     Result clear(Clear value),
-    Result getAirticket(GetAirticket value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -601,8 +634,9 @@ class _$GetMarker with DiagnosticableTreeMixin implements GetMarker {
     @required Result searchPlace(String input),
     @required Result markerPressed(Place place),
     @required Result getDistance(),
+    @required Result autoComplete(String input, String sessionToken),
+    @required Result suggestionPressed(String sessionToken, String placeid),
     @required Result clear(),
-    @required Result getAirticket(),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -611,8 +645,9 @@ class _$GetMarker with DiagnosticableTreeMixin implements GetMarker {
     assert(searchPlace != null);
     assert(markerPressed != null);
     assert(getDistance != null);
+    assert(autoComplete != null);
+    assert(suggestionPressed != null);
     assert(clear != null);
-    assert(getAirticket != null);
     return getMarker();
   }
 
@@ -626,8 +661,9 @@ class _$GetMarker with DiagnosticableTreeMixin implements GetMarker {
     Result searchPlace(String input),
     Result markerPressed(Place place),
     Result getDistance(),
+    Result autoComplete(String input, String sessionToken),
+    Result suggestionPressed(String sessionToken, String placeid),
     Result clear(),
-    Result getAirticket(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -647,8 +683,9 @@ class _$GetMarker with DiagnosticableTreeMixin implements GetMarker {
     @required Result searchPlace(SearchPlace value),
     @required Result markerPressed(MarkerPressed value),
     @required Result getDistance(GetDistance value),
+    @required Result autoComplete(AutoComplete value),
+    @required Result suggestionPressed(SuggestionPressed value),
     @required Result clear(Clear value),
-    @required Result getAirticket(GetAirticket value),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -657,8 +694,9 @@ class _$GetMarker with DiagnosticableTreeMixin implements GetMarker {
     assert(searchPlace != null);
     assert(markerPressed != null);
     assert(getDistance != null);
+    assert(autoComplete != null);
+    assert(suggestionPressed != null);
     assert(clear != null);
-    assert(getAirticket != null);
     return getMarker(this);
   }
 
@@ -672,8 +710,9 @@ class _$GetMarker with DiagnosticableTreeMixin implements GetMarker {
     Result searchPlace(SearchPlace value),
     Result markerPressed(MarkerPressed value),
     Result getDistance(GetDistance value),
+    Result autoComplete(AutoComplete value),
+    Result suggestionPressed(SuggestionPressed value),
     Result clear(Clear value),
-    Result getAirticket(GetAirticket value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -763,8 +802,9 @@ class _$SearchPlace with DiagnosticableTreeMixin implements SearchPlace {
     @required Result searchPlace(String input),
     @required Result markerPressed(Place place),
     @required Result getDistance(),
+    @required Result autoComplete(String input, String sessionToken),
+    @required Result suggestionPressed(String sessionToken, String placeid),
     @required Result clear(),
-    @required Result getAirticket(),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -773,8 +813,9 @@ class _$SearchPlace with DiagnosticableTreeMixin implements SearchPlace {
     assert(searchPlace != null);
     assert(markerPressed != null);
     assert(getDistance != null);
+    assert(autoComplete != null);
+    assert(suggestionPressed != null);
     assert(clear != null);
-    assert(getAirticket != null);
     return searchPlace(input);
   }
 
@@ -788,8 +829,9 @@ class _$SearchPlace with DiagnosticableTreeMixin implements SearchPlace {
     Result searchPlace(String input),
     Result markerPressed(Place place),
     Result getDistance(),
+    Result autoComplete(String input, String sessionToken),
+    Result suggestionPressed(String sessionToken, String placeid),
     Result clear(),
-    Result getAirticket(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -809,8 +851,9 @@ class _$SearchPlace with DiagnosticableTreeMixin implements SearchPlace {
     @required Result searchPlace(SearchPlace value),
     @required Result markerPressed(MarkerPressed value),
     @required Result getDistance(GetDistance value),
+    @required Result autoComplete(AutoComplete value),
+    @required Result suggestionPressed(SuggestionPressed value),
     @required Result clear(Clear value),
-    @required Result getAirticket(GetAirticket value),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -819,8 +862,9 @@ class _$SearchPlace with DiagnosticableTreeMixin implements SearchPlace {
     assert(searchPlace != null);
     assert(markerPressed != null);
     assert(getDistance != null);
+    assert(autoComplete != null);
+    assert(suggestionPressed != null);
     assert(clear != null);
-    assert(getAirticket != null);
     return searchPlace(this);
   }
 
@@ -834,8 +878,9 @@ class _$SearchPlace with DiagnosticableTreeMixin implements SearchPlace {
     Result searchPlace(SearchPlace value),
     Result markerPressed(MarkerPressed value),
     Result getDistance(GetDistance value),
+    Result autoComplete(AutoComplete value),
+    Result suggestionPressed(SuggestionPressed value),
     Result clear(Clear value),
-    Result getAirticket(GetAirticket value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -928,8 +973,9 @@ class _$MarkerPressed with DiagnosticableTreeMixin implements MarkerPressed {
     @required Result searchPlace(String input),
     @required Result markerPressed(Place place),
     @required Result getDistance(),
+    @required Result autoComplete(String input, String sessionToken),
+    @required Result suggestionPressed(String sessionToken, String placeid),
     @required Result clear(),
-    @required Result getAirticket(),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -938,8 +984,9 @@ class _$MarkerPressed with DiagnosticableTreeMixin implements MarkerPressed {
     assert(searchPlace != null);
     assert(markerPressed != null);
     assert(getDistance != null);
+    assert(autoComplete != null);
+    assert(suggestionPressed != null);
     assert(clear != null);
-    assert(getAirticket != null);
     return markerPressed(place);
   }
 
@@ -953,8 +1000,9 @@ class _$MarkerPressed with DiagnosticableTreeMixin implements MarkerPressed {
     Result searchPlace(String input),
     Result markerPressed(Place place),
     Result getDistance(),
+    Result autoComplete(String input, String sessionToken),
+    Result suggestionPressed(String sessionToken, String placeid),
     Result clear(),
-    Result getAirticket(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -974,8 +1022,9 @@ class _$MarkerPressed with DiagnosticableTreeMixin implements MarkerPressed {
     @required Result searchPlace(SearchPlace value),
     @required Result markerPressed(MarkerPressed value),
     @required Result getDistance(GetDistance value),
+    @required Result autoComplete(AutoComplete value),
+    @required Result suggestionPressed(SuggestionPressed value),
     @required Result clear(Clear value),
-    @required Result getAirticket(GetAirticket value),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -984,8 +1033,9 @@ class _$MarkerPressed with DiagnosticableTreeMixin implements MarkerPressed {
     assert(searchPlace != null);
     assert(markerPressed != null);
     assert(getDistance != null);
+    assert(autoComplete != null);
+    assert(suggestionPressed != null);
     assert(clear != null);
-    assert(getAirticket != null);
     return markerPressed(this);
   }
 
@@ -999,8 +1049,9 @@ class _$MarkerPressed with DiagnosticableTreeMixin implements MarkerPressed {
     Result searchPlace(SearchPlace value),
     Result markerPressed(MarkerPressed value),
     Result getDistance(GetDistance value),
+    Result autoComplete(AutoComplete value),
+    Result suggestionPressed(SuggestionPressed value),
     Result clear(Clear value),
-    Result getAirticket(GetAirticket value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1071,8 +1122,9 @@ class _$GetDistance with DiagnosticableTreeMixin implements GetDistance {
     @required Result searchPlace(String input),
     @required Result markerPressed(Place place),
     @required Result getDistance(),
+    @required Result autoComplete(String input, String sessionToken),
+    @required Result suggestionPressed(String sessionToken, String placeid),
     @required Result clear(),
-    @required Result getAirticket(),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -1081,8 +1133,9 @@ class _$GetDistance with DiagnosticableTreeMixin implements GetDistance {
     assert(searchPlace != null);
     assert(markerPressed != null);
     assert(getDistance != null);
+    assert(autoComplete != null);
+    assert(suggestionPressed != null);
     assert(clear != null);
-    assert(getAirticket != null);
     return getDistance();
   }
 
@@ -1096,8 +1149,9 @@ class _$GetDistance with DiagnosticableTreeMixin implements GetDistance {
     Result searchPlace(String input),
     Result markerPressed(Place place),
     Result getDistance(),
+    Result autoComplete(String input, String sessionToken),
+    Result suggestionPressed(String sessionToken, String placeid),
     Result clear(),
-    Result getAirticket(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1117,8 +1171,9 @@ class _$GetDistance with DiagnosticableTreeMixin implements GetDistance {
     @required Result searchPlace(SearchPlace value),
     @required Result markerPressed(MarkerPressed value),
     @required Result getDistance(GetDistance value),
+    @required Result autoComplete(AutoComplete value),
+    @required Result suggestionPressed(SuggestionPressed value),
     @required Result clear(Clear value),
-    @required Result getAirticket(GetAirticket value),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -1127,8 +1182,9 @@ class _$GetDistance with DiagnosticableTreeMixin implements GetDistance {
     assert(searchPlace != null);
     assert(markerPressed != null);
     assert(getDistance != null);
+    assert(autoComplete != null);
+    assert(suggestionPressed != null);
     assert(clear != null);
-    assert(getAirticket != null);
     return getDistance(this);
   }
 
@@ -1142,8 +1198,9 @@ class _$GetDistance with DiagnosticableTreeMixin implements GetDistance {
     Result searchPlace(SearchPlace value),
     Result markerPressed(MarkerPressed value),
     Result getDistance(GetDistance value),
+    Result autoComplete(AutoComplete value),
+    Result suggestionPressed(SuggestionPressed value),
     Result clear(Clear value),
-    Result getAirticket(GetAirticket value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1156,6 +1213,378 @@ class _$GetDistance with DiagnosticableTreeMixin implements GetDistance {
 
 abstract class GetDistance implements GeolocationEvent {
   const factory GetDistance() = _$GetDistance;
+}
+
+/// @nodoc
+abstract class $AutoCompleteCopyWith<$Res> {
+  factory $AutoCompleteCopyWith(
+          AutoComplete value, $Res Function(AutoComplete) then) =
+      _$AutoCompleteCopyWithImpl<$Res>;
+  $Res call({String input, String sessionToken});
+}
+
+/// @nodoc
+class _$AutoCompleteCopyWithImpl<$Res>
+    extends _$GeolocationEventCopyWithImpl<$Res>
+    implements $AutoCompleteCopyWith<$Res> {
+  _$AutoCompleteCopyWithImpl(
+      AutoComplete _value, $Res Function(AutoComplete) _then)
+      : super(_value, (v) => _then(v as AutoComplete));
+
+  @override
+  AutoComplete get _value => super._value as AutoComplete;
+
+  @override
+  $Res call({
+    Object input = freezed,
+    Object sessionToken = freezed,
+  }) {
+    return _then(AutoComplete(
+      input == freezed ? _value.input : input as String,
+      sessionToken == freezed ? _value.sessionToken : sessionToken as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$AutoComplete with DiagnosticableTreeMixin implements AutoComplete {
+  const _$AutoComplete(this.input, this.sessionToken)
+      : assert(input != null),
+        assert(sessionToken != null);
+
+  @override
+  final String input;
+  @override
+  final String sessionToken;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'GeolocationEvent.autoComplete(input: $input, sessionToken: $sessionToken)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'GeolocationEvent.autoComplete'))
+      ..add(DiagnosticsProperty('input', input))
+      ..add(DiagnosticsProperty('sessionToken', sessionToken));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is AutoComplete &&
+            (identical(other.input, input) ||
+                const DeepCollectionEquality().equals(other.input, input)) &&
+            (identical(other.sessionToken, sessionToken) ||
+                const DeepCollectionEquality()
+                    .equals(other.sessionToken, sessionToken)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(input) ^
+      const DeepCollectionEquality().hash(sessionToken);
+
+  @override
+  $AutoCompleteCopyWith<AutoComplete> get copyWith =>
+      _$AutoCompleteCopyWithImpl<AutoComplete>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result getCurrentPosition(),
+    @required Result getPlace(),
+    @required Result getCinema(),
+    @required Result getMarker(),
+    @required Result searchPlace(String input),
+    @required Result markerPressed(Place place),
+    @required Result getDistance(),
+    @required Result autoComplete(String input, String sessionToken),
+    @required Result suggestionPressed(String sessionToken, String placeid),
+    @required Result clear(),
+  }) {
+    assert(getCurrentPosition != null);
+    assert(getPlace != null);
+    assert(getCinema != null);
+    assert(getMarker != null);
+    assert(searchPlace != null);
+    assert(markerPressed != null);
+    assert(getDistance != null);
+    assert(autoComplete != null);
+    assert(suggestionPressed != null);
+    assert(clear != null);
+    return autoComplete(input, sessionToken);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result getCurrentPosition(),
+    Result getPlace(),
+    Result getCinema(),
+    Result getMarker(),
+    Result searchPlace(String input),
+    Result markerPressed(Place place),
+    Result getDistance(),
+    Result autoComplete(String input, String sessionToken),
+    Result suggestionPressed(String sessionToken, String placeid),
+    Result clear(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (autoComplete != null) {
+      return autoComplete(input, sessionToken);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result getCurrentPosition(GetCurrentPosition value),
+    @required Result getPlace(GetPlace value),
+    @required Result getCinema(GetCinema value),
+    @required Result getMarker(GetMarker value),
+    @required Result searchPlace(SearchPlace value),
+    @required Result markerPressed(MarkerPressed value),
+    @required Result getDistance(GetDistance value),
+    @required Result autoComplete(AutoComplete value),
+    @required Result suggestionPressed(SuggestionPressed value),
+    @required Result clear(Clear value),
+  }) {
+    assert(getCurrentPosition != null);
+    assert(getPlace != null);
+    assert(getCinema != null);
+    assert(getMarker != null);
+    assert(searchPlace != null);
+    assert(markerPressed != null);
+    assert(getDistance != null);
+    assert(autoComplete != null);
+    assert(suggestionPressed != null);
+    assert(clear != null);
+    return autoComplete(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result getCurrentPosition(GetCurrentPosition value),
+    Result getPlace(GetPlace value),
+    Result getCinema(GetCinema value),
+    Result getMarker(GetMarker value),
+    Result searchPlace(SearchPlace value),
+    Result markerPressed(MarkerPressed value),
+    Result getDistance(GetDistance value),
+    Result autoComplete(AutoComplete value),
+    Result suggestionPressed(SuggestionPressed value),
+    Result clear(Clear value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (autoComplete != null) {
+      return autoComplete(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AutoComplete implements GeolocationEvent {
+  const factory AutoComplete(String input, String sessionToken) =
+      _$AutoComplete;
+
+  String get input;
+  String get sessionToken;
+  $AutoCompleteCopyWith<AutoComplete> get copyWith;
+}
+
+/// @nodoc
+abstract class $SuggestionPressedCopyWith<$Res> {
+  factory $SuggestionPressedCopyWith(
+          SuggestionPressed value, $Res Function(SuggestionPressed) then) =
+      _$SuggestionPressedCopyWithImpl<$Res>;
+  $Res call({String sessionToken, String placeid});
+}
+
+/// @nodoc
+class _$SuggestionPressedCopyWithImpl<$Res>
+    extends _$GeolocationEventCopyWithImpl<$Res>
+    implements $SuggestionPressedCopyWith<$Res> {
+  _$SuggestionPressedCopyWithImpl(
+      SuggestionPressed _value, $Res Function(SuggestionPressed) _then)
+      : super(_value, (v) => _then(v as SuggestionPressed));
+
+  @override
+  SuggestionPressed get _value => super._value as SuggestionPressed;
+
+  @override
+  $Res call({
+    Object sessionToken = freezed,
+    Object placeid = freezed,
+  }) {
+    return _then(SuggestionPressed(
+      sessionToken == freezed ? _value.sessionToken : sessionToken as String,
+      placeid == freezed ? _value.placeid : placeid as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$SuggestionPressed
+    with DiagnosticableTreeMixin
+    implements SuggestionPressed {
+  const _$SuggestionPressed(this.sessionToken, this.placeid)
+      : assert(sessionToken != null),
+        assert(placeid != null);
+
+  @override
+  final String sessionToken;
+  @override
+  final String placeid;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'GeolocationEvent.suggestionPressed(sessionToken: $sessionToken, placeid: $placeid)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'GeolocationEvent.suggestionPressed'))
+      ..add(DiagnosticsProperty('sessionToken', sessionToken))
+      ..add(DiagnosticsProperty('placeid', placeid));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SuggestionPressed &&
+            (identical(other.sessionToken, sessionToken) ||
+                const DeepCollectionEquality()
+                    .equals(other.sessionToken, sessionToken)) &&
+            (identical(other.placeid, placeid) ||
+                const DeepCollectionEquality().equals(other.placeid, placeid)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(sessionToken) ^
+      const DeepCollectionEquality().hash(placeid);
+
+  @override
+  $SuggestionPressedCopyWith<SuggestionPressed> get copyWith =>
+      _$SuggestionPressedCopyWithImpl<SuggestionPressed>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result getCurrentPosition(),
+    @required Result getPlace(),
+    @required Result getCinema(),
+    @required Result getMarker(),
+    @required Result searchPlace(String input),
+    @required Result markerPressed(Place place),
+    @required Result getDistance(),
+    @required Result autoComplete(String input, String sessionToken),
+    @required Result suggestionPressed(String sessionToken, String placeid),
+    @required Result clear(),
+  }) {
+    assert(getCurrentPosition != null);
+    assert(getPlace != null);
+    assert(getCinema != null);
+    assert(getMarker != null);
+    assert(searchPlace != null);
+    assert(markerPressed != null);
+    assert(getDistance != null);
+    assert(autoComplete != null);
+    assert(suggestionPressed != null);
+    assert(clear != null);
+    return suggestionPressed(sessionToken, placeid);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result getCurrentPosition(),
+    Result getPlace(),
+    Result getCinema(),
+    Result getMarker(),
+    Result searchPlace(String input),
+    Result markerPressed(Place place),
+    Result getDistance(),
+    Result autoComplete(String input, String sessionToken),
+    Result suggestionPressed(String sessionToken, String placeid),
+    Result clear(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (suggestionPressed != null) {
+      return suggestionPressed(sessionToken, placeid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result getCurrentPosition(GetCurrentPosition value),
+    @required Result getPlace(GetPlace value),
+    @required Result getCinema(GetCinema value),
+    @required Result getMarker(GetMarker value),
+    @required Result searchPlace(SearchPlace value),
+    @required Result markerPressed(MarkerPressed value),
+    @required Result getDistance(GetDistance value),
+    @required Result autoComplete(AutoComplete value),
+    @required Result suggestionPressed(SuggestionPressed value),
+    @required Result clear(Clear value),
+  }) {
+    assert(getCurrentPosition != null);
+    assert(getPlace != null);
+    assert(getCinema != null);
+    assert(getMarker != null);
+    assert(searchPlace != null);
+    assert(markerPressed != null);
+    assert(getDistance != null);
+    assert(autoComplete != null);
+    assert(suggestionPressed != null);
+    assert(clear != null);
+    return suggestionPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result getCurrentPosition(GetCurrentPosition value),
+    Result getPlace(GetPlace value),
+    Result getCinema(GetCinema value),
+    Result getMarker(GetMarker value),
+    Result searchPlace(SearchPlace value),
+    Result markerPressed(MarkerPressed value),
+    Result getDistance(GetDistance value),
+    Result autoComplete(AutoComplete value),
+    Result suggestionPressed(SuggestionPressed value),
+    Result clear(Clear value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (suggestionPressed != null) {
+      return suggestionPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SuggestionPressed implements GeolocationEvent {
+  const factory SuggestionPressed(String sessionToken, String placeid) =
+      _$SuggestionPressed;
+
+  String get sessionToken;
+  String get placeid;
+  $SuggestionPressedCopyWith<SuggestionPressed> get copyWith;
 }
 
 /// @nodoc
@@ -1207,8 +1636,9 @@ class _$Clear with DiagnosticableTreeMixin implements Clear {
     @required Result searchPlace(String input),
     @required Result markerPressed(Place place),
     @required Result getDistance(),
+    @required Result autoComplete(String input, String sessionToken),
+    @required Result suggestionPressed(String sessionToken, String placeid),
     @required Result clear(),
-    @required Result getAirticket(),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -1217,8 +1647,9 @@ class _$Clear with DiagnosticableTreeMixin implements Clear {
     assert(searchPlace != null);
     assert(markerPressed != null);
     assert(getDistance != null);
+    assert(autoComplete != null);
+    assert(suggestionPressed != null);
     assert(clear != null);
-    assert(getAirticket != null);
     return clear();
   }
 
@@ -1232,8 +1663,9 @@ class _$Clear with DiagnosticableTreeMixin implements Clear {
     Result searchPlace(String input),
     Result markerPressed(Place place),
     Result getDistance(),
+    Result autoComplete(String input, String sessionToken),
+    Result suggestionPressed(String sessionToken, String placeid),
     Result clear(),
-    Result getAirticket(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1253,8 +1685,9 @@ class _$Clear with DiagnosticableTreeMixin implements Clear {
     @required Result searchPlace(SearchPlace value),
     @required Result markerPressed(MarkerPressed value),
     @required Result getDistance(GetDistance value),
+    @required Result autoComplete(AutoComplete value),
+    @required Result suggestionPressed(SuggestionPressed value),
     @required Result clear(Clear value),
-    @required Result getAirticket(GetAirticket value),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -1263,8 +1696,9 @@ class _$Clear with DiagnosticableTreeMixin implements Clear {
     assert(searchPlace != null);
     assert(markerPressed != null);
     assert(getDistance != null);
+    assert(autoComplete != null);
+    assert(suggestionPressed != null);
     assert(clear != null);
-    assert(getAirticket != null);
     return clear(this);
   }
 
@@ -1278,8 +1712,9 @@ class _$Clear with DiagnosticableTreeMixin implements Clear {
     Result searchPlace(SearchPlace value),
     Result markerPressed(MarkerPressed value),
     Result getDistance(GetDistance value),
+    Result autoComplete(AutoComplete value),
+    Result suggestionPressed(SuggestionPressed value),
     Result clear(Clear value),
-    Result getAirticket(GetAirticket value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1295,146 +1730,6 @@ abstract class Clear implements GeolocationEvent {
 }
 
 /// @nodoc
-abstract class $GetAirticketCopyWith<$Res> {
-  factory $GetAirticketCopyWith(
-          GetAirticket value, $Res Function(GetAirticket) then) =
-      _$GetAirticketCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$GetAirticketCopyWithImpl<$Res>
-    extends _$GeolocationEventCopyWithImpl<$Res>
-    implements $GetAirticketCopyWith<$Res> {
-  _$GetAirticketCopyWithImpl(
-      GetAirticket _value, $Res Function(GetAirticket) _then)
-      : super(_value, (v) => _then(v as GetAirticket));
-
-  @override
-  GetAirticket get _value => super._value as GetAirticket;
-}
-
-/// @nodoc
-class _$GetAirticket with DiagnosticableTreeMixin implements GetAirticket {
-  const _$GetAirticket();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'GeolocationEvent.getAirticket()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'GeolocationEvent.getAirticket'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is GetAirticket);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result getCurrentPosition(),
-    @required Result getPlace(),
-    @required Result getCinema(),
-    @required Result getMarker(),
-    @required Result searchPlace(String input),
-    @required Result markerPressed(Place place),
-    @required Result getDistance(),
-    @required Result clear(),
-    @required Result getAirticket(),
-  }) {
-    assert(getCurrentPosition != null);
-    assert(getPlace != null);
-    assert(getCinema != null);
-    assert(getMarker != null);
-    assert(searchPlace != null);
-    assert(markerPressed != null);
-    assert(getDistance != null);
-    assert(clear != null);
-    assert(getAirticket != null);
-    return getAirticket();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result getCurrentPosition(),
-    Result getPlace(),
-    Result getCinema(),
-    Result getMarker(),
-    Result searchPlace(String input),
-    Result markerPressed(Place place),
-    Result getDistance(),
-    Result clear(),
-    Result getAirticket(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (getAirticket != null) {
-      return getAirticket();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result getCurrentPosition(GetCurrentPosition value),
-    @required Result getPlace(GetPlace value),
-    @required Result getCinema(GetCinema value),
-    @required Result getMarker(GetMarker value),
-    @required Result searchPlace(SearchPlace value),
-    @required Result markerPressed(MarkerPressed value),
-    @required Result getDistance(GetDistance value),
-    @required Result clear(Clear value),
-    @required Result getAirticket(GetAirticket value),
-  }) {
-    assert(getCurrentPosition != null);
-    assert(getPlace != null);
-    assert(getCinema != null);
-    assert(getMarker != null);
-    assert(searchPlace != null);
-    assert(markerPressed != null);
-    assert(getDistance != null);
-    assert(clear != null);
-    assert(getAirticket != null);
-    return getAirticket(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result getCurrentPosition(GetCurrentPosition value),
-    Result getPlace(GetPlace value),
-    Result getCinema(GetCinema value),
-    Result getMarker(GetMarker value),
-    Result searchPlace(SearchPlace value),
-    Result markerPressed(MarkerPressed value),
-    Result getDistance(GetDistance value),
-    Result clear(Clear value),
-    Result getAirticket(GetAirticket value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (getAirticket != null) {
-      return getAirticket(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetAirticket implements GeolocationEvent {
-  const factory GetAirticket() = _$GetAirticket;
-}
-
-/// @nodoc
 class _$GeolocationStateTearOff {
   const _$GeolocationStateTearOff();
 
@@ -1445,24 +1740,28 @@ class _$GeolocationStateTearOff {
       @required bool isLoading,
       @required bool finishCoordinating,
       @required bool fetchAPIFailure,
-      @required bool fetchAirTicket,
+      @required bool fetchPlaceSuccess,
       @required List<Place> places,
+      @required List<Place> searchPlaces,
       @required List<Marker> markers,
+      @required List<Suggestion> suggestions,
+      @required bool isPlaceLoading,
       @required Place selectedPlace,
-      @required double distance,
-      @required List<Airticket> airticket}) {
+      @required double distance}) {
     return _GeolocationState(
       latitude: latitude,
       longitude: longitude,
       isLoading: isLoading,
       finishCoordinating: finishCoordinating,
       fetchAPIFailure: fetchAPIFailure,
-      fetchAirTicket: fetchAirTicket,
+      fetchPlaceSuccess: fetchPlaceSuccess,
       places: places,
+      searchPlaces: searchPlaces,
       markers: markers,
+      suggestions: suggestions,
+      isPlaceLoading: isPlaceLoading,
       selectedPlace: selectedPlace,
       distance: distance,
-      airticket: airticket,
     );
   }
 }
@@ -1478,12 +1777,14 @@ mixin _$GeolocationState {
   bool get isLoading;
   bool get finishCoordinating;
   bool get fetchAPIFailure;
-  bool get fetchAirTicket;
+  bool get fetchPlaceSuccess;
   List<Place> get places;
+  List<Place> get searchPlaces;
   List<Marker> get markers;
+  List<Suggestion> get suggestions;
+  bool get isPlaceLoading;
   Place get selectedPlace;
   double get distance;
-  List<Airticket> get airticket;
 
   $GeolocationStateCopyWith<GeolocationState> get copyWith;
 }
@@ -1499,12 +1800,14 @@ abstract class $GeolocationStateCopyWith<$Res> {
       bool isLoading,
       bool finishCoordinating,
       bool fetchAPIFailure,
-      bool fetchAirTicket,
+      bool fetchPlaceSuccess,
       List<Place> places,
+      List<Place> searchPlaces,
       List<Marker> markers,
+      List<Suggestion> suggestions,
+      bool isPlaceLoading,
       Place selectedPlace,
-      double distance,
-      List<Airticket> airticket});
+      double distance});
 }
 
 /// @nodoc
@@ -1523,12 +1826,14 @@ class _$GeolocationStateCopyWithImpl<$Res>
     Object isLoading = freezed,
     Object finishCoordinating = freezed,
     Object fetchAPIFailure = freezed,
-    Object fetchAirTicket = freezed,
+    Object fetchPlaceSuccess = freezed,
     Object places = freezed,
+    Object searchPlaces = freezed,
     Object markers = freezed,
+    Object suggestions = freezed,
+    Object isPlaceLoading = freezed,
     Object selectedPlace = freezed,
     Object distance = freezed,
-    Object airticket = freezed,
   }) {
     return _then(_value.copyWith(
       latitude: latitude == freezed ? _value.latitude : latitude as double,
@@ -1540,18 +1845,24 @@ class _$GeolocationStateCopyWithImpl<$Res>
       fetchAPIFailure: fetchAPIFailure == freezed
           ? _value.fetchAPIFailure
           : fetchAPIFailure as bool,
-      fetchAirTicket: fetchAirTicket == freezed
-          ? _value.fetchAirTicket
-          : fetchAirTicket as bool,
+      fetchPlaceSuccess: fetchPlaceSuccess == freezed
+          ? _value.fetchPlaceSuccess
+          : fetchPlaceSuccess as bool,
       places: places == freezed ? _value.places : places as List<Place>,
+      searchPlaces: searchPlaces == freezed
+          ? _value.searchPlaces
+          : searchPlaces as List<Place>,
       markers: markers == freezed ? _value.markers : markers as List<Marker>,
+      suggestions: suggestions == freezed
+          ? _value.suggestions
+          : suggestions as List<Suggestion>,
+      isPlaceLoading: isPlaceLoading == freezed
+          ? _value.isPlaceLoading
+          : isPlaceLoading as bool,
       selectedPlace: selectedPlace == freezed
           ? _value.selectedPlace
           : selectedPlace as Place,
       distance: distance == freezed ? _value.distance : distance as double,
-      airticket: airticket == freezed
-          ? _value.airticket
-          : airticket as List<Airticket>,
     ));
   }
 }
@@ -1569,12 +1880,14 @@ abstract class _$GeolocationStateCopyWith<$Res>
       bool isLoading,
       bool finishCoordinating,
       bool fetchAPIFailure,
-      bool fetchAirTicket,
+      bool fetchPlaceSuccess,
       List<Place> places,
+      List<Place> searchPlaces,
       List<Marker> markers,
+      List<Suggestion> suggestions,
+      bool isPlaceLoading,
       Place selectedPlace,
-      double distance,
-      List<Airticket> airticket});
+      double distance});
 }
 
 /// @nodoc
@@ -1595,12 +1908,14 @@ class __$GeolocationStateCopyWithImpl<$Res>
     Object isLoading = freezed,
     Object finishCoordinating = freezed,
     Object fetchAPIFailure = freezed,
-    Object fetchAirTicket = freezed,
+    Object fetchPlaceSuccess = freezed,
     Object places = freezed,
+    Object searchPlaces = freezed,
     Object markers = freezed,
+    Object suggestions = freezed,
+    Object isPlaceLoading = freezed,
     Object selectedPlace = freezed,
     Object distance = freezed,
-    Object airticket = freezed,
   }) {
     return _then(_GeolocationState(
       latitude: latitude == freezed ? _value.latitude : latitude as double,
@@ -1612,18 +1927,24 @@ class __$GeolocationStateCopyWithImpl<$Res>
       fetchAPIFailure: fetchAPIFailure == freezed
           ? _value.fetchAPIFailure
           : fetchAPIFailure as bool,
-      fetchAirTicket: fetchAirTicket == freezed
-          ? _value.fetchAirTicket
-          : fetchAirTicket as bool,
+      fetchPlaceSuccess: fetchPlaceSuccess == freezed
+          ? _value.fetchPlaceSuccess
+          : fetchPlaceSuccess as bool,
       places: places == freezed ? _value.places : places as List<Place>,
+      searchPlaces: searchPlaces == freezed
+          ? _value.searchPlaces
+          : searchPlaces as List<Place>,
       markers: markers == freezed ? _value.markers : markers as List<Marker>,
+      suggestions: suggestions == freezed
+          ? _value.suggestions
+          : suggestions as List<Suggestion>,
+      isPlaceLoading: isPlaceLoading == freezed
+          ? _value.isPlaceLoading
+          : isPlaceLoading as bool,
       selectedPlace: selectedPlace == freezed
           ? _value.selectedPlace
           : selectedPlace as Place,
       distance: distance == freezed ? _value.distance : distance as double,
-      airticket: airticket == freezed
-          ? _value.airticket
-          : airticket as List<Airticket>,
     ));
   }
 }
@@ -1638,23 +1959,27 @@ class _$_GeolocationState
       @required this.isLoading,
       @required this.finishCoordinating,
       @required this.fetchAPIFailure,
-      @required this.fetchAirTicket,
+      @required this.fetchPlaceSuccess,
       @required this.places,
+      @required this.searchPlaces,
       @required this.markers,
+      @required this.suggestions,
+      @required this.isPlaceLoading,
       @required this.selectedPlace,
-      @required this.distance,
-      @required this.airticket})
+      @required this.distance})
       : assert(latitude != null),
         assert(longitude != null),
         assert(isLoading != null),
         assert(finishCoordinating != null),
         assert(fetchAPIFailure != null),
-        assert(fetchAirTicket != null),
+        assert(fetchPlaceSuccess != null),
         assert(places != null),
+        assert(searchPlaces != null),
         assert(markers != null),
+        assert(suggestions != null),
+        assert(isPlaceLoading != null),
         assert(selectedPlace != null),
-        assert(distance != null),
-        assert(airticket != null);
+        assert(distance != null);
 
   @override
   final double latitude;
@@ -1667,21 +1992,25 @@ class _$_GeolocationState
   @override
   final bool fetchAPIFailure;
   @override
-  final bool fetchAirTicket;
+  final bool fetchPlaceSuccess;
   @override
   final List<Place> places;
   @override
+  final List<Place> searchPlaces;
+  @override
   final List<Marker> markers;
+  @override
+  final List<Suggestion> suggestions;
+  @override
+  final bool isPlaceLoading;
   @override
   final Place selectedPlace;
   @override
   final double distance;
-  @override
-  final List<Airticket> airticket;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'GeolocationState(latitude: $latitude, longitude: $longitude, isLoading: $isLoading, finishCoordinating: $finishCoordinating, fetchAPIFailure: $fetchAPIFailure, fetchAirTicket: $fetchAirTicket, places: $places, markers: $markers, selectedPlace: $selectedPlace, distance: $distance, airticket: $airticket)';
+    return 'GeolocationState(latitude: $latitude, longitude: $longitude, isLoading: $isLoading, finishCoordinating: $finishCoordinating, fetchAPIFailure: $fetchAPIFailure, fetchPlaceSuccess: $fetchPlaceSuccess, places: $places, searchPlaces: $searchPlaces, markers: $markers, suggestions: $suggestions, isPlaceLoading: $isPlaceLoading, selectedPlace: $selectedPlace, distance: $distance)';
   }
 
   @override
@@ -1694,12 +2023,14 @@ class _$_GeolocationState
       ..add(DiagnosticsProperty('isLoading', isLoading))
       ..add(DiagnosticsProperty('finishCoordinating', finishCoordinating))
       ..add(DiagnosticsProperty('fetchAPIFailure', fetchAPIFailure))
-      ..add(DiagnosticsProperty('fetchAirTicket', fetchAirTicket))
+      ..add(DiagnosticsProperty('fetchPlaceSuccess', fetchPlaceSuccess))
       ..add(DiagnosticsProperty('places', places))
+      ..add(DiagnosticsProperty('searchPlaces', searchPlaces))
       ..add(DiagnosticsProperty('markers', markers))
+      ..add(DiagnosticsProperty('suggestions', suggestions))
+      ..add(DiagnosticsProperty('isPlaceLoading', isPlaceLoading))
       ..add(DiagnosticsProperty('selectedPlace', selectedPlace))
-      ..add(DiagnosticsProperty('distance', distance))
-      ..add(DiagnosticsProperty('airticket', airticket));
+      ..add(DiagnosticsProperty('distance', distance));
   }
 
   @override
@@ -1721,23 +2052,29 @@ class _$_GeolocationState
             (identical(other.fetchAPIFailure, fetchAPIFailure) ||
                 const DeepCollectionEquality()
                     .equals(other.fetchAPIFailure, fetchAPIFailure)) &&
-            (identical(other.fetchAirTicket, fetchAirTicket) ||
+            (identical(other.fetchPlaceSuccess, fetchPlaceSuccess) ||
                 const DeepCollectionEquality()
-                    .equals(other.fetchAirTicket, fetchAirTicket)) &&
+                    .equals(other.fetchPlaceSuccess, fetchPlaceSuccess)) &&
             (identical(other.places, places) ||
                 const DeepCollectionEquality().equals(other.places, places)) &&
+            (identical(other.searchPlaces, searchPlaces) ||
+                const DeepCollectionEquality()
+                    .equals(other.searchPlaces, searchPlaces)) &&
             (identical(other.markers, markers) ||
                 const DeepCollectionEquality()
                     .equals(other.markers, markers)) &&
+            (identical(other.suggestions, suggestions) ||
+                const DeepCollectionEquality()
+                    .equals(other.suggestions, suggestions)) &&
+            (identical(other.isPlaceLoading, isPlaceLoading) ||
+                const DeepCollectionEquality()
+                    .equals(other.isPlaceLoading, isPlaceLoading)) &&
             (identical(other.selectedPlace, selectedPlace) ||
                 const DeepCollectionEquality()
                     .equals(other.selectedPlace, selectedPlace)) &&
             (identical(other.distance, distance) ||
                 const DeepCollectionEquality()
-                    .equals(other.distance, distance)) &&
-            (identical(other.airticket, airticket) ||
-                const DeepCollectionEquality()
-                    .equals(other.airticket, airticket)));
+                    .equals(other.distance, distance)));
   }
 
   @override
@@ -1748,12 +2085,14 @@ class _$_GeolocationState
       const DeepCollectionEquality().hash(isLoading) ^
       const DeepCollectionEquality().hash(finishCoordinating) ^
       const DeepCollectionEquality().hash(fetchAPIFailure) ^
-      const DeepCollectionEquality().hash(fetchAirTicket) ^
+      const DeepCollectionEquality().hash(fetchPlaceSuccess) ^
       const DeepCollectionEquality().hash(places) ^
+      const DeepCollectionEquality().hash(searchPlaces) ^
       const DeepCollectionEquality().hash(markers) ^
+      const DeepCollectionEquality().hash(suggestions) ^
+      const DeepCollectionEquality().hash(isPlaceLoading) ^
       const DeepCollectionEquality().hash(selectedPlace) ^
-      const DeepCollectionEquality().hash(distance) ^
-      const DeepCollectionEquality().hash(airticket);
+      const DeepCollectionEquality().hash(distance);
 
   @override
   _$GeolocationStateCopyWith<_GeolocationState> get copyWith =>
@@ -1767,12 +2106,14 @@ abstract class _GeolocationState implements GeolocationState {
       @required bool isLoading,
       @required bool finishCoordinating,
       @required bool fetchAPIFailure,
-      @required bool fetchAirTicket,
+      @required bool fetchPlaceSuccess,
       @required List<Place> places,
+      @required List<Place> searchPlaces,
       @required List<Marker> markers,
+      @required List<Suggestion> suggestions,
+      @required bool isPlaceLoading,
       @required Place selectedPlace,
-      @required double distance,
-      @required List<Airticket> airticket}) = _$_GeolocationState;
+      @required double distance}) = _$_GeolocationState;
 
   @override
   double get latitude;
@@ -1785,17 +2126,21 @@ abstract class _GeolocationState implements GeolocationState {
   @override
   bool get fetchAPIFailure;
   @override
-  bool get fetchAirTicket;
+  bool get fetchPlaceSuccess;
   @override
   List<Place> get places;
   @override
+  List<Place> get searchPlaces;
+  @override
   List<Marker> get markers;
+  @override
+  List<Suggestion> get suggestions;
+  @override
+  bool get isPlaceLoading;
   @override
   Place get selectedPlace;
   @override
   double get distance;
-  @override
-  List<Airticket> get airticket;
   @override
   _$GeolocationStateCopyWith<_GeolocationState> get copyWith;
 }

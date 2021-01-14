@@ -8,12 +8,14 @@ abstract class GeolocationState with _$GeolocationState {
     @required bool isLoading,
     @required bool finishCoordinating,
     @required bool fetchAPIFailure,
-    @required bool fetchAirTicket,
+    @required bool fetchPlaceSuccess,
     @required List<Place> places,
+    @required List<Place> searchPlaces,
     @required List<Marker> markers,
+    @required List<Suggestion> suggestions,
+    @required bool isPlaceLoading,
     @required Place selectedPlace,
     @required double distance,
-    @required List<Airticket> airticket,
   }) = _GeolocationState;
 
   factory GeolocationState.initial() => const GeolocationState(
@@ -22,10 +24,12 @@ abstract class GeolocationState with _$GeolocationState {
       isLoading: false,
       finishCoordinating: false,
       fetchAPIFailure: false,
-      fetchAirTicket: false,
+      fetchPlaceSuccess: false,
+      isPlaceLoading: false,
       places: [],
+      searchPlaces: [],
       markers: [],
-      airticket: [],
+      suggestions: [],
       selectedPlace: Place(),
       distance: 0.0);
 }

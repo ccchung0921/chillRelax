@@ -1,20 +1,27 @@
+import 'dart:async';
 import 'dart:ui';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:hkonline/application/airticket/airticket_bloc.dart';
 import 'package:hkonline/application/auth/authenticate_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hkonline/application/auth/instagram/bloc/igpost_bloc.dart';
 import 'package:hkonline/application/geolocator/bloc/geolocation_bloc.dart';
 import 'package:hkonline/application/quest/quest_bloc.dart';
-import 'package:hkonline/infrastructure/googlePlace/place.dart';
+import 'package:hkonline/infrastructure/googlePlace/place_search.dart';
+import 'package:hkonline/infrastructure/googlePlace/suggestions.dart';
+import 'package:hkonline/infrastructure/instagram/api.dart';
+import 'package:hkonline/infrastructure/instagram/post.dart';
 import 'package:hkonline/infrastructure/skyscanner/airticket.dart';
 import 'package:hkonline/infrastructure/skyscanner/api.dart';
 import 'package:hkonline/presentation/map/airticket_detail_window.dart';
+import 'package:hkonline/presentation/map/igpost_detail_window.dart';
 import 'package:hkonline/presentation/map/place_detail_.window.dart';
 import 'package:hkonline/presentation/routes/router.gr.dart';
-import 'package:geolocator/geolocator.dart';
+import 'package:uuid/uuid.dart';
 
 class MapScreen extends StatefulWidget {
   @override
@@ -22,10 +29,14 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-  final List<Marker> markers = List<Marker>();
+  final List<Marker> markers = <Marker>[];
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   String input = '';
   bool inAirplaneMode = false;
   Airticket selectedAirticket = const Airticket();
+  List<IgPost> igPostList = [];
+  IgPost selectedIgPost = const IgPost();
   GoogleMapController _mapController;
 
   @override
@@ -46,97 +57,136 @@ class _MapScreenState extends State<MapScreen> {
                 notSetUp: (_) =>
                     ExtendedNavigator.of(context).replace(Routes.firstQuest),
                 orElse: () {});
+          }),
+          BlocListener<AirticketBloc, AirticketState>(
+              listener: (context, state) {
+            state.when(
+                initial: () {},
+                ticketFailure: () {},
+                ticketSuccess: (airtickets) {
+                  final List<Airticket> tickets = airtickets;
+                  tickets.forEach((ticket) async {
+                    final response =
+                        await SkyscannerAPI().getGeoCode(ticket.destination);
+                    final Marker marker = Marker(
+                        markerId: MarkerId(ticket.price.toString()),
+                        icon: await BitmapDescriptor.fromAssetImage(
+                            config,
+                            ticket.countryName == 'Japan'
+                                ? 'assets/SmallJP.png'
+                                : 'assets/SmallTW.png'),
+                        onTap: () {
+                          setState(() {
+                            selectedAirticket = ticket;
+                          });
+                          showAirTicket(selectedAirticket);
+                          moveCountry(response['lat'] as double,
+                              response['lng'] as double, 7.0);
+                        },
+                        position: LatLng(response['lat'] as double,
+                            response['lng'] as double));
+                    markers.add(marker);
+                  });
+                });
+          }),
+          BlocListener<IgpostBloc, IgpostState>(listener: (context, state) {
+            state.when(
+                initial: () {},
+                postfailure: () {},
+                postSuccess: (posts) {
+                  final List<IgPost> igPosts = posts;
+                  setState(() {
+                    igPostList = igPosts;
+                  });
+                  igPosts.forEach((post) async {
+                    if (post.location.isNotEmpty) {
+                      final response =
+                          await InstagramAPI().getGeoCode(post.location);
+                      final Marker marker = Marker(
+                          markerId: MarkerId(post.postID),
+                          icon: await BitmapDescriptor.fromAssetImage(
+                              config, 'assets/SmallEx.png'),
+                          onTap: () {
+                            setState(() {
+                              selectedIgPost = post;
+                            });
+                            showIgPost(post);
+                          },
+                          position: LatLng(response['lat'] as double,
+                              response['lng'] as double));
+                      markers.add(marker);
+                    }
+                  });
+                });
           })
         ],
         child: BlocConsumer<GeolocationBloc, GeolocationState>(
           listener: (context, state) => {
-            if (state.finishCoordinating == false)
-              {
-                context
-                    .bloc<GeolocationBloc>()
-                    .add(const GeolocationEvent.getCurrentPosition())
-              },
             if (state.finishCoordinating == true &&
                 (state.places.length < 20 || state.places.isEmpty))
               {
                 context
-                    .bloc<GeolocationBloc>()
+                    .read<GeolocationBloc>()
                     .add(const GeolocationEvent.getPlace()),
               },
             if (state.finishCoordinating == true &&
                 (state.places.length >= 20 && state.places.length < 25))
               {
                 context
-                    .bloc<GeolocationBloc>()
+                    .read<GeolocationBloc>()
                     .add(const GeolocationEvent.getCinema())
               },
-            if (state.finishCoordinating == true && state.airticket.isEmpty)
-              {
-                context
-                    .bloc<GeolocationBloc>()
-                    .add(const GeolocationEvent.getAirticket()),
-                print('trying to get airticket')
-              },
-            if (state.places.isNotEmpty)
+            if (state.fetchPlaceSuccess == true)
               {
                 state.places.forEach((place) async {
                   final Marker marker = Marker(
-                      markerId: MarkerId(place.name),
+                      markerId: MarkerId(place.placeID),
                       icon: place.type == "restaurant"
                           ? await BitmapDescriptor.fromAssetImage(
                               config, 'assets/SmallRestaurant3.png')
-                          : await BitmapDescriptor.fromAssetImage(
-                              config, 'assets/SmallCinema.png'),
+                          : place.type == "cafe"
+                              ? await BitmapDescriptor.fromAssetImage(
+                                  config, 'assets/SmallCafe.png')
+                              : await BitmapDescriptor.fromAssetImage(
+                                  config, 'assets/SmallCinema.png'),
                       onTap: () {
                         context
-                            .bloc<GeolocationBloc>()
+                            .read<GeolocationBloc>()
                             .add(GeolocationEvent.markerPressed(place));
                         context
-                            .bloc<GeolocationBloc>()
+                            .read<GeolocationBloc>()
                             .add(const GeolocationEvent.getDistance());
                         showBottomSheet();
                       },
-                      draggable: false,
-                      infoWindow: InfoWindow(
-                          title: place.name, snippet: place.vicinity),
                       position: LatLng(
                           place.geometry['location']['lat'] as double,
                           place.geometry['location']['lng'] as double));
-                  markers.add(marker);
+                  if (markers.isEmpty) {
+                    markers.add(marker);
+                  } else {
+                    bool contains = false;
+                    for (final Marker currMarker in markers) {
+                      if (currMarker.markerId == marker.markerId) {
+                        contains = true;
+                        break;
+                      }
+                    }
+                    if (!contains) {
+                      markers.add(marker);
+                    }
+                  }
                 })
               },
-            if (state.airticket.isNotEmpty)
-              {
-                state.airticket.forEach((ticket) async {
-                  final response =
-                      await SkyscannerAPI().getGeoCode(ticket.destination);
-
-                  final Marker marker = Marker(
-                      markerId: MarkerId(ticket.price.toString()),
-                      draggable: false,
-                      icon: await BitmapDescriptor.fromAssetImage(
-                          config,
-                          ticket.countryName == 'Japan'
-                              ? 'assets/SmallJP.png'
-                              : 'assets/SmallTW.png'),
-                      onTap: () {
-                        setState(() {
-                          selectedAirticket = ticket;
-                        });
-                        showAirTicket(selectedAirticket);
-                        moveCountry(response['lat'] as double,
-                            response['lng'] as double, 7.0);
-                      },
-                      position: LatLng(response['lat'] as double,
-                          response['lng'] as double));
-                  markers.add(marker);
-                })
-              }
           },
           builder: (context, state) {
             return Scaffold(
+              key: _scaffoldKey,
               body: state.isLoading
-                  ? const Center(child: CircularProgressIndicator())
+                  ? const Center(
+                      child: SpinKitFoldingCube(
+                      color: Colors.blueAccent,
+                      size: 70.0,
+                    ))
                   : Stack(
                       children: <Widget>[
                         GoogleMap(
@@ -153,41 +203,42 @@ class _MapScreenState extends State<MapScreen> {
                         ),
                         SafeArea(
                           child: Container(
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               color: Colors.white,
+                              border: Border.all(color: Colors.amber[500]),
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(30)),
+                                  const BorderRadius.all(Radius.circular(30)),
                             ),
                             height: MediaQuery.of(context).size.height / 12.5,
                             alignment: Alignment.topCenter,
-                            child: TextFormField(
-                              onChanged: (value) {
-                                setState(() {
-                                  input = value;
-                                });
-                              },
-                              decoration: InputDecoration(
-                                  labelText: '搜尋地方...',
-                                  prefixIcon: IconButton(
-                                    onPressed: () {
-                                      context.bloc<GeolocationBloc>().add(
-                                          GeolocationEvent.searchPlace(input));
-                                    },
-                                    icon: const Icon(Icons.search),
-                                  ),
-                                  suffixIcon: IconButton(
-                                      onPressed: () {
-                                        context.bloc<GeolocationBloc>().add(
-                                            const GeolocationEvent
-                                                .getCurrentPosition());
-                                        moveCamera(
-                                            state.latitude, state.longitude);
-                                      },
-                                      icon:
-                                          const Icon(Icons.gps_fixed_outlined)),
-                                  border: const OutlineInputBorder(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(30)))),
+                            child: ListTile(
+                              leading: IconButton(
+                                onPressed: () {
+                                  _scaffoldKey.currentState.openDrawer();
+                                },
+                                icon: const Icon(Icons.menu),
+                              ),
+                              title: TextFormField(
+                                readOnly: true,
+                                onTap: () async {
+                                  final sessionToken = Uuid().v4();
+                                  await showSearch(
+                                      context: context,
+                                      delegate: PlaceSearch(
+                                          sessionToken: sessionToken));
+                                },
+                                decoration: const InputDecoration.collapsed(
+                                  hintText: '搜尋地方...',
+                                ),
+                              ),
+                              trailing: IconButton(
+                                  onPressed: () {
+                                    context.read<GeolocationBloc>().add(
+                                        const GeolocationEvent
+                                            .getCurrentPosition());
+                                    moveCamera(state.latitude, state.longitude);
+                                  },
+                                  icon: const Icon(Icons.gps_fixed_outlined)),
                             ),
                           ),
                         ),
@@ -242,40 +293,43 @@ class _MapScreenState extends State<MapScreen> {
                                 icon: const Icon(Icons.logout),
                                 onPressed: () {
                                   context
-                                      .bloc<AuthenticateBloc>()
+                                      .read<AuthenticateBloc>()
                                       .add(const AuthenticateEvent.signOut());
                                 },
                               ))),
                     ),
                     ListTile(
-                      leading: IconButton(
-                        icon: const Icon(Icons.local_taxi),
-                        color: Colors.redAccent[700],
-                        onPressed: () {},
-                      ),
+                      onTap: () {
+                        print(state.searchPlaces.length);
+                      },
+                      leading:
+                          Icon(Icons.local_taxi, color: Colors.redAccent[700]),
                       title: const Text("的士群組"),
                     ),
                     ListTile(
-                        leading: IconButton(
-                          icon: const Icon(Icons.lightbulb),
-                          color: Colors.amber[500],
-                          onPressed: () {
-                            print(state.fetchAirTicket);
-                          },
+                        onTap: () {
+                          ExtendedNavigator.of(context).push(
+                              Routes.suggestionList,
+                              arguments: SuggestionListArguments(
+                                  postList: igPostList));
+                        },
+                        leading: const Icon(
+                          Icons.book,
+                          color: Color(0xff159ac6),
                         ),
-                        title: const Text("本週好去處")),
+                        title: const Text("文化生活")),
                     ListTile(
-                        leading: IconButton(
-                          icon: const Icon(Icons.credit_card),
-                          color: Colors.amber[700],
-                          onPressed: () {},
-                        ),
+                        onTap: () {
+                          ExtendedNavigator.of(context)
+                              .push(Routes.creditCardList);
+                        },
+                        leading:
+                            Icon(Icons.credit_card, color: Colors.amber[700]),
                         title: const Text("信用卡著數")),
                     ListTile(
-                        leading: IconButton(
-                          icon: const Icon(Icons.settings),
+                        leading: Icon(
+                          Icons.settings,
                           color: Colors.blueGrey[300],
-                          onPressed: () {},
                         ),
                         title: const Text("設定"))
                   ],
@@ -317,6 +371,20 @@ class _MapScreenState extends State<MapScreen> {
         context: context,
         builder: (context) {
           return PlaceDetailWindow();
+        });
+  }
+
+  void showIgPost(IgPost post) {
+    showModalBottomSheet(
+        context: context,
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+        enableDrag: true,
+        elevation: 3,
+        builder: (context) {
+          return IgPostDetailWindow(
+            post: post,
+          );
         });
   }
 
