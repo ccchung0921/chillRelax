@@ -46,6 +46,5 @@ class Place {
           opening: opening ?? this.opening,
           photoReference: photoReference ?? this.photoReference);
 
-  @override
   List<Object> get props => [name, vicinity, geometry];
 }

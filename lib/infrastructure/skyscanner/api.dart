@@ -1,6 +1,7 @@
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
 import 'package:hkonline/infrastructure/skyscanner/airticket.dart';
+import 'package:uuid/uuid.dart';
 
 class SkyscannerAPI {
   final key = "d7b8ff967amshc8d131786b3fcf8p15497djsnf4f4be9b51a9";
@@ -58,6 +59,7 @@ class SkyscannerAPI {
           ? []
           : quotes.map((a) {
               return Airticket(
+                id: Uuid().v4(),
                 destination: getDestinationName(
                     a['OutboundLeg']['DestinationId'] as int, places)[0],
                 price: a['MinPrice'] as num,

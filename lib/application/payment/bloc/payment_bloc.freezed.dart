@@ -28,16 +28,22 @@ class _$PaymentEventTearOff {
   }
 
 // ignore: unused_element
-  PaymentWithVisaPressed paymentWithVisaPressed(double amount) {
+  PaymentWithVisaPressed paymentWithVisaPressed(
+      double amount, String productType, dynamic product) {
     return PaymentWithVisaPressed(
       amount,
+      productType,
+      product,
     );
   }
 
 // ignore: unused_element
-  PaymentWithMasterPressed paymentWithMasterPressed(double amount) {
+  PaymentWithMasterPressed paymentWithMasterPressed(
+      double amount, String productType, dynamic product) {
     return PaymentWithMasterPressed(
       amount,
+      productType,
+      product,
     );
   }
 }
@@ -52,15 +58,21 @@ mixin _$PaymentEvent {
   Result when<Result extends Object>({
     @required Result masterCardChanged(String masterCard),
     @required Result visaCardChanged(String visaCard),
-    @required Result paymentWithVisaPressed(double amount),
-    @required Result paymentWithMasterPressed(double amount),
+    @required
+        Result paymentWithVisaPressed(
+            double amount, String productType, dynamic product),
+    @required
+        Result paymentWithMasterPressed(
+            double amount, String productType, dynamic product),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result masterCardChanged(String masterCard),
     Result visaCardChanged(String visaCard),
-    Result paymentWithVisaPressed(double amount),
-    Result paymentWithMasterPressed(double amount),
+    Result paymentWithVisaPressed(
+        double amount, String productType, dynamic product),
+    Result paymentWithMasterPressed(
+        double amount, String productType, dynamic product),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -159,8 +171,12 @@ class _$MasterCardChanged implements MasterCardChanged {
   Result when<Result extends Object>({
     @required Result masterCardChanged(String masterCard),
     @required Result visaCardChanged(String visaCard),
-    @required Result paymentWithVisaPressed(double amount),
-    @required Result paymentWithMasterPressed(double amount),
+    @required
+        Result paymentWithVisaPressed(
+            double amount, String productType, dynamic product),
+    @required
+        Result paymentWithMasterPressed(
+            double amount, String productType, dynamic product),
   }) {
     assert(masterCardChanged != null);
     assert(visaCardChanged != null);
@@ -174,8 +190,10 @@ class _$MasterCardChanged implements MasterCardChanged {
   Result maybeWhen<Result extends Object>({
     Result masterCardChanged(String masterCard),
     Result visaCardChanged(String visaCard),
-    Result paymentWithVisaPressed(double amount),
-    Result paymentWithMasterPressed(double amount),
+    Result paymentWithVisaPressed(
+        double amount, String productType, dynamic product),
+    Result paymentWithMasterPressed(
+        double amount, String productType, dynamic product),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -287,8 +305,12 @@ class _$VisaCardChanged implements VisaCardChanged {
   Result when<Result extends Object>({
     @required Result masterCardChanged(String masterCard),
     @required Result visaCardChanged(String visaCard),
-    @required Result paymentWithVisaPressed(double amount),
-    @required Result paymentWithMasterPressed(double amount),
+    @required
+        Result paymentWithVisaPressed(
+            double amount, String productType, dynamic product),
+    @required
+        Result paymentWithMasterPressed(
+            double amount, String productType, dynamic product),
   }) {
     assert(masterCardChanged != null);
     assert(visaCardChanged != null);
@@ -302,8 +324,10 @@ class _$VisaCardChanged implements VisaCardChanged {
   Result maybeWhen<Result extends Object>({
     Result masterCardChanged(String masterCard),
     Result visaCardChanged(String visaCard),
-    Result paymentWithVisaPressed(double amount),
-    Result paymentWithMasterPressed(double amount),
+    Result paymentWithVisaPressed(
+        double amount, String productType, dynamic product),
+    Result paymentWithMasterPressed(
+        double amount, String productType, dynamic product),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -357,7 +381,7 @@ abstract class $PaymentWithVisaPressedCopyWith<$Res> {
   factory $PaymentWithVisaPressedCopyWith(PaymentWithVisaPressed value,
           $Res Function(PaymentWithVisaPressed) then) =
       _$PaymentWithVisaPressedCopyWithImpl<$Res>;
-  $Res call({double amount});
+  $Res call({double amount, String productType, dynamic product});
 }
 
 /// @nodoc
@@ -374,23 +398,34 @@ class _$PaymentWithVisaPressedCopyWithImpl<$Res>
   @override
   $Res call({
     Object amount = freezed,
+    Object productType = freezed,
+    Object product = freezed,
   }) {
     return _then(PaymentWithVisaPressed(
       amount == freezed ? _value.amount : amount as double,
+      productType == freezed ? _value.productType : productType as String,
+      product == freezed ? _value.product : product as dynamic,
     ));
   }
 }
 
 /// @nodoc
 class _$PaymentWithVisaPressed implements PaymentWithVisaPressed {
-  const _$PaymentWithVisaPressed(this.amount) : assert(amount != null);
+  const _$PaymentWithVisaPressed(this.amount, this.productType, this.product)
+      : assert(amount != null),
+        assert(productType != null),
+        assert(product != null);
 
   @override
   final double amount;
+  @override
+  final String productType;
+  @override
+  final dynamic product;
 
   @override
   String toString() {
-    return 'PaymentEvent.paymentWithVisaPressed(amount: $amount)';
+    return 'PaymentEvent.paymentWithVisaPressed(amount: $amount, productType: $productType, product: $product)';
   }
 
   @override
@@ -398,12 +433,20 @@ class _$PaymentWithVisaPressed implements PaymentWithVisaPressed {
     return identical(this, other) ||
         (other is PaymentWithVisaPressed &&
             (identical(other.amount, amount) ||
-                const DeepCollectionEquality().equals(other.amount, amount)));
+                const DeepCollectionEquality().equals(other.amount, amount)) &&
+            (identical(other.productType, productType) ||
+                const DeepCollectionEquality()
+                    .equals(other.productType, productType)) &&
+            (identical(other.product, product) ||
+                const DeepCollectionEquality().equals(other.product, product)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(amount);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(amount) ^
+      const DeepCollectionEquality().hash(productType) ^
+      const DeepCollectionEquality().hash(product);
 
   @override
   $PaymentWithVisaPressedCopyWith<PaymentWithVisaPressed> get copyWith =>
@@ -415,14 +458,18 @@ class _$PaymentWithVisaPressed implements PaymentWithVisaPressed {
   Result when<Result extends Object>({
     @required Result masterCardChanged(String masterCard),
     @required Result visaCardChanged(String visaCard),
-    @required Result paymentWithVisaPressed(double amount),
-    @required Result paymentWithMasterPressed(double amount),
+    @required
+        Result paymentWithVisaPressed(
+            double amount, String productType, dynamic product),
+    @required
+        Result paymentWithMasterPressed(
+            double amount, String productType, dynamic product),
   }) {
     assert(masterCardChanged != null);
     assert(visaCardChanged != null);
     assert(paymentWithVisaPressed != null);
     assert(paymentWithMasterPressed != null);
-    return paymentWithVisaPressed(amount);
+    return paymentWithVisaPressed(amount, productType, product);
   }
 
   @override
@@ -430,13 +477,15 @@ class _$PaymentWithVisaPressed implements PaymentWithVisaPressed {
   Result maybeWhen<Result extends Object>({
     Result masterCardChanged(String masterCard),
     Result visaCardChanged(String visaCard),
-    Result paymentWithVisaPressed(double amount),
-    Result paymentWithMasterPressed(double amount),
+    Result paymentWithVisaPressed(
+        double amount, String productType, dynamic product),
+    Result paymentWithMasterPressed(
+        double amount, String productType, dynamic product),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (paymentWithVisaPressed != null) {
-      return paymentWithVisaPressed(amount);
+      return paymentWithVisaPressed(amount, productType, product);
     }
     return orElse();
   }
@@ -474,10 +523,13 @@ class _$PaymentWithVisaPressed implements PaymentWithVisaPressed {
 }
 
 abstract class PaymentWithVisaPressed implements PaymentEvent {
-  const factory PaymentWithVisaPressed(double amount) =
+  const factory PaymentWithVisaPressed(
+          double amount, String productType, dynamic product) =
       _$PaymentWithVisaPressed;
 
   double get amount;
+  String get productType;
+  dynamic get product;
   $PaymentWithVisaPressedCopyWith<PaymentWithVisaPressed> get copyWith;
 }
 
@@ -486,7 +538,7 @@ abstract class $PaymentWithMasterPressedCopyWith<$Res> {
   factory $PaymentWithMasterPressedCopyWith(PaymentWithMasterPressed value,
           $Res Function(PaymentWithMasterPressed) then) =
       _$PaymentWithMasterPressedCopyWithImpl<$Res>;
-  $Res call({double amount});
+  $Res call({double amount, String productType, dynamic product});
 }
 
 /// @nodoc
@@ -504,23 +556,34 @@ class _$PaymentWithMasterPressedCopyWithImpl<$Res>
   @override
   $Res call({
     Object amount = freezed,
+    Object productType = freezed,
+    Object product = freezed,
   }) {
     return _then(PaymentWithMasterPressed(
       amount == freezed ? _value.amount : amount as double,
+      productType == freezed ? _value.productType : productType as String,
+      product == freezed ? _value.product : product as dynamic,
     ));
   }
 }
 
 /// @nodoc
 class _$PaymentWithMasterPressed implements PaymentWithMasterPressed {
-  const _$PaymentWithMasterPressed(this.amount) : assert(amount != null);
+  const _$PaymentWithMasterPressed(this.amount, this.productType, this.product)
+      : assert(amount != null),
+        assert(productType != null),
+        assert(product != null);
 
   @override
   final double amount;
+  @override
+  final String productType;
+  @override
+  final dynamic product;
 
   @override
   String toString() {
-    return 'PaymentEvent.paymentWithMasterPressed(amount: $amount)';
+    return 'PaymentEvent.paymentWithMasterPressed(amount: $amount, productType: $productType, product: $product)';
   }
 
   @override
@@ -528,12 +591,20 @@ class _$PaymentWithMasterPressed implements PaymentWithMasterPressed {
     return identical(this, other) ||
         (other is PaymentWithMasterPressed &&
             (identical(other.amount, amount) ||
-                const DeepCollectionEquality().equals(other.amount, amount)));
+                const DeepCollectionEquality().equals(other.amount, amount)) &&
+            (identical(other.productType, productType) ||
+                const DeepCollectionEquality()
+                    .equals(other.productType, productType)) &&
+            (identical(other.product, product) ||
+                const DeepCollectionEquality().equals(other.product, product)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(amount);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(amount) ^
+      const DeepCollectionEquality().hash(productType) ^
+      const DeepCollectionEquality().hash(product);
 
   @override
   $PaymentWithMasterPressedCopyWith<PaymentWithMasterPressed> get copyWith =>
@@ -545,14 +616,18 @@ class _$PaymentWithMasterPressed implements PaymentWithMasterPressed {
   Result when<Result extends Object>({
     @required Result masterCardChanged(String masterCard),
     @required Result visaCardChanged(String visaCard),
-    @required Result paymentWithVisaPressed(double amount),
-    @required Result paymentWithMasterPressed(double amount),
+    @required
+        Result paymentWithVisaPressed(
+            double amount, String productType, dynamic product),
+    @required
+        Result paymentWithMasterPressed(
+            double amount, String productType, dynamic product),
   }) {
     assert(masterCardChanged != null);
     assert(visaCardChanged != null);
     assert(paymentWithVisaPressed != null);
     assert(paymentWithMasterPressed != null);
-    return paymentWithMasterPressed(amount);
+    return paymentWithMasterPressed(amount, productType, product);
   }
 
   @override
@@ -560,13 +635,15 @@ class _$PaymentWithMasterPressed implements PaymentWithMasterPressed {
   Result maybeWhen<Result extends Object>({
     Result masterCardChanged(String masterCard),
     Result visaCardChanged(String visaCard),
-    Result paymentWithVisaPressed(double amount),
-    Result paymentWithMasterPressed(double amount),
+    Result paymentWithVisaPressed(
+        double amount, String productType, dynamic product),
+    Result paymentWithMasterPressed(
+        double amount, String productType, dynamic product),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (paymentWithMasterPressed != null) {
-      return paymentWithMasterPressed(amount);
+      return paymentWithMasterPressed(amount, productType, product);
     }
     return orElse();
   }
@@ -604,10 +681,13 @@ class _$PaymentWithMasterPressed implements PaymentWithMasterPressed {
 }
 
 abstract class PaymentWithMasterPressed implements PaymentEvent {
-  const factory PaymentWithMasterPressed(double amount) =
+  const factory PaymentWithMasterPressed(
+          double amount, String productType, dynamic product) =
       _$PaymentWithMasterPressed;
 
   double get amount;
+  String get productType;
+  dynamic get product;
   $PaymentWithMasterPressedCopyWith<PaymentWithMasterPressed> get copyWith;
 }
 

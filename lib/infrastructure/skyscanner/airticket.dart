@@ -1,4 +1,5 @@
 class Airticket {
+  final String id;
   final String destination;
   final num price;
   final bool direct;
@@ -9,6 +10,7 @@ class Airticket {
   final Map geometry;
 
   const Airticket({
+    this.id,
     this.destination,
     this.price,
     this.direct,

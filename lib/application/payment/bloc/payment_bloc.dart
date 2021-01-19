@@ -3,6 +3,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hkonline/domain/auth/value_objects.dart';
 import 'package:hkonline/infrastructure/payment/api.dart';
 import 'package:hkonline/infrastructure/payment/payment_message.dart';
+import 'package:hkonline/infrastructure/record/airticket_record.dart';
+import 'package:hkonline/infrastructure/skyscanner/airticket.dart';
 
 part 'payment_event.dart';
 part 'payment_state.dart';
@@ -35,8 +37,12 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
             'paymentAmount': e.amount,
             'remarks': "",
           });
+
           await Payment().storePayment(successMsg);
           yield state.copyWith(successMsg: successMsg);
+          if (e.productType == "airticket") {
+            AirticketRecord().addAirticket(e.product as Airticket);
+          }
         } catch (err) {
           yield state.copyWith(paymentError: true);
         }
@@ -58,6 +64,9 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
           });
           await Payment().storePayment(successMsg);
           yield state.copyWith(successMsg: successMsg);
+          if (e.productType == "airticket") {
+            AirticketRecord().addAirticket(e.product as Airticket);
+          }
         } catch (err) {
           yield state.copyWith(paymentError: true);
         }

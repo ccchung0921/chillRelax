@@ -16,7 +16,6 @@ abstract class PaymentState with _$PaymentState {
         visaCard: VisaCard(''),
         isSubmitting: false,
         showErrorMsg: false,
-        successMsg: null,
         paymentError: false,
       );
 }

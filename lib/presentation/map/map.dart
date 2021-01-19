@@ -203,7 +203,7 @@ class _MapScreenState extends State<MapScreen> {
                           child: Container(
                             decoration: BoxDecoration(
                               color: Colors.white,
-                              border: Border.all(color: Colors.amber[500]),
+                              border: Border.all(color: Colors.teal),
                               borderRadius:
                                   const BorderRadius.all(Radius.circular(30)),
                             ),
@@ -248,7 +248,7 @@ class _MapScreenState extends State<MapScreen> {
                                 airplaneMode(
                                     state.latitude, state.longitude, 17.0);
                               },
-                              backgroundColor: Colors.amber[700],
+                              backgroundColor: Colors.teal,
                               child: inAirplaneMode
                                   ? const Text(
                                       '🇭🇰',
@@ -322,6 +322,14 @@ class _MapScreenState extends State<MapScreen> {
                         leading:
                             Icon(Icons.credit_card, color: Colors.amber[700]),
                         title: const Text("信用卡著數")),
+                    ListTile(
+                        onTap: () => ExtendedNavigator.of(context)
+                            .push(Routes.personalRecord),
+                        leading: const Icon(
+                          Icons.person,
+                          color: Colors.blue,
+                        ),
+                        title: const Text("關於我")),
                     ListTile(
                         leading: Icon(
                           Icons.settings,

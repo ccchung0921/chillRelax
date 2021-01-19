@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:hkonline/infrastructure/payment/payment_message.dart';
+import 'package:hkonline/presentation/routes/router.gr.dart';
 
 class PaymentSuccess extends StatelessWidget {
   final PaymentMessage msg;
@@ -23,7 +25,8 @@ class PaymentSuccess extends StatelessWidget {
                 children: <Widget>[
                   const SizedBox(width: 8),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () => ExtendedNavigator.of(context)
+                        .push(Routes.personalRecord),
                     child: const Text("查看機票"),
                   )
                 ],

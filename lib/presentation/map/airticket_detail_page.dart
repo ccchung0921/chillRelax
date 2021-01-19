@@ -237,11 +237,15 @@ class _AirticketDetailPageState extends State<AirticketDetailPage> {
                             if (paymentMethod == "VISA") {
                               context.read<PaymentBloc>().add(
                                   PaymentEvent.paymentWithVisaPressed(
-                                      widget.airticket.price.toDouble()));
+                                      widget.airticket.price.toDouble(),
+                                      "airticket",
+                                      widget.airticket));
                             } else {
                               context.read<PaymentBloc>().add(
                                   PaymentEvent.paymentWithMasterPressed(
-                                      widget.airticket.price.toDouble()));
+                                      widget.airticket.price.toDouble(),
+                                      "airticket",
+                                      widget.airticket));
                             }
                           },
                           child: const Text('OK')),
