@@ -65,10 +65,10 @@ class _SignInFormState extends State<SignInForm> {
                         children: [
                           TextFormField(
                             onChanged: (value) => context
-                                .bloc<SignInFormBloc>()
+                                .read<SignInFormBloc>()
                                 .add(SignInFormEvent.emailChanged(value)),
                             validator: (_) => context
-                                .bloc<SignInFormBloc>()
+                                .read<SignInFormBloc>()
                                 .state
                                 .emailAddress
                                 .value
@@ -88,14 +88,14 @@ class _SignInFormState extends State<SignInForm> {
                           TextFormField(
                             onChanged: (value) {
                               context
-                                  .bloc<SignInFormBloc>()
+                                  .read<SignInFormBloc>()
                                   .add(SignInFormEvent.passwordChanged(value));
                               setState(() {
                                 password = value;
                               });
                             },
                             validator: (_) => context
-                                .bloc<SignInFormBloc>()
+                                .read<SignInFormBloc>()
                                 .state
                                 .password
                                 .value
@@ -184,13 +184,12 @@ class _SignInFormState extends State<SignInForm> {
                                 child: FlatButton(
                                   onPressed: () {
                                     register
-                                        ? context.bloc<SignInFormBloc>().add(
+                                        ? context.read<SignInFormBloc>().add(
                                             const SignInFormEvent
                                                 .registerWithEmailAndPasswordPressed())
                                         : setState(() {
                                             register = !register;
                                           });
-                                    ;
                                   },
                                   child: Text(
                                     '註冊',
@@ -206,24 +205,24 @@ class _SignInFormState extends State<SignInForm> {
                             ],
                           ),
                           Row(
-                            children: [
-                              const Expanded(
+                            children: const [
+                              Expanded(
                                 child: Divider(
                                   color: Colors.black,
                                 ),
                               ),
-                              const SizedBox(
+                              SizedBox(
                                 width: 5.0,
                               ),
-                              const Text('或',
+                              Text('或',
                                   style: TextStyle(
                                     fontSize: 18.0,
                                     fontWeight: FontWeight.bold,
                                   )),
-                              const SizedBox(
+                              SizedBox(
                                 width: 5.0,
                               ),
-                              const Expanded(
+                              Expanded(
                                 child: Divider(
                                   color: Colors.black,
                                 ),
@@ -240,7 +239,7 @@ class _SignInFormState extends State<SignInForm> {
                               elevation: 10,
                               backgroundColor: Colors.white,
                               onPressed: () {
-                                context.bloc<SignInFormBloc>().add(
+                                context.read<SignInFormBloc>().add(
                                     const SignInFormEvent
                                         .signInWithGooglePressed());
                               },
@@ -257,7 +256,7 @@ class _SignInFormState extends State<SignInForm> {
               ),
               if (state.isSubmitting) ...[
                 const SizedBox(height: 10),
-                const LinearProgressIndicator(value: null),
+                const LinearProgressIndicator(),
               ]
             ],
           ),

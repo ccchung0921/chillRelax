@@ -1,11 +1,14 @@
 import 'package:auto_route/auto_route_annotations.dart';
 import 'package:hkonline/presentation/auth/sign_in_screen.dart';
 import 'package:hkonline/presentation/auth/splash_screen.dart';
+import 'package:hkonline/presentation/creditcard/creditcard_detail.dart';
 import 'package:hkonline/presentation/list/creditcard_list.dart';
 import 'package:hkonline/presentation/list/suggestion_list.dart';
+import 'package:hkonline/presentation/map/airticket_detail_page.dart';
 import 'package:hkonline/presentation/map/igpost_detail_page.dart';
 import 'package:hkonline/presentation/map/map.dart';
 import 'package:hkonline/presentation/map/place_detail_page.dart';
+import 'package:hkonline/presentation/payment/payment_success.dart';
 import 'package:hkonline/presentation/questionnaire/first_quest.dart';
 import 'package:hkonline/presentation/questionnaire/second_quest.dart';
 
@@ -19,5 +22,8 @@ import 'package:hkonline/presentation/questionnaire/second_quest.dart';
   MaterialRoute(page: IgPostDetailPage),
   MaterialRoute(page: SuggestionList),
   MaterialRoute(page: CreditCardList),
+  MaterialRoute(page: CreditCardDetailPage),
+  MaterialRoute(page: AirticketDetailPage),
+  MaterialRoute(page: PaymentSuccess),
 ], generateNavigationHelperExtension: true)
 class $MyRouter {}

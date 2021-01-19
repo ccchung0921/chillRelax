@@ -9,15 +9,21 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../infrastructure/creditCard/credit_card.dart';
 import '../../infrastructure/googlePlace/place.dart';
 import '../../infrastructure/instagram/post.dart';
+import '../../infrastructure/payment/payment_message.dart';
+import '../../infrastructure/skyscanner/airticket.dart';
 import '../auth/sign_in_screen.dart';
 import '../auth/splash_screen.dart';
+import '../creditcard/creditcard_detail.dart';
 import '../list/creditcard_list.dart';
 import '../list/suggestion_list.dart';
+import '../map/airticket_detail_page.dart';
 import '../map/igpost_detail_page.dart';
 import '../map/map.dart';
 import '../map/place_detail_page.dart';
+import '../payment/payment_success.dart';
 import '../questionnaire/first_quest.dart';
 import '../questionnaire/second_quest.dart';
 
@@ -31,6 +37,9 @@ class Routes {
   static const String igPostDetailPage = '/ig-post-detail-page';
   static const String suggestionList = '/suggestion-list';
   static const String creditCardList = '/credit-card-list';
+  static const String creditCardDetailPage = '/credit-card-detail-page';
+  static const String airticketDetailPage = '/airticket-detail-page';
+  static const String paymentSuccess = '/payment-success';
   static const all = <String>{
     splashScreen,
     signInScreen,
@@ -41,6 +50,9 @@ class Routes {
     igPostDetailPage,
     suggestionList,
     creditCardList,
+    creditCardDetailPage,
+    airticketDetailPage,
+    paymentSuccess,
   };
 }
 
@@ -57,6 +69,9 @@ class MyRouter extends RouterBase {
     RouteDef(Routes.igPostDetailPage, page: IgPostDetailPage),
     RouteDef(Routes.suggestionList, page: SuggestionList),
     RouteDef(Routes.creditCardList, page: CreditCardList),
+    RouteDef(Routes.creditCardDetailPage, page: CreditCardDetailPage),
+    RouteDef(Routes.airticketDetailPage, page: AirticketDetailPage),
+    RouteDef(Routes.paymentSuccess, page: PaymentSuccess),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -133,6 +148,42 @@ class MyRouter extends RouterBase {
         settings: data,
       );
     },
+    CreditCardDetailPage: (data) {
+      final args = data.getArgs<CreditCardDetailPageArguments>(
+        orElse: () => CreditCardDetailPageArguments(),
+      );
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => CreditCardDetailPage(
+          key: args.key,
+          card: args.card,
+        ),
+        settings: data,
+      );
+    },
+    AirticketDetailPage: (data) {
+      final args = data.getArgs<AirticketDetailPageArguments>(
+        orElse: () => AirticketDetailPageArguments(),
+      );
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => AirticketDetailPage(
+          key: args.key,
+          airticket: args.airticket,
+        ),
+        settings: data,
+      );
+    },
+    PaymentSuccess: (data) {
+      final args = data.getArgs<PaymentSuccessArguments>(
+        orElse: () => PaymentSuccessArguments(),
+      );
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => PaymentSuccess(
+          key: args.key,
+          msg: args.msg,
+        ),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -179,6 +230,33 @@ extension MyRouterExtendedNavigatorStateX on ExtendedNavigatorState {
       );
 
   Future<dynamic> pushCreditCardList() => push<dynamic>(Routes.creditCardList);
+
+  Future<dynamic> pushCreditCardDetailPage({
+    Key key,
+    CreditCard card,
+  }) =>
+      push<dynamic>(
+        Routes.creditCardDetailPage,
+        arguments: CreditCardDetailPageArguments(key: key, card: card),
+      );
+
+  Future<dynamic> pushAirticketDetailPage({
+    Key key,
+    Airticket airticket,
+  }) =>
+      push<dynamic>(
+        Routes.airticketDetailPage,
+        arguments: AirticketDetailPageArguments(key: key, airticket: airticket),
+      );
+
+  Future<dynamic> pushPaymentSuccess({
+    Key key,
+    PaymentMessage msg,
+  }) =>
+      push<dynamic>(
+        Routes.paymentSuccess,
+        arguments: PaymentSuccessArguments(key: key, msg: msg),
+      );
 }
 
 /// ************************************************************************
@@ -204,4 +282,25 @@ class SuggestionListArguments {
   final Key key;
   final List<IgPost> postList;
   SuggestionListArguments({this.key, this.postList});
+}
+
+/// CreditCardDetailPage arguments holder class
+class CreditCardDetailPageArguments {
+  final Key key;
+  final CreditCard card;
+  CreditCardDetailPageArguments({this.key, this.card});
+}
+
+/// AirticketDetailPage arguments holder class
+class AirticketDetailPageArguments {
+  final Key key;
+  final Airticket airticket;
+  AirticketDetailPageArguments({this.key, this.airticket});
+}
+
+/// PaymentSuccess arguments holder class
+class PaymentSuccessArguments {
+  final Key key;
+  final PaymentMessage msg;
+  PaymentSuccessArguments({this.key, this.msg});
 }

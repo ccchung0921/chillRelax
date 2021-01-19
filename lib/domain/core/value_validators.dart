@@ -18,3 +18,22 @@ Either<ValueFailure<String>, String> validatePassword(String input) {
     return left(ValueFailure.shortPassword(failedValue: input));
   }
 }
+
+//Visa cards – Begin with a 4 and have 13 or 16 digits.
+Either<ValueFailure<String>, String> validateVisa(String input) {
+  if (input.startsWith("4") && (input.length >= 13 && input.length < 17)) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidVisa(failedValue: input));
+  }
+}
+
+//Mastercard cards – Begin with a 5 and has 16 digits.
+
+Either<ValueFailure<String>, String> validateMaster(String input) {
+  if (input.startsWith("5") && input.length == 16) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidMaster(failedValue: input));
+  }
+}

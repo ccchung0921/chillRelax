@@ -16,8 +16,5 @@ extension FirestoreRef on FirebaseFirestore {
 extension DocumentRef on DocumentReference {
   CollectionReference get questCollection => collection('quest');
   CollectionReference get personalInfoCollection => collection('info');
+  CollectionReference get paymentCollection => collection('payment');
 }
-
-// extension InfoRef on DocumentReference {
-//   CollectionReference get personalInfoCollection => collection('info');
-// }

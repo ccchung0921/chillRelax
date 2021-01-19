@@ -1,8 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:hkonline/application/geolocator/bloc/geolocation_bloc.dart';
 import 'package:hkonline/infrastructure/googlePlace/place.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -40,7 +37,7 @@ class PlaceDetailPage extends StatelessWidget {
                                 Colors.grey.withOpacity(0.0),
                                 Colors.black,
                               ],
-                              stops: [
+                              stops: const [
                                 0.0,
                                 1.0
                               ])),

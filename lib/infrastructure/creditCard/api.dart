@@ -19,8 +19,10 @@ class BocAPI {
     // }
     final response = await http.post(
         'https://apisandbox.bochk.com/creditcard/product/card/v1',
-        headers: {"Authorization": "123456"});
-    print(response.statusCode);
+        headers: {
+          "Authorization": "123456",
+          "Content-Type": "application/json"
+        });
     if (response.statusCode != 200) {
       final authorizationEndpoint =
           Uri.parse('https://apisandbox.bochk.com/auth/oauth/v2/token');
@@ -30,9 +32,12 @@ class BocAPI {
           authorizationEndpoint, identifer, secret);
       final response = await client.post(
           'https://apisandbox.bochk.com/creditcard/product/card/v1',
-          headers: {"Authorization": client.credentials.toString()});
-      print(response);
+          headers: {
+            "Authorization": client.credentials.toJson(),
+            "Content-Type": "application/json"
+          });
       final data = convert.jsonDecode(response.body);
+      print(data);
       //await credentialsFile.writeAsString(client.credentials.toJson());
       final products = data['products'] as List;
       // final localProducts =
@@ -42,12 +47,16 @@ class BocAPI {
         return CreditCard(
             language: p['language'] as String,
             cardName: p['cardname'] as String,
+            issueBank: p['issuinginstitutions'] as String,
             cardType: p['cardtype'] as String,
             cardLink: p['productleafleturl'] as String,
             description: p['productshortdescription'] as String,
             minAnnualSalary: p['minannualsalaryreq'] as String,
             annualFee: p['annualfeehkd'] as String,
-            welcomeGift: p['welcominggiftshortdesc1'] as String);
+            welcomeGift: p['welcominggiftshortdesc1'] as String,
+            image: products.first == p
+                ? "assets/BOC_Card.png"
+                : "assets/BOC_Diamond.png");
       }).toList();
     } else {
       final data = convert.jsonDecode(response.body);
@@ -56,11 +65,15 @@ class BocAPI {
         return CreditCard(
             cardName: p['cardname'] as String,
             cardType: p['cardtype'] as String,
+            issueBank: p['issuinginstitutions'] as String,
             cardLink: p['productleafleturl'] as String,
             description: p['productshortdescription'] as String,
             minAnnualSalary: p['minannualsalaryreq'] as String,
             annualFee: p['annualfeehkd'] as String,
-            welcomeGift: p['welcominggiftshortdesc1'] as String);
+            welcomeGift: p['welcominggiftshortdesc1'] as String,
+            image: products.first == p
+                ? "assets/BOC_Card.png"
+                : "assets/BOC_Diamond.png");
       }).toList();
     }
   }

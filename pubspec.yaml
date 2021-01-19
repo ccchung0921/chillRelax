@@ -81,6 +81,10 @@ flutter:
     - assets/SmallEx.png
     - assets/HongKongflag.jpg
     - assets/appLogo.png
+    - assets/BOC_Card.png
+    - assets/BOC_Diamond.png
+    - assets/visa.png
+    - assets/master.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see

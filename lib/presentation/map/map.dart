@@ -12,7 +12,6 @@ import 'package:hkonline/application/auth/instagram/bloc/igpost_bloc.dart';
 import 'package:hkonline/application/geolocator/bloc/geolocation_bloc.dart';
 import 'package:hkonline/application/quest/quest_bloc.dart';
 import 'package:hkonline/infrastructure/googlePlace/place_search.dart';
-import 'package:hkonline/infrastructure/googlePlace/suggestions.dart';
 import 'package:hkonline/infrastructure/instagram/api.dart';
 import 'package:hkonline/infrastructure/instagram/post.dart';
 import 'package:hkonline/infrastructure/skyscanner/airticket.dart';
@@ -191,7 +190,6 @@ class _MapScreenState extends State<MapScreen> {
                       children: <Widget>[
                         GoogleMap(
                           myLocationEnabled: true,
-                          zoomControlsEnabled: false,
                           mapToolbarEnabled: false,
                           onMapCreated: _onMapCreated,
                           markers: Set<Marker>.of(markers),
@@ -244,7 +242,7 @@ class _MapScreenState extends State<MapScreen> {
                         ),
                         Positioned(
                           bottom: 50,
-                          right: 20,
+                          left: 20,
                           child: FloatingActionButton(
                               onPressed: () {
                                 airplaneMode(
@@ -299,9 +297,7 @@ class _MapScreenState extends State<MapScreen> {
                               ))),
                     ),
                     ListTile(
-                      onTap: () {
-                        print(state.searchPlaces.length);
-                      },
+                      onTap: () {},
                       leading:
                           Icon(Icons.local_taxi, color: Colors.redAccent[700]),
                       title: const Text("的士群組"),

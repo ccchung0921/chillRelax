@@ -96,6 +96,5 @@ class IgPostDetailPage extends StatelessWidget {
         ),
       ]),
     );
-    ;
   }
 }

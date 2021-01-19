@@ -29,21 +29,20 @@ class SkyscannerAPI {
     final DateTime tomorrow = day.add(const Duration(days: 7));
     final parseDate = DateTime.parse(tomorrow.toString());
     final reformatDate =
-        "${parseDate.year}-${parseDate.month}-${parseDate.day < 10 ? '0' + parseDate.day.toString() : parseDate.day}";
+        "${parseDate.year}-${parseDate.month < 10 ? '0${parseDate.month}' : parseDate.month}-${parseDate.day < 10 ? '0${parseDate.day}' : parseDate.day}";
     final response = await http.get(
         "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/HK/HKD/en-UK/HK-sky/JP-sky/$reformatDate",
         headers: requestHeaders);
     final response2 = await http.get(
         "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/HK/HKD/en-US/HK-sky/TW-sky/$reformatDate",
         headers: requestHeaders);
-
     if (response.statusCode == 200 && response2.statusCode == 200) {
       final data = convert.jsonDecode(response.body);
       final data2 = convert.jsonDecode(response2.body);
       final quotes = data['Quotes'] + data2['Quotes'] as List;
       final carriers = data['Carriers'] + data2['Carriers'] as List<dynamic>;
       final places = data['Places'] + data2['Places'] as List<dynamic>;
-      final copies = quotes.asMap();
+      // final copies = quotes.asMap();
       // copies.map((index, copy) {
       //   if (copy['OutboundLeg']['DestinationId'] ==
       //       quotes[index]['OutboundLeg']['DestinationId']) {
