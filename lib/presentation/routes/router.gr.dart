@@ -20,6 +20,7 @@ import '../map/map.dart';
 import '../map/place_detail_page.dart';
 import '../questionnaire/first_quest.dart';
 import '../questionnaire/second_quest.dart';
+import '../taxi/taxi_main.dart';
 
 class Routes {
   static const String splashScreen = '/';
@@ -31,6 +32,7 @@ class Routes {
   static const String igPostDetailPage = '/ig-post-detail-page';
   static const String suggestionList = '/suggestion-list';
   static const String creditCardList = '/credit-card-list';
+  static const String taxiMainPage = '/taxi-main-page';
   static const all = <String>{
     splashScreen,
     signInScreen,
@@ -41,6 +43,7 @@ class Routes {
     igPostDetailPage,
     suggestionList,
     creditCardList,
+    taxiMainPage,
   };
 }
 
@@ -57,6 +60,7 @@ class MyRouter extends RouterBase {
     RouteDef(Routes.igPostDetailPage, page: IgPostDetailPage),
     RouteDef(Routes.suggestionList, page: SuggestionList),
     RouteDef(Routes.creditCardList, page: CreditCardList),
+    RouteDef(Routes.taxiMainPage, page: TaxiMainPage),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -133,6 +137,12 @@ class MyRouter extends RouterBase {
         settings: data,
       );
     },
+    TaxiMainPage: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => TaxiMainPage(),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -179,6 +189,8 @@ extension MyRouterExtendedNavigatorStateX on ExtendedNavigatorState {
       );
 
   Future<dynamic> pushCreditCardList() => push<dynamic>(Routes.creditCardList);
+
+  Future<dynamic> pushTaxiMainPage() => push<dynamic>(Routes.taxiMainPage);
 }
 
 /// ************************************************************************

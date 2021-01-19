@@ -21,6 +21,7 @@ import 'package:hkonline/presentation/map/airticket_detail_window.dart';
 import 'package:hkonline/presentation/map/igpost_detail_window.dart';
 import 'package:hkonline/presentation/map/place_detail_.window.dart';
 import 'package:hkonline/presentation/routes/router.gr.dart';
+import 'package:hkonline/presentation/taxi/taxi_main.dart';
 import 'package:uuid/uuid.dart';
 
 class MapScreen extends StatefulWidget {
@@ -300,7 +301,8 @@ class _MapScreenState extends State<MapScreen> {
                     ),
                     ListTile(
                       onTap: () {
-                        print(state.searchPlaces.length);
+                        ExtendedNavigator.of(context).push(Routes.taxiMainPage);
+                        
                       },
                       leading:
                           Icon(Icons.local_taxi, color: Colors.redAccent[700]),
