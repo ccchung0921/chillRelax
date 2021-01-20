@@ -3,7 +3,8 @@ import 'package:hkonline/infrastructure/googlePlace/place.dart';
 import 'package:http/http.dart' as http;
 
 class PlaceAPI {
-  final key = 'AIzaSyCdRCZB-55TEmikwu5vjfIDajJTg5D0XeA';
+  // final key = 'AIzaSyCdRCZB-55TEmikwu5vjfIDajJTg5D0XeA'; old key
+  final key = 'AIzaSyCdXWm3q1aKCiuTuZYBMvcefJWG11aWcHY';
   String getPhotoURL(String reference, int height) {
     return "https://maps.googleapis.com/maps/api/place/photo?maxheight=$height&photoreference=$reference&key=$key";
   }
