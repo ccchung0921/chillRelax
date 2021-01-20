@@ -51,36 +51,37 @@ mixin _$ValueFailure<T> {
   String get failedValue;
 
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invaldEmail(String failedValue),
-    @required Result shortPassword(String failedValue),
-    @required Result invalidVisa(String failedValue),
-    @required Result invalidMaster(String failedValue),
+  TResult when<TResult extends Object>({
+    @required TResult invaldEmail(String failedValue),
+    @required TResult shortPassword(String failedValue),
+    @required TResult invalidVisa(String failedValue),
+    @required TResult invalidMaster(String failedValue),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invaldEmail(String failedValue),
-    Result shortPassword(String failedValue),
-    Result invalidVisa(String failedValue),
-    Result invalidMaster(String failedValue),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult invaldEmail(String failedValue),
+    TResult shortPassword(String failedValue),
+    TResult invalidVisa(String failedValue),
+    TResult invalidMaster(String failedValue),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invaldEmail(InvalidEmail<T> value),
-    @required Result shortPassword(ShortPassword<T> value),
-    @required Result invalidVisa(InvalidVisa<T> value),
-    @required Result invalidMaster(InvalidMaster<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult invaldEmail(InvalidEmail<T> value),
+    @required TResult shortPassword(ShortPassword<T> value),
+    @required TResult invalidVisa(InvalidVisa<T> value),
+    @required TResult invalidMaster(InvalidMaster<T> value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invaldEmail(InvalidEmail<T> value),
-    Result shortPassword(ShortPassword<T> value),
-    Result invalidVisa(InvalidVisa<T> value),
-    Result invalidMaster(InvalidMaster<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult invaldEmail(InvalidEmail<T> value),
+    TResult shortPassword(ShortPassword<T> value),
+    TResult invalidVisa(InvalidVisa<T> value),
+    TResult invalidMaster(InvalidMaster<T> value),
+    @required TResult orElse(),
   });
 
+  @JsonKey(ignore: true)
   $ValueFailureCopyWith<T, ValueFailure<T>> get copyWith;
 }
 
@@ -170,17 +171,18 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
+  @JsonKey(ignore: true)
   @override
   $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith =>
       _$InvalidEmailCopyWithImpl<T, InvalidEmail<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invaldEmail(String failedValue),
-    @required Result shortPassword(String failedValue),
-    @required Result invalidVisa(String failedValue),
-    @required Result invalidMaster(String failedValue),
+  TResult when<TResult extends Object>({
+    @required TResult invaldEmail(String failedValue),
+    @required TResult shortPassword(String failedValue),
+    @required TResult invalidVisa(String failedValue),
+    @required TResult invalidMaster(String failedValue),
   }) {
     assert(invaldEmail != null);
     assert(shortPassword != null);
@@ -191,12 +193,12 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invaldEmail(String failedValue),
-    Result shortPassword(String failedValue),
-    Result invalidVisa(String failedValue),
-    Result invalidMaster(String failedValue),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult invaldEmail(String failedValue),
+    TResult shortPassword(String failedValue),
+    TResult invalidVisa(String failedValue),
+    TResult invalidMaster(String failedValue),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invaldEmail != null) {
@@ -207,11 +209,11 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invaldEmail(InvalidEmail<T> value),
-    @required Result shortPassword(ShortPassword<T> value),
-    @required Result invalidVisa(InvalidVisa<T> value),
-    @required Result invalidMaster(InvalidMaster<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult invaldEmail(InvalidEmail<T> value),
+    @required TResult shortPassword(ShortPassword<T> value),
+    @required TResult invalidVisa(InvalidVisa<T> value),
+    @required TResult invalidMaster(InvalidMaster<T> value),
   }) {
     assert(invaldEmail != null);
     assert(shortPassword != null);
@@ -222,12 +224,12 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invaldEmail(InvalidEmail<T> value),
-    Result shortPassword(ShortPassword<T> value),
-    Result invalidVisa(InvalidVisa<T> value),
-    Result invalidMaster(InvalidMaster<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult invaldEmail(InvalidEmail<T> value),
+    TResult shortPassword(ShortPassword<T> value),
+    TResult invalidVisa(InvalidVisa<T> value),
+    TResult invalidMaster(InvalidMaster<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invaldEmail != null) {
@@ -244,6 +246,7 @@ abstract class InvalidEmail<T> implements ValueFailure<T> {
   @override
   String get failedValue;
   @override
+  @JsonKey(ignore: true)
   $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith;
 }
 
@@ -305,17 +308,18 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
+  @JsonKey(ignore: true)
   @override
   $ShortPasswordCopyWith<T, ShortPassword<T>> get copyWith =>
       _$ShortPasswordCopyWithImpl<T, ShortPassword<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invaldEmail(String failedValue),
-    @required Result shortPassword(String failedValue),
-    @required Result invalidVisa(String failedValue),
-    @required Result invalidMaster(String failedValue),
+  TResult when<TResult extends Object>({
+    @required TResult invaldEmail(String failedValue),
+    @required TResult shortPassword(String failedValue),
+    @required TResult invalidVisa(String failedValue),
+    @required TResult invalidMaster(String failedValue),
   }) {
     assert(invaldEmail != null);
     assert(shortPassword != null);
@@ -326,12 +330,12 @@ class _$ShortPassword<T> implements ShortPassword<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invaldEmail(String failedValue),
-    Result shortPassword(String failedValue),
-    Result invalidVisa(String failedValue),
-    Result invalidMaster(String failedValue),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult invaldEmail(String failedValue),
+    TResult shortPassword(String failedValue),
+    TResult invalidVisa(String failedValue),
+    TResult invalidMaster(String failedValue),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (shortPassword != null) {
@@ -342,11 +346,11 @@ class _$ShortPassword<T> implements ShortPassword<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invaldEmail(InvalidEmail<T> value),
-    @required Result shortPassword(ShortPassword<T> value),
-    @required Result invalidVisa(InvalidVisa<T> value),
-    @required Result invalidMaster(InvalidMaster<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult invaldEmail(InvalidEmail<T> value),
+    @required TResult shortPassword(ShortPassword<T> value),
+    @required TResult invalidVisa(InvalidVisa<T> value),
+    @required TResult invalidMaster(InvalidMaster<T> value),
   }) {
     assert(invaldEmail != null);
     assert(shortPassword != null);
@@ -357,12 +361,12 @@ class _$ShortPassword<T> implements ShortPassword<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invaldEmail(InvalidEmail<T> value),
-    Result shortPassword(ShortPassword<T> value),
-    Result invalidVisa(InvalidVisa<T> value),
-    Result invalidMaster(InvalidMaster<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult invaldEmail(InvalidEmail<T> value),
+    TResult shortPassword(ShortPassword<T> value),
+    TResult invalidVisa(InvalidVisa<T> value),
+    TResult invalidMaster(InvalidMaster<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (shortPassword != null) {
@@ -379,6 +383,7 @@ abstract class ShortPassword<T> implements ValueFailure<T> {
   @override
   String get failedValue;
   @override
+  @JsonKey(ignore: true)
   $ShortPasswordCopyWith<T, ShortPassword<T>> get copyWith;
 }
 
@@ -440,17 +445,18 @@ class _$InvalidVisa<T> implements InvalidVisa<T> {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
+  @JsonKey(ignore: true)
   @override
   $InvalidVisaCopyWith<T, InvalidVisa<T>> get copyWith =>
       _$InvalidVisaCopyWithImpl<T, InvalidVisa<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invaldEmail(String failedValue),
-    @required Result shortPassword(String failedValue),
-    @required Result invalidVisa(String failedValue),
-    @required Result invalidMaster(String failedValue),
+  TResult when<TResult extends Object>({
+    @required TResult invaldEmail(String failedValue),
+    @required TResult shortPassword(String failedValue),
+    @required TResult invalidVisa(String failedValue),
+    @required TResult invalidMaster(String failedValue),
   }) {
     assert(invaldEmail != null);
     assert(shortPassword != null);
@@ -461,12 +467,12 @@ class _$InvalidVisa<T> implements InvalidVisa<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invaldEmail(String failedValue),
-    Result shortPassword(String failedValue),
-    Result invalidVisa(String failedValue),
-    Result invalidMaster(String failedValue),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult invaldEmail(String failedValue),
+    TResult shortPassword(String failedValue),
+    TResult invalidVisa(String failedValue),
+    TResult invalidMaster(String failedValue),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidVisa != null) {
@@ -477,11 +483,11 @@ class _$InvalidVisa<T> implements InvalidVisa<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invaldEmail(InvalidEmail<T> value),
-    @required Result shortPassword(ShortPassword<T> value),
-    @required Result invalidVisa(InvalidVisa<T> value),
-    @required Result invalidMaster(InvalidMaster<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult invaldEmail(InvalidEmail<T> value),
+    @required TResult shortPassword(ShortPassword<T> value),
+    @required TResult invalidVisa(InvalidVisa<T> value),
+    @required TResult invalidMaster(InvalidMaster<T> value),
   }) {
     assert(invaldEmail != null);
     assert(shortPassword != null);
@@ -492,12 +498,12 @@ class _$InvalidVisa<T> implements InvalidVisa<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invaldEmail(InvalidEmail<T> value),
-    Result shortPassword(ShortPassword<T> value),
-    Result invalidVisa(InvalidVisa<T> value),
-    Result invalidMaster(InvalidMaster<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult invaldEmail(InvalidEmail<T> value),
+    TResult shortPassword(ShortPassword<T> value),
+    TResult invalidVisa(InvalidVisa<T> value),
+    TResult invalidMaster(InvalidMaster<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidVisa != null) {
@@ -513,6 +519,7 @@ abstract class InvalidVisa<T> implements ValueFailure<T> {
   @override
   String get failedValue;
   @override
+  @JsonKey(ignore: true)
   $InvalidVisaCopyWith<T, InvalidVisa<T>> get copyWith;
 }
 
@@ -574,17 +581,18 @@ class _$InvalidMaster<T> implements InvalidMaster<T> {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
+  @JsonKey(ignore: true)
   @override
   $InvalidMasterCopyWith<T, InvalidMaster<T>> get copyWith =>
       _$InvalidMasterCopyWithImpl<T, InvalidMaster<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invaldEmail(String failedValue),
-    @required Result shortPassword(String failedValue),
-    @required Result invalidVisa(String failedValue),
-    @required Result invalidMaster(String failedValue),
+  TResult when<TResult extends Object>({
+    @required TResult invaldEmail(String failedValue),
+    @required TResult shortPassword(String failedValue),
+    @required TResult invalidVisa(String failedValue),
+    @required TResult invalidMaster(String failedValue),
   }) {
     assert(invaldEmail != null);
     assert(shortPassword != null);
@@ -595,12 +603,12 @@ class _$InvalidMaster<T> implements InvalidMaster<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invaldEmail(String failedValue),
-    Result shortPassword(String failedValue),
-    Result invalidVisa(String failedValue),
-    Result invalidMaster(String failedValue),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult invaldEmail(String failedValue),
+    TResult shortPassword(String failedValue),
+    TResult invalidVisa(String failedValue),
+    TResult invalidMaster(String failedValue),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidMaster != null) {
@@ -611,11 +619,11 @@ class _$InvalidMaster<T> implements InvalidMaster<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invaldEmail(InvalidEmail<T> value),
-    @required Result shortPassword(ShortPassword<T> value),
-    @required Result invalidVisa(InvalidVisa<T> value),
-    @required Result invalidMaster(InvalidMaster<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult invaldEmail(InvalidEmail<T> value),
+    @required TResult shortPassword(ShortPassword<T> value),
+    @required TResult invalidVisa(InvalidVisa<T> value),
+    @required TResult invalidMaster(InvalidMaster<T> value),
   }) {
     assert(invaldEmail != null);
     assert(shortPassword != null);
@@ -626,12 +634,12 @@ class _$InvalidMaster<T> implements InvalidMaster<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invaldEmail(InvalidEmail<T> value),
-    Result shortPassword(ShortPassword<T> value),
-    Result invalidVisa(InvalidVisa<T> value),
-    Result invalidMaster(InvalidMaster<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult invaldEmail(InvalidEmail<T> value),
+    TResult shortPassword(ShortPassword<T> value),
+    TResult invalidVisa(InvalidVisa<T> value),
+    TResult invalidMaster(InvalidMaster<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidMaster != null) {
@@ -648,5 +656,6 @@ abstract class InvalidMaster<T> implements ValueFailure<T> {
   @override
   String get failedValue;
   @override
+  @JsonKey(ignore: true)
   $InvalidMasterCopyWith<T, InvalidMaster<T>> get copyWith;
 }

@@ -27,6 +27,7 @@ import '../payment/payment_success.dart';
 import '../personal/personal_record.dart';
 import '../questionnaire/first_quest.dart';
 import '../questionnaire/second_quest.dart';
+import '../taxi/taxi_main.dart';
 
 class Routes {
   static const String splashScreen = '/';
@@ -42,6 +43,7 @@ class Routes {
   static const String airticketDetailPage = '/airticket-detail-page';
   static const String paymentSuccess = '/payment-success';
   static const String personalRecord = '/personal-record';
+  static const String taxiMainPage = '/taxi-main-page';
   static const all = <String>{
     splashScreen,
     signInScreen,
@@ -56,6 +58,7 @@ class Routes {
     airticketDetailPage,
     paymentSuccess,
     personalRecord,
+    taxiMainPage,
   };
 }
 
@@ -76,6 +79,7 @@ class MyRouter extends RouterBase {
     RouteDef(Routes.airticketDetailPage, page: AirticketDetailPage),
     RouteDef(Routes.paymentSuccess, page: PaymentSuccess),
     RouteDef(Routes.personalRecord, page: PersonalRecord),
+    RouteDef(Routes.taxiMainPage, page: TaxiMainPage),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -194,6 +198,12 @@ class MyRouter extends RouterBase {
         settings: data,
       );
     },
+    TaxiMainPage: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => TaxiMainPage(),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -269,6 +279,8 @@ extension MyRouterExtendedNavigatorStateX on ExtendedNavigatorState {
       );
 
   Future<dynamic> pushPersonalRecord() => push<dynamic>(Routes.personalRecord);
+
+  Future<dynamic> pushTaxiMainPage() => push<dynamic>(Routes.taxiMainPage);
 }
 
 /// ************************************************************************

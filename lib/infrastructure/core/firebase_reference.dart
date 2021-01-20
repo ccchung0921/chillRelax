@@ -18,4 +18,5 @@ extension DocumentRef on DocumentReference {
   CollectionReference get personalInfoCollection => collection('info');
   CollectionReference get paymentCollection => collection('payment');
   CollectionReference get airticketCollection => collection('airticket');
+  CollectionReference get orderCollection => collection('order');
 }

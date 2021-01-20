@@ -26,22 +26,22 @@ const $IgpostEvent = _$IgpostEventTearOff();
 /// @nodoc
 mixin _$IgpostEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result fetchIgPost(),
+  TResult when<TResult extends Object>({
+    @required TResult fetchIgPost(),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result fetchIgPost(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult fetchIgPost(),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result fetchIgPost(_FetchIgPost value),
+  TResult map<TResult extends Object>({
+    @required TResult fetchIgPost(_FetchIgPost value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result fetchIgPost(_FetchIgPost value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult fetchIgPost(_FetchIgPost value),
+    @required TResult orElse(),
   });
 }
 
@@ -98,8 +98,8 @@ class _$_FetchIgPost implements _FetchIgPost {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result fetchIgPost(),
+  TResult when<TResult extends Object>({
+    @required TResult fetchIgPost(),
   }) {
     assert(fetchIgPost != null);
     return fetchIgPost();
@@ -107,9 +107,9 @@ class _$_FetchIgPost implements _FetchIgPost {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result fetchIgPost(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult fetchIgPost(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (fetchIgPost != null) {
@@ -120,8 +120,8 @@ class _$_FetchIgPost implements _FetchIgPost {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result fetchIgPost(_FetchIgPost value),
+  TResult map<TResult extends Object>({
+    @required TResult fetchIgPost(_FetchIgPost value),
   }) {
     assert(fetchIgPost != null);
     return fetchIgPost(this);
@@ -129,9 +129,9 @@ class _$_FetchIgPost implements _FetchIgPost {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result fetchIgPost(_FetchIgPost value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult fetchIgPost(_FetchIgPost value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (fetchIgPost != null) {
@@ -174,30 +174,30 @@ const $IgpostState = _$IgpostStateTearOff();
 /// @nodoc
 mixin _$IgpostState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result postfailure(),
-    @required Result postSuccess(List<IgPost> posts),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult postfailure(),
+    @required TResult postSuccess(List<IgPost> posts),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result postfailure(),
-    Result postSuccess(List<IgPost> posts),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult postfailure(),
+    TResult postSuccess(List<IgPost> posts),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result postfailure(_PostFailure value),
-    @required Result postSuccess(_PostSuccess value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult postfailure(_PostFailure value),
+    @required TResult postSuccess(_PostSuccess value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result postfailure(_PostFailure value),
-    Result postSuccess(_PostSuccess value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult postfailure(_PostFailure value),
+    TResult postSuccess(_PostSuccess value),
+    @required TResult orElse(),
   });
 }
 
@@ -252,10 +252,10 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result postfailure(),
-    @required Result postSuccess(List<IgPost> posts),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult postfailure(),
+    @required TResult postSuccess(List<IgPost> posts),
   }) {
     assert(initial != null);
     assert(postfailure != null);
@@ -265,11 +265,11 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result postfailure(),
-    Result postSuccess(List<IgPost> posts),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult postfailure(),
+    TResult postSuccess(List<IgPost> posts),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -280,10 +280,10 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result postfailure(_PostFailure value),
-    @required Result postSuccess(_PostSuccess value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult postfailure(_PostFailure value),
+    @required TResult postSuccess(_PostSuccess value),
   }) {
     assert(initial != null);
     assert(postfailure != null);
@@ -293,11 +293,11 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result postfailure(_PostFailure value),
-    Result postSuccess(_PostSuccess value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult postfailure(_PostFailure value),
+    TResult postSuccess(_PostSuccess value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -348,10 +348,10 @@ class _$_PostFailure implements _PostFailure {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result postfailure(),
-    @required Result postSuccess(List<IgPost> posts),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult postfailure(),
+    @required TResult postSuccess(List<IgPost> posts),
   }) {
     assert(initial != null);
     assert(postfailure != null);
@@ -361,11 +361,11 @@ class _$_PostFailure implements _PostFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result postfailure(),
-    Result postSuccess(List<IgPost> posts),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult postfailure(),
+    TResult postSuccess(List<IgPost> posts),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (postfailure != null) {
@@ -376,10 +376,10 @@ class _$_PostFailure implements _PostFailure {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result postfailure(_PostFailure value),
-    @required Result postSuccess(_PostSuccess value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult postfailure(_PostFailure value),
+    @required TResult postSuccess(_PostSuccess value),
   }) {
     assert(initial != null);
     assert(postfailure != null);
@@ -389,11 +389,11 @@ class _$_PostFailure implements _PostFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result postfailure(_PostFailure value),
-    Result postSuccess(_PostSuccess value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult postfailure(_PostFailure value),
+    TResult postSuccess(_PostSuccess value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (postfailure != null) {
@@ -459,16 +459,17 @@ class _$_PostSuccess implements _PostSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(posts);
 
+  @JsonKey(ignore: true)
   @override
   _$PostSuccessCopyWith<_PostSuccess> get copyWith =>
       __$PostSuccessCopyWithImpl<_PostSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result postfailure(),
-    @required Result postSuccess(List<IgPost> posts),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult postfailure(),
+    @required TResult postSuccess(List<IgPost> posts),
   }) {
     assert(initial != null);
     assert(postfailure != null);
@@ -478,11 +479,11 @@ class _$_PostSuccess implements _PostSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result postfailure(),
-    Result postSuccess(List<IgPost> posts),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult postfailure(),
+    TResult postSuccess(List<IgPost> posts),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (postSuccess != null) {
@@ -493,10 +494,10 @@ class _$_PostSuccess implements _PostSuccess {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result postfailure(_PostFailure value),
-    @required Result postSuccess(_PostSuccess value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult postfailure(_PostFailure value),
+    @required TResult postSuccess(_PostSuccess value),
   }) {
     assert(initial != null);
     assert(postfailure != null);
@@ -506,11 +507,11 @@ class _$_PostSuccess implements _PostSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result postfailure(_PostFailure value),
-    Result postSuccess(_PostSuccess value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult postfailure(_PostFailure value),
+    TResult postSuccess(_PostSuccess value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (postSuccess != null) {
@@ -524,5 +525,6 @@ abstract class _PostSuccess implements IgpostState {
   const factory _PostSuccess(List<IgPost> posts) = _$_PostSuccess;
 
   List<IgPost> get posts;
+  @JsonKey(ignore: true)
   _$PostSuccessCopyWith<_PostSuccess> get copyWith;
 }

@@ -12,6 +12,7 @@ import 'package:hkonline/presentation/payment/payment_success.dart';
 import 'package:hkonline/presentation/personal/personal_record.dart';
 import 'package:hkonline/presentation/questionnaire/first_quest.dart';
 import 'package:hkonline/presentation/questionnaire/second_quest.dart';
+import 'package:hkonline/presentation/taxi/taxi_main.dart';
 
 @MaterialAutoRouter(routes: <AutoRoute>[
   MaterialRoute(page: SplashScreen, initial: true),
@@ -27,5 +28,6 @@ import 'package:hkonline/presentation/questionnaire/second_quest.dart';
   MaterialRoute(page: AirticketDetailPage),
   MaterialRoute(page: PaymentSuccess),
   MaterialRoute(page: PersonalRecord),
+  MaterialRoute(page: TaxiMainPage),
 ], generateNavigationHelperExtension: true)
 class $MyRouter {}

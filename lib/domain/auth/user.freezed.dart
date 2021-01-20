@@ -29,6 +29,7 @@ const $CurrentUser = _$CurrentUserTearOff();
 mixin _$CurrentUser {
   UniqueId get id;
 
+  @JsonKey(ignore: true)
   $CurrentUserCopyWith<CurrentUser> get copyWith;
 }
 
@@ -112,6 +113,7 @@ class _$_CurrentUser implements _CurrentUser {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
 
+  @JsonKey(ignore: true)
   @override
   _$CurrentUserCopyWith<_CurrentUser> get copyWith =>
       __$CurrentUserCopyWithImpl<_CurrentUser>(this, _$identity);
@@ -123,5 +125,6 @@ abstract class _CurrentUser implements CurrentUser {
   @override
   UniqueId get id;
   @override
+  @JsonKey(ignore: true)
   _$CurrentUserCopyWith<_CurrentUser> get copyWith;
 }
