@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:hkonline/application/airticket_watcher/bloc/airticket_watcher_bloc.dart';
+import 'package:hkonline/application/airticket_watcher/airticket_watcher_bloc.dart';
 
 class AirticketRecordPage extends StatelessWidget {
   @override

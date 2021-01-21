@@ -1,6 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:hkonline/infrastructure/googlePlace/place.dart';
+import 'package:hkonline/presentation/feedback/feedback_comment_widget.dart';
+import 'package:hkonline/presentation/feedback/feedback_rating.dart';
+import 'package:hkonline/presentation/routes/router.gr.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PlaceDetailPage extends StatelessWidget {
@@ -10,110 +13,127 @@ class PlaceDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.green[800],
+        onPressed: () => ExtendedNavigator.of(context).push(Routes.feedBackPage,
+            arguments: FeedBackPageArguments(placeID: place.placeID)),
+        child: const Icon(Icons.edit),
+      ),
       body: Stack(children: [
-        Container(
-          color: Colors.white,
-          child: SafeArea(
-            child: Column(
-              children: [
-                Stack(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Colors.transparent,
-                          image: DecorationImage(
-                              fit: BoxFit.fill,
-                              image: NetworkImage(place.photoReference))),
-                      height: MediaQuery.of(context).size.height * 0.3,
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height * 0.3,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          gradient: LinearGradient(
-                              begin: FractionalOffset.topCenter,
-                              end: FractionalOffset.bottomCenter,
-                              colors: [
-                                Colors.grey.withOpacity(0.0),
-                                Colors.black,
-                              ],
-                              stops: const [
-                                0.0,
-                                1.0
-                              ])),
-                    ),
-                    Positioned.fill(
-                      child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Text(
-                          place.name,
-                          style: const TextStyle(
-                            fontSize: 20,
+        SingleChildScrollView(
+          child: Container(
+            color: Colors.white,
+            child: SafeArea(
+              child: Column(
+                children: [
+                  Stack(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Colors.transparent,
+                            image: DecorationImage(
+                                fit: BoxFit.fill,
+                                image: NetworkImage(place.photoReference))),
+                        height: MediaQuery.of(context).size.height * 0.3,
+                      ),
+                      Container(
+                        height: MediaQuery.of(context).size.height * 0.3,
+                        decoration: BoxDecoration(
                             color: Colors.white,
+                            gradient: LinearGradient(
+                                begin: FractionalOffset.topCenter,
+                                end: FractionalOffset.bottomCenter,
+                                colors: [
+                                  Colors.grey.withOpacity(0.0),
+                                  Colors.black,
+                                ],
+                                stops: const [
+                                  0.0,
+                                  1.0
+                                ])),
+                      ),
+                      Positioned.fill(
+                        child: Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Text(
+                            place.name,
+                            style: const TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 10.0,
-                ),
-                ListTile(
-                  leading: Image.network(
-                    place.iconURL,
-                    width: 25,
-                    height: 25,
+                    ],
                   ),
-                  title: Text(
-                    place.type,
-                    style: const TextStyle(fontSize: 20),
+                  const SizedBox(
+                    height: 10.0,
                   ),
-                ),
-                if (place.opening != null)
-                  ListTile(
-                      leading: const Icon(Icons.alarm),
-                      title: place.opening['open_now'] == true
-                          ? const Text('開放中')
-                          : const Text('休息中')),
-                ListTile(
-                  leading: const Icon(Icons.map_outlined),
-                  title: Text(place.vicinity,
-                      style: const TextStyle(
-                        fontSize: 18,
-                      )),
-                ),
-                if (place.phoneNumber.isNotEmpty)
-                  ListTile(
-                    onTap: () async {
-                      await launch("tel:${place.phoneNumber}");
-                    },
-                    leading: const Icon(
-                      Icons.phone,
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: FeedbackRatingWidget(
+                      placeID: place.placeID,
                     ),
-                    title: Text(place.phoneNumber,
+                  ),
+                  ListTile(
+                    leading: Image.network(
+                      place.iconURL,
+                      width: 25,
+                      height: 25,
+                    ),
+                    title: Text(
+                      place.type,
+                      style: const TextStyle(fontSize: 20),
+                    ),
+                  ),
+                  if (place.opening != null)
+                    ListTile(
+                        leading: const Icon(Icons.alarm),
+                        title: place.opening['open_now'] == true
+                            ? const Text('開放中')
+                            : const Text('休息中')),
+                  ListTile(
+                    leading: const Icon(Icons.map_outlined),
+                    title: Text(place.vicinity,
                         style: const TextStyle(
                           fontSize: 18,
                         )),
-                  )
-                else
-                  Container(),
-                if (place.openingHours.isNotEmpty)
-                  if (place.openingHours.length == 7)
-                    ExpansionTile(
-                        leading: const Icon(Icons.access_alarm),
-                        title: Text(place
-                            .openingHours[DateTime.now().weekday - 1]
-                            .toString()),
-                        children: dayList(getToday(place.openingHours)))
+                  ),
+                  if (place.phoneNumber.isNotEmpty)
+                    ListTile(
+                      onTap: () async {
+                        await launch("tel:${place.phoneNumber}");
+                      },
+                      leading: const Icon(
+                        Icons.phone,
+                      ),
+                      title: Text(place.phoneNumber,
+                          style: const TextStyle(
+                            fontSize: 18,
+                          )),
+                    )
                   else
-                    ExpansionTile(
-                        leading: const Icon(Icons.access_alarm),
-                        title: Text(place.openingHours.first.toString()),
-                        children: dayList(place.openingHours))
-                else
-                  Container()
-              ],
+                    Container(),
+                  if (place.openingHours.isNotEmpty)
+                    if (place.openingHours.length == 7)
+                      ExpansionTile(
+                          leading: const Icon(Icons.access_alarm),
+                          title: Text(place
+                              .openingHours[DateTime.now().weekday - 1]
+                              .toString()),
+                          children: dayList(getToday(place.openingHours)))
+                    else
+                      ExpansionTile(
+                          leading: const Icon(Icons.access_alarm),
+                          title: Text(place.openingHours.first.toString()),
+                          children: dayList(place.openingHours))
+                  else
+                    Container(),
+                  FeedbackCommentWidget(
+                    placeID: place.placeID,
+                  ),
+                ],
+              ),
             ),
           ),
         ),

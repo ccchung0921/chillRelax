@@ -14,9 +14,10 @@ class _$CurrentUserTearOff {
   const _$CurrentUserTearOff();
 
 // ignore: unused_element
-  _CurrentUser call({@required UniqueId id}) {
+  _CurrentUser call({@required UniqueId id, String displayName}) {
     return _CurrentUser(
       id: id,
+      displayName: displayName,
     );
   }
 }
@@ -28,6 +29,7 @@ const $CurrentUser = _$CurrentUserTearOff();
 /// @nodoc
 mixin _$CurrentUser {
   UniqueId get id;
+  String get displayName;
 
   $CurrentUserCopyWith<CurrentUser> get copyWith;
 }
@@ -37,7 +39,7 @@ abstract class $CurrentUserCopyWith<$Res> {
   factory $CurrentUserCopyWith(
           CurrentUser value, $Res Function(CurrentUser) then) =
       _$CurrentUserCopyWithImpl<$Res>;
-  $Res call({UniqueId id});
+  $Res call({UniqueId id, String displayName});
 }
 
 /// @nodoc
@@ -51,9 +53,12 @@ class _$CurrentUserCopyWithImpl<$Res> implements $CurrentUserCopyWith<$Res> {
   @override
   $Res call({
     Object id = freezed,
+    Object displayName = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as UniqueId,
+      displayName:
+          displayName == freezed ? _value.displayName : displayName as String,
     ));
   }
 }
@@ -65,7 +70,7 @@ abstract class _$CurrentUserCopyWith<$Res>
           _CurrentUser value, $Res Function(_CurrentUser) then) =
       __$CurrentUserCopyWithImpl<$Res>;
   @override
-  $Res call({UniqueId id});
+  $Res call({UniqueId id, String displayName});
 }
 
 /// @nodoc
@@ -81,23 +86,29 @@ class __$CurrentUserCopyWithImpl<$Res> extends _$CurrentUserCopyWithImpl<$Res>
   @override
   $Res call({
     Object id = freezed,
+    Object displayName = freezed,
   }) {
     return _then(_CurrentUser(
       id: id == freezed ? _value.id : id as UniqueId,
+      displayName:
+          displayName == freezed ? _value.displayName : displayName as String,
     ));
   }
 }
 
 /// @nodoc
 class _$_CurrentUser implements _CurrentUser {
-  const _$_CurrentUser({@required this.id}) : assert(id != null);
+  const _$_CurrentUser({@required this.id, this.displayName})
+      : assert(id != null);
 
   @override
   final UniqueId id;
+  @override
+  final String displayName;
 
   @override
   String toString() {
-    return 'CurrentUser(id: $id)';
+    return 'CurrentUser(id: $id, displayName: $displayName)';
   }
 
   @override
@@ -105,12 +116,17 @@ class _$_CurrentUser implements _CurrentUser {
     return identical(this, other) ||
         (other is _CurrentUser &&
             (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)));
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.displayName, displayName) ||
+                const DeepCollectionEquality()
+                    .equals(other.displayName, displayName)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(displayName);
 
   @override
   _$CurrentUserCopyWith<_CurrentUser> get copyWith =>
@@ -118,10 +134,13 @@ class _$_CurrentUser implements _CurrentUser {
 }
 
 abstract class _CurrentUser implements CurrentUser {
-  const factory _CurrentUser({@required UniqueId id}) = _$_CurrentUser;
+  const factory _CurrentUser({@required UniqueId id, String displayName}) =
+      _$_CurrentUser;
 
   @override
   UniqueId get id;
+  @override
+  String get displayName;
   @override
   _$CurrentUserCopyWith<_CurrentUser> get copyWith;
 }

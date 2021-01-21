@@ -7,5 +7,6 @@ part 'user.freezed.dart';
 abstract class CurrentUser with _$CurrentUser {
   const factory CurrentUser({
     @required UniqueId id,
+    String displayName,
   }) = _CurrentUser;
 }

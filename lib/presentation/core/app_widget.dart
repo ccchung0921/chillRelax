@@ -36,9 +36,6 @@ class AppWidget extends StatelessWidget {
         BlocProvider(
             create: (context) =>
                 QuestBloc()..add(const QuestEvent.detectSetUp())),
-        BlocProvider(
-            create: (context) =>
-                CreditcardBloc()..add(const CreditcardEvent.fetchCreditCard())),
       ],
       child: MaterialApp(
         title: 'Material App',

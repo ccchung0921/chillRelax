@@ -17,6 +17,7 @@ import '../../infrastructure/skyscanner/airticket.dart';
 import '../auth/sign_in_screen.dart';
 import '../auth/splash_screen.dart';
 import '../creditcard/creditcard_detail.dart';
+import '../feedback/feedback_overview_page.dart';
 import '../list/creditcard_list.dart';
 import '../list/suggestion_list.dart';
 import '../map/airticket_detail_page.dart';
@@ -42,6 +43,7 @@ class Routes {
   static const String airticketDetailPage = '/airticket-detail-page';
   static const String paymentSuccess = '/payment-success';
   static const String personalRecord = '/personal-record';
+  static const String feedBackPage = '/feed-back-page';
   static const all = <String>{
     splashScreen,
     signInScreen,
@@ -56,6 +58,7 @@ class Routes {
     airticketDetailPage,
     paymentSuccess,
     personalRecord,
+    feedBackPage,
   };
 }
 
@@ -76,6 +79,7 @@ class MyRouter extends RouterBase {
     RouteDef(Routes.airticketDetailPage, page: AirticketDetailPage),
     RouteDef(Routes.paymentSuccess, page: PaymentSuccess),
     RouteDef(Routes.personalRecord, page: PersonalRecord),
+    RouteDef(Routes.feedBackPage, page: FeedBackPage),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -194,6 +198,18 @@ class MyRouter extends RouterBase {
         settings: data,
       );
     },
+    FeedBackPage: (data) {
+      final args = data.getArgs<FeedBackPageArguments>(
+        orElse: () => FeedBackPageArguments(),
+      );
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => FeedBackPage(
+          key: args.key,
+          placeID: args.placeID,
+        ),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -269,6 +285,15 @@ extension MyRouterExtendedNavigatorStateX on ExtendedNavigatorState {
       );
 
   Future<dynamic> pushPersonalRecord() => push<dynamic>(Routes.personalRecord);
+
+  Future<dynamic> pushFeedBackPage({
+    Key key,
+    String placeID,
+  }) =>
+      push<dynamic>(
+        Routes.feedBackPage,
+        arguments: FeedBackPageArguments(key: key, placeID: placeID),
+      );
 }
 
 /// ************************************************************************
@@ -315,4 +340,11 @@ class PaymentSuccessArguments {
   final Key key;
   final PaymentMessage msg;
   PaymentSuccessArguments({this.key, this.msg});
+}
+
+/// FeedBackPage arguments holder class
+class FeedBackPageArguments {
+  final Key key;
+  final String placeID;
+  FeedBackPageArguments({this.key, this.placeID});
 }

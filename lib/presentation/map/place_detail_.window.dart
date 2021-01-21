@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:hkonline/application/geolocator/bloc/geolocation_bloc.dart';
+import 'package:hkonline/presentation/feedback/feedback_rating.dart';
 import 'package:hkonline/presentation/routes/router.gr.dart';
 
 class PlaceDetailWindow extends StatelessWidget {
@@ -64,12 +65,15 @@ class PlaceDetailWindow extends StatelessWidget {
                                       )),
                         subtitle: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
+                          children: <Widget>[
                             SizedBox(
                                 height:
-                                    MediaQuery.of(context).size.height / 40),
-                            SizedBox(
-                                width: MediaQuery.of(context).size.width / 30),
+                                    MediaQuery.of(context).size.height / 90),
+                            FeedbackRatingWidget(
+                              placeID: state.selectedPlace.placeID,
+                              widgetSize: 15.0,
+                            ),
+                            const SizedBox(height: 5),
                             Text(
                               state.selectedPlace.vicinity,
                               style: const TextStyle(color: Colors.black),

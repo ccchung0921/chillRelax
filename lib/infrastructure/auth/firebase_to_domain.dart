@@ -6,6 +6,7 @@ extension FirebaseToDomain on auth.User {
   CurrentUser toDomain() {
     return CurrentUser(
       id: UniqueId.fromUniqueString(uid),
+      displayName: displayName,
     );
   }
 }
