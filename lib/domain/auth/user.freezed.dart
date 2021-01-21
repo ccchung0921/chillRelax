@@ -31,6 +31,7 @@ mixin _$CurrentUser {
   UniqueId get id;
   String get displayName;
 
+  @JsonKey(ignore: true)
   $CurrentUserCopyWith<CurrentUser> get copyWith;
 }
 
@@ -128,6 +129,7 @@ class _$_CurrentUser implements _CurrentUser {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(displayName);
 
+  @JsonKey(ignore: true)
   @override
   _$CurrentUserCopyWith<_CurrentUser> get copyWith =>
       __$CurrentUserCopyWithImpl<_CurrentUser>(this, _$identity);
@@ -142,5 +144,6 @@ abstract class _CurrentUser implements CurrentUser {
   @override
   String get displayName;
   @override
+  @JsonKey(ignore: true)
   _$CurrentUserCopyWith<_CurrentUser> get copyWith;
 }

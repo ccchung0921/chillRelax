@@ -21,6 +21,7 @@ import 'package:hkonline/presentation/map/igpost_detail_window.dart';
 import 'package:hkonline/presentation/map/place_detail_.window.dart';
 import 'package:hkonline/presentation/routes/router.gr.dart';
 import 'package:uuid/uuid.dart';
+import 'package:hkonline/presentation/taxi/taxi_main.dart';
 
 class MapScreen extends StatefulWidget {
   @override
@@ -297,7 +298,9 @@ class _MapScreenState extends State<MapScreen> {
                               ))),
                     ),
                     ListTile(
-                      onTap: () {},
+                      onTap: () {
+                        ExtendedNavigator.of(context).push(Routes.taxiMainPage);
+                      },
                       leading:
                           Icon(Icons.local_taxi, color: Colors.redAccent[700]),
                       title: const Text("的士群組"),

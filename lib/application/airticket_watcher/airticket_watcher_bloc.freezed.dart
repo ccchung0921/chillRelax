@@ -38,30 +38,30 @@ const $AirticketWatcherEvent = _$AirticketWatcherEventTearOff();
 /// @nodoc
 mixin _$AirticketWatcherEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result watchAllAirticket(),
-    @required Result airticketReceived(List<Airticket> airtickets),
-    @required Result errorReceived(),
+  TResult when<TResult extends Object>({
+    @required TResult watchAllAirticket(),
+    @required TResult airticketReceived(List<Airticket> airtickets),
+    @required TResult errorReceived(),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result watchAllAirticket(),
-    Result airticketReceived(List<Airticket> airtickets),
-    Result errorReceived(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult watchAllAirticket(),
+    TResult airticketReceived(List<Airticket> airtickets),
+    TResult errorReceived(),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result watchAllAirticket(_WatchAllAirticket value),
-    @required Result airticketReceived(_AirticketReceived value),
-    @required Result errorReceived(_ErrorReceived value),
+  TResult map<TResult extends Object>({
+    @required TResult watchAllAirticket(_WatchAllAirticket value),
+    @required TResult airticketReceived(_AirticketReceived value),
+    @required TResult errorReceived(_ErrorReceived value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result watchAllAirticket(_WatchAllAirticket value),
-    Result airticketReceived(_AirticketReceived value),
-    Result errorReceived(_ErrorReceived value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult watchAllAirticket(_WatchAllAirticket value),
+    TResult airticketReceived(_AirticketReceived value),
+    TResult errorReceived(_ErrorReceived value),
+    @required TResult orElse(),
   });
 }
 
@@ -120,10 +120,10 @@ class _$_WatchAllAirticket implements _WatchAllAirticket {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result watchAllAirticket(),
-    @required Result airticketReceived(List<Airticket> airtickets),
-    @required Result errorReceived(),
+  TResult when<TResult extends Object>({
+    @required TResult watchAllAirticket(),
+    @required TResult airticketReceived(List<Airticket> airtickets),
+    @required TResult errorReceived(),
   }) {
     assert(watchAllAirticket != null);
     assert(airticketReceived != null);
@@ -133,11 +133,11 @@ class _$_WatchAllAirticket implements _WatchAllAirticket {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result watchAllAirticket(),
-    Result airticketReceived(List<Airticket> airtickets),
-    Result errorReceived(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult watchAllAirticket(),
+    TResult airticketReceived(List<Airticket> airtickets),
+    TResult errorReceived(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (watchAllAirticket != null) {
@@ -148,10 +148,10 @@ class _$_WatchAllAirticket implements _WatchAllAirticket {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result watchAllAirticket(_WatchAllAirticket value),
-    @required Result airticketReceived(_AirticketReceived value),
-    @required Result errorReceived(_ErrorReceived value),
+  TResult map<TResult extends Object>({
+    @required TResult watchAllAirticket(_WatchAllAirticket value),
+    @required TResult airticketReceived(_AirticketReceived value),
+    @required TResult errorReceived(_ErrorReceived value),
   }) {
     assert(watchAllAirticket != null);
     assert(airticketReceived != null);
@@ -161,11 +161,11 @@ class _$_WatchAllAirticket implements _WatchAllAirticket {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result watchAllAirticket(_WatchAllAirticket value),
-    Result airticketReceived(_AirticketReceived value),
-    Result errorReceived(_ErrorReceived value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult watchAllAirticket(_WatchAllAirticket value),
+    TResult airticketReceived(_AirticketReceived value),
+    TResult errorReceived(_ErrorReceived value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (watchAllAirticket != null) {
@@ -233,16 +233,17 @@ class _$_AirticketReceived implements _AirticketReceived {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(airtickets);
 
+  @JsonKey(ignore: true)
   @override
   _$AirticketReceivedCopyWith<_AirticketReceived> get copyWith =>
       __$AirticketReceivedCopyWithImpl<_AirticketReceived>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result watchAllAirticket(),
-    @required Result airticketReceived(List<Airticket> airtickets),
-    @required Result errorReceived(),
+  TResult when<TResult extends Object>({
+    @required TResult watchAllAirticket(),
+    @required TResult airticketReceived(List<Airticket> airtickets),
+    @required TResult errorReceived(),
   }) {
     assert(watchAllAirticket != null);
     assert(airticketReceived != null);
@@ -252,11 +253,11 @@ class _$_AirticketReceived implements _AirticketReceived {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result watchAllAirticket(),
-    Result airticketReceived(List<Airticket> airtickets),
-    Result errorReceived(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult watchAllAirticket(),
+    TResult airticketReceived(List<Airticket> airtickets),
+    TResult errorReceived(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (airticketReceived != null) {
@@ -267,10 +268,10 @@ class _$_AirticketReceived implements _AirticketReceived {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result watchAllAirticket(_WatchAllAirticket value),
-    @required Result airticketReceived(_AirticketReceived value),
-    @required Result errorReceived(_ErrorReceived value),
+  TResult map<TResult extends Object>({
+    @required TResult watchAllAirticket(_WatchAllAirticket value),
+    @required TResult airticketReceived(_AirticketReceived value),
+    @required TResult errorReceived(_ErrorReceived value),
   }) {
     assert(watchAllAirticket != null);
     assert(airticketReceived != null);
@@ -280,11 +281,11 @@ class _$_AirticketReceived implements _AirticketReceived {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result watchAllAirticket(_WatchAllAirticket value),
-    Result airticketReceived(_AirticketReceived value),
-    Result errorReceived(_ErrorReceived value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult watchAllAirticket(_WatchAllAirticket value),
+    TResult airticketReceived(_AirticketReceived value),
+    TResult errorReceived(_ErrorReceived value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (airticketReceived != null) {
@@ -299,6 +300,7 @@ abstract class _AirticketReceived implements AirticketWatcherEvent {
       _$_AirticketReceived;
 
   List<Airticket> get airtickets;
+  @JsonKey(ignore: true)
   _$AirticketReceivedCopyWith<_AirticketReceived> get copyWith;
 }
 
@@ -340,10 +342,10 @@ class _$_ErrorReceived implements _ErrorReceived {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result watchAllAirticket(),
-    @required Result airticketReceived(List<Airticket> airtickets),
-    @required Result errorReceived(),
+  TResult when<TResult extends Object>({
+    @required TResult watchAllAirticket(),
+    @required TResult airticketReceived(List<Airticket> airtickets),
+    @required TResult errorReceived(),
   }) {
     assert(watchAllAirticket != null);
     assert(airticketReceived != null);
@@ -353,11 +355,11 @@ class _$_ErrorReceived implements _ErrorReceived {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result watchAllAirticket(),
-    Result airticketReceived(List<Airticket> airtickets),
-    Result errorReceived(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult watchAllAirticket(),
+    TResult airticketReceived(List<Airticket> airtickets),
+    TResult errorReceived(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (errorReceived != null) {
@@ -368,10 +370,10 @@ class _$_ErrorReceived implements _ErrorReceived {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result watchAllAirticket(_WatchAllAirticket value),
-    @required Result airticketReceived(_AirticketReceived value),
-    @required Result errorReceived(_ErrorReceived value),
+  TResult map<TResult extends Object>({
+    @required TResult watchAllAirticket(_WatchAllAirticket value),
+    @required TResult airticketReceived(_AirticketReceived value),
+    @required TResult errorReceived(_ErrorReceived value),
   }) {
     assert(watchAllAirticket != null);
     assert(airticketReceived != null);
@@ -381,11 +383,11 @@ class _$_ErrorReceived implements _ErrorReceived {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result watchAllAirticket(_WatchAllAirticket value),
-    Result airticketReceived(_AirticketReceived value),
-    Result errorReceived(_ErrorReceived value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult watchAllAirticket(_WatchAllAirticket value),
+    TResult airticketReceived(_AirticketReceived value),
+    TResult errorReceived(_ErrorReceived value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (errorReceived != null) {
@@ -433,34 +435,34 @@ const $AirticketWatcherState = _$AirticketWatcherStateTearOff();
 /// @nodoc
 mixin _$AirticketWatcherState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loadSuccess(List<Airticket> airtickets),
-    @required Result loadFailure(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult loadSuccess(List<Airticket> airtickets),
+    @required TResult loadFailure(),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loadSuccess(List<Airticket> airtickets),
-    Result loadFailure(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult loadSuccess(List<Airticket> airtickets),
+    TResult loadFailure(),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult loading(_Loading value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult loading(_Loading value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
+    @required TResult orElse(),
   });
 }
 
@@ -517,11 +519,11 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loadSuccess(List<Airticket> airtickets),
-    @required Result loadFailure(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult loadSuccess(List<Airticket> airtickets),
+    @required TResult loadFailure(),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -532,12 +534,12 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loadSuccess(List<Airticket> airtickets),
-    Result loadFailure(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult loadSuccess(List<Airticket> airtickets),
+    TResult loadFailure(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -548,11 +550,11 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult loading(_Loading value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -563,12 +565,12 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult loading(_Loading value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -618,11 +620,11 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loadSuccess(List<Airticket> airtickets),
-    @required Result loadFailure(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult loadSuccess(List<Airticket> airtickets),
+    @required TResult loadFailure(),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -633,12 +635,12 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loadSuccess(List<Airticket> airtickets),
-    Result loadFailure(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult loadSuccess(List<Airticket> airtickets),
+    TResult loadFailure(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loading != null) {
@@ -649,11 +651,11 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult loading(_Loading value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -664,12 +666,12 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult loading(_Loading value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loading != null) {
@@ -737,17 +739,18 @@ class _$_LoadSuccess implements _LoadSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(airtickets);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loadSuccess(List<Airticket> airtickets),
-    @required Result loadFailure(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult loadSuccess(List<Airticket> airtickets),
+    @required TResult loadFailure(),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -758,12 +761,12 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loadSuccess(List<Airticket> airtickets),
-    Result loadFailure(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult loadSuccess(List<Airticket> airtickets),
+    TResult loadFailure(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loadSuccess != null) {
@@ -774,11 +777,11 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult loading(_Loading value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -789,12 +792,12 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult loading(_Loading value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loadSuccess != null) {
@@ -808,6 +811,7 @@ abstract class _LoadSuccess implements AirticketWatcherState {
   const factory _LoadSuccess(List<Airticket> airtickets) = _$_LoadSuccess;
 
   List<Airticket> get airtickets;
+  @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
@@ -849,11 +853,11 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loadSuccess(List<Airticket> airtickets),
-    @required Result loadFailure(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult loadSuccess(List<Airticket> airtickets),
+    @required TResult loadFailure(),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -864,12 +868,12 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loadSuccess(List<Airticket> airtickets),
-    Result loadFailure(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult loadSuccess(List<Airticket> airtickets),
+    TResult loadFailure(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loadFailure != null) {
@@ -880,11 +884,11 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult loading(_Loading value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -895,12 +899,12 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult loading(_Loading value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loadFailure != null) {

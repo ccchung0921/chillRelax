@@ -47,8 +47,10 @@ dependencies:
   url_launcher: ^5.7.10
   oauth2: ^1.6.3
   flutter_swiper: ^1.1.6
+  date_time_picker: "^1.1.1"
   smooth_star_rating: ^1.1.1
   timeago: ^2.0.29
+ 
 
 dev_dependencies:
   flutter_test:
@@ -58,6 +60,7 @@ dev_dependencies:
   lint: ^1.2.0
   injectable_generator: ^1.0.4
   auto_route_generator: ^0.6.8
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

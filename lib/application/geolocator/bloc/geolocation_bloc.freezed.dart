@@ -81,58 +81,58 @@ const $GeolocationEvent = _$GeolocationEventTearOff();
 /// @nodoc
 mixin _$GeolocationEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result getCurrentPosition(),
-    @required Result getPlace(),
-    @required Result getCinema(),
-    @required Result getMarker(),
-    @required Result searchPlace(String input),
-    @required Result markerPressed(Place place),
-    @required Result getDistance(),
-    @required Result autoComplete(String input, String sessionToken),
-    @required Result suggestionPressed(String sessionToken, String placeid),
-    @required Result clear(),
+  TResult when<TResult extends Object>({
+    @required TResult getCurrentPosition(),
+    @required TResult getPlace(),
+    @required TResult getCinema(),
+    @required TResult getMarker(),
+    @required TResult searchPlace(String input),
+    @required TResult markerPressed(Place place),
+    @required TResult getDistance(),
+    @required TResult autoComplete(String input, String sessionToken),
+    @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult clear(),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result getCurrentPosition(),
-    Result getPlace(),
-    Result getCinema(),
-    Result getMarker(),
-    Result searchPlace(String input),
-    Result markerPressed(Place place),
-    Result getDistance(),
-    Result autoComplete(String input, String sessionToken),
-    Result suggestionPressed(String sessionToken, String placeid),
-    Result clear(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult getCurrentPosition(),
+    TResult getPlace(),
+    TResult getCinema(),
+    TResult getMarker(),
+    TResult searchPlace(String input),
+    TResult markerPressed(Place place),
+    TResult getDistance(),
+    TResult autoComplete(String input, String sessionToken),
+    TResult suggestionPressed(String sessionToken, String placeid),
+    TResult clear(),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result getCurrentPosition(GetCurrentPosition value),
-    @required Result getPlace(GetPlace value),
-    @required Result getCinema(GetCinema value),
-    @required Result getMarker(GetMarker value),
-    @required Result searchPlace(SearchPlace value),
-    @required Result markerPressed(MarkerPressed value),
-    @required Result getDistance(GetDistance value),
-    @required Result autoComplete(AutoComplete value),
-    @required Result suggestionPressed(SuggestionPressed value),
-    @required Result clear(Clear value),
+  TResult map<TResult extends Object>({
+    @required TResult getCurrentPosition(GetCurrentPosition value),
+    @required TResult getPlace(GetPlace value),
+    @required TResult getCinema(GetCinema value),
+    @required TResult getMarker(GetMarker value),
+    @required TResult searchPlace(SearchPlace value),
+    @required TResult markerPressed(MarkerPressed value),
+    @required TResult getDistance(GetDistance value),
+    @required TResult autoComplete(AutoComplete value),
+    @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult clear(Clear value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result getCurrentPosition(GetCurrentPosition value),
-    Result getPlace(GetPlace value),
-    Result getCinema(GetCinema value),
-    Result getMarker(GetMarker value),
-    Result searchPlace(SearchPlace value),
-    Result markerPressed(MarkerPressed value),
-    Result getDistance(GetDistance value),
-    Result autoComplete(AutoComplete value),
-    Result suggestionPressed(SuggestionPressed value),
-    Result clear(Clear value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult getCurrentPosition(GetCurrentPosition value),
+    TResult getPlace(GetPlace value),
+    TResult getCinema(GetCinema value),
+    TResult getMarker(GetMarker value),
+    TResult searchPlace(SearchPlace value),
+    TResult markerPressed(MarkerPressed value),
+    TResult getDistance(GetDistance value),
+    TResult autoComplete(AutoComplete value),
+    TResult suggestionPressed(SuggestionPressed value),
+    TResult clear(Clear value),
+    @required TResult orElse(),
   });
 }
 
@@ -200,17 +200,17 @@ class _$GetCurrentPosition
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result getCurrentPosition(),
-    @required Result getPlace(),
-    @required Result getCinema(),
-    @required Result getMarker(),
-    @required Result searchPlace(String input),
-    @required Result markerPressed(Place place),
-    @required Result getDistance(),
-    @required Result autoComplete(String input, String sessionToken),
-    @required Result suggestionPressed(String sessionToken, String placeid),
-    @required Result clear(),
+  TResult when<TResult extends Object>({
+    @required TResult getCurrentPosition(),
+    @required TResult getPlace(),
+    @required TResult getCinema(),
+    @required TResult getMarker(),
+    @required TResult searchPlace(String input),
+    @required TResult markerPressed(Place place),
+    @required TResult getDistance(),
+    @required TResult autoComplete(String input, String sessionToken),
+    @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult clear(),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -227,18 +227,18 @@ class _$GetCurrentPosition
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result getCurrentPosition(),
-    Result getPlace(),
-    Result getCinema(),
-    Result getMarker(),
-    Result searchPlace(String input),
-    Result markerPressed(Place place),
-    Result getDistance(),
-    Result autoComplete(String input, String sessionToken),
-    Result suggestionPressed(String sessionToken, String placeid),
-    Result clear(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult getCurrentPosition(),
+    TResult getPlace(),
+    TResult getCinema(),
+    TResult getMarker(),
+    TResult searchPlace(String input),
+    TResult markerPressed(Place place),
+    TResult getDistance(),
+    TResult autoComplete(String input, String sessionToken),
+    TResult suggestionPressed(String sessionToken, String placeid),
+    TResult clear(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (getCurrentPosition != null) {
@@ -249,17 +249,17 @@ class _$GetCurrentPosition
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result getCurrentPosition(GetCurrentPosition value),
-    @required Result getPlace(GetPlace value),
-    @required Result getCinema(GetCinema value),
-    @required Result getMarker(GetMarker value),
-    @required Result searchPlace(SearchPlace value),
-    @required Result markerPressed(MarkerPressed value),
-    @required Result getDistance(GetDistance value),
-    @required Result autoComplete(AutoComplete value),
-    @required Result suggestionPressed(SuggestionPressed value),
-    @required Result clear(Clear value),
+  TResult map<TResult extends Object>({
+    @required TResult getCurrentPosition(GetCurrentPosition value),
+    @required TResult getPlace(GetPlace value),
+    @required TResult getCinema(GetCinema value),
+    @required TResult getMarker(GetMarker value),
+    @required TResult searchPlace(SearchPlace value),
+    @required TResult markerPressed(MarkerPressed value),
+    @required TResult getDistance(GetDistance value),
+    @required TResult autoComplete(AutoComplete value),
+    @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult clear(Clear value),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -276,18 +276,18 @@ class _$GetCurrentPosition
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result getCurrentPosition(GetCurrentPosition value),
-    Result getPlace(GetPlace value),
-    Result getCinema(GetCinema value),
-    Result getMarker(GetMarker value),
-    Result searchPlace(SearchPlace value),
-    Result markerPressed(MarkerPressed value),
-    Result getDistance(GetDistance value),
-    Result autoComplete(AutoComplete value),
-    Result suggestionPressed(SuggestionPressed value),
-    Result clear(Clear value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult getCurrentPosition(GetCurrentPosition value),
+    TResult getPlace(GetPlace value),
+    TResult getCinema(GetCinema value),
+    TResult getMarker(GetMarker value),
+    TResult searchPlace(SearchPlace value),
+    TResult markerPressed(MarkerPressed value),
+    TResult getDistance(GetDistance value),
+    TResult autoComplete(AutoComplete value),
+    TResult suggestionPressed(SuggestionPressed value),
+    TResult clear(Clear value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (getCurrentPosition != null) {
@@ -342,17 +342,17 @@ class _$GetPlace with DiagnosticableTreeMixin implements GetPlace {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result getCurrentPosition(),
-    @required Result getPlace(),
-    @required Result getCinema(),
-    @required Result getMarker(),
-    @required Result searchPlace(String input),
-    @required Result markerPressed(Place place),
-    @required Result getDistance(),
-    @required Result autoComplete(String input, String sessionToken),
-    @required Result suggestionPressed(String sessionToken, String placeid),
-    @required Result clear(),
+  TResult when<TResult extends Object>({
+    @required TResult getCurrentPosition(),
+    @required TResult getPlace(),
+    @required TResult getCinema(),
+    @required TResult getMarker(),
+    @required TResult searchPlace(String input),
+    @required TResult markerPressed(Place place),
+    @required TResult getDistance(),
+    @required TResult autoComplete(String input, String sessionToken),
+    @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult clear(),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -369,18 +369,18 @@ class _$GetPlace with DiagnosticableTreeMixin implements GetPlace {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result getCurrentPosition(),
-    Result getPlace(),
-    Result getCinema(),
-    Result getMarker(),
-    Result searchPlace(String input),
-    Result markerPressed(Place place),
-    Result getDistance(),
-    Result autoComplete(String input, String sessionToken),
-    Result suggestionPressed(String sessionToken, String placeid),
-    Result clear(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult getCurrentPosition(),
+    TResult getPlace(),
+    TResult getCinema(),
+    TResult getMarker(),
+    TResult searchPlace(String input),
+    TResult markerPressed(Place place),
+    TResult getDistance(),
+    TResult autoComplete(String input, String sessionToken),
+    TResult suggestionPressed(String sessionToken, String placeid),
+    TResult clear(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (getPlace != null) {
@@ -391,17 +391,17 @@ class _$GetPlace with DiagnosticableTreeMixin implements GetPlace {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result getCurrentPosition(GetCurrentPosition value),
-    @required Result getPlace(GetPlace value),
-    @required Result getCinema(GetCinema value),
-    @required Result getMarker(GetMarker value),
-    @required Result searchPlace(SearchPlace value),
-    @required Result markerPressed(MarkerPressed value),
-    @required Result getDistance(GetDistance value),
-    @required Result autoComplete(AutoComplete value),
-    @required Result suggestionPressed(SuggestionPressed value),
-    @required Result clear(Clear value),
+  TResult map<TResult extends Object>({
+    @required TResult getCurrentPosition(GetCurrentPosition value),
+    @required TResult getPlace(GetPlace value),
+    @required TResult getCinema(GetCinema value),
+    @required TResult getMarker(GetMarker value),
+    @required TResult searchPlace(SearchPlace value),
+    @required TResult markerPressed(MarkerPressed value),
+    @required TResult getDistance(GetDistance value),
+    @required TResult autoComplete(AutoComplete value),
+    @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult clear(Clear value),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -418,18 +418,18 @@ class _$GetPlace with DiagnosticableTreeMixin implements GetPlace {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result getCurrentPosition(GetCurrentPosition value),
-    Result getPlace(GetPlace value),
-    Result getCinema(GetCinema value),
-    Result getMarker(GetMarker value),
-    Result searchPlace(SearchPlace value),
-    Result markerPressed(MarkerPressed value),
-    Result getDistance(GetDistance value),
-    Result autoComplete(AutoComplete value),
-    Result suggestionPressed(SuggestionPressed value),
-    Result clear(Clear value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult getCurrentPosition(GetCurrentPosition value),
+    TResult getPlace(GetPlace value),
+    TResult getCinema(GetCinema value),
+    TResult getMarker(GetMarker value),
+    TResult searchPlace(SearchPlace value),
+    TResult markerPressed(MarkerPressed value),
+    TResult getDistance(GetDistance value),
+    TResult autoComplete(AutoComplete value),
+    TResult suggestionPressed(SuggestionPressed value),
+    TResult clear(Clear value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (getPlace != null) {
@@ -484,17 +484,17 @@ class _$GetCinema with DiagnosticableTreeMixin implements GetCinema {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result getCurrentPosition(),
-    @required Result getPlace(),
-    @required Result getCinema(),
-    @required Result getMarker(),
-    @required Result searchPlace(String input),
-    @required Result markerPressed(Place place),
-    @required Result getDistance(),
-    @required Result autoComplete(String input, String sessionToken),
-    @required Result suggestionPressed(String sessionToken, String placeid),
-    @required Result clear(),
+  TResult when<TResult extends Object>({
+    @required TResult getCurrentPosition(),
+    @required TResult getPlace(),
+    @required TResult getCinema(),
+    @required TResult getMarker(),
+    @required TResult searchPlace(String input),
+    @required TResult markerPressed(Place place),
+    @required TResult getDistance(),
+    @required TResult autoComplete(String input, String sessionToken),
+    @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult clear(),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -511,18 +511,18 @@ class _$GetCinema with DiagnosticableTreeMixin implements GetCinema {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result getCurrentPosition(),
-    Result getPlace(),
-    Result getCinema(),
-    Result getMarker(),
-    Result searchPlace(String input),
-    Result markerPressed(Place place),
-    Result getDistance(),
-    Result autoComplete(String input, String sessionToken),
-    Result suggestionPressed(String sessionToken, String placeid),
-    Result clear(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult getCurrentPosition(),
+    TResult getPlace(),
+    TResult getCinema(),
+    TResult getMarker(),
+    TResult searchPlace(String input),
+    TResult markerPressed(Place place),
+    TResult getDistance(),
+    TResult autoComplete(String input, String sessionToken),
+    TResult suggestionPressed(String sessionToken, String placeid),
+    TResult clear(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (getCinema != null) {
@@ -533,17 +533,17 @@ class _$GetCinema with DiagnosticableTreeMixin implements GetCinema {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result getCurrentPosition(GetCurrentPosition value),
-    @required Result getPlace(GetPlace value),
-    @required Result getCinema(GetCinema value),
-    @required Result getMarker(GetMarker value),
-    @required Result searchPlace(SearchPlace value),
-    @required Result markerPressed(MarkerPressed value),
-    @required Result getDistance(GetDistance value),
-    @required Result autoComplete(AutoComplete value),
-    @required Result suggestionPressed(SuggestionPressed value),
-    @required Result clear(Clear value),
+  TResult map<TResult extends Object>({
+    @required TResult getCurrentPosition(GetCurrentPosition value),
+    @required TResult getPlace(GetPlace value),
+    @required TResult getCinema(GetCinema value),
+    @required TResult getMarker(GetMarker value),
+    @required TResult searchPlace(SearchPlace value),
+    @required TResult markerPressed(MarkerPressed value),
+    @required TResult getDistance(GetDistance value),
+    @required TResult autoComplete(AutoComplete value),
+    @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult clear(Clear value),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -560,18 +560,18 @@ class _$GetCinema with DiagnosticableTreeMixin implements GetCinema {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result getCurrentPosition(GetCurrentPosition value),
-    Result getPlace(GetPlace value),
-    Result getCinema(GetCinema value),
-    Result getMarker(GetMarker value),
-    Result searchPlace(SearchPlace value),
-    Result markerPressed(MarkerPressed value),
-    Result getDistance(GetDistance value),
-    Result autoComplete(AutoComplete value),
-    Result suggestionPressed(SuggestionPressed value),
-    Result clear(Clear value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult getCurrentPosition(GetCurrentPosition value),
+    TResult getPlace(GetPlace value),
+    TResult getCinema(GetCinema value),
+    TResult getMarker(GetMarker value),
+    TResult searchPlace(SearchPlace value),
+    TResult markerPressed(MarkerPressed value),
+    TResult getDistance(GetDistance value),
+    TResult autoComplete(AutoComplete value),
+    TResult suggestionPressed(SuggestionPressed value),
+    TResult clear(Clear value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (getCinema != null) {
@@ -626,17 +626,17 @@ class _$GetMarker with DiagnosticableTreeMixin implements GetMarker {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result getCurrentPosition(),
-    @required Result getPlace(),
-    @required Result getCinema(),
-    @required Result getMarker(),
-    @required Result searchPlace(String input),
-    @required Result markerPressed(Place place),
-    @required Result getDistance(),
-    @required Result autoComplete(String input, String sessionToken),
-    @required Result suggestionPressed(String sessionToken, String placeid),
-    @required Result clear(),
+  TResult when<TResult extends Object>({
+    @required TResult getCurrentPosition(),
+    @required TResult getPlace(),
+    @required TResult getCinema(),
+    @required TResult getMarker(),
+    @required TResult searchPlace(String input),
+    @required TResult markerPressed(Place place),
+    @required TResult getDistance(),
+    @required TResult autoComplete(String input, String sessionToken),
+    @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult clear(),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -653,18 +653,18 @@ class _$GetMarker with DiagnosticableTreeMixin implements GetMarker {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result getCurrentPosition(),
-    Result getPlace(),
-    Result getCinema(),
-    Result getMarker(),
-    Result searchPlace(String input),
-    Result markerPressed(Place place),
-    Result getDistance(),
-    Result autoComplete(String input, String sessionToken),
-    Result suggestionPressed(String sessionToken, String placeid),
-    Result clear(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult getCurrentPosition(),
+    TResult getPlace(),
+    TResult getCinema(),
+    TResult getMarker(),
+    TResult searchPlace(String input),
+    TResult markerPressed(Place place),
+    TResult getDistance(),
+    TResult autoComplete(String input, String sessionToken),
+    TResult suggestionPressed(String sessionToken, String placeid),
+    TResult clear(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (getMarker != null) {
@@ -675,17 +675,17 @@ class _$GetMarker with DiagnosticableTreeMixin implements GetMarker {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result getCurrentPosition(GetCurrentPosition value),
-    @required Result getPlace(GetPlace value),
-    @required Result getCinema(GetCinema value),
-    @required Result getMarker(GetMarker value),
-    @required Result searchPlace(SearchPlace value),
-    @required Result markerPressed(MarkerPressed value),
-    @required Result getDistance(GetDistance value),
-    @required Result autoComplete(AutoComplete value),
-    @required Result suggestionPressed(SuggestionPressed value),
-    @required Result clear(Clear value),
+  TResult map<TResult extends Object>({
+    @required TResult getCurrentPosition(GetCurrentPosition value),
+    @required TResult getPlace(GetPlace value),
+    @required TResult getCinema(GetCinema value),
+    @required TResult getMarker(GetMarker value),
+    @required TResult searchPlace(SearchPlace value),
+    @required TResult markerPressed(MarkerPressed value),
+    @required TResult getDistance(GetDistance value),
+    @required TResult autoComplete(AutoComplete value),
+    @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult clear(Clear value),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -702,18 +702,18 @@ class _$GetMarker with DiagnosticableTreeMixin implements GetMarker {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result getCurrentPosition(GetCurrentPosition value),
-    Result getPlace(GetPlace value),
-    Result getCinema(GetCinema value),
-    Result getMarker(GetMarker value),
-    Result searchPlace(SearchPlace value),
-    Result markerPressed(MarkerPressed value),
-    Result getDistance(GetDistance value),
-    Result autoComplete(AutoComplete value),
-    Result suggestionPressed(SuggestionPressed value),
-    Result clear(Clear value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult getCurrentPosition(GetCurrentPosition value),
+    TResult getPlace(GetPlace value),
+    TResult getCinema(GetCinema value),
+    TResult getMarker(GetMarker value),
+    TResult searchPlace(SearchPlace value),
+    TResult markerPressed(MarkerPressed value),
+    TResult getDistance(GetDistance value),
+    TResult autoComplete(AutoComplete value),
+    TResult suggestionPressed(SuggestionPressed value),
+    TResult clear(Clear value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (getMarker != null) {
@@ -788,23 +788,24 @@ class _$SearchPlace with DiagnosticableTreeMixin implements SearchPlace {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(input);
 
+  @JsonKey(ignore: true)
   @override
   $SearchPlaceCopyWith<SearchPlace> get copyWith =>
       _$SearchPlaceCopyWithImpl<SearchPlace>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result getCurrentPosition(),
-    @required Result getPlace(),
-    @required Result getCinema(),
-    @required Result getMarker(),
-    @required Result searchPlace(String input),
-    @required Result markerPressed(Place place),
-    @required Result getDistance(),
-    @required Result autoComplete(String input, String sessionToken),
-    @required Result suggestionPressed(String sessionToken, String placeid),
-    @required Result clear(),
+  TResult when<TResult extends Object>({
+    @required TResult getCurrentPosition(),
+    @required TResult getPlace(),
+    @required TResult getCinema(),
+    @required TResult getMarker(),
+    @required TResult searchPlace(String input),
+    @required TResult markerPressed(Place place),
+    @required TResult getDistance(),
+    @required TResult autoComplete(String input, String sessionToken),
+    @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult clear(),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -821,18 +822,18 @@ class _$SearchPlace with DiagnosticableTreeMixin implements SearchPlace {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result getCurrentPosition(),
-    Result getPlace(),
-    Result getCinema(),
-    Result getMarker(),
-    Result searchPlace(String input),
-    Result markerPressed(Place place),
-    Result getDistance(),
-    Result autoComplete(String input, String sessionToken),
-    Result suggestionPressed(String sessionToken, String placeid),
-    Result clear(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult getCurrentPosition(),
+    TResult getPlace(),
+    TResult getCinema(),
+    TResult getMarker(),
+    TResult searchPlace(String input),
+    TResult markerPressed(Place place),
+    TResult getDistance(),
+    TResult autoComplete(String input, String sessionToken),
+    TResult suggestionPressed(String sessionToken, String placeid),
+    TResult clear(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (searchPlace != null) {
@@ -843,17 +844,17 @@ class _$SearchPlace with DiagnosticableTreeMixin implements SearchPlace {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result getCurrentPosition(GetCurrentPosition value),
-    @required Result getPlace(GetPlace value),
-    @required Result getCinema(GetCinema value),
-    @required Result getMarker(GetMarker value),
-    @required Result searchPlace(SearchPlace value),
-    @required Result markerPressed(MarkerPressed value),
-    @required Result getDistance(GetDistance value),
-    @required Result autoComplete(AutoComplete value),
-    @required Result suggestionPressed(SuggestionPressed value),
-    @required Result clear(Clear value),
+  TResult map<TResult extends Object>({
+    @required TResult getCurrentPosition(GetCurrentPosition value),
+    @required TResult getPlace(GetPlace value),
+    @required TResult getCinema(GetCinema value),
+    @required TResult getMarker(GetMarker value),
+    @required TResult searchPlace(SearchPlace value),
+    @required TResult markerPressed(MarkerPressed value),
+    @required TResult getDistance(GetDistance value),
+    @required TResult autoComplete(AutoComplete value),
+    @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult clear(Clear value),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -870,18 +871,18 @@ class _$SearchPlace with DiagnosticableTreeMixin implements SearchPlace {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result getCurrentPosition(GetCurrentPosition value),
-    Result getPlace(GetPlace value),
-    Result getCinema(GetCinema value),
-    Result getMarker(GetMarker value),
-    Result searchPlace(SearchPlace value),
-    Result markerPressed(MarkerPressed value),
-    Result getDistance(GetDistance value),
-    Result autoComplete(AutoComplete value),
-    Result suggestionPressed(SuggestionPressed value),
-    Result clear(Clear value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult getCurrentPosition(GetCurrentPosition value),
+    TResult getPlace(GetPlace value),
+    TResult getCinema(GetCinema value),
+    TResult getMarker(GetMarker value),
+    TResult searchPlace(SearchPlace value),
+    TResult markerPressed(MarkerPressed value),
+    TResult getDistance(GetDistance value),
+    TResult autoComplete(AutoComplete value),
+    TResult suggestionPressed(SuggestionPressed value),
+    TResult clear(Clear value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (searchPlace != null) {
@@ -895,6 +896,7 @@ abstract class SearchPlace implements GeolocationEvent {
   const factory SearchPlace(String input) = _$SearchPlace;
 
   String get input;
+  @JsonKey(ignore: true)
   $SearchPlaceCopyWith<SearchPlace> get copyWith;
 }
 
@@ -959,23 +961,24 @@ class _$MarkerPressed with DiagnosticableTreeMixin implements MarkerPressed {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(place);
 
+  @JsonKey(ignore: true)
   @override
   $MarkerPressedCopyWith<MarkerPressed> get copyWith =>
       _$MarkerPressedCopyWithImpl<MarkerPressed>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result getCurrentPosition(),
-    @required Result getPlace(),
-    @required Result getCinema(),
-    @required Result getMarker(),
-    @required Result searchPlace(String input),
-    @required Result markerPressed(Place place),
-    @required Result getDistance(),
-    @required Result autoComplete(String input, String sessionToken),
-    @required Result suggestionPressed(String sessionToken, String placeid),
-    @required Result clear(),
+  TResult when<TResult extends Object>({
+    @required TResult getCurrentPosition(),
+    @required TResult getPlace(),
+    @required TResult getCinema(),
+    @required TResult getMarker(),
+    @required TResult searchPlace(String input),
+    @required TResult markerPressed(Place place),
+    @required TResult getDistance(),
+    @required TResult autoComplete(String input, String sessionToken),
+    @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult clear(),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -992,18 +995,18 @@ class _$MarkerPressed with DiagnosticableTreeMixin implements MarkerPressed {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result getCurrentPosition(),
-    Result getPlace(),
-    Result getCinema(),
-    Result getMarker(),
-    Result searchPlace(String input),
-    Result markerPressed(Place place),
-    Result getDistance(),
-    Result autoComplete(String input, String sessionToken),
-    Result suggestionPressed(String sessionToken, String placeid),
-    Result clear(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult getCurrentPosition(),
+    TResult getPlace(),
+    TResult getCinema(),
+    TResult getMarker(),
+    TResult searchPlace(String input),
+    TResult markerPressed(Place place),
+    TResult getDistance(),
+    TResult autoComplete(String input, String sessionToken),
+    TResult suggestionPressed(String sessionToken, String placeid),
+    TResult clear(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (markerPressed != null) {
@@ -1014,17 +1017,17 @@ class _$MarkerPressed with DiagnosticableTreeMixin implements MarkerPressed {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result getCurrentPosition(GetCurrentPosition value),
-    @required Result getPlace(GetPlace value),
-    @required Result getCinema(GetCinema value),
-    @required Result getMarker(GetMarker value),
-    @required Result searchPlace(SearchPlace value),
-    @required Result markerPressed(MarkerPressed value),
-    @required Result getDistance(GetDistance value),
-    @required Result autoComplete(AutoComplete value),
-    @required Result suggestionPressed(SuggestionPressed value),
-    @required Result clear(Clear value),
+  TResult map<TResult extends Object>({
+    @required TResult getCurrentPosition(GetCurrentPosition value),
+    @required TResult getPlace(GetPlace value),
+    @required TResult getCinema(GetCinema value),
+    @required TResult getMarker(GetMarker value),
+    @required TResult searchPlace(SearchPlace value),
+    @required TResult markerPressed(MarkerPressed value),
+    @required TResult getDistance(GetDistance value),
+    @required TResult autoComplete(AutoComplete value),
+    @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult clear(Clear value),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -1041,18 +1044,18 @@ class _$MarkerPressed with DiagnosticableTreeMixin implements MarkerPressed {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result getCurrentPosition(GetCurrentPosition value),
-    Result getPlace(GetPlace value),
-    Result getCinema(GetCinema value),
-    Result getMarker(GetMarker value),
-    Result searchPlace(SearchPlace value),
-    Result markerPressed(MarkerPressed value),
-    Result getDistance(GetDistance value),
-    Result autoComplete(AutoComplete value),
-    Result suggestionPressed(SuggestionPressed value),
-    Result clear(Clear value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult getCurrentPosition(GetCurrentPosition value),
+    TResult getPlace(GetPlace value),
+    TResult getCinema(GetCinema value),
+    TResult getMarker(GetMarker value),
+    TResult searchPlace(SearchPlace value),
+    TResult markerPressed(MarkerPressed value),
+    TResult getDistance(GetDistance value),
+    TResult autoComplete(AutoComplete value),
+    TResult suggestionPressed(SuggestionPressed value),
+    TResult clear(Clear value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (markerPressed != null) {
@@ -1066,6 +1069,7 @@ abstract class MarkerPressed implements GeolocationEvent {
   const factory MarkerPressed(Place place) = _$MarkerPressed;
 
   Place get place;
+  @JsonKey(ignore: true)
   $MarkerPressedCopyWith<MarkerPressed> get copyWith;
 }
 
@@ -1114,17 +1118,17 @@ class _$GetDistance with DiagnosticableTreeMixin implements GetDistance {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result getCurrentPosition(),
-    @required Result getPlace(),
-    @required Result getCinema(),
-    @required Result getMarker(),
-    @required Result searchPlace(String input),
-    @required Result markerPressed(Place place),
-    @required Result getDistance(),
-    @required Result autoComplete(String input, String sessionToken),
-    @required Result suggestionPressed(String sessionToken, String placeid),
-    @required Result clear(),
+  TResult when<TResult extends Object>({
+    @required TResult getCurrentPosition(),
+    @required TResult getPlace(),
+    @required TResult getCinema(),
+    @required TResult getMarker(),
+    @required TResult searchPlace(String input),
+    @required TResult markerPressed(Place place),
+    @required TResult getDistance(),
+    @required TResult autoComplete(String input, String sessionToken),
+    @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult clear(),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -1141,18 +1145,18 @@ class _$GetDistance with DiagnosticableTreeMixin implements GetDistance {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result getCurrentPosition(),
-    Result getPlace(),
-    Result getCinema(),
-    Result getMarker(),
-    Result searchPlace(String input),
-    Result markerPressed(Place place),
-    Result getDistance(),
-    Result autoComplete(String input, String sessionToken),
-    Result suggestionPressed(String sessionToken, String placeid),
-    Result clear(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult getCurrentPosition(),
+    TResult getPlace(),
+    TResult getCinema(),
+    TResult getMarker(),
+    TResult searchPlace(String input),
+    TResult markerPressed(Place place),
+    TResult getDistance(),
+    TResult autoComplete(String input, String sessionToken),
+    TResult suggestionPressed(String sessionToken, String placeid),
+    TResult clear(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (getDistance != null) {
@@ -1163,17 +1167,17 @@ class _$GetDistance with DiagnosticableTreeMixin implements GetDistance {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result getCurrentPosition(GetCurrentPosition value),
-    @required Result getPlace(GetPlace value),
-    @required Result getCinema(GetCinema value),
-    @required Result getMarker(GetMarker value),
-    @required Result searchPlace(SearchPlace value),
-    @required Result markerPressed(MarkerPressed value),
-    @required Result getDistance(GetDistance value),
-    @required Result autoComplete(AutoComplete value),
-    @required Result suggestionPressed(SuggestionPressed value),
-    @required Result clear(Clear value),
+  TResult map<TResult extends Object>({
+    @required TResult getCurrentPosition(GetCurrentPosition value),
+    @required TResult getPlace(GetPlace value),
+    @required TResult getCinema(GetCinema value),
+    @required TResult getMarker(GetMarker value),
+    @required TResult searchPlace(SearchPlace value),
+    @required TResult markerPressed(MarkerPressed value),
+    @required TResult getDistance(GetDistance value),
+    @required TResult autoComplete(AutoComplete value),
+    @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult clear(Clear value),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -1190,18 +1194,18 @@ class _$GetDistance with DiagnosticableTreeMixin implements GetDistance {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result getCurrentPosition(GetCurrentPosition value),
-    Result getPlace(GetPlace value),
-    Result getCinema(GetCinema value),
-    Result getMarker(GetMarker value),
-    Result searchPlace(SearchPlace value),
-    Result markerPressed(MarkerPressed value),
-    Result getDistance(GetDistance value),
-    Result autoComplete(AutoComplete value),
-    Result suggestionPressed(SuggestionPressed value),
-    Result clear(Clear value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult getCurrentPosition(GetCurrentPosition value),
+    TResult getPlace(GetPlace value),
+    TResult getCinema(GetCinema value),
+    TResult getMarker(GetMarker value),
+    TResult searchPlace(SearchPlace value),
+    TResult markerPressed(MarkerPressed value),
+    TResult getDistance(GetDistance value),
+    TResult autoComplete(AutoComplete value),
+    TResult suggestionPressed(SuggestionPressed value),
+    TResult clear(Clear value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (getDistance != null) {
@@ -1288,23 +1292,24 @@ class _$AutoComplete with DiagnosticableTreeMixin implements AutoComplete {
       const DeepCollectionEquality().hash(input) ^
       const DeepCollectionEquality().hash(sessionToken);
 
+  @JsonKey(ignore: true)
   @override
   $AutoCompleteCopyWith<AutoComplete> get copyWith =>
       _$AutoCompleteCopyWithImpl<AutoComplete>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result getCurrentPosition(),
-    @required Result getPlace(),
-    @required Result getCinema(),
-    @required Result getMarker(),
-    @required Result searchPlace(String input),
-    @required Result markerPressed(Place place),
-    @required Result getDistance(),
-    @required Result autoComplete(String input, String sessionToken),
-    @required Result suggestionPressed(String sessionToken, String placeid),
-    @required Result clear(),
+  TResult when<TResult extends Object>({
+    @required TResult getCurrentPosition(),
+    @required TResult getPlace(),
+    @required TResult getCinema(),
+    @required TResult getMarker(),
+    @required TResult searchPlace(String input),
+    @required TResult markerPressed(Place place),
+    @required TResult getDistance(),
+    @required TResult autoComplete(String input, String sessionToken),
+    @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult clear(),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -1321,18 +1326,18 @@ class _$AutoComplete with DiagnosticableTreeMixin implements AutoComplete {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result getCurrentPosition(),
-    Result getPlace(),
-    Result getCinema(),
-    Result getMarker(),
-    Result searchPlace(String input),
-    Result markerPressed(Place place),
-    Result getDistance(),
-    Result autoComplete(String input, String sessionToken),
-    Result suggestionPressed(String sessionToken, String placeid),
-    Result clear(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult getCurrentPosition(),
+    TResult getPlace(),
+    TResult getCinema(),
+    TResult getMarker(),
+    TResult searchPlace(String input),
+    TResult markerPressed(Place place),
+    TResult getDistance(),
+    TResult autoComplete(String input, String sessionToken),
+    TResult suggestionPressed(String sessionToken, String placeid),
+    TResult clear(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (autoComplete != null) {
@@ -1343,17 +1348,17 @@ class _$AutoComplete with DiagnosticableTreeMixin implements AutoComplete {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result getCurrentPosition(GetCurrentPosition value),
-    @required Result getPlace(GetPlace value),
-    @required Result getCinema(GetCinema value),
-    @required Result getMarker(GetMarker value),
-    @required Result searchPlace(SearchPlace value),
-    @required Result markerPressed(MarkerPressed value),
-    @required Result getDistance(GetDistance value),
-    @required Result autoComplete(AutoComplete value),
-    @required Result suggestionPressed(SuggestionPressed value),
-    @required Result clear(Clear value),
+  TResult map<TResult extends Object>({
+    @required TResult getCurrentPosition(GetCurrentPosition value),
+    @required TResult getPlace(GetPlace value),
+    @required TResult getCinema(GetCinema value),
+    @required TResult getMarker(GetMarker value),
+    @required TResult searchPlace(SearchPlace value),
+    @required TResult markerPressed(MarkerPressed value),
+    @required TResult getDistance(GetDistance value),
+    @required TResult autoComplete(AutoComplete value),
+    @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult clear(Clear value),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -1370,18 +1375,18 @@ class _$AutoComplete with DiagnosticableTreeMixin implements AutoComplete {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result getCurrentPosition(GetCurrentPosition value),
-    Result getPlace(GetPlace value),
-    Result getCinema(GetCinema value),
-    Result getMarker(GetMarker value),
-    Result searchPlace(SearchPlace value),
-    Result markerPressed(MarkerPressed value),
-    Result getDistance(GetDistance value),
-    Result autoComplete(AutoComplete value),
-    Result suggestionPressed(SuggestionPressed value),
-    Result clear(Clear value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult getCurrentPosition(GetCurrentPosition value),
+    TResult getPlace(GetPlace value),
+    TResult getCinema(GetCinema value),
+    TResult getMarker(GetMarker value),
+    TResult searchPlace(SearchPlace value),
+    TResult markerPressed(MarkerPressed value),
+    TResult getDistance(GetDistance value),
+    TResult autoComplete(AutoComplete value),
+    TResult suggestionPressed(SuggestionPressed value),
+    TResult clear(Clear value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (autoComplete != null) {
@@ -1397,6 +1402,7 @@ abstract class AutoComplete implements GeolocationEvent {
 
   String get input;
   String get sessionToken;
+  @JsonKey(ignore: true)
   $AutoCompleteCopyWith<AutoComplete> get copyWith;
 }
 
@@ -1475,23 +1481,24 @@ class _$SuggestionPressed
       const DeepCollectionEquality().hash(sessionToken) ^
       const DeepCollectionEquality().hash(placeid);
 
+  @JsonKey(ignore: true)
   @override
   $SuggestionPressedCopyWith<SuggestionPressed> get copyWith =>
       _$SuggestionPressedCopyWithImpl<SuggestionPressed>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result getCurrentPosition(),
-    @required Result getPlace(),
-    @required Result getCinema(),
-    @required Result getMarker(),
-    @required Result searchPlace(String input),
-    @required Result markerPressed(Place place),
-    @required Result getDistance(),
-    @required Result autoComplete(String input, String sessionToken),
-    @required Result suggestionPressed(String sessionToken, String placeid),
-    @required Result clear(),
+  TResult when<TResult extends Object>({
+    @required TResult getCurrentPosition(),
+    @required TResult getPlace(),
+    @required TResult getCinema(),
+    @required TResult getMarker(),
+    @required TResult searchPlace(String input),
+    @required TResult markerPressed(Place place),
+    @required TResult getDistance(),
+    @required TResult autoComplete(String input, String sessionToken),
+    @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult clear(),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -1508,18 +1515,18 @@ class _$SuggestionPressed
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result getCurrentPosition(),
-    Result getPlace(),
-    Result getCinema(),
-    Result getMarker(),
-    Result searchPlace(String input),
-    Result markerPressed(Place place),
-    Result getDistance(),
-    Result autoComplete(String input, String sessionToken),
-    Result suggestionPressed(String sessionToken, String placeid),
-    Result clear(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult getCurrentPosition(),
+    TResult getPlace(),
+    TResult getCinema(),
+    TResult getMarker(),
+    TResult searchPlace(String input),
+    TResult markerPressed(Place place),
+    TResult getDistance(),
+    TResult autoComplete(String input, String sessionToken),
+    TResult suggestionPressed(String sessionToken, String placeid),
+    TResult clear(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (suggestionPressed != null) {
@@ -1530,17 +1537,17 @@ class _$SuggestionPressed
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result getCurrentPosition(GetCurrentPosition value),
-    @required Result getPlace(GetPlace value),
-    @required Result getCinema(GetCinema value),
-    @required Result getMarker(GetMarker value),
-    @required Result searchPlace(SearchPlace value),
-    @required Result markerPressed(MarkerPressed value),
-    @required Result getDistance(GetDistance value),
-    @required Result autoComplete(AutoComplete value),
-    @required Result suggestionPressed(SuggestionPressed value),
-    @required Result clear(Clear value),
+  TResult map<TResult extends Object>({
+    @required TResult getCurrentPosition(GetCurrentPosition value),
+    @required TResult getPlace(GetPlace value),
+    @required TResult getCinema(GetCinema value),
+    @required TResult getMarker(GetMarker value),
+    @required TResult searchPlace(SearchPlace value),
+    @required TResult markerPressed(MarkerPressed value),
+    @required TResult getDistance(GetDistance value),
+    @required TResult autoComplete(AutoComplete value),
+    @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult clear(Clear value),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -1557,18 +1564,18 @@ class _$SuggestionPressed
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result getCurrentPosition(GetCurrentPosition value),
-    Result getPlace(GetPlace value),
-    Result getCinema(GetCinema value),
-    Result getMarker(GetMarker value),
-    Result searchPlace(SearchPlace value),
-    Result markerPressed(MarkerPressed value),
-    Result getDistance(GetDistance value),
-    Result autoComplete(AutoComplete value),
-    Result suggestionPressed(SuggestionPressed value),
-    Result clear(Clear value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult getCurrentPosition(GetCurrentPosition value),
+    TResult getPlace(GetPlace value),
+    TResult getCinema(GetCinema value),
+    TResult getMarker(GetMarker value),
+    TResult searchPlace(SearchPlace value),
+    TResult markerPressed(MarkerPressed value),
+    TResult getDistance(GetDistance value),
+    TResult autoComplete(AutoComplete value),
+    TResult suggestionPressed(SuggestionPressed value),
+    TResult clear(Clear value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (suggestionPressed != null) {
@@ -1584,6 +1591,7 @@ abstract class SuggestionPressed implements GeolocationEvent {
 
   String get sessionToken;
   String get placeid;
+  @JsonKey(ignore: true)
   $SuggestionPressedCopyWith<SuggestionPressed> get copyWith;
 }
 
@@ -1628,17 +1636,17 @@ class _$Clear with DiagnosticableTreeMixin implements Clear {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result getCurrentPosition(),
-    @required Result getPlace(),
-    @required Result getCinema(),
-    @required Result getMarker(),
-    @required Result searchPlace(String input),
-    @required Result markerPressed(Place place),
-    @required Result getDistance(),
-    @required Result autoComplete(String input, String sessionToken),
-    @required Result suggestionPressed(String sessionToken, String placeid),
-    @required Result clear(),
+  TResult when<TResult extends Object>({
+    @required TResult getCurrentPosition(),
+    @required TResult getPlace(),
+    @required TResult getCinema(),
+    @required TResult getMarker(),
+    @required TResult searchPlace(String input),
+    @required TResult markerPressed(Place place),
+    @required TResult getDistance(),
+    @required TResult autoComplete(String input, String sessionToken),
+    @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult clear(),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -1655,18 +1663,18 @@ class _$Clear with DiagnosticableTreeMixin implements Clear {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result getCurrentPosition(),
-    Result getPlace(),
-    Result getCinema(),
-    Result getMarker(),
-    Result searchPlace(String input),
-    Result markerPressed(Place place),
-    Result getDistance(),
-    Result autoComplete(String input, String sessionToken),
-    Result suggestionPressed(String sessionToken, String placeid),
-    Result clear(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult getCurrentPosition(),
+    TResult getPlace(),
+    TResult getCinema(),
+    TResult getMarker(),
+    TResult searchPlace(String input),
+    TResult markerPressed(Place place),
+    TResult getDistance(),
+    TResult autoComplete(String input, String sessionToken),
+    TResult suggestionPressed(String sessionToken, String placeid),
+    TResult clear(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (clear != null) {
@@ -1677,17 +1685,17 @@ class _$Clear with DiagnosticableTreeMixin implements Clear {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result getCurrentPosition(GetCurrentPosition value),
-    @required Result getPlace(GetPlace value),
-    @required Result getCinema(GetCinema value),
-    @required Result getMarker(GetMarker value),
-    @required Result searchPlace(SearchPlace value),
-    @required Result markerPressed(MarkerPressed value),
-    @required Result getDistance(GetDistance value),
-    @required Result autoComplete(AutoComplete value),
-    @required Result suggestionPressed(SuggestionPressed value),
-    @required Result clear(Clear value),
+  TResult map<TResult extends Object>({
+    @required TResult getCurrentPosition(GetCurrentPosition value),
+    @required TResult getPlace(GetPlace value),
+    @required TResult getCinema(GetCinema value),
+    @required TResult getMarker(GetMarker value),
+    @required TResult searchPlace(SearchPlace value),
+    @required TResult markerPressed(MarkerPressed value),
+    @required TResult getDistance(GetDistance value),
+    @required TResult autoComplete(AutoComplete value),
+    @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult clear(Clear value),
   }) {
     assert(getCurrentPosition != null);
     assert(getPlace != null);
@@ -1704,18 +1712,18 @@ class _$Clear with DiagnosticableTreeMixin implements Clear {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result getCurrentPosition(GetCurrentPosition value),
-    Result getPlace(GetPlace value),
-    Result getCinema(GetCinema value),
-    Result getMarker(GetMarker value),
-    Result searchPlace(SearchPlace value),
-    Result markerPressed(MarkerPressed value),
-    Result getDistance(GetDistance value),
-    Result autoComplete(AutoComplete value),
-    Result suggestionPressed(SuggestionPressed value),
-    Result clear(Clear value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult getCurrentPosition(GetCurrentPosition value),
+    TResult getPlace(GetPlace value),
+    TResult getCinema(GetCinema value),
+    TResult getMarker(GetMarker value),
+    TResult searchPlace(SearchPlace value),
+    TResult markerPressed(MarkerPressed value),
+    TResult getDistance(GetDistance value),
+    TResult autoComplete(AutoComplete value),
+    TResult suggestionPressed(SuggestionPressed value),
+    TResult clear(Clear value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (clear != null) {
@@ -1786,6 +1794,7 @@ mixin _$GeolocationState {
   Place get selectedPlace;
   double get distance;
 
+  @JsonKey(ignore: true)
   $GeolocationStateCopyWith<GeolocationState> get copyWith;
 }
 
@@ -2094,6 +2103,7 @@ class _$_GeolocationState
       const DeepCollectionEquality().hash(selectedPlace) ^
       const DeepCollectionEquality().hash(distance);
 
+  @JsonKey(ignore: true)
   @override
   _$GeolocationStateCopyWith<_GeolocationState> get copyWith =>
       __$GeolocationStateCopyWithImpl<_GeolocationState>(this, _$identity);
@@ -2142,5 +2152,6 @@ abstract class _GeolocationState implements GeolocationState {
   @override
   double get distance;
   @override
+  @JsonKey(ignore: true)
   _$GeolocationStateCopyWith<_GeolocationState> get copyWith;
 }

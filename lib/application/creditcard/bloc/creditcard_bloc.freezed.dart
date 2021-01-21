@@ -26,22 +26,22 @@ const $CreditcardEvent = _$CreditcardEventTearOff();
 /// @nodoc
 mixin _$CreditcardEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result fetchCreditCard(),
+  TResult when<TResult extends Object>({
+    @required TResult fetchCreditCard(),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result fetchCreditCard(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult fetchCreditCard(),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result fetchCreditCard(_FetchCreditCard value),
+  TResult map<TResult extends Object>({
+    @required TResult fetchCreditCard(_FetchCreditCard value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result fetchCreditCard(_FetchCreditCard value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult fetchCreditCard(_FetchCreditCard value),
+    @required TResult orElse(),
   });
 }
 
@@ -100,8 +100,8 @@ class _$_FetchCreditCard implements _FetchCreditCard {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result fetchCreditCard(),
+  TResult when<TResult extends Object>({
+    @required TResult fetchCreditCard(),
   }) {
     assert(fetchCreditCard != null);
     return fetchCreditCard();
@@ -109,9 +109,9 @@ class _$_FetchCreditCard implements _FetchCreditCard {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result fetchCreditCard(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult fetchCreditCard(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (fetchCreditCard != null) {
@@ -122,8 +122,8 @@ class _$_FetchCreditCard implements _FetchCreditCard {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result fetchCreditCard(_FetchCreditCard value),
+  TResult map<TResult extends Object>({
+    @required TResult fetchCreditCard(_FetchCreditCard value),
   }) {
     assert(fetchCreditCard != null);
     return fetchCreditCard(this);
@@ -131,9 +131,9 @@ class _$_FetchCreditCard implements _FetchCreditCard {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result fetchCreditCard(_FetchCreditCard value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult fetchCreditCard(_FetchCreditCard value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (fetchCreditCard != null) {
@@ -176,30 +176,30 @@ const $CreditcardState = _$CreditcardStateTearOff();
 /// @nodoc
 mixin _$CreditcardState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result cardFailure(),
-    @required Result cardSuccess(List<CreditCard> creditcards),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult cardFailure(),
+    @required TResult cardSuccess(List<CreditCard> creditcards),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result cardFailure(),
-    Result cardSuccess(List<CreditCard> creditcards),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult cardFailure(),
+    TResult cardSuccess(List<CreditCard> creditcards),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result cardFailure(_CardFailure value),
-    @required Result cardSuccess(_CardSuccess value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult cardFailure(_CardFailure value),
+    @required TResult cardSuccess(_CardSuccess value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result cardFailure(_CardFailure value),
-    Result cardSuccess(_CardSuccess value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult cardFailure(_CardFailure value),
+    TResult cardSuccess(_CardSuccess value),
+    @required TResult orElse(),
   });
 }
 
@@ -255,10 +255,10 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result cardFailure(),
-    @required Result cardSuccess(List<CreditCard> creditcards),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult cardFailure(),
+    @required TResult cardSuccess(List<CreditCard> creditcards),
   }) {
     assert(initial != null);
     assert(cardFailure != null);
@@ -268,11 +268,11 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result cardFailure(),
-    Result cardSuccess(List<CreditCard> creditcards),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult cardFailure(),
+    TResult cardSuccess(List<CreditCard> creditcards),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -283,10 +283,10 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result cardFailure(_CardFailure value),
-    @required Result cardSuccess(_CardSuccess value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult cardFailure(_CardFailure value),
+    @required TResult cardSuccess(_CardSuccess value),
   }) {
     assert(initial != null);
     assert(cardFailure != null);
@@ -296,11 +296,11 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result cardFailure(_CardFailure value),
-    Result cardSuccess(_CardSuccess value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult cardFailure(_CardFailure value),
+    TResult cardSuccess(_CardSuccess value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -352,10 +352,10 @@ class _$_CardFailure implements _CardFailure {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result cardFailure(),
-    @required Result cardSuccess(List<CreditCard> creditcards),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult cardFailure(),
+    @required TResult cardSuccess(List<CreditCard> creditcards),
   }) {
     assert(initial != null);
     assert(cardFailure != null);
@@ -365,11 +365,11 @@ class _$_CardFailure implements _CardFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result cardFailure(),
-    Result cardSuccess(List<CreditCard> creditcards),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult cardFailure(),
+    TResult cardSuccess(List<CreditCard> creditcards),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (cardFailure != null) {
@@ -380,10 +380,10 @@ class _$_CardFailure implements _CardFailure {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result cardFailure(_CardFailure value),
-    @required Result cardSuccess(_CardSuccess value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult cardFailure(_CardFailure value),
+    @required TResult cardSuccess(_CardSuccess value),
   }) {
     assert(initial != null);
     assert(cardFailure != null);
@@ -393,11 +393,11 @@ class _$_CardFailure implements _CardFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result cardFailure(_CardFailure value),
-    Result cardSuccess(_CardSuccess value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult cardFailure(_CardFailure value),
+    TResult cardSuccess(_CardSuccess value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (cardFailure != null) {
@@ -467,16 +467,17 @@ class _$_CardSuccess implements _CardSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(creditcards);
 
+  @JsonKey(ignore: true)
   @override
   _$CardSuccessCopyWith<_CardSuccess> get copyWith =>
       __$CardSuccessCopyWithImpl<_CardSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result cardFailure(),
-    @required Result cardSuccess(List<CreditCard> creditcards),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult cardFailure(),
+    @required TResult cardSuccess(List<CreditCard> creditcards),
   }) {
     assert(initial != null);
     assert(cardFailure != null);
@@ -486,11 +487,11 @@ class _$_CardSuccess implements _CardSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result cardFailure(),
-    Result cardSuccess(List<CreditCard> creditcards),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult cardFailure(),
+    TResult cardSuccess(List<CreditCard> creditcards),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (cardSuccess != null) {
@@ -501,10 +502,10 @@ class _$_CardSuccess implements _CardSuccess {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result cardFailure(_CardFailure value),
-    @required Result cardSuccess(_CardSuccess value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult cardFailure(_CardFailure value),
+    @required TResult cardSuccess(_CardSuccess value),
   }) {
     assert(initial != null);
     assert(cardFailure != null);
@@ -514,11 +515,11 @@ class _$_CardSuccess implements _CardSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result cardFailure(_CardFailure value),
-    Result cardSuccess(_CardSuccess value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult cardFailure(_CardFailure value),
+    TResult cardSuccess(_CardSuccess value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (cardSuccess != null) {
@@ -532,5 +533,6 @@ abstract class _CardSuccess implements CreditcardState {
   const factory _CardSuccess(List<CreditCard> creditcards) = _$_CardSuccess;
 
   List<CreditCard> get creditcards;
+  @JsonKey(ignore: true)
   _$CardSuccessCopyWith<_CardSuccess> get copyWith;
 }

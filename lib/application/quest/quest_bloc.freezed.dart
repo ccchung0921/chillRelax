@@ -26,22 +26,22 @@ const $QuestEvent = _$QuestEventTearOff();
 /// @nodoc
 mixin _$QuestEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result detectSetUp(),
+  TResult when<TResult extends Object>({
+    @required TResult detectSetUp(),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result detectSetUp(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult detectSetUp(),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result detectSetUp(DetectSetUp value),
+  TResult map<TResult extends Object>({
+    @required TResult detectSetUp(DetectSetUp value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result detectSetUp(DetectSetUp value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult detectSetUp(DetectSetUp value),
+    @required TResult orElse(),
   });
 }
 
@@ -98,8 +98,8 @@ class _$DetectSetUp implements DetectSetUp {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result detectSetUp(),
+  TResult when<TResult extends Object>({
+    @required TResult detectSetUp(),
   }) {
     assert(detectSetUp != null);
     return detectSetUp();
@@ -107,9 +107,9 @@ class _$DetectSetUp implements DetectSetUp {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result detectSetUp(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult detectSetUp(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (detectSetUp != null) {
@@ -120,8 +120,8 @@ class _$DetectSetUp implements DetectSetUp {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result detectSetUp(DetectSetUp value),
+  TResult map<TResult extends Object>({
+    @required TResult detectSetUp(DetectSetUp value),
   }) {
     assert(detectSetUp != null);
     return detectSetUp(this);
@@ -129,9 +129,9 @@ class _$DetectSetUp implements DetectSetUp {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result detectSetUp(DetectSetUp value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult detectSetUp(DetectSetUp value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (detectSetUp != null) {
@@ -172,30 +172,30 @@ const $QuestState = _$QuestStateTearOff();
 /// @nodoc
 mixin _$QuestState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result setUp(),
-    @required Result notSetUp(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult setUp(),
+    @required TResult notSetUp(),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result setUp(),
-    Result notSetUp(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult setUp(),
+    TResult notSetUp(),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result setUp(_SetUp value),
-    @required Result notSetUp(_NotSetUp value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult setUp(_SetUp value),
+    @required TResult notSetUp(_NotSetUp value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result setUp(_SetUp value),
-    Result notSetUp(_NotSetUp value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult setUp(_SetUp value),
+    TResult notSetUp(_NotSetUp value),
+    @required TResult orElse(),
   });
 }
 
@@ -250,10 +250,10 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result setUp(),
-    @required Result notSetUp(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult setUp(),
+    @required TResult notSetUp(),
   }) {
     assert(initial != null);
     assert(setUp != null);
@@ -263,11 +263,11 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result setUp(),
-    Result notSetUp(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult setUp(),
+    TResult notSetUp(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -278,10 +278,10 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result setUp(_SetUp value),
-    @required Result notSetUp(_NotSetUp value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult setUp(_SetUp value),
+    @required TResult notSetUp(_NotSetUp value),
   }) {
     assert(initial != null);
     assert(setUp != null);
@@ -291,11 +291,11 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result setUp(_SetUp value),
-    Result notSetUp(_NotSetUp value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult setUp(_SetUp value),
+    TResult notSetUp(_NotSetUp value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -344,10 +344,10 @@ class _$_SetUp implements _SetUp {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result setUp(),
-    @required Result notSetUp(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult setUp(),
+    @required TResult notSetUp(),
   }) {
     assert(initial != null);
     assert(setUp != null);
@@ -357,11 +357,11 @@ class _$_SetUp implements _SetUp {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result setUp(),
-    Result notSetUp(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult setUp(),
+    TResult notSetUp(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (setUp != null) {
@@ -372,10 +372,10 @@ class _$_SetUp implements _SetUp {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result setUp(_SetUp value),
-    @required Result notSetUp(_NotSetUp value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult setUp(_SetUp value),
+    @required TResult notSetUp(_NotSetUp value),
   }) {
     assert(initial != null);
     assert(setUp != null);
@@ -385,11 +385,11 @@ class _$_SetUp implements _SetUp {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result setUp(_SetUp value),
-    Result notSetUp(_NotSetUp value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult setUp(_SetUp value),
+    TResult notSetUp(_NotSetUp value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (setUp != null) {
@@ -438,10 +438,10 @@ class _$_NotSetUp implements _NotSetUp {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result setUp(),
-    @required Result notSetUp(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult setUp(),
+    @required TResult notSetUp(),
   }) {
     assert(initial != null);
     assert(setUp != null);
@@ -451,11 +451,11 @@ class _$_NotSetUp implements _NotSetUp {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result setUp(),
-    Result notSetUp(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult setUp(),
+    TResult notSetUp(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (notSetUp != null) {
@@ -466,10 +466,10 @@ class _$_NotSetUp implements _NotSetUp {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result setUp(_SetUp value),
-    @required Result notSetUp(_NotSetUp value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult setUp(_SetUp value),
+    @required TResult notSetUp(_NotSetUp value),
   }) {
     assert(initial != null);
     assert(setUp != null);
@@ -479,11 +479,11 @@ class _$_NotSetUp implements _NotSetUp {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result setUp(_SetUp value),
-    Result notSetUp(_NotSetUp value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult setUp(_SetUp value),
+    TResult notSetUp(_NotSetUp value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (notSetUp != null) {

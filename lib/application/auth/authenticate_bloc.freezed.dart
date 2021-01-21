@@ -31,26 +31,26 @@ const $AuthenticateEvent = _$AuthenticateEventTearOff();
 /// @nodoc
 mixin _$AuthenticateEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result authCheck(),
-    @required Result signOut(),
+  TResult when<TResult extends Object>({
+    @required TResult authCheck(),
+    @required TResult signOut(),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result authCheck(),
-    Result signOut(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult authCheck(),
+    TResult signOut(),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result authCheck(AuthCheck value),
-    @required Result signOut(SignOut value),
+  TResult map<TResult extends Object>({
+    @required TResult authCheck(AuthCheck value),
+    @required TResult signOut(SignOut value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result authCheck(AuthCheck value),
-    Result signOut(SignOut value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult authCheck(AuthCheck value),
+    TResult signOut(SignOut value),
+    @required TResult orElse(),
   });
 }
 
@@ -107,9 +107,9 @@ class _$AuthCheck implements AuthCheck {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result authCheck(),
-    @required Result signOut(),
+  TResult when<TResult extends Object>({
+    @required TResult authCheck(),
+    @required TResult signOut(),
   }) {
     assert(authCheck != null);
     assert(signOut != null);
@@ -118,10 +118,10 @@ class _$AuthCheck implements AuthCheck {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result authCheck(),
-    Result signOut(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult authCheck(),
+    TResult signOut(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (authCheck != null) {
@@ -132,9 +132,9 @@ class _$AuthCheck implements AuthCheck {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result authCheck(AuthCheck value),
-    @required Result signOut(SignOut value),
+  TResult map<TResult extends Object>({
+    @required TResult authCheck(AuthCheck value),
+    @required TResult signOut(SignOut value),
   }) {
     assert(authCheck != null);
     assert(signOut != null);
@@ -143,10 +143,10 @@ class _$AuthCheck implements AuthCheck {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result authCheck(AuthCheck value),
-    Result signOut(SignOut value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult authCheck(AuthCheck value),
+    TResult signOut(SignOut value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (authCheck != null) {
@@ -195,9 +195,9 @@ class _$SignOut implements SignOut {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result authCheck(),
-    @required Result signOut(),
+  TResult when<TResult extends Object>({
+    @required TResult authCheck(),
+    @required TResult signOut(),
   }) {
     assert(authCheck != null);
     assert(signOut != null);
@@ -206,10 +206,10 @@ class _$SignOut implements SignOut {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result authCheck(),
-    Result signOut(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult authCheck(),
+    TResult signOut(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (signOut != null) {
@@ -220,9 +220,9 @@ class _$SignOut implements SignOut {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result authCheck(AuthCheck value),
-    @required Result signOut(SignOut value),
+  TResult map<TResult extends Object>({
+    @required TResult authCheck(AuthCheck value),
+    @required TResult signOut(SignOut value),
   }) {
     assert(authCheck != null);
     assert(signOut != null);
@@ -231,10 +231,10 @@ class _$SignOut implements SignOut {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result authCheck(AuthCheck value),
-    Result signOut(SignOut value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult authCheck(AuthCheck value),
+    TResult signOut(SignOut value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (signOut != null) {
@@ -275,30 +275,30 @@ const $AuthenticateState = _$AuthenticateStateTearOff();
 /// @nodoc
 mixin _$AuthenticateState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result authenticate(),
-    @required Result unauthenticate(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult authenticate(),
+    @required TResult unauthenticate(),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result authenticate(),
-    Result unauthenticate(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult authenticate(),
+    TResult unauthenticate(),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result authenticate(_Authenticate value),
-    @required Result unauthenticate(_Unauthenticate value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult authenticate(_Authenticate value),
+    @required TResult unauthenticate(_Unauthenticate value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result authenticate(_Authenticate value),
-    Result unauthenticate(_Unauthenticate value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult authenticate(_Authenticate value),
+    TResult unauthenticate(_Unauthenticate value),
+    @required TResult orElse(),
   });
 }
 
@@ -354,10 +354,10 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result authenticate(),
-    @required Result unauthenticate(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult authenticate(),
+    @required TResult unauthenticate(),
   }) {
     assert(initial != null);
     assert(authenticate != null);
@@ -367,11 +367,11 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result authenticate(),
-    Result unauthenticate(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult authenticate(),
+    TResult unauthenticate(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -382,10 +382,10 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result authenticate(_Authenticate value),
-    @required Result unauthenticate(_Unauthenticate value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult authenticate(_Authenticate value),
+    @required TResult unauthenticate(_Unauthenticate value),
   }) {
     assert(initial != null);
     assert(authenticate != null);
@@ -395,11 +395,11 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result authenticate(_Authenticate value),
-    Result unauthenticate(_Unauthenticate value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult authenticate(_Authenticate value),
+    TResult unauthenticate(_Unauthenticate value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -451,10 +451,10 @@ class _$_Authenticate implements _Authenticate {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result authenticate(),
-    @required Result unauthenticate(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult authenticate(),
+    @required TResult unauthenticate(),
   }) {
     assert(initial != null);
     assert(authenticate != null);
@@ -464,11 +464,11 @@ class _$_Authenticate implements _Authenticate {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result authenticate(),
-    Result unauthenticate(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult authenticate(),
+    TResult unauthenticate(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (authenticate != null) {
@@ -479,10 +479,10 @@ class _$_Authenticate implements _Authenticate {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result authenticate(_Authenticate value),
-    @required Result unauthenticate(_Unauthenticate value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult authenticate(_Authenticate value),
+    @required TResult unauthenticate(_Unauthenticate value),
   }) {
     assert(initial != null);
     assert(authenticate != null);
@@ -492,11 +492,11 @@ class _$_Authenticate implements _Authenticate {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result authenticate(_Authenticate value),
-    Result unauthenticate(_Unauthenticate value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult authenticate(_Authenticate value),
+    TResult unauthenticate(_Unauthenticate value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (authenticate != null) {
@@ -548,10 +548,10 @@ class _$_Unauthenticate implements _Unauthenticate {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result authenticate(),
-    @required Result unauthenticate(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult authenticate(),
+    @required TResult unauthenticate(),
   }) {
     assert(initial != null);
     assert(authenticate != null);
@@ -561,11 +561,11 @@ class _$_Unauthenticate implements _Unauthenticate {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result authenticate(),
-    Result unauthenticate(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult authenticate(),
+    TResult unauthenticate(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (unauthenticate != null) {
@@ -576,10 +576,10 @@ class _$_Unauthenticate implements _Unauthenticate {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result authenticate(_Authenticate value),
-    @required Result unauthenticate(_Unauthenticate value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult authenticate(_Authenticate value),
+    @required TResult unauthenticate(_Unauthenticate value),
   }) {
     assert(initial != null);
     assert(authenticate != null);
@@ -589,11 +589,11 @@ class _$_Unauthenticate implements _Unauthenticate {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result authenticate(_Authenticate value),
-    Result unauthenticate(_Unauthenticate value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult authenticate(_Authenticate value),
+    TResult unauthenticate(_Unauthenticate value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (unauthenticate != null) {
