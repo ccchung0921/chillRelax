@@ -2,24 +2,26 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hkonline/infrastructure/core/firebase_reference.dart';
+import 'package:hkonline/infrastructure/taxi/taxi_order.dart';
+
 
 class OrderResository {
-  final FirebaseFirestore _firestore;
+   FirebaseFirestore _firestore;
 
-  OrderResository(this._firestore);
+  
 
-  Future createTaxiOrder(String startPlace, String finalPlace,
-      String departureTime, int quota) async {
+  Future<void> createTaxiOrder(TaxiOrder taxiOrder) async {
     try {
       final userDoc = await _firestore.userDocument();
-      Future.wait([
-        userDoc.orderCollection.add({
-          'startPlace': startPlace,
-          'finalPlace': finalPlace,
-          'departureTime': departureTime,
-          'quota': quota,
-        }),
-      ]);
+            await userDoc.orderCollection.add({
+        'startPlace': taxiOrder.startPlace,
+        'finalPlace': taxiOrder.finalPlace,
+        'departureTime': taxiOrder.departureTime,
+        'quota': taxiOrder.quota,
+        'timeStamp': taxiOrder.timeStamp,
+        'authorID': taxiOrder.authorID,
+        'authorName': taxiOrder.authorName
+      });
     } catch (e) {
       print(e.toString());
     }

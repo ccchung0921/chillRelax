@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:hkonline/application/taxi/bloc/taxi_bloc.dart';
 import 'package:hkonline/infrastructure/core/firebase_reference.dart';
 import 'package:hkonline/infrastructure/taxi/order_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:date_time_picker/date_time_picker.dart';
+import 'package:hkonline/infrastructure/taxi/taxi_order.dart';
 import 'package:hkonline/presentation/routes/router.gr.dart';
 import 'package:auto_route/auto_route.dart';
 
@@ -58,15 +62,25 @@ class _CreateOrderState extends State<CreateOrderPage> {
   final List<int> number = [1, 2, 3];
   String startPlace;
   String finalPlace;
-
-  String departureTime;
+  DateTime departureTime;
   int quota;
+  DateTime timeStamp;
+  num authorID;
+  String authorName;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: Form(
+      body: BlocProvider<TaxiBloc>(
+        create: (context)=>TaxiBloc(),
+        child: BlocBuilder(builder: (context,state){
+          // if (state.isLoading){
+          //   return SpinKitFadingCube(
+            
+          //   );
+          // }else{}
+        return Form(
         // ignore: deprecated_member_use
         autovalidate: true,
         child: Container(
@@ -176,14 +190,14 @@ class _CreateOrderState extends State<CreateOrderPage> {
                   initialValue: DateTime.now().toString(),
                   firstDate: DateTime(2000),
                   lastDate: DateTime(2100),
-                  icon: Icon(Icons.event),
+                  icon: const Icon(Icons.event),
                   dateLabelText: 'Date',
                   timeLabelText: "Hour",
                   selectableDayPredicate: (date) {
                     return true;
                   },
                   onChanged: (val) =>
-                      setState(() => departureTime = val as String),
+                      setState(() => departureTime ),
                   validator: (val) {
                     print(val);
                     return null;
@@ -193,8 +207,7 @@ class _CreateOrderState extends State<CreateOrderPage> {
                 const SizedBox(height: 20.0),
                 IconButton(
                   onPressed: () {
-                    OrderResository(FirebaseFirestore.instance).createTaxiOrder(
-                        startPlace, finalPlace, departureTime, quota);
+                    //context.read<TaxiBloc>().add(TaxiEvent.createTaxiOrder())
                     ExtendedNavigator.of(context).push(Routes.taxiMainPage);
                   },
                   icon: const Icon(
@@ -207,7 +220,12 @@ class _CreateOrderState extends State<CreateOrderPage> {
             ),
           ),
         ),
+      );
+
+        })
       ),
     );
+  
+    
   }
 }

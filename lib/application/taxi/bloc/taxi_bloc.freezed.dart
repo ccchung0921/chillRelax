@@ -14,8 +14,10 @@ class _$TaxiEventTearOff {
   const _$TaxiEventTearOff();
 
 // ignore: unused_element
-  _CreateTaxiOrder createTaxiOrder() {
-    return const _CreateTaxiOrder();
+  _CreateTaxiOrder createTaxiOrder(TaxiOrder order) {
+    return _CreateTaxiOrder(
+      order,
+    );
   }
 
 // ignore: unused_element
@@ -32,12 +34,12 @@ const $TaxiEvent = _$TaxiEventTearOff();
 mixin _$TaxiEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult createTaxiOrder(),
+    @required TResult createTaxiOrder(TaxiOrder order),
     @required TResult fetchTaxiOrder(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult createTaxiOrder(),
+    TResult createTaxiOrder(TaxiOrder order),
     TResult fetchTaxiOrder(),
     @required TResult orElse(),
   });
@@ -74,6 +76,7 @@ abstract class _$CreateTaxiOrderCopyWith<$Res> {
   factory _$CreateTaxiOrderCopyWith(
           _CreateTaxiOrder value, $Res Function(_CreateTaxiOrder) then) =
       __$CreateTaxiOrderCopyWithImpl<$Res>;
+  $Res call({TaxiOrder order});
 }
 
 /// @nodoc
@@ -85,46 +88,67 @@ class __$CreateTaxiOrderCopyWithImpl<$Res> extends _$TaxiEventCopyWithImpl<$Res>
 
   @override
   _CreateTaxiOrder get _value => super._value as _CreateTaxiOrder;
+
+  @override
+  $Res call({
+    Object order = freezed,
+  }) {
+    return _then(_CreateTaxiOrder(
+      order == freezed ? _value.order : order as TaxiOrder,
+    ));
+  }
 }
 
 /// @nodoc
 class _$_CreateTaxiOrder implements _CreateTaxiOrder {
-  const _$_CreateTaxiOrder();
+  const _$_CreateTaxiOrder(this.order) : assert(order != null);
+
+  @override
+  final TaxiOrder order;
 
   @override
   String toString() {
-    return 'TaxiEvent.createTaxiOrder()';
+    return 'TaxiEvent.createTaxiOrder(order: $order)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _CreateTaxiOrder);
+    return identical(this, other) ||
+        (other is _CreateTaxiOrder &&
+            (identical(other.order, order) ||
+                const DeepCollectionEquality().equals(other.order, order)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(order);
+
+  @JsonKey(ignore: true)
+  @override
+  _$CreateTaxiOrderCopyWith<_CreateTaxiOrder> get copyWith =>
+      __$CreateTaxiOrderCopyWithImpl<_CreateTaxiOrder>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult createTaxiOrder(),
+    @required TResult createTaxiOrder(TaxiOrder order),
     @required TResult fetchTaxiOrder(),
   }) {
     assert(createTaxiOrder != null);
     assert(fetchTaxiOrder != null);
-    return createTaxiOrder();
+    return createTaxiOrder(order);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult createTaxiOrder(),
+    TResult createTaxiOrder(TaxiOrder order),
     TResult fetchTaxiOrder(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (createTaxiOrder != null) {
-      return createTaxiOrder();
+      return createTaxiOrder(order);
     }
     return orElse();
   }
@@ -156,7 +180,11 @@ class _$_CreateTaxiOrder implements _CreateTaxiOrder {
 }
 
 abstract class _CreateTaxiOrder implements TaxiEvent {
-  const factory _CreateTaxiOrder() = _$_CreateTaxiOrder;
+  const factory _CreateTaxiOrder(TaxiOrder order) = _$_CreateTaxiOrder;
+
+  TaxiOrder get order;
+  @JsonKey(ignore: true)
+  _$CreateTaxiOrderCopyWith<_CreateTaxiOrder> get copyWith;
 }
 
 /// @nodoc
@@ -197,7 +225,7 @@ class _$_FetchTaxiOrder implements _FetchTaxiOrder {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult createTaxiOrder(),
+    @required TResult createTaxiOrder(TaxiOrder order),
     @required TResult fetchTaxiOrder(),
   }) {
     assert(createTaxiOrder != null);
@@ -208,7 +236,7 @@ class _$_FetchTaxiOrder implements _FetchTaxiOrder {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult createTaxiOrder(),
+    TResult createTaxiOrder(TaxiOrder order),
     TResult fetchTaxiOrder(),
     @required TResult orElse(),
   }) {

@@ -67,46 +67,46 @@ const $FeedbackEvent = _$FeedbackEventTearOff();
 /// @nodoc
 mixin _$FeedbackEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initializePlaceID(String placeID),
-    @required Result titleChanged(String title),
-    @required Result commentChanged(String comment),
-    @required Result ratingChanged(double rating),
-    @required Result saveButtonPressed(String userID, String name),
-    @required Result insertFeedback(),
-    @required Result createFeedback(),
+  TResult when<TResult extends Object>({
+    @required TResult initializePlaceID(String placeID),
+    @required TResult titleChanged(String title),
+    @required TResult commentChanged(String comment),
+    @required TResult ratingChanged(double rating),
+    @required TResult saveButtonPressed(String userID, String name),
+    @required TResult insertFeedback(),
+    @required TResult createFeedback(),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initializePlaceID(String placeID),
-    Result titleChanged(String title),
-    Result commentChanged(String comment),
-    Result ratingChanged(double rating),
-    Result saveButtonPressed(String userID, String name),
-    Result insertFeedback(),
-    Result createFeedback(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initializePlaceID(String placeID),
+    TResult titleChanged(String title),
+    TResult commentChanged(String comment),
+    TResult ratingChanged(double rating),
+    TResult saveButtonPressed(String userID, String name),
+    TResult insertFeedback(),
+    TResult createFeedback(),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initializePlaceID(_InitializePlaceID value),
-    @required Result titleChanged(_TitleChanged value),
-    @required Result commentChanged(_CommentChanged value),
-    @required Result ratingChanged(_RatingChanged value),
-    @required Result saveButtonPressed(_SaveButtonPressed value),
-    @required Result insertFeedback(_InsertFeedback value),
-    @required Result createFeedback(_CreateFeedback value),
+  TResult map<TResult extends Object>({
+    @required TResult initializePlaceID(_InitializePlaceID value),
+    @required TResult titleChanged(_TitleChanged value),
+    @required TResult commentChanged(_CommentChanged value),
+    @required TResult ratingChanged(_RatingChanged value),
+    @required TResult saveButtonPressed(_SaveButtonPressed value),
+    @required TResult insertFeedback(_InsertFeedback value),
+    @required TResult createFeedback(_CreateFeedback value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initializePlaceID(_InitializePlaceID value),
-    Result titleChanged(_TitleChanged value),
-    Result commentChanged(_CommentChanged value),
-    Result ratingChanged(_RatingChanged value),
-    Result saveButtonPressed(_SaveButtonPressed value),
-    Result insertFeedback(_InsertFeedback value),
-    Result createFeedback(_CreateFeedback value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initializePlaceID(_InitializePlaceID value),
+    TResult titleChanged(_TitleChanged value),
+    TResult commentChanged(_CommentChanged value),
+    TResult ratingChanged(_RatingChanged value),
+    TResult saveButtonPressed(_SaveButtonPressed value),
+    TResult insertFeedback(_InsertFeedback value),
+    TResult createFeedback(_CreateFeedback value),
+    @required TResult orElse(),
   });
 }
 
@@ -180,20 +180,21 @@ class _$_InitializePlaceID implements _InitializePlaceID {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(placeID);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializePlaceIDCopyWith<_InitializePlaceID> get copyWith =>
       __$InitializePlaceIDCopyWithImpl<_InitializePlaceID>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initializePlaceID(String placeID),
-    @required Result titleChanged(String title),
-    @required Result commentChanged(String comment),
-    @required Result ratingChanged(double rating),
-    @required Result saveButtonPressed(String userID, String name),
-    @required Result insertFeedback(),
-    @required Result createFeedback(),
+  TResult when<TResult extends Object>({
+    @required TResult initializePlaceID(String placeID),
+    @required TResult titleChanged(String title),
+    @required TResult commentChanged(String comment),
+    @required TResult ratingChanged(double rating),
+    @required TResult saveButtonPressed(String userID, String name),
+    @required TResult insertFeedback(),
+    @required TResult createFeedback(),
   }) {
     assert(initializePlaceID != null);
     assert(titleChanged != null);
@@ -207,15 +208,15 @@ class _$_InitializePlaceID implements _InitializePlaceID {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initializePlaceID(String placeID),
-    Result titleChanged(String title),
-    Result commentChanged(String comment),
-    Result ratingChanged(double rating),
-    Result saveButtonPressed(String userID, String name),
-    Result insertFeedback(),
-    Result createFeedback(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initializePlaceID(String placeID),
+    TResult titleChanged(String title),
+    TResult commentChanged(String comment),
+    TResult ratingChanged(double rating),
+    TResult saveButtonPressed(String userID, String name),
+    TResult insertFeedback(),
+    TResult createFeedback(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initializePlaceID != null) {
@@ -226,14 +227,14 @@ class _$_InitializePlaceID implements _InitializePlaceID {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initializePlaceID(_InitializePlaceID value),
-    @required Result titleChanged(_TitleChanged value),
-    @required Result commentChanged(_CommentChanged value),
-    @required Result ratingChanged(_RatingChanged value),
-    @required Result saveButtonPressed(_SaveButtonPressed value),
-    @required Result insertFeedback(_InsertFeedback value),
-    @required Result createFeedback(_CreateFeedback value),
+  TResult map<TResult extends Object>({
+    @required TResult initializePlaceID(_InitializePlaceID value),
+    @required TResult titleChanged(_TitleChanged value),
+    @required TResult commentChanged(_CommentChanged value),
+    @required TResult ratingChanged(_RatingChanged value),
+    @required TResult saveButtonPressed(_SaveButtonPressed value),
+    @required TResult insertFeedback(_InsertFeedback value),
+    @required TResult createFeedback(_CreateFeedback value),
   }) {
     assert(initializePlaceID != null);
     assert(titleChanged != null);
@@ -247,15 +248,15 @@ class _$_InitializePlaceID implements _InitializePlaceID {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initializePlaceID(_InitializePlaceID value),
-    Result titleChanged(_TitleChanged value),
-    Result commentChanged(_CommentChanged value),
-    Result ratingChanged(_RatingChanged value),
-    Result saveButtonPressed(_SaveButtonPressed value),
-    Result insertFeedback(_InsertFeedback value),
-    Result createFeedback(_CreateFeedback value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initializePlaceID(_InitializePlaceID value),
+    TResult titleChanged(_TitleChanged value),
+    TResult commentChanged(_CommentChanged value),
+    TResult ratingChanged(_RatingChanged value),
+    TResult saveButtonPressed(_SaveButtonPressed value),
+    TResult insertFeedback(_InsertFeedback value),
+    TResult createFeedback(_CreateFeedback value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initializePlaceID != null) {
@@ -269,6 +270,7 @@ abstract class _InitializePlaceID implements FeedbackEvent {
   const factory _InitializePlaceID(String placeID) = _$_InitializePlaceID;
 
   String get placeID;
+  @JsonKey(ignore: true)
   _$InitializePlaceIDCopyWith<_InitializePlaceID> get copyWith;
 }
 
@@ -325,20 +327,21 @@ class _$_TitleChanged implements _TitleChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(title);
 
+  @JsonKey(ignore: true)
   @override
   _$TitleChangedCopyWith<_TitleChanged> get copyWith =>
       __$TitleChangedCopyWithImpl<_TitleChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initializePlaceID(String placeID),
-    @required Result titleChanged(String title),
-    @required Result commentChanged(String comment),
-    @required Result ratingChanged(double rating),
-    @required Result saveButtonPressed(String userID, String name),
-    @required Result insertFeedback(),
-    @required Result createFeedback(),
+  TResult when<TResult extends Object>({
+    @required TResult initializePlaceID(String placeID),
+    @required TResult titleChanged(String title),
+    @required TResult commentChanged(String comment),
+    @required TResult ratingChanged(double rating),
+    @required TResult saveButtonPressed(String userID, String name),
+    @required TResult insertFeedback(),
+    @required TResult createFeedback(),
   }) {
     assert(initializePlaceID != null);
     assert(titleChanged != null);
@@ -352,15 +355,15 @@ class _$_TitleChanged implements _TitleChanged {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initializePlaceID(String placeID),
-    Result titleChanged(String title),
-    Result commentChanged(String comment),
-    Result ratingChanged(double rating),
-    Result saveButtonPressed(String userID, String name),
-    Result insertFeedback(),
-    Result createFeedback(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initializePlaceID(String placeID),
+    TResult titleChanged(String title),
+    TResult commentChanged(String comment),
+    TResult ratingChanged(double rating),
+    TResult saveButtonPressed(String userID, String name),
+    TResult insertFeedback(),
+    TResult createFeedback(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (titleChanged != null) {
@@ -371,14 +374,14 @@ class _$_TitleChanged implements _TitleChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initializePlaceID(_InitializePlaceID value),
-    @required Result titleChanged(_TitleChanged value),
-    @required Result commentChanged(_CommentChanged value),
-    @required Result ratingChanged(_RatingChanged value),
-    @required Result saveButtonPressed(_SaveButtonPressed value),
-    @required Result insertFeedback(_InsertFeedback value),
-    @required Result createFeedback(_CreateFeedback value),
+  TResult map<TResult extends Object>({
+    @required TResult initializePlaceID(_InitializePlaceID value),
+    @required TResult titleChanged(_TitleChanged value),
+    @required TResult commentChanged(_CommentChanged value),
+    @required TResult ratingChanged(_RatingChanged value),
+    @required TResult saveButtonPressed(_SaveButtonPressed value),
+    @required TResult insertFeedback(_InsertFeedback value),
+    @required TResult createFeedback(_CreateFeedback value),
   }) {
     assert(initializePlaceID != null);
     assert(titleChanged != null);
@@ -392,15 +395,15 @@ class _$_TitleChanged implements _TitleChanged {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initializePlaceID(_InitializePlaceID value),
-    Result titleChanged(_TitleChanged value),
-    Result commentChanged(_CommentChanged value),
-    Result ratingChanged(_RatingChanged value),
-    Result saveButtonPressed(_SaveButtonPressed value),
-    Result insertFeedback(_InsertFeedback value),
-    Result createFeedback(_CreateFeedback value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initializePlaceID(_InitializePlaceID value),
+    TResult titleChanged(_TitleChanged value),
+    TResult commentChanged(_CommentChanged value),
+    TResult ratingChanged(_RatingChanged value),
+    TResult saveButtonPressed(_SaveButtonPressed value),
+    TResult insertFeedback(_InsertFeedback value),
+    TResult createFeedback(_CreateFeedback value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (titleChanged != null) {
@@ -414,6 +417,7 @@ abstract class _TitleChanged implements FeedbackEvent {
   const factory _TitleChanged(String title) = _$_TitleChanged;
 
   String get title;
+  @JsonKey(ignore: true)
   _$TitleChangedCopyWith<_TitleChanged> get copyWith;
 }
 
@@ -470,20 +474,21 @@ class _$_CommentChanged implements _CommentChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(comment);
 
+  @JsonKey(ignore: true)
   @override
   _$CommentChangedCopyWith<_CommentChanged> get copyWith =>
       __$CommentChangedCopyWithImpl<_CommentChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initializePlaceID(String placeID),
-    @required Result titleChanged(String title),
-    @required Result commentChanged(String comment),
-    @required Result ratingChanged(double rating),
-    @required Result saveButtonPressed(String userID, String name),
-    @required Result insertFeedback(),
-    @required Result createFeedback(),
+  TResult when<TResult extends Object>({
+    @required TResult initializePlaceID(String placeID),
+    @required TResult titleChanged(String title),
+    @required TResult commentChanged(String comment),
+    @required TResult ratingChanged(double rating),
+    @required TResult saveButtonPressed(String userID, String name),
+    @required TResult insertFeedback(),
+    @required TResult createFeedback(),
   }) {
     assert(initializePlaceID != null);
     assert(titleChanged != null);
@@ -497,15 +502,15 @@ class _$_CommentChanged implements _CommentChanged {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initializePlaceID(String placeID),
-    Result titleChanged(String title),
-    Result commentChanged(String comment),
-    Result ratingChanged(double rating),
-    Result saveButtonPressed(String userID, String name),
-    Result insertFeedback(),
-    Result createFeedback(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initializePlaceID(String placeID),
+    TResult titleChanged(String title),
+    TResult commentChanged(String comment),
+    TResult ratingChanged(double rating),
+    TResult saveButtonPressed(String userID, String name),
+    TResult insertFeedback(),
+    TResult createFeedback(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (commentChanged != null) {
@@ -516,14 +521,14 @@ class _$_CommentChanged implements _CommentChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initializePlaceID(_InitializePlaceID value),
-    @required Result titleChanged(_TitleChanged value),
-    @required Result commentChanged(_CommentChanged value),
-    @required Result ratingChanged(_RatingChanged value),
-    @required Result saveButtonPressed(_SaveButtonPressed value),
-    @required Result insertFeedback(_InsertFeedback value),
-    @required Result createFeedback(_CreateFeedback value),
+  TResult map<TResult extends Object>({
+    @required TResult initializePlaceID(_InitializePlaceID value),
+    @required TResult titleChanged(_TitleChanged value),
+    @required TResult commentChanged(_CommentChanged value),
+    @required TResult ratingChanged(_RatingChanged value),
+    @required TResult saveButtonPressed(_SaveButtonPressed value),
+    @required TResult insertFeedback(_InsertFeedback value),
+    @required TResult createFeedback(_CreateFeedback value),
   }) {
     assert(initializePlaceID != null);
     assert(titleChanged != null);
@@ -537,15 +542,15 @@ class _$_CommentChanged implements _CommentChanged {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initializePlaceID(_InitializePlaceID value),
-    Result titleChanged(_TitleChanged value),
-    Result commentChanged(_CommentChanged value),
-    Result ratingChanged(_RatingChanged value),
-    Result saveButtonPressed(_SaveButtonPressed value),
-    Result insertFeedback(_InsertFeedback value),
-    Result createFeedback(_CreateFeedback value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initializePlaceID(_InitializePlaceID value),
+    TResult titleChanged(_TitleChanged value),
+    TResult commentChanged(_CommentChanged value),
+    TResult ratingChanged(_RatingChanged value),
+    TResult saveButtonPressed(_SaveButtonPressed value),
+    TResult insertFeedback(_InsertFeedback value),
+    TResult createFeedback(_CreateFeedback value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (commentChanged != null) {
@@ -559,6 +564,7 @@ abstract class _CommentChanged implements FeedbackEvent {
   const factory _CommentChanged(String comment) = _$_CommentChanged;
 
   String get comment;
+  @JsonKey(ignore: true)
   _$CommentChangedCopyWith<_CommentChanged> get copyWith;
 }
 
@@ -615,20 +621,21 @@ class _$_RatingChanged implements _RatingChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(rating);
 
+  @JsonKey(ignore: true)
   @override
   _$RatingChangedCopyWith<_RatingChanged> get copyWith =>
       __$RatingChangedCopyWithImpl<_RatingChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initializePlaceID(String placeID),
-    @required Result titleChanged(String title),
-    @required Result commentChanged(String comment),
-    @required Result ratingChanged(double rating),
-    @required Result saveButtonPressed(String userID, String name),
-    @required Result insertFeedback(),
-    @required Result createFeedback(),
+  TResult when<TResult extends Object>({
+    @required TResult initializePlaceID(String placeID),
+    @required TResult titleChanged(String title),
+    @required TResult commentChanged(String comment),
+    @required TResult ratingChanged(double rating),
+    @required TResult saveButtonPressed(String userID, String name),
+    @required TResult insertFeedback(),
+    @required TResult createFeedback(),
   }) {
     assert(initializePlaceID != null);
     assert(titleChanged != null);
@@ -642,15 +649,15 @@ class _$_RatingChanged implements _RatingChanged {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initializePlaceID(String placeID),
-    Result titleChanged(String title),
-    Result commentChanged(String comment),
-    Result ratingChanged(double rating),
-    Result saveButtonPressed(String userID, String name),
-    Result insertFeedback(),
-    Result createFeedback(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initializePlaceID(String placeID),
+    TResult titleChanged(String title),
+    TResult commentChanged(String comment),
+    TResult ratingChanged(double rating),
+    TResult saveButtonPressed(String userID, String name),
+    TResult insertFeedback(),
+    TResult createFeedback(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (ratingChanged != null) {
@@ -661,14 +668,14 @@ class _$_RatingChanged implements _RatingChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initializePlaceID(_InitializePlaceID value),
-    @required Result titleChanged(_TitleChanged value),
-    @required Result commentChanged(_CommentChanged value),
-    @required Result ratingChanged(_RatingChanged value),
-    @required Result saveButtonPressed(_SaveButtonPressed value),
-    @required Result insertFeedback(_InsertFeedback value),
-    @required Result createFeedback(_CreateFeedback value),
+  TResult map<TResult extends Object>({
+    @required TResult initializePlaceID(_InitializePlaceID value),
+    @required TResult titleChanged(_TitleChanged value),
+    @required TResult commentChanged(_CommentChanged value),
+    @required TResult ratingChanged(_RatingChanged value),
+    @required TResult saveButtonPressed(_SaveButtonPressed value),
+    @required TResult insertFeedback(_InsertFeedback value),
+    @required TResult createFeedback(_CreateFeedback value),
   }) {
     assert(initializePlaceID != null);
     assert(titleChanged != null);
@@ -682,15 +689,15 @@ class _$_RatingChanged implements _RatingChanged {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initializePlaceID(_InitializePlaceID value),
-    Result titleChanged(_TitleChanged value),
-    Result commentChanged(_CommentChanged value),
-    Result ratingChanged(_RatingChanged value),
-    Result saveButtonPressed(_SaveButtonPressed value),
-    Result insertFeedback(_InsertFeedback value),
-    Result createFeedback(_CreateFeedback value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initializePlaceID(_InitializePlaceID value),
+    TResult titleChanged(_TitleChanged value),
+    TResult commentChanged(_CommentChanged value),
+    TResult ratingChanged(_RatingChanged value),
+    TResult saveButtonPressed(_SaveButtonPressed value),
+    TResult insertFeedback(_InsertFeedback value),
+    TResult createFeedback(_CreateFeedback value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (ratingChanged != null) {
@@ -704,6 +711,7 @@ abstract class _RatingChanged implements FeedbackEvent {
   const factory _RatingChanged(double rating) = _$_RatingChanged;
 
   double get rating;
+  @JsonKey(ignore: true)
   _$RatingChangedCopyWith<_RatingChanged> get copyWith;
 }
 
@@ -770,20 +778,21 @@ class _$_SaveButtonPressed implements _SaveButtonPressed {
       const DeepCollectionEquality().hash(userID) ^
       const DeepCollectionEquality().hash(name);
 
+  @JsonKey(ignore: true)
   @override
   _$SaveButtonPressedCopyWith<_SaveButtonPressed> get copyWith =>
       __$SaveButtonPressedCopyWithImpl<_SaveButtonPressed>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initializePlaceID(String placeID),
-    @required Result titleChanged(String title),
-    @required Result commentChanged(String comment),
-    @required Result ratingChanged(double rating),
-    @required Result saveButtonPressed(String userID, String name),
-    @required Result insertFeedback(),
-    @required Result createFeedback(),
+  TResult when<TResult extends Object>({
+    @required TResult initializePlaceID(String placeID),
+    @required TResult titleChanged(String title),
+    @required TResult commentChanged(String comment),
+    @required TResult ratingChanged(double rating),
+    @required TResult saveButtonPressed(String userID, String name),
+    @required TResult insertFeedback(),
+    @required TResult createFeedback(),
   }) {
     assert(initializePlaceID != null);
     assert(titleChanged != null);
@@ -797,15 +806,15 @@ class _$_SaveButtonPressed implements _SaveButtonPressed {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initializePlaceID(String placeID),
-    Result titleChanged(String title),
-    Result commentChanged(String comment),
-    Result ratingChanged(double rating),
-    Result saveButtonPressed(String userID, String name),
-    Result insertFeedback(),
-    Result createFeedback(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initializePlaceID(String placeID),
+    TResult titleChanged(String title),
+    TResult commentChanged(String comment),
+    TResult ratingChanged(double rating),
+    TResult saveButtonPressed(String userID, String name),
+    TResult insertFeedback(),
+    TResult createFeedback(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (saveButtonPressed != null) {
@@ -816,14 +825,14 @@ class _$_SaveButtonPressed implements _SaveButtonPressed {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initializePlaceID(_InitializePlaceID value),
-    @required Result titleChanged(_TitleChanged value),
-    @required Result commentChanged(_CommentChanged value),
-    @required Result ratingChanged(_RatingChanged value),
-    @required Result saveButtonPressed(_SaveButtonPressed value),
-    @required Result insertFeedback(_InsertFeedback value),
-    @required Result createFeedback(_CreateFeedback value),
+  TResult map<TResult extends Object>({
+    @required TResult initializePlaceID(_InitializePlaceID value),
+    @required TResult titleChanged(_TitleChanged value),
+    @required TResult commentChanged(_CommentChanged value),
+    @required TResult ratingChanged(_RatingChanged value),
+    @required TResult saveButtonPressed(_SaveButtonPressed value),
+    @required TResult insertFeedback(_InsertFeedback value),
+    @required TResult createFeedback(_CreateFeedback value),
   }) {
     assert(initializePlaceID != null);
     assert(titleChanged != null);
@@ -837,15 +846,15 @@ class _$_SaveButtonPressed implements _SaveButtonPressed {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initializePlaceID(_InitializePlaceID value),
-    Result titleChanged(_TitleChanged value),
-    Result commentChanged(_CommentChanged value),
-    Result ratingChanged(_RatingChanged value),
-    Result saveButtonPressed(_SaveButtonPressed value),
-    Result insertFeedback(_InsertFeedback value),
-    Result createFeedback(_CreateFeedback value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initializePlaceID(_InitializePlaceID value),
+    TResult titleChanged(_TitleChanged value),
+    TResult commentChanged(_CommentChanged value),
+    TResult ratingChanged(_RatingChanged value),
+    TResult saveButtonPressed(_SaveButtonPressed value),
+    TResult insertFeedback(_InsertFeedback value),
+    TResult createFeedback(_CreateFeedback value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (saveButtonPressed != null) {
@@ -861,6 +870,7 @@ abstract class _SaveButtonPressed implements FeedbackEvent {
 
   String get userID;
   String get name;
+  @JsonKey(ignore: true)
   _$SaveButtonPressedCopyWith<_SaveButtonPressed> get copyWith;
 }
 
@@ -902,14 +912,14 @@ class _$_InsertFeedback implements _InsertFeedback {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initializePlaceID(String placeID),
-    @required Result titleChanged(String title),
-    @required Result commentChanged(String comment),
-    @required Result ratingChanged(double rating),
-    @required Result saveButtonPressed(String userID, String name),
-    @required Result insertFeedback(),
-    @required Result createFeedback(),
+  TResult when<TResult extends Object>({
+    @required TResult initializePlaceID(String placeID),
+    @required TResult titleChanged(String title),
+    @required TResult commentChanged(String comment),
+    @required TResult ratingChanged(double rating),
+    @required TResult saveButtonPressed(String userID, String name),
+    @required TResult insertFeedback(),
+    @required TResult createFeedback(),
   }) {
     assert(initializePlaceID != null);
     assert(titleChanged != null);
@@ -923,15 +933,15 @@ class _$_InsertFeedback implements _InsertFeedback {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initializePlaceID(String placeID),
-    Result titleChanged(String title),
-    Result commentChanged(String comment),
-    Result ratingChanged(double rating),
-    Result saveButtonPressed(String userID, String name),
-    Result insertFeedback(),
-    Result createFeedback(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initializePlaceID(String placeID),
+    TResult titleChanged(String title),
+    TResult commentChanged(String comment),
+    TResult ratingChanged(double rating),
+    TResult saveButtonPressed(String userID, String name),
+    TResult insertFeedback(),
+    TResult createFeedback(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (insertFeedback != null) {
@@ -942,14 +952,14 @@ class _$_InsertFeedback implements _InsertFeedback {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initializePlaceID(_InitializePlaceID value),
-    @required Result titleChanged(_TitleChanged value),
-    @required Result commentChanged(_CommentChanged value),
-    @required Result ratingChanged(_RatingChanged value),
-    @required Result saveButtonPressed(_SaveButtonPressed value),
-    @required Result insertFeedback(_InsertFeedback value),
-    @required Result createFeedback(_CreateFeedback value),
+  TResult map<TResult extends Object>({
+    @required TResult initializePlaceID(_InitializePlaceID value),
+    @required TResult titleChanged(_TitleChanged value),
+    @required TResult commentChanged(_CommentChanged value),
+    @required TResult ratingChanged(_RatingChanged value),
+    @required TResult saveButtonPressed(_SaveButtonPressed value),
+    @required TResult insertFeedback(_InsertFeedback value),
+    @required TResult createFeedback(_CreateFeedback value),
   }) {
     assert(initializePlaceID != null);
     assert(titleChanged != null);
@@ -963,15 +973,15 @@ class _$_InsertFeedback implements _InsertFeedback {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initializePlaceID(_InitializePlaceID value),
-    Result titleChanged(_TitleChanged value),
-    Result commentChanged(_CommentChanged value),
-    Result ratingChanged(_RatingChanged value),
-    Result saveButtonPressed(_SaveButtonPressed value),
-    Result insertFeedback(_InsertFeedback value),
-    Result createFeedback(_CreateFeedback value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initializePlaceID(_InitializePlaceID value),
+    TResult titleChanged(_TitleChanged value),
+    TResult commentChanged(_CommentChanged value),
+    TResult ratingChanged(_RatingChanged value),
+    TResult saveButtonPressed(_SaveButtonPressed value),
+    TResult insertFeedback(_InsertFeedback value),
+    TResult createFeedback(_CreateFeedback value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (insertFeedback != null) {
@@ -1023,14 +1033,14 @@ class _$_CreateFeedback implements _CreateFeedback {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initializePlaceID(String placeID),
-    @required Result titleChanged(String title),
-    @required Result commentChanged(String comment),
-    @required Result ratingChanged(double rating),
-    @required Result saveButtonPressed(String userID, String name),
-    @required Result insertFeedback(),
-    @required Result createFeedback(),
+  TResult when<TResult extends Object>({
+    @required TResult initializePlaceID(String placeID),
+    @required TResult titleChanged(String title),
+    @required TResult commentChanged(String comment),
+    @required TResult ratingChanged(double rating),
+    @required TResult saveButtonPressed(String userID, String name),
+    @required TResult insertFeedback(),
+    @required TResult createFeedback(),
   }) {
     assert(initializePlaceID != null);
     assert(titleChanged != null);
@@ -1044,15 +1054,15 @@ class _$_CreateFeedback implements _CreateFeedback {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initializePlaceID(String placeID),
-    Result titleChanged(String title),
-    Result commentChanged(String comment),
-    Result ratingChanged(double rating),
-    Result saveButtonPressed(String userID, String name),
-    Result insertFeedback(),
-    Result createFeedback(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initializePlaceID(String placeID),
+    TResult titleChanged(String title),
+    TResult commentChanged(String comment),
+    TResult ratingChanged(double rating),
+    TResult saveButtonPressed(String userID, String name),
+    TResult insertFeedback(),
+    TResult createFeedback(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (createFeedback != null) {
@@ -1063,14 +1073,14 @@ class _$_CreateFeedback implements _CreateFeedback {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initializePlaceID(_InitializePlaceID value),
-    @required Result titleChanged(_TitleChanged value),
-    @required Result commentChanged(_CommentChanged value),
-    @required Result ratingChanged(_RatingChanged value),
-    @required Result saveButtonPressed(_SaveButtonPressed value),
-    @required Result insertFeedback(_InsertFeedback value),
-    @required Result createFeedback(_CreateFeedback value),
+  TResult map<TResult extends Object>({
+    @required TResult initializePlaceID(_InitializePlaceID value),
+    @required TResult titleChanged(_TitleChanged value),
+    @required TResult commentChanged(_CommentChanged value),
+    @required TResult ratingChanged(_RatingChanged value),
+    @required TResult saveButtonPressed(_SaveButtonPressed value),
+    @required TResult insertFeedback(_InsertFeedback value),
+    @required TResult createFeedback(_CreateFeedback value),
   }) {
     assert(initializePlaceID != null);
     assert(titleChanged != null);
@@ -1084,15 +1094,15 @@ class _$_CreateFeedback implements _CreateFeedback {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initializePlaceID(_InitializePlaceID value),
-    Result titleChanged(_TitleChanged value),
-    Result commentChanged(_CommentChanged value),
-    Result ratingChanged(_RatingChanged value),
-    Result saveButtonPressed(_SaveButtonPressed value),
-    Result insertFeedback(_InsertFeedback value),
-    Result createFeedback(_CreateFeedback value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initializePlaceID(_InitializePlaceID value),
+    TResult titleChanged(_TitleChanged value),
+    TResult commentChanged(_CommentChanged value),
+    TResult ratingChanged(_RatingChanged value),
+    TResult saveButtonPressed(_SaveButtonPressed value),
+    TResult insertFeedback(_InsertFeedback value),
+    TResult createFeedback(_CreateFeedback value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (createFeedback != null) {
@@ -1136,6 +1146,7 @@ mixin _$FeedbackState {
   bool get isSaving;
   bool get saveSuccess;
 
+  @JsonKey(ignore: true)
   $FeedbackStateCopyWith<FeedbackState> get copyWith;
 }
 
@@ -1270,6 +1281,7 @@ class _$_FeedbackState implements _FeedbackState {
       const DeepCollectionEquality().hash(isSaving) ^
       const DeepCollectionEquality().hash(saveSuccess);
 
+  @JsonKey(ignore: true)
   @override
   _$FeedbackStateCopyWith<_FeedbackState> get copyWith =>
       __$FeedbackStateCopyWithImpl<_FeedbackState>(this, _$identity);
@@ -1291,5 +1303,6 @@ abstract class _FeedbackState implements FeedbackState {
   @override
   bool get saveSuccess;
   @override
+  @JsonKey(ignore: true)
   _$FeedbackStateCopyWith<_FeedbackState> get copyWith;
 }
