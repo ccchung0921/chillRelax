@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:hkonline/application/taxi/bloc/taxi_bloc.dart';
+import 'package:hkonline/domain/auth/i_auth_facade.dart';
+import 'package:hkonline/domain/core/errors.dart';
 import 'package:hkonline/infrastructure/core/firebase_reference.dart';
 import 'package:hkonline/infrastructure/taxi/order_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -9,6 +11,8 @@ import 'package:date_time_picker/date_time_picker.dart';
 import 'package:hkonline/infrastructure/taxi/taxi_order.dart';
 import 'package:hkonline/presentation/routes/router.gr.dart';
 import 'package:auto_route/auto_route.dart';
+
+import '../../injection.dart';
 
 class CreateOrderPage extends StatefulWidget {
   @override
@@ -72,6 +76,7 @@ class _CreateOrderState extends State<CreateOrderPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
+      
       body: BlocProvider<TaxiBloc>(
         create: (context)=>TaxiBloc(),
         child: BlocBuilder(builder: (context,state){
@@ -206,7 +211,11 @@ class _CreateOrderState extends State<CreateOrderPage> {
                 ),
                 const SizedBox(height: 20.0),
                 IconButton(
-                  onPressed: () {
+                  onPressed: () async {
+                    final getUser = await getIt<IAuthFacade>().getCurrentUser();
+                    final user = getUser.getOrElse(() => throw NotAuthError());
+                    context.read<TaxiBloc>().add(TaxiEvent.saveButtonPressed(
+                      user.id.getOrCrash(), user.displayName));
                     //context.read<TaxiBloc>().add(TaxiEvent.createTaxiOrder())
                     ExtendedNavigator.of(context).push(Routes.taxiMainPage);
                   },

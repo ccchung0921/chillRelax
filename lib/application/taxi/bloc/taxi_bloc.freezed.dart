@@ -14,15 +14,44 @@ class _$TaxiEventTearOff {
   const _$TaxiEventTearOff();
 
 // ignore: unused_element
-  _CreateTaxiOrder createTaxiOrder(TaxiOrder order) {
-    return _CreateTaxiOrder(
-      order,
+  _StartPlaceChanged startPlaceChanged(String startPlace) {
+    return _StartPlaceChanged(
+      startPlace,
     );
   }
 
 // ignore: unused_element
-  _FetchTaxiOrder fetchTaxiOrder() {
-    return const _FetchTaxiOrder();
+  _FinalPlaceChanged finalPlaceChanged(String finalPlace) {
+    return _FinalPlaceChanged(
+      finalPlace,
+    );
+  }
+
+// ignore: unused_element
+  _QuotaChanged quotaChanged(num quota) {
+    return _QuotaChanged(
+      quota,
+    );
+  }
+
+// ignore: unused_element
+  _DepartureTimeChanged departureTimeChanged(DateTime departureTime) {
+    return _DepartureTimeChanged(
+      departureTime,
+    );
+  }
+
+// ignore: unused_element
+  _SaveBottonPressed saveButtonPressed(String userID, String name) {
+    return _SaveBottonPressed(
+      userID,
+      name,
+    );
+  }
+
+// ignore: unused_element
+  _CreateTaxiOrder createTaxiOrder() {
+    return const _CreateTaxiOrder();
   }
 }
 
@@ -34,24 +63,40 @@ const $TaxiEvent = _$TaxiEventTearOff();
 mixin _$TaxiEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult createTaxiOrder(TaxiOrder order),
-    @required TResult fetchTaxiOrder(),
+    @required TResult startPlaceChanged(String startPlace),
+    @required TResult finalPlaceChanged(String finalPlace),
+    @required TResult quotaChanged(num quota),
+    @required TResult departureTimeChanged(DateTime departureTime),
+    @required TResult saveButtonPressed(String userID, String name),
+    @required TResult createTaxiOrder(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult createTaxiOrder(TaxiOrder order),
-    TResult fetchTaxiOrder(),
+    TResult startPlaceChanged(String startPlace),
+    TResult finalPlaceChanged(String finalPlace),
+    TResult quotaChanged(num quota),
+    TResult departureTimeChanged(DateTime departureTime),
+    TResult saveButtonPressed(String userID, String name),
+    TResult createTaxiOrder(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult startPlaceChanged(_StartPlaceChanged value),
+    @required TResult finalPlaceChanged(_FinalPlaceChanged value),
+    @required TResult quotaChanged(_QuotaChanged value),
+    @required TResult departureTimeChanged(_DepartureTimeChanged value),
+    @required TResult saveButtonPressed(_SaveBottonPressed value),
     @required TResult createTaxiOrder(_CreateTaxiOrder value),
-    @required TResult fetchTaxiOrder(_FetchTaxiOrder value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult startPlaceChanged(_StartPlaceChanged value),
+    TResult finalPlaceChanged(_FinalPlaceChanged value),
+    TResult quotaChanged(_QuotaChanged value),
+    TResult departureTimeChanged(_DepartureTimeChanged value),
+    TResult saveButtonPressed(_SaveBottonPressed value),
     TResult createTaxiOrder(_CreateTaxiOrder value),
-    TResult fetchTaxiOrder(_FetchTaxiOrder value),
     @required TResult orElse(),
   });
 }
@@ -72,11 +117,734 @@ class _$TaxiEventCopyWithImpl<$Res> implements $TaxiEventCopyWith<$Res> {
 }
 
 /// @nodoc
+abstract class _$StartPlaceChangedCopyWith<$Res> {
+  factory _$StartPlaceChangedCopyWith(
+          _StartPlaceChanged value, $Res Function(_StartPlaceChanged) then) =
+      __$StartPlaceChangedCopyWithImpl<$Res>;
+  $Res call({String startPlace});
+}
+
+/// @nodoc
+class __$StartPlaceChangedCopyWithImpl<$Res>
+    extends _$TaxiEventCopyWithImpl<$Res>
+    implements _$StartPlaceChangedCopyWith<$Res> {
+  __$StartPlaceChangedCopyWithImpl(
+      _StartPlaceChanged _value, $Res Function(_StartPlaceChanged) _then)
+      : super(_value, (v) => _then(v as _StartPlaceChanged));
+
+  @override
+  _StartPlaceChanged get _value => super._value as _StartPlaceChanged;
+
+  @override
+  $Res call({
+    Object startPlace = freezed,
+  }) {
+    return _then(_StartPlaceChanged(
+      startPlace == freezed ? _value.startPlace : startPlace as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_StartPlaceChanged implements _StartPlaceChanged {
+  const _$_StartPlaceChanged(this.startPlace) : assert(startPlace != null);
+
+  @override
+  final String startPlace;
+
+  @override
+  String toString() {
+    return 'TaxiEvent.startPlaceChanged(startPlace: $startPlace)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _StartPlaceChanged &&
+            (identical(other.startPlace, startPlace) ||
+                const DeepCollectionEquality()
+                    .equals(other.startPlace, startPlace)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(startPlace);
+
+  @JsonKey(ignore: true)
+  @override
+  _$StartPlaceChangedCopyWith<_StartPlaceChanged> get copyWith =>
+      __$StartPlaceChangedCopyWithImpl<_StartPlaceChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult startPlaceChanged(String startPlace),
+    @required TResult finalPlaceChanged(String finalPlace),
+    @required TResult quotaChanged(num quota),
+    @required TResult departureTimeChanged(DateTime departureTime),
+    @required TResult saveButtonPressed(String userID, String name),
+    @required TResult createTaxiOrder(),
+  }) {
+    assert(startPlaceChanged != null);
+    assert(finalPlaceChanged != null);
+    assert(quotaChanged != null);
+    assert(departureTimeChanged != null);
+    assert(saveButtonPressed != null);
+    assert(createTaxiOrder != null);
+    return startPlaceChanged(startPlace);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult startPlaceChanged(String startPlace),
+    TResult finalPlaceChanged(String finalPlace),
+    TResult quotaChanged(num quota),
+    TResult departureTimeChanged(DateTime departureTime),
+    TResult saveButtonPressed(String userID, String name),
+    TResult createTaxiOrder(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (startPlaceChanged != null) {
+      return startPlaceChanged(startPlace);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult startPlaceChanged(_StartPlaceChanged value),
+    @required TResult finalPlaceChanged(_FinalPlaceChanged value),
+    @required TResult quotaChanged(_QuotaChanged value),
+    @required TResult departureTimeChanged(_DepartureTimeChanged value),
+    @required TResult saveButtonPressed(_SaveBottonPressed value),
+    @required TResult createTaxiOrder(_CreateTaxiOrder value),
+  }) {
+    assert(startPlaceChanged != null);
+    assert(finalPlaceChanged != null);
+    assert(quotaChanged != null);
+    assert(departureTimeChanged != null);
+    assert(saveButtonPressed != null);
+    assert(createTaxiOrder != null);
+    return startPlaceChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult startPlaceChanged(_StartPlaceChanged value),
+    TResult finalPlaceChanged(_FinalPlaceChanged value),
+    TResult quotaChanged(_QuotaChanged value),
+    TResult departureTimeChanged(_DepartureTimeChanged value),
+    TResult saveButtonPressed(_SaveBottonPressed value),
+    TResult createTaxiOrder(_CreateTaxiOrder value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (startPlaceChanged != null) {
+      return startPlaceChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _StartPlaceChanged implements TaxiEvent {
+  const factory _StartPlaceChanged(String startPlace) = _$_StartPlaceChanged;
+
+  String get startPlace;
+  @JsonKey(ignore: true)
+  _$StartPlaceChangedCopyWith<_StartPlaceChanged> get copyWith;
+}
+
+/// @nodoc
+abstract class _$FinalPlaceChangedCopyWith<$Res> {
+  factory _$FinalPlaceChangedCopyWith(
+          _FinalPlaceChanged value, $Res Function(_FinalPlaceChanged) then) =
+      __$FinalPlaceChangedCopyWithImpl<$Res>;
+  $Res call({String finalPlace});
+}
+
+/// @nodoc
+class __$FinalPlaceChangedCopyWithImpl<$Res>
+    extends _$TaxiEventCopyWithImpl<$Res>
+    implements _$FinalPlaceChangedCopyWith<$Res> {
+  __$FinalPlaceChangedCopyWithImpl(
+      _FinalPlaceChanged _value, $Res Function(_FinalPlaceChanged) _then)
+      : super(_value, (v) => _then(v as _FinalPlaceChanged));
+
+  @override
+  _FinalPlaceChanged get _value => super._value as _FinalPlaceChanged;
+
+  @override
+  $Res call({
+    Object finalPlace = freezed,
+  }) {
+    return _then(_FinalPlaceChanged(
+      finalPlace == freezed ? _value.finalPlace : finalPlace as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_FinalPlaceChanged implements _FinalPlaceChanged {
+  const _$_FinalPlaceChanged(this.finalPlace) : assert(finalPlace != null);
+
+  @override
+  final String finalPlace;
+
+  @override
+  String toString() {
+    return 'TaxiEvent.finalPlaceChanged(finalPlace: $finalPlace)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _FinalPlaceChanged &&
+            (identical(other.finalPlace, finalPlace) ||
+                const DeepCollectionEquality()
+                    .equals(other.finalPlace, finalPlace)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(finalPlace);
+
+  @JsonKey(ignore: true)
+  @override
+  _$FinalPlaceChangedCopyWith<_FinalPlaceChanged> get copyWith =>
+      __$FinalPlaceChangedCopyWithImpl<_FinalPlaceChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult startPlaceChanged(String startPlace),
+    @required TResult finalPlaceChanged(String finalPlace),
+    @required TResult quotaChanged(num quota),
+    @required TResult departureTimeChanged(DateTime departureTime),
+    @required TResult saveButtonPressed(String userID, String name),
+    @required TResult createTaxiOrder(),
+  }) {
+    assert(startPlaceChanged != null);
+    assert(finalPlaceChanged != null);
+    assert(quotaChanged != null);
+    assert(departureTimeChanged != null);
+    assert(saveButtonPressed != null);
+    assert(createTaxiOrder != null);
+    return finalPlaceChanged(finalPlace);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult startPlaceChanged(String startPlace),
+    TResult finalPlaceChanged(String finalPlace),
+    TResult quotaChanged(num quota),
+    TResult departureTimeChanged(DateTime departureTime),
+    TResult saveButtonPressed(String userID, String name),
+    TResult createTaxiOrder(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (finalPlaceChanged != null) {
+      return finalPlaceChanged(finalPlace);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult startPlaceChanged(_StartPlaceChanged value),
+    @required TResult finalPlaceChanged(_FinalPlaceChanged value),
+    @required TResult quotaChanged(_QuotaChanged value),
+    @required TResult departureTimeChanged(_DepartureTimeChanged value),
+    @required TResult saveButtonPressed(_SaveBottonPressed value),
+    @required TResult createTaxiOrder(_CreateTaxiOrder value),
+  }) {
+    assert(startPlaceChanged != null);
+    assert(finalPlaceChanged != null);
+    assert(quotaChanged != null);
+    assert(departureTimeChanged != null);
+    assert(saveButtonPressed != null);
+    assert(createTaxiOrder != null);
+    return finalPlaceChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult startPlaceChanged(_StartPlaceChanged value),
+    TResult finalPlaceChanged(_FinalPlaceChanged value),
+    TResult quotaChanged(_QuotaChanged value),
+    TResult departureTimeChanged(_DepartureTimeChanged value),
+    TResult saveButtonPressed(_SaveBottonPressed value),
+    TResult createTaxiOrder(_CreateTaxiOrder value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (finalPlaceChanged != null) {
+      return finalPlaceChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FinalPlaceChanged implements TaxiEvent {
+  const factory _FinalPlaceChanged(String finalPlace) = _$_FinalPlaceChanged;
+
+  String get finalPlace;
+  @JsonKey(ignore: true)
+  _$FinalPlaceChangedCopyWith<_FinalPlaceChanged> get copyWith;
+}
+
+/// @nodoc
+abstract class _$QuotaChangedCopyWith<$Res> {
+  factory _$QuotaChangedCopyWith(
+          _QuotaChanged value, $Res Function(_QuotaChanged) then) =
+      __$QuotaChangedCopyWithImpl<$Res>;
+  $Res call({num quota});
+}
+
+/// @nodoc
+class __$QuotaChangedCopyWithImpl<$Res> extends _$TaxiEventCopyWithImpl<$Res>
+    implements _$QuotaChangedCopyWith<$Res> {
+  __$QuotaChangedCopyWithImpl(
+      _QuotaChanged _value, $Res Function(_QuotaChanged) _then)
+      : super(_value, (v) => _then(v as _QuotaChanged));
+
+  @override
+  _QuotaChanged get _value => super._value as _QuotaChanged;
+
+  @override
+  $Res call({
+    Object quota = freezed,
+  }) {
+    return _then(_QuotaChanged(
+      quota == freezed ? _value.quota : quota as num,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_QuotaChanged implements _QuotaChanged {
+  const _$_QuotaChanged(this.quota) : assert(quota != null);
+
+  @override
+  final num quota;
+
+  @override
+  String toString() {
+    return 'TaxiEvent.quotaChanged(quota: $quota)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _QuotaChanged &&
+            (identical(other.quota, quota) ||
+                const DeepCollectionEquality().equals(other.quota, quota)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(quota);
+
+  @JsonKey(ignore: true)
+  @override
+  _$QuotaChangedCopyWith<_QuotaChanged> get copyWith =>
+      __$QuotaChangedCopyWithImpl<_QuotaChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult startPlaceChanged(String startPlace),
+    @required TResult finalPlaceChanged(String finalPlace),
+    @required TResult quotaChanged(num quota),
+    @required TResult departureTimeChanged(DateTime departureTime),
+    @required TResult saveButtonPressed(String userID, String name),
+    @required TResult createTaxiOrder(),
+  }) {
+    assert(startPlaceChanged != null);
+    assert(finalPlaceChanged != null);
+    assert(quotaChanged != null);
+    assert(departureTimeChanged != null);
+    assert(saveButtonPressed != null);
+    assert(createTaxiOrder != null);
+    return quotaChanged(quota);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult startPlaceChanged(String startPlace),
+    TResult finalPlaceChanged(String finalPlace),
+    TResult quotaChanged(num quota),
+    TResult departureTimeChanged(DateTime departureTime),
+    TResult saveButtonPressed(String userID, String name),
+    TResult createTaxiOrder(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (quotaChanged != null) {
+      return quotaChanged(quota);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult startPlaceChanged(_StartPlaceChanged value),
+    @required TResult finalPlaceChanged(_FinalPlaceChanged value),
+    @required TResult quotaChanged(_QuotaChanged value),
+    @required TResult departureTimeChanged(_DepartureTimeChanged value),
+    @required TResult saveButtonPressed(_SaveBottonPressed value),
+    @required TResult createTaxiOrder(_CreateTaxiOrder value),
+  }) {
+    assert(startPlaceChanged != null);
+    assert(finalPlaceChanged != null);
+    assert(quotaChanged != null);
+    assert(departureTimeChanged != null);
+    assert(saveButtonPressed != null);
+    assert(createTaxiOrder != null);
+    return quotaChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult startPlaceChanged(_StartPlaceChanged value),
+    TResult finalPlaceChanged(_FinalPlaceChanged value),
+    TResult quotaChanged(_QuotaChanged value),
+    TResult departureTimeChanged(_DepartureTimeChanged value),
+    TResult saveButtonPressed(_SaveBottonPressed value),
+    TResult createTaxiOrder(_CreateTaxiOrder value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (quotaChanged != null) {
+      return quotaChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _QuotaChanged implements TaxiEvent {
+  const factory _QuotaChanged(num quota) = _$_QuotaChanged;
+
+  num get quota;
+  @JsonKey(ignore: true)
+  _$QuotaChangedCopyWith<_QuotaChanged> get copyWith;
+}
+
+/// @nodoc
+abstract class _$DepartureTimeChangedCopyWith<$Res> {
+  factory _$DepartureTimeChangedCopyWith(_DepartureTimeChanged value,
+          $Res Function(_DepartureTimeChanged) then) =
+      __$DepartureTimeChangedCopyWithImpl<$Res>;
+  $Res call({DateTime departureTime});
+}
+
+/// @nodoc
+class __$DepartureTimeChangedCopyWithImpl<$Res>
+    extends _$TaxiEventCopyWithImpl<$Res>
+    implements _$DepartureTimeChangedCopyWith<$Res> {
+  __$DepartureTimeChangedCopyWithImpl(
+      _DepartureTimeChanged _value, $Res Function(_DepartureTimeChanged) _then)
+      : super(_value, (v) => _then(v as _DepartureTimeChanged));
+
+  @override
+  _DepartureTimeChanged get _value => super._value as _DepartureTimeChanged;
+
+  @override
+  $Res call({
+    Object departureTime = freezed,
+  }) {
+    return _then(_DepartureTimeChanged(
+      departureTime == freezed
+          ? _value.departureTime
+          : departureTime as DateTime,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_DepartureTimeChanged implements _DepartureTimeChanged {
+  const _$_DepartureTimeChanged(this.departureTime)
+      : assert(departureTime != null);
+
+  @override
+  final DateTime departureTime;
+
+  @override
+  String toString() {
+    return 'TaxiEvent.departureTimeChanged(departureTime: $departureTime)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _DepartureTimeChanged &&
+            (identical(other.departureTime, departureTime) ||
+                const DeepCollectionEquality()
+                    .equals(other.departureTime, departureTime)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(departureTime);
+
+  @JsonKey(ignore: true)
+  @override
+  _$DepartureTimeChangedCopyWith<_DepartureTimeChanged> get copyWith =>
+      __$DepartureTimeChangedCopyWithImpl<_DepartureTimeChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult startPlaceChanged(String startPlace),
+    @required TResult finalPlaceChanged(String finalPlace),
+    @required TResult quotaChanged(num quota),
+    @required TResult departureTimeChanged(DateTime departureTime),
+    @required TResult saveButtonPressed(String userID, String name),
+    @required TResult createTaxiOrder(),
+  }) {
+    assert(startPlaceChanged != null);
+    assert(finalPlaceChanged != null);
+    assert(quotaChanged != null);
+    assert(departureTimeChanged != null);
+    assert(saveButtonPressed != null);
+    assert(createTaxiOrder != null);
+    return departureTimeChanged(departureTime);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult startPlaceChanged(String startPlace),
+    TResult finalPlaceChanged(String finalPlace),
+    TResult quotaChanged(num quota),
+    TResult departureTimeChanged(DateTime departureTime),
+    TResult saveButtonPressed(String userID, String name),
+    TResult createTaxiOrder(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (departureTimeChanged != null) {
+      return departureTimeChanged(departureTime);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult startPlaceChanged(_StartPlaceChanged value),
+    @required TResult finalPlaceChanged(_FinalPlaceChanged value),
+    @required TResult quotaChanged(_QuotaChanged value),
+    @required TResult departureTimeChanged(_DepartureTimeChanged value),
+    @required TResult saveButtonPressed(_SaveBottonPressed value),
+    @required TResult createTaxiOrder(_CreateTaxiOrder value),
+  }) {
+    assert(startPlaceChanged != null);
+    assert(finalPlaceChanged != null);
+    assert(quotaChanged != null);
+    assert(departureTimeChanged != null);
+    assert(saveButtonPressed != null);
+    assert(createTaxiOrder != null);
+    return departureTimeChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult startPlaceChanged(_StartPlaceChanged value),
+    TResult finalPlaceChanged(_FinalPlaceChanged value),
+    TResult quotaChanged(_QuotaChanged value),
+    TResult departureTimeChanged(_DepartureTimeChanged value),
+    TResult saveButtonPressed(_SaveBottonPressed value),
+    TResult createTaxiOrder(_CreateTaxiOrder value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (departureTimeChanged != null) {
+      return departureTimeChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DepartureTimeChanged implements TaxiEvent {
+  const factory _DepartureTimeChanged(DateTime departureTime) =
+      _$_DepartureTimeChanged;
+
+  DateTime get departureTime;
+  @JsonKey(ignore: true)
+  _$DepartureTimeChangedCopyWith<_DepartureTimeChanged> get copyWith;
+}
+
+/// @nodoc
+abstract class _$SaveBottonPressedCopyWith<$Res> {
+  factory _$SaveBottonPressedCopyWith(
+          _SaveBottonPressed value, $Res Function(_SaveBottonPressed) then) =
+      __$SaveBottonPressedCopyWithImpl<$Res>;
+  $Res call({String userID, String name});
+}
+
+/// @nodoc
+class __$SaveBottonPressedCopyWithImpl<$Res>
+    extends _$TaxiEventCopyWithImpl<$Res>
+    implements _$SaveBottonPressedCopyWith<$Res> {
+  __$SaveBottonPressedCopyWithImpl(
+      _SaveBottonPressed _value, $Res Function(_SaveBottonPressed) _then)
+      : super(_value, (v) => _then(v as _SaveBottonPressed));
+
+  @override
+  _SaveBottonPressed get _value => super._value as _SaveBottonPressed;
+
+  @override
+  $Res call({
+    Object userID = freezed,
+    Object name = freezed,
+  }) {
+    return _then(_SaveBottonPressed(
+      userID == freezed ? _value.userID : userID as String,
+      name == freezed ? _value.name : name as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_SaveBottonPressed implements _SaveBottonPressed {
+  const _$_SaveBottonPressed(this.userID, this.name)
+      : assert(userID != null),
+        assert(name != null);
+
+  @override
+  final String userID;
+  @override
+  final String name;
+
+  @override
+  String toString() {
+    return 'TaxiEvent.saveButtonPressed(userID: $userID, name: $name)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SaveBottonPressed &&
+            (identical(other.userID, userID) ||
+                const DeepCollectionEquality().equals(other.userID, userID)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(userID) ^
+      const DeepCollectionEquality().hash(name);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SaveBottonPressedCopyWith<_SaveBottonPressed> get copyWith =>
+      __$SaveBottonPressedCopyWithImpl<_SaveBottonPressed>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult startPlaceChanged(String startPlace),
+    @required TResult finalPlaceChanged(String finalPlace),
+    @required TResult quotaChanged(num quota),
+    @required TResult departureTimeChanged(DateTime departureTime),
+    @required TResult saveButtonPressed(String userID, String name),
+    @required TResult createTaxiOrder(),
+  }) {
+    assert(startPlaceChanged != null);
+    assert(finalPlaceChanged != null);
+    assert(quotaChanged != null);
+    assert(departureTimeChanged != null);
+    assert(saveButtonPressed != null);
+    assert(createTaxiOrder != null);
+    return saveButtonPressed(userID, name);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult startPlaceChanged(String startPlace),
+    TResult finalPlaceChanged(String finalPlace),
+    TResult quotaChanged(num quota),
+    TResult departureTimeChanged(DateTime departureTime),
+    TResult saveButtonPressed(String userID, String name),
+    TResult createTaxiOrder(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (saveButtonPressed != null) {
+      return saveButtonPressed(userID, name);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult startPlaceChanged(_StartPlaceChanged value),
+    @required TResult finalPlaceChanged(_FinalPlaceChanged value),
+    @required TResult quotaChanged(_QuotaChanged value),
+    @required TResult departureTimeChanged(_DepartureTimeChanged value),
+    @required TResult saveButtonPressed(_SaveBottonPressed value),
+    @required TResult createTaxiOrder(_CreateTaxiOrder value),
+  }) {
+    assert(startPlaceChanged != null);
+    assert(finalPlaceChanged != null);
+    assert(quotaChanged != null);
+    assert(departureTimeChanged != null);
+    assert(saveButtonPressed != null);
+    assert(createTaxiOrder != null);
+    return saveButtonPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult startPlaceChanged(_StartPlaceChanged value),
+    TResult finalPlaceChanged(_FinalPlaceChanged value),
+    TResult quotaChanged(_QuotaChanged value),
+    TResult departureTimeChanged(_DepartureTimeChanged value),
+    TResult saveButtonPressed(_SaveBottonPressed value),
+    TResult createTaxiOrder(_CreateTaxiOrder value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (saveButtonPressed != null) {
+      return saveButtonPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SaveBottonPressed implements TaxiEvent {
+  const factory _SaveBottonPressed(String userID, String name) =
+      _$_SaveBottonPressed;
+
+  String get userID;
+  String get name;
+  @JsonKey(ignore: true)
+  _$SaveBottonPressedCopyWith<_SaveBottonPressed> get copyWith;
+}
+
+/// @nodoc
 abstract class _$CreateTaxiOrderCopyWith<$Res> {
   factory _$CreateTaxiOrderCopyWith(
           _CreateTaxiOrder value, $Res Function(_CreateTaxiOrder) then) =
       __$CreateTaxiOrderCopyWithImpl<$Res>;
-  $Res call({TaxiOrder order});
 }
 
 /// @nodoc
@@ -88,67 +856,58 @@ class __$CreateTaxiOrderCopyWithImpl<$Res> extends _$TaxiEventCopyWithImpl<$Res>
 
   @override
   _CreateTaxiOrder get _value => super._value as _CreateTaxiOrder;
-
-  @override
-  $Res call({
-    Object order = freezed,
-  }) {
-    return _then(_CreateTaxiOrder(
-      order == freezed ? _value.order : order as TaxiOrder,
-    ));
-  }
 }
 
 /// @nodoc
 class _$_CreateTaxiOrder implements _CreateTaxiOrder {
-  const _$_CreateTaxiOrder(this.order) : assert(order != null);
-
-  @override
-  final TaxiOrder order;
+  const _$_CreateTaxiOrder();
 
   @override
   String toString() {
-    return 'TaxiEvent.createTaxiOrder(order: $order)';
+    return 'TaxiEvent.createTaxiOrder()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _CreateTaxiOrder &&
-            (identical(other.order, order) ||
-                const DeepCollectionEquality().equals(other.order, order)));
+    return identical(this, other) || (other is _CreateTaxiOrder);
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(order);
-
-  @JsonKey(ignore: true)
-  @override
-  _$CreateTaxiOrderCopyWith<_CreateTaxiOrder> get copyWith =>
-      __$CreateTaxiOrderCopyWithImpl<_CreateTaxiOrder>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult createTaxiOrder(TaxiOrder order),
-    @required TResult fetchTaxiOrder(),
+    @required TResult startPlaceChanged(String startPlace),
+    @required TResult finalPlaceChanged(String finalPlace),
+    @required TResult quotaChanged(num quota),
+    @required TResult departureTimeChanged(DateTime departureTime),
+    @required TResult saveButtonPressed(String userID, String name),
+    @required TResult createTaxiOrder(),
   }) {
+    assert(startPlaceChanged != null);
+    assert(finalPlaceChanged != null);
+    assert(quotaChanged != null);
+    assert(departureTimeChanged != null);
+    assert(saveButtonPressed != null);
     assert(createTaxiOrder != null);
-    assert(fetchTaxiOrder != null);
-    return createTaxiOrder(order);
+    return createTaxiOrder();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult createTaxiOrder(TaxiOrder order),
-    TResult fetchTaxiOrder(),
+    TResult startPlaceChanged(String startPlace),
+    TResult finalPlaceChanged(String finalPlace),
+    TResult quotaChanged(num quota),
+    TResult departureTimeChanged(DateTime departureTime),
+    TResult saveButtonPressed(String userID, String name),
+    TResult createTaxiOrder(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (createTaxiOrder != null) {
-      return createTaxiOrder(order);
+      return createTaxiOrder();
     }
     return orElse();
   }
@@ -156,19 +915,31 @@ class _$_CreateTaxiOrder implements _CreateTaxiOrder {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult startPlaceChanged(_StartPlaceChanged value),
+    @required TResult finalPlaceChanged(_FinalPlaceChanged value),
+    @required TResult quotaChanged(_QuotaChanged value),
+    @required TResult departureTimeChanged(_DepartureTimeChanged value),
+    @required TResult saveButtonPressed(_SaveBottonPressed value),
     @required TResult createTaxiOrder(_CreateTaxiOrder value),
-    @required TResult fetchTaxiOrder(_FetchTaxiOrder value),
   }) {
+    assert(startPlaceChanged != null);
+    assert(finalPlaceChanged != null);
+    assert(quotaChanged != null);
+    assert(departureTimeChanged != null);
+    assert(saveButtonPressed != null);
     assert(createTaxiOrder != null);
-    assert(fetchTaxiOrder != null);
     return createTaxiOrder(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult startPlaceChanged(_StartPlaceChanged value),
+    TResult finalPlaceChanged(_FinalPlaceChanged value),
+    TResult quotaChanged(_QuotaChanged value),
+    TResult departureTimeChanged(_DepartureTimeChanged value),
+    TResult saveButtonPressed(_SaveBottonPressed value),
     TResult createTaxiOrder(_CreateTaxiOrder value),
-    TResult fetchTaxiOrder(_FetchTaxiOrder value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -180,101 +951,7 @@ class _$_CreateTaxiOrder implements _CreateTaxiOrder {
 }
 
 abstract class _CreateTaxiOrder implements TaxiEvent {
-  const factory _CreateTaxiOrder(TaxiOrder order) = _$_CreateTaxiOrder;
-
-  TaxiOrder get order;
-  @JsonKey(ignore: true)
-  _$CreateTaxiOrderCopyWith<_CreateTaxiOrder> get copyWith;
-}
-
-/// @nodoc
-abstract class _$FetchTaxiOrderCopyWith<$Res> {
-  factory _$FetchTaxiOrderCopyWith(
-          _FetchTaxiOrder value, $Res Function(_FetchTaxiOrder) then) =
-      __$FetchTaxiOrderCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$FetchTaxiOrderCopyWithImpl<$Res> extends _$TaxiEventCopyWithImpl<$Res>
-    implements _$FetchTaxiOrderCopyWith<$Res> {
-  __$FetchTaxiOrderCopyWithImpl(
-      _FetchTaxiOrder _value, $Res Function(_FetchTaxiOrder) _then)
-      : super(_value, (v) => _then(v as _FetchTaxiOrder));
-
-  @override
-  _FetchTaxiOrder get _value => super._value as _FetchTaxiOrder;
-}
-
-/// @nodoc
-class _$_FetchTaxiOrder implements _FetchTaxiOrder {
-  const _$_FetchTaxiOrder();
-
-  @override
-  String toString() {
-    return 'TaxiEvent.fetchTaxiOrder()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _FetchTaxiOrder);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult createTaxiOrder(TaxiOrder order),
-    @required TResult fetchTaxiOrder(),
-  }) {
-    assert(createTaxiOrder != null);
-    assert(fetchTaxiOrder != null);
-    return fetchTaxiOrder();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult createTaxiOrder(TaxiOrder order),
-    TResult fetchTaxiOrder(),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (fetchTaxiOrder != null) {
-      return fetchTaxiOrder();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult createTaxiOrder(_CreateTaxiOrder value),
-    @required TResult fetchTaxiOrder(_FetchTaxiOrder value),
-  }) {
-    assert(createTaxiOrder != null);
-    assert(fetchTaxiOrder != null);
-    return fetchTaxiOrder(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult createTaxiOrder(_CreateTaxiOrder value),
-    TResult fetchTaxiOrder(_FetchTaxiOrder value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (fetchTaxiOrder != null) {
-      return fetchTaxiOrder(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _FetchTaxiOrder implements TaxiEvent {
-  const factory _FetchTaxiOrder() = _$_FetchTaxiOrder;
+  const factory _CreateTaxiOrder() = _$_CreateTaxiOrder;
 }
 
 /// @nodoc
@@ -282,28 +959,17 @@ class _$TaxiStateTearOff {
   const _$TaxiStateTearOff();
 
 // ignore: unused_element
-  _Initial initial() {
-    return const _Initial();
-  }
-
-// ignore: unused_element
-  _CreateTaxiOrderSuccess createTaxiOrderSuccess() {
-    return const _CreateTaxiOrderSuccess();
-  }
-
-// ignore: unused_element
-  _CreateTaxiOrderFailure createTaxiOrderFailure() {
-    return const _CreateTaxiOrderFailure();
-  }
-
-// ignore: unused_element
-  _FetchTaxiOrderSuccess fetchTaxiOrderSuccess() {
-    return const _FetchTaxiOrderSuccess();
-  }
-
-// ignore: unused_element
-  _FetchTaxiOrderFailure fetchTaxiOrderFailure() {
-    return const _FetchTaxiOrderFailure();
+  _TaxiState call(
+      {TaxiOrder taxiOrder,
+      bool showErrorMsg,
+      bool isSaving,
+      bool saveSuccess}) {
+    return _TaxiState(
+      taxiOrder: taxiOrder,
+      showErrorMsg: showErrorMsg,
+      isSaving: isSaving,
+      saveSuccess: saveSuccess,
+    );
   }
 }
 
@@ -313,46 +979,24 @@ const $TaxiState = _$TaxiStateTearOff();
 
 /// @nodoc
 mixin _$TaxiState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult createTaxiOrderSuccess(),
-    @required TResult createTaxiOrderFailure(),
-    @required TResult fetchTaxiOrderSuccess(),
-    @required TResult fetchTaxiOrderFailure(),
-  });
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult createTaxiOrderSuccess(),
-    TResult createTaxiOrderFailure(),
-    TResult fetchTaxiOrderSuccess(),
-    TResult fetchTaxiOrderFailure(),
-    @required TResult orElse(),
-  });
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult createTaxiOrderSuccess(_CreateTaxiOrderSuccess value),
-    @required TResult createTaxiOrderFailure(_CreateTaxiOrderFailure value),
-    @required TResult fetchTaxiOrderSuccess(_FetchTaxiOrderSuccess value),
-    @required TResult fetchTaxiOrderFailure(_FetchTaxiOrderFailure value),
-  });
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult createTaxiOrderSuccess(_CreateTaxiOrderSuccess value),
-    TResult createTaxiOrderFailure(_CreateTaxiOrderFailure value),
-    TResult fetchTaxiOrderSuccess(_FetchTaxiOrderSuccess value),
-    TResult fetchTaxiOrderFailure(_FetchTaxiOrderFailure value),
-    @required TResult orElse(),
-  });
+  TaxiOrder get taxiOrder;
+  bool get showErrorMsg;
+  bool get isSaving;
+  bool get saveSuccess;
+
+  @JsonKey(ignore: true)
+  $TaxiStateCopyWith<TaxiState> get copyWith;
 }
 
 /// @nodoc
 abstract class $TaxiStateCopyWith<$Res> {
   factory $TaxiStateCopyWith(TaxiState value, $Res Function(TaxiState) then) =
       _$TaxiStateCopyWithImpl<$Res>;
+  $Res call(
+      {TaxiOrder taxiOrder,
+      bool showErrorMsg,
+      bool isSaving,
+      bool saveSuccess});
 }
 
 /// @nodoc
@@ -362,546 +1006,134 @@ class _$TaxiStateCopyWithImpl<$Res> implements $TaxiStateCopyWith<$Res> {
   final TaxiState _value;
   // ignore: unused_field
   final $Res Function(TaxiState) _then;
-}
-
-/// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$TaxiStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
 
   @override
-  _Initial get _value => super._value as _Initial;
+  $Res call({
+    Object taxiOrder = freezed,
+    Object showErrorMsg = freezed,
+    Object isSaving = freezed,
+    Object saveSuccess = freezed,
+  }) {
+    return _then(_value.copyWith(
+      taxiOrder:
+          taxiOrder == freezed ? _value.taxiOrder : taxiOrder as TaxiOrder,
+      showErrorMsg:
+          showErrorMsg == freezed ? _value.showErrorMsg : showErrorMsg as bool,
+      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
+      saveSuccess:
+          saveSuccess == freezed ? _value.saveSuccess : saveSuccess as bool,
+    ));
+  }
 }
 
 /// @nodoc
-class _$_Initial implements _Initial {
-  const _$_Initial();
+abstract class _$TaxiStateCopyWith<$Res> implements $TaxiStateCopyWith<$Res> {
+  factory _$TaxiStateCopyWith(
+          _TaxiState value, $Res Function(_TaxiState) then) =
+      __$TaxiStateCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {TaxiOrder taxiOrder,
+      bool showErrorMsg,
+      bool isSaving,
+      bool saveSuccess});
+}
+
+/// @nodoc
+class __$TaxiStateCopyWithImpl<$Res> extends _$TaxiStateCopyWithImpl<$Res>
+    implements _$TaxiStateCopyWith<$Res> {
+  __$TaxiStateCopyWithImpl(_TaxiState _value, $Res Function(_TaxiState) _then)
+      : super(_value, (v) => _then(v as _TaxiState));
+
+  @override
+  _TaxiState get _value => super._value as _TaxiState;
+
+  @override
+  $Res call({
+    Object taxiOrder = freezed,
+    Object showErrorMsg = freezed,
+    Object isSaving = freezed,
+    Object saveSuccess = freezed,
+  }) {
+    return _then(_TaxiState(
+      taxiOrder:
+          taxiOrder == freezed ? _value.taxiOrder : taxiOrder as TaxiOrder,
+      showErrorMsg:
+          showErrorMsg == freezed ? _value.showErrorMsg : showErrorMsg as bool,
+      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
+      saveSuccess:
+          saveSuccess == freezed ? _value.saveSuccess : saveSuccess as bool,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_TaxiState implements _TaxiState {
+  const _$_TaxiState(
+      {this.taxiOrder, this.showErrorMsg, this.isSaving, this.saveSuccess});
+
+  @override
+  final TaxiOrder taxiOrder;
+  @override
+  final bool showErrorMsg;
+  @override
+  final bool isSaving;
+  @override
+  final bool saveSuccess;
 
   @override
   String toString() {
-    return 'TaxiState.initial()';
+    return 'TaxiState(taxiOrder: $taxiOrder, showErrorMsg: $showErrorMsg, isSaving: $isSaving, saveSuccess: $saveSuccess)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other is _TaxiState &&
+            (identical(other.taxiOrder, taxiOrder) ||
+                const DeepCollectionEquality()
+                    .equals(other.taxiOrder, taxiOrder)) &&
+            (identical(other.showErrorMsg, showErrorMsg) ||
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMsg, showErrorMsg)) &&
+            (identical(other.isSaving, isSaving) ||
+                const DeepCollectionEquality()
+                    .equals(other.isSaving, isSaving)) &&
+            (identical(other.saveSuccess, saveSuccess) ||
+                const DeepCollectionEquality()
+                    .equals(other.saveSuccess, saveSuccess)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(taxiOrder) ^
+      const DeepCollectionEquality().hash(showErrorMsg) ^
+      const DeepCollectionEquality().hash(isSaving) ^
+      const DeepCollectionEquality().hash(saveSuccess);
 
+  @JsonKey(ignore: true)
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult createTaxiOrderSuccess(),
-    @required TResult createTaxiOrderFailure(),
-    @required TResult fetchTaxiOrderSuccess(),
-    @required TResult fetchTaxiOrderFailure(),
-  }) {
-    assert(initial != null);
-    assert(createTaxiOrderSuccess != null);
-    assert(createTaxiOrderFailure != null);
-    assert(fetchTaxiOrderSuccess != null);
-    assert(fetchTaxiOrderFailure != null);
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult createTaxiOrderSuccess(),
-    TResult createTaxiOrderFailure(),
-    TResult fetchTaxiOrderSuccess(),
-    TResult fetchTaxiOrderFailure(),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult createTaxiOrderSuccess(_CreateTaxiOrderSuccess value),
-    @required TResult createTaxiOrderFailure(_CreateTaxiOrderFailure value),
-    @required TResult fetchTaxiOrderSuccess(_FetchTaxiOrderSuccess value),
-    @required TResult fetchTaxiOrderFailure(_FetchTaxiOrderFailure value),
-  }) {
-    assert(initial != null);
-    assert(createTaxiOrderSuccess != null);
-    assert(createTaxiOrderFailure != null);
-    assert(fetchTaxiOrderSuccess != null);
-    assert(fetchTaxiOrderFailure != null);
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult createTaxiOrderSuccess(_CreateTaxiOrderSuccess value),
-    TResult createTaxiOrderFailure(_CreateTaxiOrderFailure value),
-    TResult fetchTaxiOrderSuccess(_FetchTaxiOrderSuccess value),
-    TResult fetchTaxiOrderFailure(_FetchTaxiOrderFailure value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
+  _$TaxiStateCopyWith<_TaxiState> get copyWith =>
+      __$TaxiStateCopyWithImpl<_TaxiState>(this, _$identity);
 }
 
-abstract class _Initial implements TaxiState {
-  const factory _Initial() = _$_Initial;
-}
-
-/// @nodoc
-abstract class _$CreateTaxiOrderSuccessCopyWith<$Res> {
-  factory _$CreateTaxiOrderSuccessCopyWith(_CreateTaxiOrderSuccess value,
-          $Res Function(_CreateTaxiOrderSuccess) then) =
-      __$CreateTaxiOrderSuccessCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$CreateTaxiOrderSuccessCopyWithImpl<$Res>
-    extends _$TaxiStateCopyWithImpl<$Res>
-    implements _$CreateTaxiOrderSuccessCopyWith<$Res> {
-  __$CreateTaxiOrderSuccessCopyWithImpl(_CreateTaxiOrderSuccess _value,
-      $Res Function(_CreateTaxiOrderSuccess) _then)
-      : super(_value, (v) => _then(v as _CreateTaxiOrderSuccess));
+abstract class _TaxiState implements TaxiState {
+  const factory _TaxiState(
+      {TaxiOrder taxiOrder,
+      bool showErrorMsg,
+      bool isSaving,
+      bool saveSuccess}) = _$_TaxiState;
 
   @override
-  _CreateTaxiOrderSuccess get _value => super._value as _CreateTaxiOrderSuccess;
-}
-
-/// @nodoc
-class _$_CreateTaxiOrderSuccess implements _CreateTaxiOrderSuccess {
-  const _$_CreateTaxiOrderSuccess();
-
+  TaxiOrder get taxiOrder;
   @override
-  String toString() {
-    return 'TaxiState.createTaxiOrderSuccess()';
-  }
-
+  bool get showErrorMsg;
   @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _CreateTaxiOrderSuccess);
-  }
-
+  bool get isSaving;
   @override
-  int get hashCode => runtimeType.hashCode;
-
+  bool get saveSuccess;
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult createTaxiOrderSuccess(),
-    @required TResult createTaxiOrderFailure(),
-    @required TResult fetchTaxiOrderSuccess(),
-    @required TResult fetchTaxiOrderFailure(),
-  }) {
-    assert(initial != null);
-    assert(createTaxiOrderSuccess != null);
-    assert(createTaxiOrderFailure != null);
-    assert(fetchTaxiOrderSuccess != null);
-    assert(fetchTaxiOrderFailure != null);
-    return createTaxiOrderSuccess();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult createTaxiOrderSuccess(),
-    TResult createTaxiOrderFailure(),
-    TResult fetchTaxiOrderSuccess(),
-    TResult fetchTaxiOrderFailure(),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (createTaxiOrderSuccess != null) {
-      return createTaxiOrderSuccess();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult createTaxiOrderSuccess(_CreateTaxiOrderSuccess value),
-    @required TResult createTaxiOrderFailure(_CreateTaxiOrderFailure value),
-    @required TResult fetchTaxiOrderSuccess(_FetchTaxiOrderSuccess value),
-    @required TResult fetchTaxiOrderFailure(_FetchTaxiOrderFailure value),
-  }) {
-    assert(initial != null);
-    assert(createTaxiOrderSuccess != null);
-    assert(createTaxiOrderFailure != null);
-    assert(fetchTaxiOrderSuccess != null);
-    assert(fetchTaxiOrderFailure != null);
-    return createTaxiOrderSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult createTaxiOrderSuccess(_CreateTaxiOrderSuccess value),
-    TResult createTaxiOrderFailure(_CreateTaxiOrderFailure value),
-    TResult fetchTaxiOrderSuccess(_FetchTaxiOrderSuccess value),
-    TResult fetchTaxiOrderFailure(_FetchTaxiOrderFailure value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (createTaxiOrderSuccess != null) {
-      return createTaxiOrderSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _CreateTaxiOrderSuccess implements TaxiState {
-  const factory _CreateTaxiOrderSuccess() = _$_CreateTaxiOrderSuccess;
-}
-
-/// @nodoc
-abstract class _$CreateTaxiOrderFailureCopyWith<$Res> {
-  factory _$CreateTaxiOrderFailureCopyWith(_CreateTaxiOrderFailure value,
-          $Res Function(_CreateTaxiOrderFailure) then) =
-      __$CreateTaxiOrderFailureCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$CreateTaxiOrderFailureCopyWithImpl<$Res>
-    extends _$TaxiStateCopyWithImpl<$Res>
-    implements _$CreateTaxiOrderFailureCopyWith<$Res> {
-  __$CreateTaxiOrderFailureCopyWithImpl(_CreateTaxiOrderFailure _value,
-      $Res Function(_CreateTaxiOrderFailure) _then)
-      : super(_value, (v) => _then(v as _CreateTaxiOrderFailure));
-
-  @override
-  _CreateTaxiOrderFailure get _value => super._value as _CreateTaxiOrderFailure;
-}
-
-/// @nodoc
-class _$_CreateTaxiOrderFailure implements _CreateTaxiOrderFailure {
-  const _$_CreateTaxiOrderFailure();
-
-  @override
-  String toString() {
-    return 'TaxiState.createTaxiOrderFailure()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _CreateTaxiOrderFailure);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult createTaxiOrderSuccess(),
-    @required TResult createTaxiOrderFailure(),
-    @required TResult fetchTaxiOrderSuccess(),
-    @required TResult fetchTaxiOrderFailure(),
-  }) {
-    assert(initial != null);
-    assert(createTaxiOrderSuccess != null);
-    assert(createTaxiOrderFailure != null);
-    assert(fetchTaxiOrderSuccess != null);
-    assert(fetchTaxiOrderFailure != null);
-    return createTaxiOrderFailure();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult createTaxiOrderSuccess(),
-    TResult createTaxiOrderFailure(),
-    TResult fetchTaxiOrderSuccess(),
-    TResult fetchTaxiOrderFailure(),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (createTaxiOrderFailure != null) {
-      return createTaxiOrderFailure();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult createTaxiOrderSuccess(_CreateTaxiOrderSuccess value),
-    @required TResult createTaxiOrderFailure(_CreateTaxiOrderFailure value),
-    @required TResult fetchTaxiOrderSuccess(_FetchTaxiOrderSuccess value),
-    @required TResult fetchTaxiOrderFailure(_FetchTaxiOrderFailure value),
-  }) {
-    assert(initial != null);
-    assert(createTaxiOrderSuccess != null);
-    assert(createTaxiOrderFailure != null);
-    assert(fetchTaxiOrderSuccess != null);
-    assert(fetchTaxiOrderFailure != null);
-    return createTaxiOrderFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult createTaxiOrderSuccess(_CreateTaxiOrderSuccess value),
-    TResult createTaxiOrderFailure(_CreateTaxiOrderFailure value),
-    TResult fetchTaxiOrderSuccess(_FetchTaxiOrderSuccess value),
-    TResult fetchTaxiOrderFailure(_FetchTaxiOrderFailure value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (createTaxiOrderFailure != null) {
-      return createTaxiOrderFailure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _CreateTaxiOrderFailure implements TaxiState {
-  const factory _CreateTaxiOrderFailure() = _$_CreateTaxiOrderFailure;
-}
-
-/// @nodoc
-abstract class _$FetchTaxiOrderSuccessCopyWith<$Res> {
-  factory _$FetchTaxiOrderSuccessCopyWith(_FetchTaxiOrderSuccess value,
-          $Res Function(_FetchTaxiOrderSuccess) then) =
-      __$FetchTaxiOrderSuccessCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$FetchTaxiOrderSuccessCopyWithImpl<$Res>
-    extends _$TaxiStateCopyWithImpl<$Res>
-    implements _$FetchTaxiOrderSuccessCopyWith<$Res> {
-  __$FetchTaxiOrderSuccessCopyWithImpl(_FetchTaxiOrderSuccess _value,
-      $Res Function(_FetchTaxiOrderSuccess) _then)
-      : super(_value, (v) => _then(v as _FetchTaxiOrderSuccess));
-
-  @override
-  _FetchTaxiOrderSuccess get _value => super._value as _FetchTaxiOrderSuccess;
-}
-
-/// @nodoc
-class _$_FetchTaxiOrderSuccess implements _FetchTaxiOrderSuccess {
-  const _$_FetchTaxiOrderSuccess();
-
-  @override
-  String toString() {
-    return 'TaxiState.fetchTaxiOrderSuccess()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _FetchTaxiOrderSuccess);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult createTaxiOrderSuccess(),
-    @required TResult createTaxiOrderFailure(),
-    @required TResult fetchTaxiOrderSuccess(),
-    @required TResult fetchTaxiOrderFailure(),
-  }) {
-    assert(initial != null);
-    assert(createTaxiOrderSuccess != null);
-    assert(createTaxiOrderFailure != null);
-    assert(fetchTaxiOrderSuccess != null);
-    assert(fetchTaxiOrderFailure != null);
-    return fetchTaxiOrderSuccess();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult createTaxiOrderSuccess(),
-    TResult createTaxiOrderFailure(),
-    TResult fetchTaxiOrderSuccess(),
-    TResult fetchTaxiOrderFailure(),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (fetchTaxiOrderSuccess != null) {
-      return fetchTaxiOrderSuccess();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult createTaxiOrderSuccess(_CreateTaxiOrderSuccess value),
-    @required TResult createTaxiOrderFailure(_CreateTaxiOrderFailure value),
-    @required TResult fetchTaxiOrderSuccess(_FetchTaxiOrderSuccess value),
-    @required TResult fetchTaxiOrderFailure(_FetchTaxiOrderFailure value),
-  }) {
-    assert(initial != null);
-    assert(createTaxiOrderSuccess != null);
-    assert(createTaxiOrderFailure != null);
-    assert(fetchTaxiOrderSuccess != null);
-    assert(fetchTaxiOrderFailure != null);
-    return fetchTaxiOrderSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult createTaxiOrderSuccess(_CreateTaxiOrderSuccess value),
-    TResult createTaxiOrderFailure(_CreateTaxiOrderFailure value),
-    TResult fetchTaxiOrderSuccess(_FetchTaxiOrderSuccess value),
-    TResult fetchTaxiOrderFailure(_FetchTaxiOrderFailure value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (fetchTaxiOrderSuccess != null) {
-      return fetchTaxiOrderSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _FetchTaxiOrderSuccess implements TaxiState {
-  const factory _FetchTaxiOrderSuccess() = _$_FetchTaxiOrderSuccess;
-}
-
-/// @nodoc
-abstract class _$FetchTaxiOrderFailureCopyWith<$Res> {
-  factory _$FetchTaxiOrderFailureCopyWith(_FetchTaxiOrderFailure value,
-          $Res Function(_FetchTaxiOrderFailure) then) =
-      __$FetchTaxiOrderFailureCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$FetchTaxiOrderFailureCopyWithImpl<$Res>
-    extends _$TaxiStateCopyWithImpl<$Res>
-    implements _$FetchTaxiOrderFailureCopyWith<$Res> {
-  __$FetchTaxiOrderFailureCopyWithImpl(_FetchTaxiOrderFailure _value,
-      $Res Function(_FetchTaxiOrderFailure) _then)
-      : super(_value, (v) => _then(v as _FetchTaxiOrderFailure));
-
-  @override
-  _FetchTaxiOrderFailure get _value => super._value as _FetchTaxiOrderFailure;
-}
-
-/// @nodoc
-class _$_FetchTaxiOrderFailure implements _FetchTaxiOrderFailure {
-  const _$_FetchTaxiOrderFailure();
-
-  @override
-  String toString() {
-    return 'TaxiState.fetchTaxiOrderFailure()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _FetchTaxiOrderFailure);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult createTaxiOrderSuccess(),
-    @required TResult createTaxiOrderFailure(),
-    @required TResult fetchTaxiOrderSuccess(),
-    @required TResult fetchTaxiOrderFailure(),
-  }) {
-    assert(initial != null);
-    assert(createTaxiOrderSuccess != null);
-    assert(createTaxiOrderFailure != null);
-    assert(fetchTaxiOrderSuccess != null);
-    assert(fetchTaxiOrderFailure != null);
-    return fetchTaxiOrderFailure();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult createTaxiOrderSuccess(),
-    TResult createTaxiOrderFailure(),
-    TResult fetchTaxiOrderSuccess(),
-    TResult fetchTaxiOrderFailure(),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (fetchTaxiOrderFailure != null) {
-      return fetchTaxiOrderFailure();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult createTaxiOrderSuccess(_CreateTaxiOrderSuccess value),
-    @required TResult createTaxiOrderFailure(_CreateTaxiOrderFailure value),
-    @required TResult fetchTaxiOrderSuccess(_FetchTaxiOrderSuccess value),
-    @required TResult fetchTaxiOrderFailure(_FetchTaxiOrderFailure value),
-  }) {
-    assert(initial != null);
-    assert(createTaxiOrderSuccess != null);
-    assert(createTaxiOrderFailure != null);
-    assert(fetchTaxiOrderSuccess != null);
-    assert(fetchTaxiOrderFailure != null);
-    return fetchTaxiOrderFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult createTaxiOrderSuccess(_CreateTaxiOrderSuccess value),
-    TResult createTaxiOrderFailure(_CreateTaxiOrderFailure value),
-    TResult fetchTaxiOrderSuccess(_FetchTaxiOrderSuccess value),
-    TResult fetchTaxiOrderFailure(_FetchTaxiOrderFailure value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (fetchTaxiOrderFailure != null) {
-      return fetchTaxiOrderFailure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _FetchTaxiOrderFailure implements TaxiState {
-  const factory _FetchTaxiOrderFailure() = _$_FetchTaxiOrderFailure;
+  @JsonKey(ignore: true)
+  _$TaxiStateCopyWith<_TaxiState> get copyWith;
 }

@@ -14,11 +14,12 @@ class OrderResository {
     try {
       final userDoc = await _firestore.userDocument();
             await userDoc.orderCollection.add({
+        'orderID' : taxiOrder.orderID,
         'startPlace': taxiOrder.startPlace,
         'finalPlace': taxiOrder.finalPlace,
         'departureTime': taxiOrder.departureTime,
         'quota': taxiOrder.quota,
-        'timeStamp': taxiOrder.timeStamp,
+        'timestamp': taxiOrder.timestamp,
         'authorID': taxiOrder.authorID,
         'authorName': taxiOrder.authorName
       });
@@ -27,19 +28,22 @@ class OrderResository {
     }
   }
 
-  // Stream<List<TaxiOrder>> watchAllOrder() async* {
-  //   final userDoc = await _firestore.userDocument();
-  //   yield* userDoc.orderCollection
-  //       .orderBy('startPlace')
-  //       .snapshots()
-  //       .map((snapshot) => (snapshot.docs.map((doc) {
-  //             final docRef = doc.data();
-  //             return TaxiOrder(
-  //               startPlace: docRef['startPlace'] as String,
-  //               finalPlace: docRef['finalPlace'] as String,
-  //               departureTime: docRef['departureTime'].toDate() as DateTime,
-  //               quota: docRef['quota'] as int,
-  //             );
-  //           })).toList());
-  // }
+  Stream<List<TaxiOrder>> fetchTaxiOrder() async* {
+    final userDoc = await _firestore.userDocument();
+    yield* userDoc.orderCollection
+        .orderBy('startPlace')
+        .snapshots()
+        .map((snapshot) => (snapshot.docs.map((doc) {
+              final docRef = doc.data();
+              return TaxiOrder(
+                startPlace: docRef['startPlace'] as String,
+                finalPlace: docRef['finalPlace'] as String,
+                departureTime: docRef['departureTime'].toDate() as DateTime,
+                quota: docRef['quota'] as num,
+                timestamp: docRef['timestamp'] as DateTime,
+                authorID: docRef['authorID'] as String,
+                authorName: docRef['quota'] as String,
+              );
+            })).toList());
+  }
 }
