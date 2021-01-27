@@ -14,7 +14,7 @@ class FeedbackEditPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
-        title: const Text("比分"),
+        title: const Text("評論"),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.post_add),

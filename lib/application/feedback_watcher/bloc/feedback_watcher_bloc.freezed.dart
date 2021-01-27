@@ -40,30 +40,30 @@ const $FeedbackWatcherEvent = _$FeedbackWatcherEventTearOff();
 /// @nodoc
 mixin _$FeedbackWatcherEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result watchAllUserFeedback(String placeID),
-    @required Result userFeedbackReceived(List<UserFeedback> userfeedbacks),
-    @required Result errorReceived(),
+  TResult when<TResult extends Object>({
+    @required TResult watchAllUserFeedback(String placeID),
+    @required TResult userFeedbackReceived(List<UserFeedback> userfeedbacks),
+    @required TResult errorReceived(),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result watchAllUserFeedback(String placeID),
-    Result userFeedbackReceived(List<UserFeedback> userfeedbacks),
-    Result errorReceived(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult watchAllUserFeedback(String placeID),
+    TResult userFeedbackReceived(List<UserFeedback> userfeedbacks),
+    TResult errorReceived(),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result watchAllUserFeedback(_WatchAllUserFeedback value),
-    @required Result userFeedbackReceived(_UserFeedbackReceived value),
-    @required Result errorReceived(_ErrorReceived value),
+  TResult map<TResult extends Object>({
+    @required TResult watchAllUserFeedback(_WatchAllUserFeedback value),
+    @required TResult userFeedbackReceived(_UserFeedbackReceived value),
+    @required TResult errorReceived(_ErrorReceived value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result watchAllUserFeedback(_WatchAllUserFeedback value),
-    Result userFeedbackReceived(_UserFeedbackReceived value),
-    Result errorReceived(_ErrorReceived value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult watchAllUserFeedback(_WatchAllUserFeedback value),
+    TResult userFeedbackReceived(_UserFeedbackReceived value),
+    TResult errorReceived(_ErrorReceived value),
+    @required TResult orElse(),
   });
 }
 
@@ -137,6 +137,7 @@ class _$_WatchAllUserFeedback implements _WatchAllUserFeedback {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(placeID);
 
+  @JsonKey(ignore: true)
   @override
   _$WatchAllUserFeedbackCopyWith<_WatchAllUserFeedback> get copyWith =>
       __$WatchAllUserFeedbackCopyWithImpl<_WatchAllUserFeedback>(
@@ -144,10 +145,10 @@ class _$_WatchAllUserFeedback implements _WatchAllUserFeedback {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result watchAllUserFeedback(String placeID),
-    @required Result userFeedbackReceived(List<UserFeedback> userfeedbacks),
-    @required Result errorReceived(),
+  TResult when<TResult extends Object>({
+    @required TResult watchAllUserFeedback(String placeID),
+    @required TResult userFeedbackReceived(List<UserFeedback> userfeedbacks),
+    @required TResult errorReceived(),
   }) {
     assert(watchAllUserFeedback != null);
     assert(userFeedbackReceived != null);
@@ -157,11 +158,11 @@ class _$_WatchAllUserFeedback implements _WatchAllUserFeedback {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result watchAllUserFeedback(String placeID),
-    Result userFeedbackReceived(List<UserFeedback> userfeedbacks),
-    Result errorReceived(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult watchAllUserFeedback(String placeID),
+    TResult userFeedbackReceived(List<UserFeedback> userfeedbacks),
+    TResult errorReceived(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (watchAllUserFeedback != null) {
@@ -172,10 +173,10 @@ class _$_WatchAllUserFeedback implements _WatchAllUserFeedback {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result watchAllUserFeedback(_WatchAllUserFeedback value),
-    @required Result userFeedbackReceived(_UserFeedbackReceived value),
-    @required Result errorReceived(_ErrorReceived value),
+  TResult map<TResult extends Object>({
+    @required TResult watchAllUserFeedback(_WatchAllUserFeedback value),
+    @required TResult userFeedbackReceived(_UserFeedbackReceived value),
+    @required TResult errorReceived(_ErrorReceived value),
   }) {
     assert(watchAllUserFeedback != null);
     assert(userFeedbackReceived != null);
@@ -185,11 +186,11 @@ class _$_WatchAllUserFeedback implements _WatchAllUserFeedback {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result watchAllUserFeedback(_WatchAllUserFeedback value),
-    Result userFeedbackReceived(_UserFeedbackReceived value),
-    Result errorReceived(_ErrorReceived value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult watchAllUserFeedback(_WatchAllUserFeedback value),
+    TResult userFeedbackReceived(_UserFeedbackReceived value),
+    TResult errorReceived(_ErrorReceived value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (watchAllUserFeedback != null) {
@@ -203,6 +204,7 @@ abstract class _WatchAllUserFeedback implements FeedbackWatcherEvent {
   const factory _WatchAllUserFeedback(String placeID) = _$_WatchAllUserFeedback;
 
   String get placeID;
+  @JsonKey(ignore: true)
   _$WatchAllUserFeedbackCopyWith<_WatchAllUserFeedback> get copyWith;
 }
 
@@ -263,6 +265,7 @@ class _$_UserFeedbackReceived implements _UserFeedbackReceived {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(userfeedbacks);
 
+  @JsonKey(ignore: true)
   @override
   _$UserFeedbackReceivedCopyWith<_UserFeedbackReceived> get copyWith =>
       __$UserFeedbackReceivedCopyWithImpl<_UserFeedbackReceived>(
@@ -270,10 +273,10 @@ class _$_UserFeedbackReceived implements _UserFeedbackReceived {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result watchAllUserFeedback(String placeID),
-    @required Result userFeedbackReceived(List<UserFeedback> userfeedbacks),
-    @required Result errorReceived(),
+  TResult when<TResult extends Object>({
+    @required TResult watchAllUserFeedback(String placeID),
+    @required TResult userFeedbackReceived(List<UserFeedback> userfeedbacks),
+    @required TResult errorReceived(),
   }) {
     assert(watchAllUserFeedback != null);
     assert(userFeedbackReceived != null);
@@ -283,11 +286,11 @@ class _$_UserFeedbackReceived implements _UserFeedbackReceived {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result watchAllUserFeedback(String placeID),
-    Result userFeedbackReceived(List<UserFeedback> userfeedbacks),
-    Result errorReceived(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult watchAllUserFeedback(String placeID),
+    TResult userFeedbackReceived(List<UserFeedback> userfeedbacks),
+    TResult errorReceived(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (userFeedbackReceived != null) {
@@ -298,10 +301,10 @@ class _$_UserFeedbackReceived implements _UserFeedbackReceived {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result watchAllUserFeedback(_WatchAllUserFeedback value),
-    @required Result userFeedbackReceived(_UserFeedbackReceived value),
-    @required Result errorReceived(_ErrorReceived value),
+  TResult map<TResult extends Object>({
+    @required TResult watchAllUserFeedback(_WatchAllUserFeedback value),
+    @required TResult userFeedbackReceived(_UserFeedbackReceived value),
+    @required TResult errorReceived(_ErrorReceived value),
   }) {
     assert(watchAllUserFeedback != null);
     assert(userFeedbackReceived != null);
@@ -311,11 +314,11 @@ class _$_UserFeedbackReceived implements _UserFeedbackReceived {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result watchAllUserFeedback(_WatchAllUserFeedback value),
-    Result userFeedbackReceived(_UserFeedbackReceived value),
-    Result errorReceived(_ErrorReceived value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult watchAllUserFeedback(_WatchAllUserFeedback value),
+    TResult userFeedbackReceived(_UserFeedbackReceived value),
+    TResult errorReceived(_ErrorReceived value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (userFeedbackReceived != null) {
@@ -330,6 +333,7 @@ abstract class _UserFeedbackReceived implements FeedbackWatcherEvent {
       _$_UserFeedbackReceived;
 
   List<UserFeedback> get userfeedbacks;
+  @JsonKey(ignore: true)
   _$UserFeedbackReceivedCopyWith<_UserFeedbackReceived> get copyWith;
 }
 
@@ -371,10 +375,10 @@ class _$_ErrorReceived implements _ErrorReceived {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result watchAllUserFeedback(String placeID),
-    @required Result userFeedbackReceived(List<UserFeedback> userfeedbacks),
-    @required Result errorReceived(),
+  TResult when<TResult extends Object>({
+    @required TResult watchAllUserFeedback(String placeID),
+    @required TResult userFeedbackReceived(List<UserFeedback> userfeedbacks),
+    @required TResult errorReceived(),
   }) {
     assert(watchAllUserFeedback != null);
     assert(userFeedbackReceived != null);
@@ -384,11 +388,11 @@ class _$_ErrorReceived implements _ErrorReceived {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result watchAllUserFeedback(String placeID),
-    Result userFeedbackReceived(List<UserFeedback> userfeedbacks),
-    Result errorReceived(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult watchAllUserFeedback(String placeID),
+    TResult userFeedbackReceived(List<UserFeedback> userfeedbacks),
+    TResult errorReceived(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (errorReceived != null) {
@@ -399,10 +403,10 @@ class _$_ErrorReceived implements _ErrorReceived {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result watchAllUserFeedback(_WatchAllUserFeedback value),
-    @required Result userFeedbackReceived(_UserFeedbackReceived value),
-    @required Result errorReceived(_ErrorReceived value),
+  TResult map<TResult extends Object>({
+    @required TResult watchAllUserFeedback(_WatchAllUserFeedback value),
+    @required TResult userFeedbackReceived(_UserFeedbackReceived value),
+    @required TResult errorReceived(_ErrorReceived value),
   }) {
     assert(watchAllUserFeedback != null);
     assert(userFeedbackReceived != null);
@@ -412,11 +416,11 @@ class _$_ErrorReceived implements _ErrorReceived {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result watchAllUserFeedback(_WatchAllUserFeedback value),
-    Result userFeedbackReceived(_UserFeedbackReceived value),
-    Result errorReceived(_ErrorReceived value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult watchAllUserFeedback(_WatchAllUserFeedback value),
+    TResult userFeedbackReceived(_UserFeedbackReceived value),
+    TResult errorReceived(_ErrorReceived value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (errorReceived != null) {
@@ -464,34 +468,34 @@ const $FeedbackWatcherState = _$FeedbackWatcherStateTearOff();
 /// @nodoc
 mixin _$FeedbackWatcherState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loadSuccess(List<UserFeedback> userfeedbacks),
-    @required Result loadFailure(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult loadSuccess(List<UserFeedback> userfeedbacks),
+    @required TResult loadFailure(),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loadSuccess(List<UserFeedback> userfeedbacks),
-    Result loadFailure(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult loadSuccess(List<UserFeedback> userfeedbacks),
+    TResult loadFailure(),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult loading(_Loading value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult loading(_Loading value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
+    @required TResult orElse(),
   });
 }
 
@@ -548,11 +552,11 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loadSuccess(List<UserFeedback> userfeedbacks),
-    @required Result loadFailure(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult loadSuccess(List<UserFeedback> userfeedbacks),
+    @required TResult loadFailure(),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -563,12 +567,12 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loadSuccess(List<UserFeedback> userfeedbacks),
-    Result loadFailure(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult loadSuccess(List<UserFeedback> userfeedbacks),
+    TResult loadFailure(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -579,11 +583,11 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult loading(_Loading value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -594,12 +598,12 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult loading(_Loading value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -649,11 +653,11 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loadSuccess(List<UserFeedback> userfeedbacks),
-    @required Result loadFailure(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult loadSuccess(List<UserFeedback> userfeedbacks),
+    @required TResult loadFailure(),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -664,12 +668,12 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loadSuccess(List<UserFeedback> userfeedbacks),
-    Result loadFailure(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult loadSuccess(List<UserFeedback> userfeedbacks),
+    TResult loadFailure(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loading != null) {
@@ -680,11 +684,11 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult loading(_Loading value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -695,12 +699,12 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult loading(_Loading value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loading != null) {
@@ -770,17 +774,18 @@ class _$_LoadSuccess implements _LoadSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(userfeedbacks);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loadSuccess(List<UserFeedback> userfeedbacks),
-    @required Result loadFailure(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult loadSuccess(List<UserFeedback> userfeedbacks),
+    @required TResult loadFailure(),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -791,12 +796,12 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loadSuccess(List<UserFeedback> userfeedbacks),
-    Result loadFailure(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult loadSuccess(List<UserFeedback> userfeedbacks),
+    TResult loadFailure(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loadSuccess != null) {
@@ -807,11 +812,11 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult loading(_Loading value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -822,12 +827,12 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult loading(_Loading value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loadSuccess != null) {
@@ -841,6 +846,7 @@ abstract class _LoadSuccess implements FeedbackWatcherState {
   const factory _LoadSuccess(List<UserFeedback> userfeedbacks) = _$_LoadSuccess;
 
   List<UserFeedback> get userfeedbacks;
+  @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
@@ -882,11 +888,11 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loadSuccess(List<UserFeedback> userfeedbacks),
-    @required Result loadFailure(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult loadSuccess(List<UserFeedback> userfeedbacks),
+    @required TResult loadFailure(),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -897,12 +903,12 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loadSuccess(List<UserFeedback> userfeedbacks),
-    Result loadFailure(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult loadSuccess(List<UserFeedback> userfeedbacks),
+    TResult loadFailure(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loadFailure != null) {
@@ -913,11 +919,11 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult loading(_Loading value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -928,12 +934,12 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult loading(_Loading value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loadFailure != null) {
