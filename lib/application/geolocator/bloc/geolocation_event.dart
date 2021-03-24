@@ -13,5 +13,6 @@ abstract class GeolocationEvent with _$GeolocationEvent {
       String input, String sessionToken) = AutoComplete;
   const factory GeolocationEvent.suggestionPressed(
       String sessionToken, String placeid) = SuggestionPressed;
+  const factory GeolocationEvent.recommendTrigger() = RecommendTrigger;
   const factory GeolocationEvent.clear() = Clear;
 }

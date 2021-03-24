@@ -10,18 +10,20 @@ import 'package:hkonline/application/auth/authenticate_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hkonline/application/auth/instagram/bloc/igpost_bloc.dart';
 import 'package:hkonline/application/geolocator/bloc/geolocation_bloc.dart';
+import 'package:hkonline/application/hiking/hiking_bloc.dart';
 import 'package:hkonline/application/quest/quest_bloc.dart';
 import 'package:hkonline/infrastructure/googlePlace/place_search.dart';
+import 'package:hkonline/infrastructure/hiking/hiking_route.dart';
 import 'package:hkonline/infrastructure/instagram/api.dart';
 import 'package:hkonline/infrastructure/instagram/post.dart';
 import 'package:hkonline/infrastructure/skyscanner/airticket.dart';
 import 'package:hkonline/infrastructure/skyscanner/api.dart';
 import 'package:hkonline/presentation/map/airticket_detail_window.dart';
+import 'package:hkonline/presentation/map/hiking_detail_window.dart';
 import 'package:hkonline/presentation/map/igpost_detail_window.dart';
 import 'package:hkonline/presentation/map/place_detail_.window.dart';
 import 'package:hkonline/presentation/routes/router.gr.dart';
 import 'package:uuid/uuid.dart';
-import 'package:hkonline/presentation/taxi/taxi_main.dart';
 
 class MapScreen extends StatefulWidget {
   @override
@@ -29,15 +31,28 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-  final List<Marker> markers = <Marker>[];
+  List<Marker> markers = <Marker>[];
+  final List<Polyline> polylines = <Polyline>[];
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   String input = '';
   bool inAirplaneMode = false;
   Airticket selectedAirticket = const Airticket();
   List<IgPost> igPostList = [];
+  List<HikingRoute> routeList = [];
   IgPost selectedIgPost = const IgPost();
   GoogleMapController _mapController;
+  bool openFilter = false;
+  bool _checked = false;
+
+  void clearRestaurant() {
+    final updated = markers
+        .where((element) => !element.markerId.value.startsWith("RE"))
+        .toList();
+    setState(() {
+      markers = updated;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -118,6 +133,32 @@ class _MapScreenState extends State<MapScreen> {
                     }
                   });
                 });
+          }),
+          BlocListener<HikingBloc, HikingState>(listener: (context, state) {
+            state.when(
+                initial: () {},
+                getSuccess: (routes) {
+                  setState(() {
+                    routeList = routes;
+                  });
+                  routes.forEach((route) {
+                    final List<LatLng> points = [];
+                    route.geopoints.forEach((geopoint) {
+                      points.add(LatLng(geopoint.lat, geopoint.lng));
+                    });
+                    polylines.add(Polyline(
+                      polylineId: PolylineId(Uuid().v4()),
+                      consumeTapEvents: true,
+                      points: points,
+                      color: Colors.green[600],
+                      width: 7,
+                      onTap: () {
+                        showHikingRoute(route);
+                      },
+                    ));
+                  });
+                },
+                getFail: () {});
           })
         ],
         child: BlocConsumer<GeolocationBloc, GeolocationState>(
@@ -139,8 +180,13 @@ class _MapScreenState extends State<MapScreen> {
             if (state.fetchPlaceSuccess == true)
               {
                 state.places.forEach((place) async {
+                  final code = place.type == "restaurant"
+                      ? 'RE'
+                      : place.type == 'cafe'
+                          ? 'CA'
+                          : 'CI';
                   final Marker marker = Marker(
-                      markerId: MarkerId(place.placeID),
+                      markerId: MarkerId(code + place.placeID),
                       icon: place.type == "restaurant"
                           ? await BitmapDescriptor.fromAssetImage(
                               config, 'assets/SmallRestaurant3.png')
@@ -177,67 +223,134 @@ class _MapScreenState extends State<MapScreen> {
                   }
                 })
               },
+            if (state.recommendSuccess == true)
+              {
+                state.recommendPlaces.forEach((place) async {
+                  print(place.name);
+                  final Marker marker = Marker(
+                      markerId: MarkerId(place.placeID),
+                      icon: await BitmapDescriptor.fromAssetImage(
+                          config, 'assets/recommend.png'),
+                      onTap: () {
+                        context
+                            .read<GeolocationBloc>()
+                            .add(GeolocationEvent.markerPressed(place));
+                        context
+                            .read<GeolocationBloc>()
+                            .add(const GeolocationEvent.getDistance());
+                        showBottomSheet();
+                      },
+                      position: LatLng(
+                          place.geometry['location']['lat'] as double,
+                          place.geometry['location']['lng'] as double));
+                  markers.add(marker);
+                })
+              }
           },
           builder: (context, state) {
             return Scaffold(
               key: _scaffoldKey,
               body: state.isLoading
                   ? const Center(
-                      child: SpinKitFoldingCube(
+                      child: SpinKitHourGlass(
                       color: Colors.blueAccent,
                       size: 70.0,
                     ))
                   : Stack(
                       children: <Widget>[
-                        GoogleMap(
-                          myLocationEnabled: true,
-                          mapToolbarEnabled: false,
-                          onMapCreated: _onMapCreated,
-                          markers: Set<Marker>.of(markers),
-                          initialCameraPosition: CameraPosition(
-                              target: LatLng(state.latitude, state.longitude),
-                              bearing: 70.0,
-                              tilt: 40.0,
-                              zoom: 17.0),
-                        ),
+                        if (state.recommendSuccess)
+                          GoogleMap(
+                            myLocationEnabled: true,
+                            mapToolbarEnabled: false,
+                            onMapCreated: _onMapCreated,
+                            polylines: Set<Polyline>.of(polylines),
+                            markers: Set<Marker>.of(markers),
+                            initialCameraPosition: CameraPosition(
+                                target: LatLng(state.latitude, state.longitude),
+                                bearing: 70.0,
+                                tilt: 40.0,
+                                zoom: 17.0),
+                          )
+                        else
+                          GoogleMap(
+                            myLocationEnabled: true,
+                            mapToolbarEnabled: false,
+                            onMapCreated: _onMapCreated,
+                            polylines: Set<Polyline>.of(polylines),
+                            markers: Set<Marker>.of(markers),
+                            initialCameraPosition: CameraPosition(
+                                target: LatLng(state.latitude, state.longitude),
+                                bearing: 70.0,
+                                tilt: 40.0,
+                                zoom: 17.0),
+                          ),
                         SafeArea(
-                          child: Container(
+                          child: AnimatedContainer(
+                            duration: const Duration(milliseconds: 300),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               border: Border.all(color: Colors.teal),
                               borderRadius:
                                   const BorderRadius.all(Radius.circular(30)),
                             ),
-                            height: MediaQuery.of(context).size.height / 12.5,
+                            height: openFilter ? 90 : 60,
+                            //MediaQuery.of(context).size.height / 12.5,
                             alignment: Alignment.topCenter,
-                            child: ListTile(
-                              leading: IconButton(
-                                onPressed: () {
-                                  _scaffoldKey.currentState.openDrawer();
-                                },
-                                icon: const Icon(Icons.menu),
-                              ),
-                              title: TextFormField(
-                                readOnly: true,
-                                onTap: () async {
-                                  final sessionToken = Uuid().v4();
-                                  await showSearch(
-                                      context: context,
-                                      delegate: PlaceSearch(
-                                          sessionToken: sessionToken));
-                                },
-                                decoration: const InputDecoration.collapsed(
-                                  hintText: '搜尋地方...',
+                            child: Column(
+                              children: [
+                                ListTile(
+                                  leading: IconButton(
+                                    onPressed: () {
+                                      _scaffoldKey.currentState.openDrawer();
+                                    },
+                                    icon: const Icon(Icons.menu),
+                                  ),
+                                  title: TextFormField(
+                                    readOnly: true,
+                                    onTap: () async {
+                                      final sessionToken = Uuid().v4();
+                                      await showSearch(
+                                          context: context,
+                                          delegate: PlaceSearch(
+                                              sessionToken: sessionToken));
+                                    },
+                                    decoration: const InputDecoration.collapsed(
+                                      hintText: '搜尋地方...',
+                                    ),
+                                  ),
+                                  trailing: IconButton(
+                                      onPressed: () {
+                                        // context.read<GeolocationBloc>().add(
+                                        //     const GeolocationEvent
+                                        //         .getCurrentPosition());
+                                        // moveCamera(state.latitude, state.longitude);
+                                        setState(() {
+                                          openFilter = !openFilter;
+                                        });
+                                      },
+                                      icon:
+                                          const Icon(Icons.gps_fixed_outlined)),
                                 ),
-                              ),
-                              trailing: IconButton(
-                                  onPressed: () {
-                                    context.read<GeolocationBloc>().add(
-                                        const GeolocationEvent
-                                            .getCurrentPosition());
-                                    moveCamera(state.latitude, state.longitude);
-                                  },
-                                  icon: const Icon(Icons.gps_fixed_outlined)),
+                                if (openFilter)
+                                  AnimatedOpacity(
+                                    opacity: openFilter ? 1 : 0.0,
+                                    duration:
+                                        const Duration(milliseconds: 5000),
+                                    child: CheckboxListTile(
+                                      title: const Text('餐廳'),
+                                      value: _checked,
+                                      onChanged: (bool value) {
+                                        setState(() {
+                                          _checked = value;
+                                        });
+                                      },
+                                      activeColor: Colors.green,
+                                      checkColor: Colors.black,
+                                    ),
+                                  )
+                                else
+                                  const SizedBox()
+                              ],
                             ),
                           ),
                         ),
@@ -257,6 +370,21 @@ class _MapScreenState extends State<MapScreen> {
                                     )
                                   : const Icon(Icons.airplanemode_active)),
                         ),
+                        Positioned(
+                            bottom: 100,
+                            left: 20,
+                            child: FloatingActionButton(
+                              onPressed: () {
+                                clearRestaurant();
+                              },
+                              backgroundColor: Colors.teal,
+                              child: inAirplaneMode
+                                  ? const Text(
+                                      '🇭🇰',
+                                      style: TextStyle(fontSize: 20.0),
+                                    )
+                                  : const Icon(Icons.filter),
+                            )),
                       ],
                     ),
               drawer: Drawer(
@@ -319,6 +447,17 @@ class _MapScreenState extends State<MapScreen> {
                         title: const Text("文化生活")),
                     ListTile(
                         onTap: () {
+                          ExtendedNavigator.of(context).push(Routes.hikingList,
+                              arguments:
+                                  HikingListArguments(routeList: routeList));
+                        },
+                        leading: Icon(
+                          Icons.filter_hdr_rounded,
+                          color: Colors.green[900],
+                        ),
+                        title: const Text("行山")),
+                    ListTile(
+                        onTap: () {
                           ExtendedNavigator.of(context)
                               .push(Routes.creditCardList);
                         },
@@ -378,6 +517,21 @@ class _MapScreenState extends State<MapScreen> {
         context: context,
         builder: (context) {
           return PlaceDetailWindow();
+        });
+  }
+
+  void showHikingRoute(HikingRoute route) {
+    showModalBottomSheet(
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+        enableDrag: true,
+        elevation: 3,
+        clipBehavior: Clip.antiAlias,
+        context: context,
+        builder: (context) {
+          return HikingDetailWindow(
+            route: route,
+          );
         });
   }
 

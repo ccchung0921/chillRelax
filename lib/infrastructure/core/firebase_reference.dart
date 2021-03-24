@@ -15,6 +15,7 @@ extension FirestoreRef on FirebaseFirestore {
 
 extension CollectionRef on FirebaseFirestore {
   CollectionReference get placeCollection => collection('place');
+  CollectionReference get hikingCollection => collection('hiking');
 }
 
 extension DocumentRef on DocumentReference {

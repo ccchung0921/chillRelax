@@ -37,7 +37,6 @@ class BocAPI {
             "Content-Type": "application/json"
           });
       final data = convert.jsonDecode(response.body);
-      print(data);
       //await credentialsFile.writeAsString(client.credentials.toJson());
       final products = data['products'] as List;
       // final localProducts =

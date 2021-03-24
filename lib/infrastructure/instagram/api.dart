@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 class InstagramAPI {
   final key =
       'EAAFtYOHkoGUBALiu63FzqLqjAv4WYl3SxIZBBsJBAz8xxqAZB8v5eD0hfnaW6jMIEGK7mM2wxppJpGU5HCpNDMmSEww4CJGZAwWJces1igh31XZBxShsZCPafkwZB2PhZBMTyDm6yUUWcLQXX4Epr28pJEBlIc6IUZBFzjv5L1gg1IpDZCvoWI18p';
-  final googleKey = "AIzaSyDilMpKQ6d6aeQxORwS9VgQVa0UPsPUPHY";
+  final googleKey = "AIzaSyCdXWm3q1aKCiuTuZYBMvcefJWG11aWcHY";
   final exhibitionTagID = '17912541967447730';
   final userID = '17841444250709529';
 
@@ -17,7 +17,7 @@ class InstagramAPI {
       final result = data['data'] as List;
       final filtered = result.where((element) =>
           DateTime.parse(element['timestamp'].toString())
-              .compareTo(DateTime.now().subtract(const Duration(days: 60))) >
+              .compareTo(DateTime.now().subtract(const Duration(days: 120))) >
           0);
       return filtered.map((p) {
         final int searching = findAddress(p['caption'].toString());

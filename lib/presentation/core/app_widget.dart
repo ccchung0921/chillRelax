@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hkonline/application/airticket/airticket_bloc.dart';
 import 'package:hkonline/application/auth/authenticate_bloc.dart';
 import 'package:hkonline/application/auth/instagram/bloc/igpost_bloc.dart';
-import 'package:hkonline/application/creditcard/bloc/creditcard_bloc.dart';
 import 'package:hkonline/application/geolocator/bloc/geolocation_bloc.dart';
+import 'package:hkonline/application/hiking/hiking_bloc.dart';
 import 'package:hkonline/application/quest/quest_bloc.dart';
 import 'package:hkonline/injection.dart';
 import 'package:hkonline/presentation/routes/router.gr.dart';
@@ -36,6 +36,10 @@ class AppWidget extends StatelessWidget {
         BlocProvider(
             create: (context) =>
                 QuestBloc()..add(const QuestEvent.detectSetUp())),
+        BlocProvider(
+          create: (context) =>
+              HikingBloc()..add(const HikingEvent.getHikingRoute()),
+        )
       ],
       child: MaterialApp(
         title: 'Material App',

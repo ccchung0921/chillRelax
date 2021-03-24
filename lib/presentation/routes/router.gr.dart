@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 
 import '../../infrastructure/creditCard/credit_card.dart';
 import '../../infrastructure/googlePlace/place.dart';
+import '../../infrastructure/hiking/hiking_route.dart';
 import '../../infrastructure/instagram/post.dart';
 import '../../infrastructure/payment/payment_message.dart';
 import '../../infrastructure/skyscanner/airticket.dart';
@@ -19,6 +20,7 @@ import '../auth/splash_screen.dart';
 import '../creditcard/creditcard_detail.dart';
 import '../feedback/feedback_overview_page.dart';
 import '../list/creditcard_list.dart';
+import '../list/hiking_list.dart';
 import '../list/suggestion_list.dart';
 import '../map/airticket_detail_page.dart';
 import '../map/igpost_detail_page.dart';
@@ -46,6 +48,7 @@ class Routes {
   static const String personalRecord = '/personal-record';
   static const String feedBackPage = '/feed-back-page';
   static const String taxiMainPage = '/taxi-main-page';
+  static const String hikingList = '/hiking-list';
   static const all = <String>{
     splashScreen,
     signInScreen,
@@ -62,6 +65,7 @@ class Routes {
     personalRecord,
     feedBackPage,
     taxiMainPage,
+    hikingList,
   };
 }
 
@@ -84,6 +88,7 @@ class MyRouter extends RouterBase {
     RouteDef(Routes.personalRecord, page: PersonalRecord),
     RouteDef(Routes.feedBackPage, page: FeedBackPage),
     RouteDef(Routes.taxiMainPage, page: TaxiMainPage),
+    RouteDef(Routes.hikingList, page: HikingList),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -220,6 +225,18 @@ class MyRouter extends RouterBase {
         settings: data,
       );
     },
+    HikingList: (data) {
+      final args = data.getArgs<HikingListArguments>(
+        orElse: () => HikingListArguments(),
+      );
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => HikingList(
+          key: args.key,
+          routeList: args.routeList,
+        ),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -306,6 +323,15 @@ extension MyRouterExtendedNavigatorStateX on ExtendedNavigatorState {
       );
 
   Future<dynamic> pushTaxiMainPage() => push<dynamic>(Routes.taxiMainPage);
+
+  Future<dynamic> pushHikingList({
+    Key key,
+    List<HikingRoute> routeList,
+  }) =>
+      push<dynamic>(
+        Routes.hikingList,
+        arguments: HikingListArguments(key: key, routeList: routeList),
+      );
 }
 
 /// ************************************************************************
@@ -359,4 +385,11 @@ class FeedBackPageArguments {
   final Key key;
   final String placeID;
   FeedBackPageArguments({this.key, this.placeID});
+}
+
+/// HikingList arguments holder class
+class HikingListArguments {
+  final Key key;
+  final List<HikingRoute> routeList;
+  HikingListArguments({this.key, this.routeList});
 }

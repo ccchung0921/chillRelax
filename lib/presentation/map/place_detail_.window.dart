@@ -31,6 +31,9 @@ class PlaceDetailWindow extends StatelessWidget {
                               Routes.placeDetailPage,
                               arguments: PlaceDetailPageArguments(
                                   place: state.selectedPlace));
+                          context
+                              .read<GeolocationBloc>()
+                              .add(const GeolocationEvent.recommendTrigger());
                         },
                         title: ListTile(
                             leading: Image.network(

@@ -16,6 +16,8 @@ abstract class GeolocationState with _$GeolocationState {
     @required bool isPlaceLoading,
     @required Place selectedPlace,
     @required double distance,
+    @required List<Place> recommendPlaces,
+    @required bool recommendSuccess,
   }) = _GeolocationState;
 
   factory GeolocationState.initial() => const GeolocationState(
@@ -31,5 +33,7 @@ abstract class GeolocationState with _$GeolocationState {
       markers: [],
       suggestions: [],
       selectedPlace: Place(),
+      recommendPlaces: [],
+      recommendSuccess: false,
       distance: 0.0);
 }

@@ -62,6 +62,7 @@ class SuggestionAPI extends PlaceAPI {
         //  'https://koenig-media.raywenderlich.com/uploads/2020/07/FlutterInterviewQuestions-feature.png',
       );
     } else {
+      print('error');
       throw 'cannot fetch detail';
     }
   }

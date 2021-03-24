@@ -5,7 +5,7 @@ import 'package:uuid/uuid.dart';
 
 class SkyscannerAPI {
   final key = "d7b8ff967amshc8d131786b3fcf8p15497djsnf4f4be9b51a9";
-  final googleKey = "AIzaSyDilMpKQ6d6aeQxORwS9VgQVa0UPsPUPHY";
+  final googleKey = "AIzaSyCdXWm3q1aKCiuTuZYBMvcefJWG11aWcHY";
   Map<String, String> requestHeaders = {
     "x-rapidapi-key": "d7b8ff967amshc8d131786b3fcf8p15497djsnf4f4be9b51a9",
   };

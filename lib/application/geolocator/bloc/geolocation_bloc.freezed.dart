@@ -69,6 +69,11 @@ class _$GeolocationEventTearOff {
   }
 
 // ignore: unused_element
+  RecommendTrigger recommendTrigger() {
+    return const RecommendTrigger();
+  }
+
+// ignore: unused_element
   Clear clear() {
     return const Clear();
   }
@@ -91,6 +96,7 @@ mixin _$GeolocationEvent {
     @required TResult getDistance(),
     @required TResult autoComplete(String input, String sessionToken),
     @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult recommendTrigger(),
     @required TResult clear(),
   });
   @optionalTypeArgs
@@ -104,6 +110,7 @@ mixin _$GeolocationEvent {
     TResult getDistance(),
     TResult autoComplete(String input, String sessionToken),
     TResult suggestionPressed(String sessionToken, String placeid),
+    TResult recommendTrigger(),
     TResult clear(),
     @required TResult orElse(),
   });
@@ -118,6 +125,7 @@ mixin _$GeolocationEvent {
     @required TResult getDistance(GetDistance value),
     @required TResult autoComplete(AutoComplete value),
     @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult recommendTrigger(RecommendTrigger value),
     @required TResult clear(Clear value),
   });
   @optionalTypeArgs
@@ -131,6 +139,7 @@ mixin _$GeolocationEvent {
     TResult getDistance(GetDistance value),
     TResult autoComplete(AutoComplete value),
     TResult suggestionPressed(SuggestionPressed value),
+    TResult recommendTrigger(RecommendTrigger value),
     TResult clear(Clear value),
     @required TResult orElse(),
   });
@@ -210,6 +219,7 @@ class _$GetCurrentPosition
     @required TResult getDistance(),
     @required TResult autoComplete(String input, String sessionToken),
     @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult recommendTrigger(),
     @required TResult clear(),
   }) {
     assert(getCurrentPosition != null);
@@ -221,6 +231,7 @@ class _$GetCurrentPosition
     assert(getDistance != null);
     assert(autoComplete != null);
     assert(suggestionPressed != null);
+    assert(recommendTrigger != null);
     assert(clear != null);
     return getCurrentPosition();
   }
@@ -237,6 +248,7 @@ class _$GetCurrentPosition
     TResult getDistance(),
     TResult autoComplete(String input, String sessionToken),
     TResult suggestionPressed(String sessionToken, String placeid),
+    TResult recommendTrigger(),
     TResult clear(),
     @required TResult orElse(),
   }) {
@@ -259,6 +271,7 @@ class _$GetCurrentPosition
     @required TResult getDistance(GetDistance value),
     @required TResult autoComplete(AutoComplete value),
     @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult recommendTrigger(RecommendTrigger value),
     @required TResult clear(Clear value),
   }) {
     assert(getCurrentPosition != null);
@@ -270,6 +283,7 @@ class _$GetCurrentPosition
     assert(getDistance != null);
     assert(autoComplete != null);
     assert(suggestionPressed != null);
+    assert(recommendTrigger != null);
     assert(clear != null);
     return getCurrentPosition(this);
   }
@@ -286,6 +300,7 @@ class _$GetCurrentPosition
     TResult getDistance(GetDistance value),
     TResult autoComplete(AutoComplete value),
     TResult suggestionPressed(SuggestionPressed value),
+    TResult recommendTrigger(RecommendTrigger value),
     TResult clear(Clear value),
     @required TResult orElse(),
   }) {
@@ -352,6 +367,7 @@ class _$GetPlace with DiagnosticableTreeMixin implements GetPlace {
     @required TResult getDistance(),
     @required TResult autoComplete(String input, String sessionToken),
     @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult recommendTrigger(),
     @required TResult clear(),
   }) {
     assert(getCurrentPosition != null);
@@ -363,6 +379,7 @@ class _$GetPlace with DiagnosticableTreeMixin implements GetPlace {
     assert(getDistance != null);
     assert(autoComplete != null);
     assert(suggestionPressed != null);
+    assert(recommendTrigger != null);
     assert(clear != null);
     return getPlace();
   }
@@ -379,6 +396,7 @@ class _$GetPlace with DiagnosticableTreeMixin implements GetPlace {
     TResult getDistance(),
     TResult autoComplete(String input, String sessionToken),
     TResult suggestionPressed(String sessionToken, String placeid),
+    TResult recommendTrigger(),
     TResult clear(),
     @required TResult orElse(),
   }) {
@@ -401,6 +419,7 @@ class _$GetPlace with DiagnosticableTreeMixin implements GetPlace {
     @required TResult getDistance(GetDistance value),
     @required TResult autoComplete(AutoComplete value),
     @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult recommendTrigger(RecommendTrigger value),
     @required TResult clear(Clear value),
   }) {
     assert(getCurrentPosition != null);
@@ -412,6 +431,7 @@ class _$GetPlace with DiagnosticableTreeMixin implements GetPlace {
     assert(getDistance != null);
     assert(autoComplete != null);
     assert(suggestionPressed != null);
+    assert(recommendTrigger != null);
     assert(clear != null);
     return getPlace(this);
   }
@@ -428,6 +448,7 @@ class _$GetPlace with DiagnosticableTreeMixin implements GetPlace {
     TResult getDistance(GetDistance value),
     TResult autoComplete(AutoComplete value),
     TResult suggestionPressed(SuggestionPressed value),
+    TResult recommendTrigger(RecommendTrigger value),
     TResult clear(Clear value),
     @required TResult orElse(),
   }) {
@@ -494,6 +515,7 @@ class _$GetCinema with DiagnosticableTreeMixin implements GetCinema {
     @required TResult getDistance(),
     @required TResult autoComplete(String input, String sessionToken),
     @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult recommendTrigger(),
     @required TResult clear(),
   }) {
     assert(getCurrentPosition != null);
@@ -505,6 +527,7 @@ class _$GetCinema with DiagnosticableTreeMixin implements GetCinema {
     assert(getDistance != null);
     assert(autoComplete != null);
     assert(suggestionPressed != null);
+    assert(recommendTrigger != null);
     assert(clear != null);
     return getCinema();
   }
@@ -521,6 +544,7 @@ class _$GetCinema with DiagnosticableTreeMixin implements GetCinema {
     TResult getDistance(),
     TResult autoComplete(String input, String sessionToken),
     TResult suggestionPressed(String sessionToken, String placeid),
+    TResult recommendTrigger(),
     TResult clear(),
     @required TResult orElse(),
   }) {
@@ -543,6 +567,7 @@ class _$GetCinema with DiagnosticableTreeMixin implements GetCinema {
     @required TResult getDistance(GetDistance value),
     @required TResult autoComplete(AutoComplete value),
     @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult recommendTrigger(RecommendTrigger value),
     @required TResult clear(Clear value),
   }) {
     assert(getCurrentPosition != null);
@@ -554,6 +579,7 @@ class _$GetCinema with DiagnosticableTreeMixin implements GetCinema {
     assert(getDistance != null);
     assert(autoComplete != null);
     assert(suggestionPressed != null);
+    assert(recommendTrigger != null);
     assert(clear != null);
     return getCinema(this);
   }
@@ -570,6 +596,7 @@ class _$GetCinema with DiagnosticableTreeMixin implements GetCinema {
     TResult getDistance(GetDistance value),
     TResult autoComplete(AutoComplete value),
     TResult suggestionPressed(SuggestionPressed value),
+    TResult recommendTrigger(RecommendTrigger value),
     TResult clear(Clear value),
     @required TResult orElse(),
   }) {
@@ -636,6 +663,7 @@ class _$GetMarker with DiagnosticableTreeMixin implements GetMarker {
     @required TResult getDistance(),
     @required TResult autoComplete(String input, String sessionToken),
     @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult recommendTrigger(),
     @required TResult clear(),
   }) {
     assert(getCurrentPosition != null);
@@ -647,6 +675,7 @@ class _$GetMarker with DiagnosticableTreeMixin implements GetMarker {
     assert(getDistance != null);
     assert(autoComplete != null);
     assert(suggestionPressed != null);
+    assert(recommendTrigger != null);
     assert(clear != null);
     return getMarker();
   }
@@ -663,6 +692,7 @@ class _$GetMarker with DiagnosticableTreeMixin implements GetMarker {
     TResult getDistance(),
     TResult autoComplete(String input, String sessionToken),
     TResult suggestionPressed(String sessionToken, String placeid),
+    TResult recommendTrigger(),
     TResult clear(),
     @required TResult orElse(),
   }) {
@@ -685,6 +715,7 @@ class _$GetMarker with DiagnosticableTreeMixin implements GetMarker {
     @required TResult getDistance(GetDistance value),
     @required TResult autoComplete(AutoComplete value),
     @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult recommendTrigger(RecommendTrigger value),
     @required TResult clear(Clear value),
   }) {
     assert(getCurrentPosition != null);
@@ -696,6 +727,7 @@ class _$GetMarker with DiagnosticableTreeMixin implements GetMarker {
     assert(getDistance != null);
     assert(autoComplete != null);
     assert(suggestionPressed != null);
+    assert(recommendTrigger != null);
     assert(clear != null);
     return getMarker(this);
   }
@@ -712,6 +744,7 @@ class _$GetMarker with DiagnosticableTreeMixin implements GetMarker {
     TResult getDistance(GetDistance value),
     TResult autoComplete(AutoComplete value),
     TResult suggestionPressed(SuggestionPressed value),
+    TResult recommendTrigger(RecommendTrigger value),
     TResult clear(Clear value),
     @required TResult orElse(),
   }) {
@@ -805,6 +838,7 @@ class _$SearchPlace with DiagnosticableTreeMixin implements SearchPlace {
     @required TResult getDistance(),
     @required TResult autoComplete(String input, String sessionToken),
     @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult recommendTrigger(),
     @required TResult clear(),
   }) {
     assert(getCurrentPosition != null);
@@ -816,6 +850,7 @@ class _$SearchPlace with DiagnosticableTreeMixin implements SearchPlace {
     assert(getDistance != null);
     assert(autoComplete != null);
     assert(suggestionPressed != null);
+    assert(recommendTrigger != null);
     assert(clear != null);
     return searchPlace(input);
   }
@@ -832,6 +867,7 @@ class _$SearchPlace with DiagnosticableTreeMixin implements SearchPlace {
     TResult getDistance(),
     TResult autoComplete(String input, String sessionToken),
     TResult suggestionPressed(String sessionToken, String placeid),
+    TResult recommendTrigger(),
     TResult clear(),
     @required TResult orElse(),
   }) {
@@ -854,6 +890,7 @@ class _$SearchPlace with DiagnosticableTreeMixin implements SearchPlace {
     @required TResult getDistance(GetDistance value),
     @required TResult autoComplete(AutoComplete value),
     @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult recommendTrigger(RecommendTrigger value),
     @required TResult clear(Clear value),
   }) {
     assert(getCurrentPosition != null);
@@ -865,6 +902,7 @@ class _$SearchPlace with DiagnosticableTreeMixin implements SearchPlace {
     assert(getDistance != null);
     assert(autoComplete != null);
     assert(suggestionPressed != null);
+    assert(recommendTrigger != null);
     assert(clear != null);
     return searchPlace(this);
   }
@@ -881,6 +919,7 @@ class _$SearchPlace with DiagnosticableTreeMixin implements SearchPlace {
     TResult getDistance(GetDistance value),
     TResult autoComplete(AutoComplete value),
     TResult suggestionPressed(SuggestionPressed value),
+    TResult recommendTrigger(RecommendTrigger value),
     TResult clear(Clear value),
     @required TResult orElse(),
   }) {
@@ -978,6 +1017,7 @@ class _$MarkerPressed with DiagnosticableTreeMixin implements MarkerPressed {
     @required TResult getDistance(),
     @required TResult autoComplete(String input, String sessionToken),
     @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult recommendTrigger(),
     @required TResult clear(),
   }) {
     assert(getCurrentPosition != null);
@@ -989,6 +1029,7 @@ class _$MarkerPressed with DiagnosticableTreeMixin implements MarkerPressed {
     assert(getDistance != null);
     assert(autoComplete != null);
     assert(suggestionPressed != null);
+    assert(recommendTrigger != null);
     assert(clear != null);
     return markerPressed(place);
   }
@@ -1005,6 +1046,7 @@ class _$MarkerPressed with DiagnosticableTreeMixin implements MarkerPressed {
     TResult getDistance(),
     TResult autoComplete(String input, String sessionToken),
     TResult suggestionPressed(String sessionToken, String placeid),
+    TResult recommendTrigger(),
     TResult clear(),
     @required TResult orElse(),
   }) {
@@ -1027,6 +1069,7 @@ class _$MarkerPressed with DiagnosticableTreeMixin implements MarkerPressed {
     @required TResult getDistance(GetDistance value),
     @required TResult autoComplete(AutoComplete value),
     @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult recommendTrigger(RecommendTrigger value),
     @required TResult clear(Clear value),
   }) {
     assert(getCurrentPosition != null);
@@ -1038,6 +1081,7 @@ class _$MarkerPressed with DiagnosticableTreeMixin implements MarkerPressed {
     assert(getDistance != null);
     assert(autoComplete != null);
     assert(suggestionPressed != null);
+    assert(recommendTrigger != null);
     assert(clear != null);
     return markerPressed(this);
   }
@@ -1054,6 +1098,7 @@ class _$MarkerPressed with DiagnosticableTreeMixin implements MarkerPressed {
     TResult getDistance(GetDistance value),
     TResult autoComplete(AutoComplete value),
     TResult suggestionPressed(SuggestionPressed value),
+    TResult recommendTrigger(RecommendTrigger value),
     TResult clear(Clear value),
     @required TResult orElse(),
   }) {
@@ -1128,6 +1173,7 @@ class _$GetDistance with DiagnosticableTreeMixin implements GetDistance {
     @required TResult getDistance(),
     @required TResult autoComplete(String input, String sessionToken),
     @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult recommendTrigger(),
     @required TResult clear(),
   }) {
     assert(getCurrentPosition != null);
@@ -1139,6 +1185,7 @@ class _$GetDistance with DiagnosticableTreeMixin implements GetDistance {
     assert(getDistance != null);
     assert(autoComplete != null);
     assert(suggestionPressed != null);
+    assert(recommendTrigger != null);
     assert(clear != null);
     return getDistance();
   }
@@ -1155,6 +1202,7 @@ class _$GetDistance with DiagnosticableTreeMixin implements GetDistance {
     TResult getDistance(),
     TResult autoComplete(String input, String sessionToken),
     TResult suggestionPressed(String sessionToken, String placeid),
+    TResult recommendTrigger(),
     TResult clear(),
     @required TResult orElse(),
   }) {
@@ -1177,6 +1225,7 @@ class _$GetDistance with DiagnosticableTreeMixin implements GetDistance {
     @required TResult getDistance(GetDistance value),
     @required TResult autoComplete(AutoComplete value),
     @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult recommendTrigger(RecommendTrigger value),
     @required TResult clear(Clear value),
   }) {
     assert(getCurrentPosition != null);
@@ -1188,6 +1237,7 @@ class _$GetDistance with DiagnosticableTreeMixin implements GetDistance {
     assert(getDistance != null);
     assert(autoComplete != null);
     assert(suggestionPressed != null);
+    assert(recommendTrigger != null);
     assert(clear != null);
     return getDistance(this);
   }
@@ -1204,6 +1254,7 @@ class _$GetDistance with DiagnosticableTreeMixin implements GetDistance {
     TResult getDistance(GetDistance value),
     TResult autoComplete(AutoComplete value),
     TResult suggestionPressed(SuggestionPressed value),
+    TResult recommendTrigger(RecommendTrigger value),
     TResult clear(Clear value),
     @required TResult orElse(),
   }) {
@@ -1309,6 +1360,7 @@ class _$AutoComplete with DiagnosticableTreeMixin implements AutoComplete {
     @required TResult getDistance(),
     @required TResult autoComplete(String input, String sessionToken),
     @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult recommendTrigger(),
     @required TResult clear(),
   }) {
     assert(getCurrentPosition != null);
@@ -1320,6 +1372,7 @@ class _$AutoComplete with DiagnosticableTreeMixin implements AutoComplete {
     assert(getDistance != null);
     assert(autoComplete != null);
     assert(suggestionPressed != null);
+    assert(recommendTrigger != null);
     assert(clear != null);
     return autoComplete(input, sessionToken);
   }
@@ -1336,6 +1389,7 @@ class _$AutoComplete with DiagnosticableTreeMixin implements AutoComplete {
     TResult getDistance(),
     TResult autoComplete(String input, String sessionToken),
     TResult suggestionPressed(String sessionToken, String placeid),
+    TResult recommendTrigger(),
     TResult clear(),
     @required TResult orElse(),
   }) {
@@ -1358,6 +1412,7 @@ class _$AutoComplete with DiagnosticableTreeMixin implements AutoComplete {
     @required TResult getDistance(GetDistance value),
     @required TResult autoComplete(AutoComplete value),
     @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult recommendTrigger(RecommendTrigger value),
     @required TResult clear(Clear value),
   }) {
     assert(getCurrentPosition != null);
@@ -1369,6 +1424,7 @@ class _$AutoComplete with DiagnosticableTreeMixin implements AutoComplete {
     assert(getDistance != null);
     assert(autoComplete != null);
     assert(suggestionPressed != null);
+    assert(recommendTrigger != null);
     assert(clear != null);
     return autoComplete(this);
   }
@@ -1385,6 +1441,7 @@ class _$AutoComplete with DiagnosticableTreeMixin implements AutoComplete {
     TResult getDistance(GetDistance value),
     TResult autoComplete(AutoComplete value),
     TResult suggestionPressed(SuggestionPressed value),
+    TResult recommendTrigger(RecommendTrigger value),
     TResult clear(Clear value),
     @required TResult orElse(),
   }) {
@@ -1498,6 +1555,7 @@ class _$SuggestionPressed
     @required TResult getDistance(),
     @required TResult autoComplete(String input, String sessionToken),
     @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult recommendTrigger(),
     @required TResult clear(),
   }) {
     assert(getCurrentPosition != null);
@@ -1509,6 +1567,7 @@ class _$SuggestionPressed
     assert(getDistance != null);
     assert(autoComplete != null);
     assert(suggestionPressed != null);
+    assert(recommendTrigger != null);
     assert(clear != null);
     return suggestionPressed(sessionToken, placeid);
   }
@@ -1525,6 +1584,7 @@ class _$SuggestionPressed
     TResult getDistance(),
     TResult autoComplete(String input, String sessionToken),
     TResult suggestionPressed(String sessionToken, String placeid),
+    TResult recommendTrigger(),
     TResult clear(),
     @required TResult orElse(),
   }) {
@@ -1547,6 +1607,7 @@ class _$SuggestionPressed
     @required TResult getDistance(GetDistance value),
     @required TResult autoComplete(AutoComplete value),
     @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult recommendTrigger(RecommendTrigger value),
     @required TResult clear(Clear value),
   }) {
     assert(getCurrentPosition != null);
@@ -1558,6 +1619,7 @@ class _$SuggestionPressed
     assert(getDistance != null);
     assert(autoComplete != null);
     assert(suggestionPressed != null);
+    assert(recommendTrigger != null);
     assert(clear != null);
     return suggestionPressed(this);
   }
@@ -1574,6 +1636,7 @@ class _$SuggestionPressed
     TResult getDistance(GetDistance value),
     TResult autoComplete(AutoComplete value),
     TResult suggestionPressed(SuggestionPressed value),
+    TResult recommendTrigger(RecommendTrigger value),
     TResult clear(Clear value),
     @required TResult orElse(),
   }) {
@@ -1593,6 +1656,160 @@ abstract class SuggestionPressed implements GeolocationEvent {
   String get placeid;
   @JsonKey(ignore: true)
   $SuggestionPressedCopyWith<SuggestionPressed> get copyWith;
+}
+
+/// @nodoc
+abstract class $RecommendTriggerCopyWith<$Res> {
+  factory $RecommendTriggerCopyWith(
+          RecommendTrigger value, $Res Function(RecommendTrigger) then) =
+      _$RecommendTriggerCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$RecommendTriggerCopyWithImpl<$Res>
+    extends _$GeolocationEventCopyWithImpl<$Res>
+    implements $RecommendTriggerCopyWith<$Res> {
+  _$RecommendTriggerCopyWithImpl(
+      RecommendTrigger _value, $Res Function(RecommendTrigger) _then)
+      : super(_value, (v) => _then(v as RecommendTrigger));
+
+  @override
+  RecommendTrigger get _value => super._value as RecommendTrigger;
+}
+
+/// @nodoc
+class _$RecommendTrigger
+    with DiagnosticableTreeMixin
+    implements RecommendTrigger {
+  const _$RecommendTrigger();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'GeolocationEvent.recommendTrigger()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'GeolocationEvent.recommendTrigger'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is RecommendTrigger);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult getCurrentPosition(),
+    @required TResult getPlace(),
+    @required TResult getCinema(),
+    @required TResult getMarker(),
+    @required TResult searchPlace(String input),
+    @required TResult markerPressed(Place place),
+    @required TResult getDistance(),
+    @required TResult autoComplete(String input, String sessionToken),
+    @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult recommendTrigger(),
+    @required TResult clear(),
+  }) {
+    assert(getCurrentPosition != null);
+    assert(getPlace != null);
+    assert(getCinema != null);
+    assert(getMarker != null);
+    assert(searchPlace != null);
+    assert(markerPressed != null);
+    assert(getDistance != null);
+    assert(autoComplete != null);
+    assert(suggestionPressed != null);
+    assert(recommendTrigger != null);
+    assert(clear != null);
+    return recommendTrigger();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult getCurrentPosition(),
+    TResult getPlace(),
+    TResult getCinema(),
+    TResult getMarker(),
+    TResult searchPlace(String input),
+    TResult markerPressed(Place place),
+    TResult getDistance(),
+    TResult autoComplete(String input, String sessionToken),
+    TResult suggestionPressed(String sessionToken, String placeid),
+    TResult recommendTrigger(),
+    TResult clear(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (recommendTrigger != null) {
+      return recommendTrigger();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult getCurrentPosition(GetCurrentPosition value),
+    @required TResult getPlace(GetPlace value),
+    @required TResult getCinema(GetCinema value),
+    @required TResult getMarker(GetMarker value),
+    @required TResult searchPlace(SearchPlace value),
+    @required TResult markerPressed(MarkerPressed value),
+    @required TResult getDistance(GetDistance value),
+    @required TResult autoComplete(AutoComplete value),
+    @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult recommendTrigger(RecommendTrigger value),
+    @required TResult clear(Clear value),
+  }) {
+    assert(getCurrentPosition != null);
+    assert(getPlace != null);
+    assert(getCinema != null);
+    assert(getMarker != null);
+    assert(searchPlace != null);
+    assert(markerPressed != null);
+    assert(getDistance != null);
+    assert(autoComplete != null);
+    assert(suggestionPressed != null);
+    assert(recommendTrigger != null);
+    assert(clear != null);
+    return recommendTrigger(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult getCurrentPosition(GetCurrentPosition value),
+    TResult getPlace(GetPlace value),
+    TResult getCinema(GetCinema value),
+    TResult getMarker(GetMarker value),
+    TResult searchPlace(SearchPlace value),
+    TResult markerPressed(MarkerPressed value),
+    TResult getDistance(GetDistance value),
+    TResult autoComplete(AutoComplete value),
+    TResult suggestionPressed(SuggestionPressed value),
+    TResult recommendTrigger(RecommendTrigger value),
+    TResult clear(Clear value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (recommendTrigger != null) {
+      return recommendTrigger(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RecommendTrigger implements GeolocationEvent {
+  const factory RecommendTrigger() = _$RecommendTrigger;
 }
 
 /// @nodoc
@@ -1646,6 +1863,7 @@ class _$Clear with DiagnosticableTreeMixin implements Clear {
     @required TResult getDistance(),
     @required TResult autoComplete(String input, String sessionToken),
     @required TResult suggestionPressed(String sessionToken, String placeid),
+    @required TResult recommendTrigger(),
     @required TResult clear(),
   }) {
     assert(getCurrentPosition != null);
@@ -1657,6 +1875,7 @@ class _$Clear with DiagnosticableTreeMixin implements Clear {
     assert(getDistance != null);
     assert(autoComplete != null);
     assert(suggestionPressed != null);
+    assert(recommendTrigger != null);
     assert(clear != null);
     return clear();
   }
@@ -1673,6 +1892,7 @@ class _$Clear with DiagnosticableTreeMixin implements Clear {
     TResult getDistance(),
     TResult autoComplete(String input, String sessionToken),
     TResult suggestionPressed(String sessionToken, String placeid),
+    TResult recommendTrigger(),
     TResult clear(),
     @required TResult orElse(),
   }) {
@@ -1695,6 +1915,7 @@ class _$Clear with DiagnosticableTreeMixin implements Clear {
     @required TResult getDistance(GetDistance value),
     @required TResult autoComplete(AutoComplete value),
     @required TResult suggestionPressed(SuggestionPressed value),
+    @required TResult recommendTrigger(RecommendTrigger value),
     @required TResult clear(Clear value),
   }) {
     assert(getCurrentPosition != null);
@@ -1706,6 +1927,7 @@ class _$Clear with DiagnosticableTreeMixin implements Clear {
     assert(getDistance != null);
     assert(autoComplete != null);
     assert(suggestionPressed != null);
+    assert(recommendTrigger != null);
     assert(clear != null);
     return clear(this);
   }
@@ -1722,6 +1944,7 @@ class _$Clear with DiagnosticableTreeMixin implements Clear {
     TResult getDistance(GetDistance value),
     TResult autoComplete(AutoComplete value),
     TResult suggestionPressed(SuggestionPressed value),
+    TResult recommendTrigger(RecommendTrigger value),
     TResult clear(Clear value),
     @required TResult orElse(),
   }) {
@@ -1755,7 +1978,9 @@ class _$GeolocationStateTearOff {
       @required List<Suggestion> suggestions,
       @required bool isPlaceLoading,
       @required Place selectedPlace,
-      @required double distance}) {
+      @required double distance,
+      @required List<Place> recommendPlaces,
+      @required bool recommendSuccess}) {
     return _GeolocationState(
       latitude: latitude,
       longitude: longitude,
@@ -1770,6 +1995,8 @@ class _$GeolocationStateTearOff {
       isPlaceLoading: isPlaceLoading,
       selectedPlace: selectedPlace,
       distance: distance,
+      recommendPlaces: recommendPlaces,
+      recommendSuccess: recommendSuccess,
     );
   }
 }
@@ -1793,6 +2020,8 @@ mixin _$GeolocationState {
   bool get isPlaceLoading;
   Place get selectedPlace;
   double get distance;
+  List<Place> get recommendPlaces;
+  bool get recommendSuccess;
 
   @JsonKey(ignore: true)
   $GeolocationStateCopyWith<GeolocationState> get copyWith;
@@ -1816,7 +2045,9 @@ abstract class $GeolocationStateCopyWith<$Res> {
       List<Suggestion> suggestions,
       bool isPlaceLoading,
       Place selectedPlace,
-      double distance});
+      double distance,
+      List<Place> recommendPlaces,
+      bool recommendSuccess});
 }
 
 /// @nodoc
@@ -1843,6 +2074,8 @@ class _$GeolocationStateCopyWithImpl<$Res>
     Object isPlaceLoading = freezed,
     Object selectedPlace = freezed,
     Object distance = freezed,
+    Object recommendPlaces = freezed,
+    Object recommendSuccess = freezed,
   }) {
     return _then(_value.copyWith(
       latitude: latitude == freezed ? _value.latitude : latitude as double,
@@ -1872,6 +2105,12 @@ class _$GeolocationStateCopyWithImpl<$Res>
           ? _value.selectedPlace
           : selectedPlace as Place,
       distance: distance == freezed ? _value.distance : distance as double,
+      recommendPlaces: recommendPlaces == freezed
+          ? _value.recommendPlaces
+          : recommendPlaces as List<Place>,
+      recommendSuccess: recommendSuccess == freezed
+          ? _value.recommendSuccess
+          : recommendSuccess as bool,
     ));
   }
 }
@@ -1896,7 +2135,9 @@ abstract class _$GeolocationStateCopyWith<$Res>
       List<Suggestion> suggestions,
       bool isPlaceLoading,
       Place selectedPlace,
-      double distance});
+      double distance,
+      List<Place> recommendPlaces,
+      bool recommendSuccess});
 }
 
 /// @nodoc
@@ -1925,6 +2166,8 @@ class __$GeolocationStateCopyWithImpl<$Res>
     Object isPlaceLoading = freezed,
     Object selectedPlace = freezed,
     Object distance = freezed,
+    Object recommendPlaces = freezed,
+    Object recommendSuccess = freezed,
   }) {
     return _then(_GeolocationState(
       latitude: latitude == freezed ? _value.latitude : latitude as double,
@@ -1954,6 +2197,12 @@ class __$GeolocationStateCopyWithImpl<$Res>
           ? _value.selectedPlace
           : selectedPlace as Place,
       distance: distance == freezed ? _value.distance : distance as double,
+      recommendPlaces: recommendPlaces == freezed
+          ? _value.recommendPlaces
+          : recommendPlaces as List<Place>,
+      recommendSuccess: recommendSuccess == freezed
+          ? _value.recommendSuccess
+          : recommendSuccess as bool,
     ));
   }
 }
@@ -1975,7 +2224,9 @@ class _$_GeolocationState
       @required this.suggestions,
       @required this.isPlaceLoading,
       @required this.selectedPlace,
-      @required this.distance})
+      @required this.distance,
+      @required this.recommendPlaces,
+      @required this.recommendSuccess})
       : assert(latitude != null),
         assert(longitude != null),
         assert(isLoading != null),
@@ -1988,7 +2239,9 @@ class _$_GeolocationState
         assert(suggestions != null),
         assert(isPlaceLoading != null),
         assert(selectedPlace != null),
-        assert(distance != null);
+        assert(distance != null),
+        assert(recommendPlaces != null),
+        assert(recommendSuccess != null);
 
   @override
   final double latitude;
@@ -2016,10 +2269,14 @@ class _$_GeolocationState
   final Place selectedPlace;
   @override
   final double distance;
+  @override
+  final List<Place> recommendPlaces;
+  @override
+  final bool recommendSuccess;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'GeolocationState(latitude: $latitude, longitude: $longitude, isLoading: $isLoading, finishCoordinating: $finishCoordinating, fetchAPIFailure: $fetchAPIFailure, fetchPlaceSuccess: $fetchPlaceSuccess, places: $places, searchPlaces: $searchPlaces, markers: $markers, suggestions: $suggestions, isPlaceLoading: $isPlaceLoading, selectedPlace: $selectedPlace, distance: $distance)';
+    return 'GeolocationState(latitude: $latitude, longitude: $longitude, isLoading: $isLoading, finishCoordinating: $finishCoordinating, fetchAPIFailure: $fetchAPIFailure, fetchPlaceSuccess: $fetchPlaceSuccess, places: $places, searchPlaces: $searchPlaces, markers: $markers, suggestions: $suggestions, isPlaceLoading: $isPlaceLoading, selectedPlace: $selectedPlace, distance: $distance, recommendPlaces: $recommendPlaces, recommendSuccess: $recommendSuccess)';
   }
 
   @override
@@ -2039,7 +2296,9 @@ class _$_GeolocationState
       ..add(DiagnosticsProperty('suggestions', suggestions))
       ..add(DiagnosticsProperty('isPlaceLoading', isPlaceLoading))
       ..add(DiagnosticsProperty('selectedPlace', selectedPlace))
-      ..add(DiagnosticsProperty('distance', distance));
+      ..add(DiagnosticsProperty('distance', distance))
+      ..add(DiagnosticsProperty('recommendPlaces', recommendPlaces))
+      ..add(DiagnosticsProperty('recommendSuccess', recommendSuccess));
   }
 
   @override
@@ -2083,7 +2342,13 @@ class _$_GeolocationState
                     .equals(other.selectedPlace, selectedPlace)) &&
             (identical(other.distance, distance) ||
                 const DeepCollectionEquality()
-                    .equals(other.distance, distance)));
+                    .equals(other.distance, distance)) &&
+            (identical(other.recommendPlaces, recommendPlaces) ||
+                const DeepCollectionEquality()
+                    .equals(other.recommendPlaces, recommendPlaces)) &&
+            (identical(other.recommendSuccess, recommendSuccess) ||
+                const DeepCollectionEquality()
+                    .equals(other.recommendSuccess, recommendSuccess)));
   }
 
   @override
@@ -2101,7 +2366,9 @@ class _$_GeolocationState
       const DeepCollectionEquality().hash(suggestions) ^
       const DeepCollectionEquality().hash(isPlaceLoading) ^
       const DeepCollectionEquality().hash(selectedPlace) ^
-      const DeepCollectionEquality().hash(distance);
+      const DeepCollectionEquality().hash(distance) ^
+      const DeepCollectionEquality().hash(recommendPlaces) ^
+      const DeepCollectionEquality().hash(recommendSuccess);
 
   @JsonKey(ignore: true)
   @override
@@ -2123,7 +2390,9 @@ abstract class _GeolocationState implements GeolocationState {
       @required List<Suggestion> suggestions,
       @required bool isPlaceLoading,
       @required Place selectedPlace,
-      @required double distance}) = _$_GeolocationState;
+      @required double distance,
+      @required List<Place> recommendPlaces,
+      @required bool recommendSuccess}) = _$_GeolocationState;
 
   @override
   double get latitude;
@@ -2151,6 +2420,10 @@ abstract class _GeolocationState implements GeolocationState {
   Place get selectedPlace;
   @override
   double get distance;
+  @override
+  List<Place> get recommendPlaces;
+  @override
+  bool get recommendSuccess;
   @override
   @JsonKey(ignore: true)
   _$GeolocationStateCopyWith<_GeolocationState> get copyWith;

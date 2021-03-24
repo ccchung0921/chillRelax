@@ -159,7 +159,7 @@ class _SignInFormState extends State<SignInForm> {
                           Row(
                             children: [
                               Expanded(
-                                child: FlatButton(
+                                child: TextButton(
                                   onPressed: () {
                                     register
                                         ? setState(() {
@@ -181,7 +181,7 @@ class _SignInFormState extends State<SignInForm> {
                                 ),
                               ),
                               Expanded(
-                                child: FlatButton(
+                                child: TextButton(
                                   onPressed: () {
                                     register
                                         ? context.read<SignInFormBloc>().add(
