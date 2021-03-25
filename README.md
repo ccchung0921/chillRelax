@@ -3,7 +3,8 @@ An local entainment application. Prototype only
 
 Main Page:
 
-![Screenshot_1614248884](https://user-images.githubusercontent.com/63452572/112439638-566b3c80-8d84-11eb-8d9a-26070d06df57.png)
+![Screenshot_1614248884-min](https://user-images.githubusercontent.com/63452572/112440350-296b5980-8d85-11eb-8817-2e46c9ed042d.png)
+
 ![placeDetailWindow](https://user-images.githubusercontent.com/63452572/112439681-64b95880-8d84-11eb-9d94-d88b52021428.png)
 
 ![placeDetailPage](https://user-images.githubusercontent.com/63452572/112439687-671bb280-8d84-11eb-9ac5-6323f2eb6e7b.png)
