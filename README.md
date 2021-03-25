@@ -3,26 +3,28 @@ An local entainment application. Prototype only
 
 Main Page:
 
-![Screenshot_1614248884-min](https://user-images.githubusercontent.com/63452572/112440350-296b5980-8d85-11eb-8817-2e46c9ed042d.png)
+![mainPage](https://user-images.githubusercontent.com/63452572/112442140-7f8ccc80-8d86-11eb-8103-acbeae149b13.png)
 
-![placeDetailWindow](https://user-images.githubusercontent.com/63452572/112439681-64b95880-8d84-11eb-9d94-d88b52021428.png)
+![placeWindow](https://user-images.githubusercontent.com/63452572/112442152-83205380-8d86-11eb-9d6a-fc96309f33f6.png)
 
-![placeDetailPage](https://user-images.githubusercontent.com/63452572/112439687-671bb280-8d84-11eb-9ac5-6323f2eb6e7b.png)
+![placePage](https://user-images.githubusercontent.com/63452572/112442169-874c7100-8d86-11eb-9062-c1068db82499.png)
 
 
 Travel Mode
-![airplaneMode](https://user-images.githubusercontent.com/63452572/112439552-33d92380-8d84-11eb-91be-e0e3fc72f1dc.png)
+![airpane_mode](https://user-images.githubusercontent.com/63452572/112442445-cd093980-8d86-11eb-8408-773982ea69d3.png)
 
-![airTicket](https://user-images.githubusercontent.com/63452572/112439555-350a5080-8d84-11eb-8550-8b53fb8c55cd.png)
+![airticket](https://user-images.githubusercontent.com/63452572/112442194-8f0c1580-8d86-11eb-9169-a5007960cf0c.png)
+
 
 
 Local Exhibition 
-![Screenshot_1614249042](https://user-images.githubusercontent.com/63452572/112439755-7864bf00-8d84-11eb-834d-2bfcbf5f00a2.png)
+![exhibitionList](https://user-images.githubusercontent.com/63452572/112442280-a3501280-8d86-11eb-8089-d6e85045db71.png)
 
-![exhibitionWindow](https://user-images.githubusercontent.com/63452572/112439659-5cf9b400-8d84-11eb-958d-434ceea1bb0c.png)
+
 
 Searching with autocomplete
-![Screenshot_1606733488](https://user-images.githubusercontent.com/63452572/112439724-6edb5700-8d84-11eb-82d9-c456031cc00f.png)
+
+![search](https://user-images.githubusercontent.com/63452572/112442289-a5b26c80-8d86-11eb-9a8a-814bd9ec0ad0.png)
 
 Credit Card Application
-![Screenshot_1614249054](https://user-images.githubusercontent.com/63452572/112439791-81ee2700-8d84-11eb-9ac3-4343635ee8cd.png)
+![credit_card](https://user-images.githubusercontent.com/63452572/112442230-992e1400-8d86-11eb-9628-c46b902643f6.png)
