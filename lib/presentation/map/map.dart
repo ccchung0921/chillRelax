@@ -12,6 +12,7 @@ import 'package:hkonline/application/auth/instagram/bloc/igpost_bloc.dart';
 import 'package:hkonline/application/geolocator/bloc/geolocation_bloc.dart';
 import 'package:hkonline/application/hiking/hiking_bloc.dart';
 import 'package:hkonline/application/quest/quest_bloc.dart';
+import 'package:hkonline/application/theme/layout_theme.dart';
 import 'package:hkonline/infrastructure/googlePlace/place_search.dart';
 import 'package:hkonline/infrastructure/hiking/hiking_route.dart';
 import 'package:hkonline/infrastructure/instagram/api.dart';
@@ -23,6 +24,7 @@ import 'package:hkonline/presentation/map/hiking_detail_window.dart';
 import 'package:hkonline/presentation/map/igpost_detail_window.dart';
 import 'package:hkonline/presentation/map/place_detail_.window.dart';
 import 'package:hkonline/presentation/routes/router.gr.dart';
+import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';
 
 class MapScreen extends StatefulWidget {
@@ -43,19 +45,41 @@ class _MapScreenState extends State<MapScreen> {
   IgPost selectedIgPost = const IgPost();
   GoogleMapController _mapController;
   bool openFilter = false;
-  bool _checked = false;
+  Map<String, bool> filters = {
+    'RE': true,
+    'CI': true,
+    'CA': true,
+  };
+  List<List<Marker>> markerHistory = [];
 
-  void clearRestaurant() {
-    final updated = markers
-        .where((element) => !element.markerId.value.startsWith("RE"))
-        .toList();
+  void filterMarker() {
+    //RE : restaurant, //CI: cinema, //CA : Cafe
+    final cloneHistory = markerHistory;
+    cloneHistory.add(markers);
     setState(() {
-      markers = updated;
+      markerHistory = cloneHistory;
+    });
+    var original = markerHistory[0];
+    final List<String> arr = [];
+    filters.forEach((key, value) {
+      if (value == false) {
+        arr.add(key);
+      }
+    });
+    for (var i = 0; i < arr.length; i++) {
+      original =
+          original.where((e) => !e.markerId.value.startsWith(arr[i])).toList();
+    }
+
+    setState(() {
+      markers = original;
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    ThemeProvider themeProvider =
+        Provider.of<ThemeProvider>(context, listen: false);
     final ImageConfiguration config = createLocalImageConfiguration(context);
     return MultiBlocListener(
         listeners: [
@@ -226,7 +250,6 @@ class _MapScreenState extends State<MapScreen> {
             if (state.recommendSuccess == true)
               {
                 state.recommendPlaces.forEach((place) async {
-                  print(place.name);
                   final Marker marker = Marker(
                       markerId: MarkerId(place.placeID),
                       icon: await BitmapDescriptor.fromAssetImage(
@@ -285,72 +308,154 @@ class _MapScreenState extends State<MapScreen> {
                                 zoom: 17.0),
                           ),
                         SafeArea(
-                          child: AnimatedContainer(
-                            duration: const Duration(milliseconds: 300),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(color: Colors.teal),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(30)),
-                            ),
-                            height: openFilter ? 90 : 60,
-                            //MediaQuery.of(context).size.height / 12.5,
-                            alignment: Alignment.topCenter,
-                            child: Column(
-                              children: [
-                                ListTile(
-                                  leading: IconButton(
-                                    onPressed: () {
-                                      _scaffoldKey.currentState.openDrawer();
-                                    },
-                                    icon: const Icon(Icons.menu),
-                                  ),
-                                  title: TextFormField(
-                                    readOnly: true,
-                                    onTap: () async {
-                                      final sessionToken = Uuid().v4();
-                                      await showSearch(
-                                          context: context,
-                                          delegate: PlaceSearch(
-                                              sessionToken: sessionToken));
-                                    },
-                                    decoration: const InputDecoration.collapsed(
-                                      hintText: '搜尋地方...',
-                                    ),
-                                  ),
-                                  trailing: IconButton(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 5),
+                            child: AnimatedContainer(
+                              duration: const Duration(milliseconds: 300),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border.all(color: Colors.teal),
+                                borderRadius:
+                                    const BorderRadius.all(Radius.circular(30)),
+                              ),
+                              height: openFilter ? 120 : 60,
+                              alignment: Alignment.topCenter,
+                              child: Column(
+                                children: [
+                                  ListTile(
+                                    leading: IconButton(
                                       onPressed: () {
-                                        // context.read<GeolocationBloc>().add(
-                                        //     const GeolocationEvent
-                                        //         .getCurrentPosition());
-                                        // moveCamera(state.latitude, state.longitude);
-                                        setState(() {
-                                          openFilter = !openFilter;
-                                        });
+                                        _scaffoldKey.currentState.openDrawer();
                                       },
-                                      icon:
-                                          const Icon(Icons.gps_fixed_outlined)),
-                                ),
-                                if (openFilter)
-                                  AnimatedOpacity(
-                                    opacity: openFilter ? 1 : 0.0,
-                                    duration:
-                                        const Duration(milliseconds: 5000),
-                                    child: CheckboxListTile(
-                                      title: const Text('餐廳'),
-                                      value: _checked,
-                                      onChanged: (bool value) {
-                                        setState(() {
-                                          _checked = value;
-                                        });
-                                      },
-                                      activeColor: Colors.green,
-                                      checkColor: Colors.black,
+                                      icon: const Icon(
+                                        Icons.menu,
+                                        color: Colors.teal,
+                                      ),
                                     ),
-                                  )
-                                else
-                                  const SizedBox()
-                              ],
+                                    title: TextFormField(
+                                      readOnly: true,
+                                      onTap: () async {
+                                        final sessionToken = Uuid().v4();
+                                        await showSearch(
+                                            context: context,
+                                            delegate: PlaceSearch(
+                                                sessionToken: sessionToken));
+                                      },
+                                      decoration:
+                                          const InputDecoration.collapsed(
+                                              hintText: '搜尋地方...',
+                                              hintStyle: TextStyle(
+                                                  color: Colors.teal)),
+                                    ),
+                                    trailing: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        IconButton(
+                                            onPressed: () {
+                                              setState(() {
+                                                openFilter = !openFilter;
+                                              });
+                                            },
+                                            icon: const Icon(
+                                              Icons.filter_list_alt,
+                                              color: Colors.teal,
+                                            )),
+                                        IconButton(
+                                            onPressed: () {
+                                              context
+                                                  .read<GeolocationBloc>()
+                                                  .add(const GeolocationEvent
+                                                      .getCurrentPosition());
+                                              moveCamera(state.latitude,
+                                                  state.longitude);
+                                            },
+                                            icon: const Icon(
+                                              Icons.gps_fixed_outlined,
+                                              color: Colors.teal,
+                                            )),
+                                      ],
+                                    ),
+                                  ),
+                                  if (openFilter)
+                                    Expanded(
+                                      child: AnimatedOpacity(
+                                        opacity: openFilter ? 1 : 0.0,
+                                        duration:
+                                            const Duration(milliseconds: 500),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            SizedBox(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.3,
+                                              child: CheckboxListTile(
+                                                title: const Icon(
+                                                  Icons.restaurant,
+                                                  color: Colors.grey,
+                                                ),
+                                                value: filters['RE'],
+                                                onChanged: (bool value) {
+                                                  setState(() {
+                                                    filters['RE'] = value;
+                                                  });
+                                                  filterMarker();
+                                                },
+                                                activeColor: Colors.green,
+                                                checkColor: Colors.white,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.3,
+                                              child: CheckboxListTile(
+                                                title: const Icon(
+                                                  Icons.movie_sharp,
+                                                  color: Colors.grey,
+                                                ),
+                                                value: filters['CI'],
+                                                onChanged: (bool value) {
+                                                  setState(() {
+                                                    filters['CI'] = value;
+                                                  });
+                                                  filterMarker();
+                                                },
+                                                activeColor: Colors.green,
+                                                checkColor: Colors.white,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.3,
+                                              child: CheckboxListTile(
+                                                title: const Icon(
+                                                  Icons.local_cafe,
+                                                  color: Colors.grey,
+                                                ),
+                                                value: filters['CA'],
+                                                onChanged: (bool value) {
+                                                  setState(() {
+                                                    filters['CA'] = value;
+                                                  });
+                                                  filterMarker();
+                                                },
+                                                activeColor: Colors.green,
+                                                checkColor: Colors.white,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    )
+                                  else
+                                    const SizedBox()
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -370,28 +475,13 @@ class _MapScreenState extends State<MapScreen> {
                                     )
                                   : const Icon(Icons.airplanemode_active)),
                         ),
-                        Positioned(
-                            bottom: 100,
-                            left: 20,
-                            child: FloatingActionButton(
-                              onPressed: () {
-                                clearRestaurant();
-                              },
-                              backgroundColor: Colors.teal,
-                              child: inAirplaneMode
-                                  ? const Text(
-                                      '🇭🇰',
-                                      style: TextStyle(fontSize: 20.0),
-                                    )
-                                  : const Icon(Icons.filter),
-                            )),
                       ],
                     ),
               drawer: Drawer(
                 child: ListView(
                   padding: EdgeInsets.zero,
                   children: [
-                    Container(
+                    SizedBox(
                       height: 100,
                       child: DrawerHeader(
                           child: ListTile(
@@ -472,6 +562,18 @@ class _MapScreenState extends State<MapScreen> {
                           color: Colors.blue,
                         ),
                         title: const Text("關於我")),
+                    SwitchListTile(
+                      value: themeProvider.isDarkMode,
+                      secondary:
+                          Icon(Icons.dark_mode, color: Colors.lightBlue[200]),
+                      title: const Text(
+                        'Dark Mode',
+                        style: TextStyle(fontWeight: FontWeight.normal),
+                      ),
+                      onChanged: (bool value) {
+                        themeProvider.swapTheme();
+                      },
+                    ),
                     ListTile(
                         leading: Icon(
                           Icons.settings,

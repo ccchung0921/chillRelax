@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hkonline/presentation/personal/airticket_record.dart';
-import 'package:hkonline/presentation/personal/like_record.dart';
+import 'package:hkonline/presentation/personal/archive_record.dart';
 import 'package:hkonline/presentation/personal/shareride_record.dart';
 
 class PersonalRecord extends StatelessWidget {
@@ -16,13 +16,17 @@ class PersonalRecord extends StatelessWidget {
               tabs: [
                 const Tab(icon: Icon(Icons.flight)),
                 Tab(icon: Icon(Icons.local_taxi, color: Colors.red[300])),
-                const Tab(icon: Icon(Icons.archive_sharp, color: Colors.black)),
+                const Tab(icon: Icon(Icons.bookmark, color: Colors.black)),
               ],
             ),
             title: const Text('個人紀錄'),
           ),
           body: TabBarView(
-            children: [AirticketRecordPage(), SharerideRecord(), LikeRecord()],
+            children: [
+              AirticketRecordPage(),
+              SharerideRecord(),
+              ArchiveRecord()
+            ],
           ),
         ),
       ),

@@ -1,14 +1,11 @@
 import 'dart:convert' as convert;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:hkonline/infrastructure/googlePlace/coordinate.dart';
 import 'package:hkonline/infrastructure/hiking/hiking_route.dart';
-import 'package:hkonline/infrastructure/core/firebase_reference.dart';
 import 'package:http/http.dart' as http;
 
 class HikingService {
-  FirebaseFirestore firestore;
-  static const baseURL = 'https://chillrelax-hiking-route.herokuapp.com/hiking';
-
+  //static const baseURL = 'https://chillrelax-hiking-route.herokuapp.com/hiking';
+  static const baseURL = 'http://10.0.2.2:5000/hiking';
   // Future<List<HikingRoute>> getHikingRoute() async {
   //   try {
   //     final documents = await FirebaseFirestore.instance.hikingCollection.get();
@@ -48,7 +45,6 @@ class HikingService {
       final response = await http.get(baseURL);
       final jsonResponse = convert.jsonDecode(response.body);
       if (jsonResponse['status'] == 'OK') {
-        print(jsonResponse);
         final routes = jsonResponse['result'] as List;
         return routes.map((route) {
           final geos = route['geopoints'] as List;
@@ -57,6 +53,7 @@ class HikingService {
               length: route['length'] as String,
               difficulty: route['difficulty'].toDouble() as double,
               duration: route['time'] as String,
+              image: route['img'] as String,
               geopoints: geos.map((e) {
                 return Coordinate(
                     lat: e['lat'].toDouble() as double,

@@ -23,6 +23,7 @@ import '../list/creditcard_list.dart';
 import '../list/hiking_list.dart';
 import '../list/suggestion_list.dart';
 import '../map/airticket_detail_page.dart';
+import '../map/hiking_detail_page.dart';
 import '../map/igpost_detail_page.dart';
 import '../map/map.dart';
 import '../map/place_detail_page.dart';
@@ -49,6 +50,7 @@ class Routes {
   static const String feedBackPage = '/feed-back-page';
   static const String taxiMainPage = '/taxi-main-page';
   static const String hikingList = '/hiking-list';
+  static const String hikingDetailPage = '/hiking-detail-page';
   static const all = <String>{
     splashScreen,
     signInScreen,
@@ -66,6 +68,7 @@ class Routes {
     feedBackPage,
     taxiMainPage,
     hikingList,
+    hikingDetailPage,
   };
 }
 
@@ -89,6 +92,7 @@ class MyRouter extends RouterBase {
     RouteDef(Routes.feedBackPage, page: FeedBackPage),
     RouteDef(Routes.taxiMainPage, page: TaxiMainPage),
     RouteDef(Routes.hikingList, page: HikingList),
+    RouteDef(Routes.hikingDetailPage, page: HikingDetailPage),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -237,6 +241,18 @@ class MyRouter extends RouterBase {
         settings: data,
       );
     },
+    HikingDetailPage: (data) {
+      final args = data.getArgs<HikingDetailPageArguments>(
+        orElse: () => HikingDetailPageArguments(),
+      );
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => HikingDetailPage(
+          key: args.key,
+          route: args.route,
+        ),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -332,6 +348,15 @@ extension MyRouterExtendedNavigatorStateX on ExtendedNavigatorState {
         Routes.hikingList,
         arguments: HikingListArguments(key: key, routeList: routeList),
       );
+
+  Future<dynamic> pushHikingDetailPage({
+    Key key,
+    HikingRoute route,
+  }) =>
+      push<dynamic>(
+        Routes.hikingDetailPage,
+        arguments: HikingDetailPageArguments(key: key, route: route),
+      );
 }
 
 /// ************************************************************************
@@ -392,4 +417,11 @@ class HikingListArguments {
   final Key key;
   final List<HikingRoute> routeList;
   HikingListArguments({this.key, this.routeList});
+}
+
+/// HikingDetailPage arguments holder class
+class HikingDetailPageArguments {
+  final Key key;
+  final HikingRoute route;
+  HikingDetailPageArguments({this.key, this.route});
 }

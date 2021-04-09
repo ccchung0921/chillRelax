@@ -23,7 +23,6 @@ class PlaceDetailWindow extends StatelessWidget {
                   child: Container(
                       width: MediaQuery.of(context).size.width * 0.9,
                       height: MediaQuery.of(context).size.height * 0.3,
-                      color: Colors.white,
                       alignment: Alignment.topLeft,
                       child: ListTile(
                         onTap: () {
@@ -79,7 +78,6 @@ class PlaceDetailWindow extends StatelessWidget {
                             const SizedBox(height: 5),
                             Text(
                               state.selectedPlace.vicinity,
-                              style: const TextStyle(color: Colors.black),
                             ),
                             SizedBox(
                                 height:
@@ -94,7 +92,6 @@ class PlaceDetailWindow extends StatelessWidget {
                                 state.selectedPlace.type,
                                 style: const TextStyle(
                                   fontSize: 20,
-                                  color: Colors.black,
                                 ),
                               ),
                             ]),
@@ -103,13 +100,15 @@ class PlaceDetailWindow extends StatelessWidget {
                             ),
                             Row(
                               children: [
-                                const Icon(Icons.directions_walk),
+                                const Icon(
+                                  Icons.directions_walk,
+                                  color: Colors.teal,
+                                ),
                                 const SizedBox(width: 10.0),
                                 Text(
                                   '${state.distance.round().toString()}m',
                                   style: const TextStyle(
                                     fontSize: 20,
-                                    color: Colors.black,
                                   ),
                                 )
                               ],

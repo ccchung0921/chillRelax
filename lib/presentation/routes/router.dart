@@ -7,6 +7,7 @@ import 'package:hkonline/presentation/list/creditcard_list.dart';
 import 'package:hkonline/presentation/list/hiking_list.dart';
 import 'package:hkonline/presentation/list/suggestion_list.dart';
 import 'package:hkonline/presentation/map/airticket_detail_page.dart';
+import 'package:hkonline/presentation/map/hiking_detail_page.dart';
 import 'package:hkonline/presentation/map/igpost_detail_page.dart';
 import 'package:hkonline/presentation/map/map.dart';
 import 'package:hkonline/presentation/map/place_detail_page.dart';
@@ -33,5 +34,6 @@ import 'package:hkonline/presentation/taxi/taxi_main.dart';
   MaterialRoute(page: FeedBackPage),
   MaterialRoute(page: TaxiMainPage),
   MaterialRoute(page: HikingList),
+  MaterialRoute(page: HikingDetailPage),
 ], generateNavigationHelperExtension: true)
 class $MyRouter {}

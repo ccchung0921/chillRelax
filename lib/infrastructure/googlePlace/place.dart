@@ -47,4 +47,16 @@ class Place {
           photoReference: photoReference ?? this.photoReference);
 
   List<Object> get props => [name, vicinity, geometry];
+
+  Map<String, dynamic> asMap() => {
+        'placeID': placeID,
+        'name': name,
+        'vicinity': vicinity,
+        'iconURL': iconURL,
+        'type': type,
+        'openingHours': openingHours,
+        'phoneNumber': phoneNumber,
+        'opening': opening,
+        'photoReference': photoReference
+      };
 }
