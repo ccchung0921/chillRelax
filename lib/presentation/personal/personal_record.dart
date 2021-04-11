@@ -8,25 +8,20 @@ class PersonalRecord extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: DefaultTabController(
-        length: 3,
+        length: 2,
         child: Scaffold(
           appBar: AppBar(
-            bottom: TabBar(
+            bottom: const TabBar(
               indicatorColor: Colors.yellow,
               tabs: [
-                const Tab(icon: Icon(Icons.flight)),
-                Tab(icon: Icon(Icons.local_taxi, color: Colors.red[300])),
-                const Tab(icon: Icon(Icons.bookmark, color: Colors.black)),
+                Tab(icon: Icon(Icons.flight)),
+                Tab(icon: Icon(Icons.bookmark, color: Colors.teal)),
               ],
             ),
             title: const Text('個人紀錄'),
           ),
           body: TabBarView(
-            children: [
-              AirticketRecordPage(),
-              SharerideRecord(),
-              ArchiveRecord()
-            ],
+            children: [AirticketRecordPage(), ArchiveRecord()],
           ),
         ),
       ),

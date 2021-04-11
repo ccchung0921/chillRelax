@@ -516,14 +516,6 @@ class _MapScreenState extends State<MapScreen> {
                               ))),
                     ),
                     ListTile(
-                      onTap: () {
-                        ExtendedNavigator.of(context).push(Routes.taxiMainPage);
-                      },
-                      leading:
-                          Icon(Icons.local_taxi, color: Colors.redAccent[700]),
-                      title: const Text("的士群組"),
-                    ),
-                    ListTile(
                         onTap: () {
                           ExtendedNavigator.of(context).push(
                               Routes.suggestionList,
