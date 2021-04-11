@@ -4,8 +4,8 @@ import 'package:hkonline/infrastructure/hiking/hiking_route.dart';
 import 'package:http/http.dart' as http;
 
 class HikingService {
-  //static const baseURL = 'https://chillrelax-hiking-route.herokuapp.com/hiking';
-  static const baseURL = 'http://10.0.2.2:5000/hiking';
+  static const baseURL = 'https://chillrelax-hiking-route.herokuapp.com/hiking';
+  //static const baseURL = 'http://10.0.2.2:5000/hiking';
   // Future<List<HikingRoute>> getHikingRoute() async {
   //   try {
   //     final documents = await FirebaseFirestore.instance.hikingCollection.get();

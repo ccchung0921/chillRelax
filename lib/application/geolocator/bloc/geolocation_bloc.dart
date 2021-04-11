@@ -129,6 +129,19 @@ class GeolocationBloc extends Bloc<GeolocationEvent, GeolocationState> {
               recommendSuccess: true,
             );
           }
+          final cfPlaces = await RecommendationAPI()
+              .getCFRecommendation(state.selectedPlace);
+          if (cfPlaces.isNotEmpty) {
+            cfPlaces.forEach((place) async {
+              final detail =
+                  await SuggestionAPI('123').fetchSuggestionDetail(place);
+              placeList.add(detail);
+            });
+            yield state.copyWith(
+              recommendPlaces: placeList,
+              recommendSuccess: true,
+            );
+          }
         } catch (err) {
           yield state.copyWith(fetchAPIFailure: true);
         }

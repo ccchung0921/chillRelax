@@ -29,6 +29,11 @@ class PlaceDetailPage extends StatelessWidget {
                       message: '收藏成功', duration: const Duration(seconds: 2))
                   .show(context);
             }
+            if (state.deleteSuccess) {
+              FlushbarHelper.createError(
+                      message: '刪除成功', duration: const Duration(seconds: 2))
+                  .show(context);
+            }
           },
           builder: (context, state) {
             return Scaffold(

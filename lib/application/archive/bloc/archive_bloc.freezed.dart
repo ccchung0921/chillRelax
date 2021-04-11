@@ -432,12 +432,17 @@ class _$ArchiveStateTearOff {
 
 // ignore: unused_element
   _ArchiveState call(
-      {Archive archive, bool showErrorMsg, bool isSaving, bool saveSuccess}) {
+      {Archive archive,
+      bool showErrorMsg,
+      bool isSaving,
+      bool saveSuccess,
+      bool deleteSuccess}) {
     return _ArchiveState(
       archive: archive,
       showErrorMsg: showErrorMsg,
       isSaving: isSaving,
       saveSuccess: saveSuccess,
+      deleteSuccess: deleteSuccess,
     );
   }
 }
@@ -452,6 +457,7 @@ mixin _$ArchiveState {
   bool get showErrorMsg;
   bool get isSaving;
   bool get saveSuccess;
+  bool get deleteSuccess;
 
   @JsonKey(ignore: true)
   $ArchiveStateCopyWith<ArchiveState> get copyWith;
@@ -463,7 +469,11 @@ abstract class $ArchiveStateCopyWith<$Res> {
           ArchiveState value, $Res Function(ArchiveState) then) =
       _$ArchiveStateCopyWithImpl<$Res>;
   $Res call(
-      {Archive archive, bool showErrorMsg, bool isSaving, bool saveSuccess});
+      {Archive archive,
+      bool showErrorMsg,
+      bool isSaving,
+      bool saveSuccess,
+      bool deleteSuccess});
 }
 
 /// @nodoc
@@ -480,6 +490,7 @@ class _$ArchiveStateCopyWithImpl<$Res> implements $ArchiveStateCopyWith<$Res> {
     Object showErrorMsg = freezed,
     Object isSaving = freezed,
     Object saveSuccess = freezed,
+    Object deleteSuccess = freezed,
   }) {
     return _then(_value.copyWith(
       archive: archive == freezed ? _value.archive : archive as Archive,
@@ -488,6 +499,9 @@ class _$ArchiveStateCopyWithImpl<$Res> implements $ArchiveStateCopyWith<$Res> {
       isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
       saveSuccess:
           saveSuccess == freezed ? _value.saveSuccess : saveSuccess as bool,
+      deleteSuccess: deleteSuccess == freezed
+          ? _value.deleteSuccess
+          : deleteSuccess as bool,
     ));
   }
 }
@@ -500,7 +514,11 @@ abstract class _$ArchiveStateCopyWith<$Res>
       __$ArchiveStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {Archive archive, bool showErrorMsg, bool isSaving, bool saveSuccess});
+      {Archive archive,
+      bool showErrorMsg,
+      bool isSaving,
+      bool saveSuccess,
+      bool deleteSuccess});
 }
 
 /// @nodoc
@@ -519,6 +537,7 @@ class __$ArchiveStateCopyWithImpl<$Res> extends _$ArchiveStateCopyWithImpl<$Res>
     Object showErrorMsg = freezed,
     Object isSaving = freezed,
     Object saveSuccess = freezed,
+    Object deleteSuccess = freezed,
   }) {
     return _then(_ArchiveState(
       archive: archive == freezed ? _value.archive : archive as Archive,
@@ -527,6 +546,9 @@ class __$ArchiveStateCopyWithImpl<$Res> extends _$ArchiveStateCopyWithImpl<$Res>
       isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
       saveSuccess:
           saveSuccess == freezed ? _value.saveSuccess : saveSuccess as bool,
+      deleteSuccess: deleteSuccess == freezed
+          ? _value.deleteSuccess
+          : deleteSuccess as bool,
     ));
   }
 }
@@ -534,7 +556,11 @@ class __$ArchiveStateCopyWithImpl<$Res> extends _$ArchiveStateCopyWithImpl<$Res>
 /// @nodoc
 class _$_ArchiveState implements _ArchiveState {
   const _$_ArchiveState(
-      {this.archive, this.showErrorMsg, this.isSaving, this.saveSuccess});
+      {this.archive,
+      this.showErrorMsg,
+      this.isSaving,
+      this.saveSuccess,
+      this.deleteSuccess});
 
   @override
   final Archive archive;
@@ -544,10 +570,12 @@ class _$_ArchiveState implements _ArchiveState {
   final bool isSaving;
   @override
   final bool saveSuccess;
+  @override
+  final bool deleteSuccess;
 
   @override
   String toString() {
-    return 'ArchiveState(archive: $archive, showErrorMsg: $showErrorMsg, isSaving: $isSaving, saveSuccess: $saveSuccess)';
+    return 'ArchiveState(archive: $archive, showErrorMsg: $showErrorMsg, isSaving: $isSaving, saveSuccess: $saveSuccess, deleteSuccess: $deleteSuccess)';
   }
 
   @override
@@ -565,7 +593,10 @@ class _$_ArchiveState implements _ArchiveState {
                     .equals(other.isSaving, isSaving)) &&
             (identical(other.saveSuccess, saveSuccess) ||
                 const DeepCollectionEquality()
-                    .equals(other.saveSuccess, saveSuccess)));
+                    .equals(other.saveSuccess, saveSuccess)) &&
+            (identical(other.deleteSuccess, deleteSuccess) ||
+                const DeepCollectionEquality()
+                    .equals(other.deleteSuccess, deleteSuccess)));
   }
 
   @override
@@ -574,7 +605,8 @@ class _$_ArchiveState implements _ArchiveState {
       const DeepCollectionEquality().hash(archive) ^
       const DeepCollectionEquality().hash(showErrorMsg) ^
       const DeepCollectionEquality().hash(isSaving) ^
-      const DeepCollectionEquality().hash(saveSuccess);
+      const DeepCollectionEquality().hash(saveSuccess) ^
+      const DeepCollectionEquality().hash(deleteSuccess);
 
   @JsonKey(ignore: true)
   @override
@@ -587,7 +619,8 @@ abstract class _ArchiveState implements ArchiveState {
       {Archive archive,
       bool showErrorMsg,
       bool isSaving,
-      bool saveSuccess}) = _$_ArchiveState;
+      bool saveSuccess,
+      bool deleteSuccess}) = _$_ArchiveState;
 
   @override
   Archive get archive;
@@ -597,6 +630,8 @@ abstract class _ArchiveState implements ArchiveState {
   bool get isSaving;
   @override
   bool get saveSuccess;
+  @override
+  bool get deleteSuccess;
   @override
   @JsonKey(ignore: true)
   _$ArchiveStateCopyWith<_ArchiveState> get copyWith;

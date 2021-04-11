@@ -25,11 +25,20 @@ class ArchiveBloc extends Bloc<ArchiveEvent, ArchiveState> {
       add(const ArchiveEvent.createFeedback());
     }, createFeedback: (e) async* {
       try {
-        await ArchiveService().createArchive(state.archive);
-        yield state.copyWith(
-          isSaving: false,
-          saveSuccess: true,
-        );
+        final response = await ArchiveService().createArchive(state.archive);
+        if (response == 'create') {
+          yield state.copyWith(
+            isSaving: false,
+            saveSuccess: true,
+            deleteSuccess: false,
+          );
+        } else {
+          yield state.copyWith(
+            isSaving: false,
+            deleteSuccess: true,
+            saveSuccess: false,
+          );
+        }
       } catch (err) {
         print(err.toString());
         yield state.copyWith(

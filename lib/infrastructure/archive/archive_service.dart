@@ -1,24 +1,36 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:hkonline/domain/auth/i_auth_facade.dart';
-import 'package:hkonline/domain/core/errors.dart';
 import 'package:hkonline/infrastructure/archive/archive.dart';
 import 'package:hkonline/infrastructure/core/firebase_reference.dart';
 import 'package:hkonline/infrastructure/googlePlace/place.dart';
-import 'package:hkonline/injection.dart';
 
 class ArchiveService {
   FirebaseFirestore _firestore;
 
-  Future<void> createArchive(Archive archive) async {
+  Future<String> createArchive(Archive archive) async {
     try {
       final userDoc = await _firestore.userDocument();
-      await userDoc.archiveCollection.doc(archive.place.placeID).set({
-        'place': archive.place.asMap(),
-        'authorID': archive.authorID,
-        'timestamp': FieldValue.serverTimestamp(),
-      });
+      final isExist = await userDoc.archiveCollection
+          .doc(archive.place.placeID)
+          .get()
+          .then((value) => value.exists);
+
+      if (!isExist) {
+        final result =
+            await userDoc.archiveCollection.doc(archive.place.placeID).set({
+          'place': archive.place.asMap(),
+          'authorID': archive.authorID,
+          'timestamp': FieldValue.serverTimestamp(),
+        }).then((_) => 'create');
+        return result;
+      } else {
+        final result = await userDoc.archiveCollection
+            .doc(archive.place.placeID)
+            .delete()
+            .then((_) => 'delete');
+        return result;
+      }
     } catch (err) {
-      print(err.toString());
+      return err.toString();
     }
   }
 
@@ -53,11 +65,11 @@ class ArchiveService {
 
   Stream<bool> watchArchived(String placeID) async* {
     final userDoc = await _firestore.userDocument();
-    final getUser = await getIt<IAuthFacade>().getCurrentUser();
-    final user = getUser.getOrElse(() => throw NotAuthError());
+    //final getUser = await getIt<IAuthFacade>().getCurrentUser();
+    // final user = getUser.getOrElse(() => throw NotAuthError());
     yield* userDoc.archiveCollection
-        .where('authorID', isEqualTo: user.id.getOrCrash())
+        .doc(placeID)
         .snapshots()
-        .map((snapshot) => snapshot.docs.isNotEmpty);
+        .map((snapshot) => snapshot.exists);
   }
 }
