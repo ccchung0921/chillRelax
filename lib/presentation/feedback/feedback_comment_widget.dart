@@ -64,6 +64,7 @@ class FeedbackCommentWidget extends StatelessWidget {
                                   children: [
                                     Text(state.userfeedbacks[index].comment),
                                     SmoothStarRating(
+                                      isReadOnly: true,
                                       rating: state.userfeedbacks[index].rating,
                                       size: 15,
                                       borderColor: Colors.grey,

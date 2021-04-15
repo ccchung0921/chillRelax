@@ -9,6 +9,7 @@ class Place {
   final String phoneNumber;
   final Map opening;
   final String photoReference;
+  final String recommendBy;
 
   const Place({
     this.placeID,
@@ -21,6 +22,7 @@ class Place {
     this.phoneNumber,
     this.opening,
     this.photoReference,
+    this.recommendBy,
   });
 
   Place copyWith(
@@ -33,7 +35,8 @@ class Place {
           List<dynamic> openingHours,
           String phoneNumber,
           Map opening,
-          String photoReference}) =>
+          String photoReference,
+          String recommendBy}) =>
       Place(
           placeID: placeID ?? this.placeID,
           name: name ?? this.name,
@@ -44,7 +47,8 @@ class Place {
           openingHours: openingHours ?? this.openingHours,
           phoneNumber: phoneNumber ?? this.phoneNumber,
           opening: opening ?? this.opening,
-          photoReference: photoReference ?? this.photoReference);
+          photoReference: photoReference ?? this.photoReference,
+          recommendBy: recommendBy ?? this.recommendBy);
 
   List<Object> get props => [name, vicinity, geometry];
 
@@ -57,6 +61,7 @@ class Place {
         'openingHours': openingHours,
         'phoneNumber': phoneNumber,
         'opening': opening,
-        'photoReference': photoReference
+        'photoReference': photoReference,
+        'recommendBy': recommendBy
       };
 }

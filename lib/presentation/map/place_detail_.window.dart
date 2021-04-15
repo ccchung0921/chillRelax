@@ -110,7 +110,22 @@ class PlaceDetailWindow extends StatelessWidget {
                                   style: const TextStyle(
                                     fontSize: 20,
                                   ),
-                                )
+                                ),
+                                SizedBox(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.35),
+                                if (state.selectedPlace.recommendBy == 'CF')
+                                  const Text(
+                                    '其他人睇緊👀',
+                                    style: TextStyle(color: Colors.black),
+                                  )
+                                else
+                                  state.selectedPlace.recommendBy == 'CB'
+                                      ? const Text(
+                                          '你可能鍾意😍',
+                                          style: TextStyle(color: Colors.black),
+                                        )
+                                      : const SizedBox()
                               ],
                             ),
                           ],

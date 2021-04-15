@@ -19,7 +19,7 @@ class CreditCardDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
           height: MediaQuery.of(context).size.height,
           child: Stack(children: [
             SingleChildScrollView(

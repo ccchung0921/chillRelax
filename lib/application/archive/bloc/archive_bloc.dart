@@ -40,7 +40,6 @@ class ArchiveBloc extends Bloc<ArchiveEvent, ArchiveState> {
           );
         }
       } catch (err) {
-        print(err.toString());
         yield state.copyWith(
           showErrorMsg: true,
         );

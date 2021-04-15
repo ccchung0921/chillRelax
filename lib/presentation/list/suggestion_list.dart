@@ -18,7 +18,7 @@ class SuggestionList extends StatelessWidget {
         itemBuilder: (context, index) {
           return Card(
             elevation: 5,
-            child: Container(
+            child: SizedBox(
               height: 80,
               child: ListTile(
                 onTap: () {

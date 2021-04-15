@@ -120,8 +120,8 @@ class GeolocationBloc extends Bloc<GeolocationEvent, GeolocationState> {
               await RecommendationAPI().getRecommendation(state.selectedPlace);
           if (places.isNotEmpty) {
             places.forEach((place) async {
-              final detail =
-                  await SuggestionAPI('123').fetchSuggestionDetail(place);
+              final detail = await SuggestionAPI('123')
+                  .fetchSuggestionDetail(place, recommendBy: "CB");
               placeList.add(detail);
             });
             yield state.copyWith(
@@ -133,8 +133,8 @@ class GeolocationBloc extends Bloc<GeolocationEvent, GeolocationState> {
               .getCFRecommendation(state.selectedPlace);
           if (cfPlaces.isNotEmpty) {
             cfPlaces.forEach((place) async {
-              final detail =
-                  await SuggestionAPI('123').fetchSuggestionDetail(place);
+              final detail = await SuggestionAPI('123')
+                  .fetchSuggestionDetail(place, recommendBy: "CF");
               placeList.add(detail);
             });
             yield state.copyWith(

@@ -37,24 +37,20 @@ class SkyscannerAPI {
     final response2 = await http.get(
         "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/HK/HKD/en-US/HK-sky/TW-sky/$reformatDate",
         headers: requestHeaders);
-    if (response.statusCode == 200 && response2.statusCode == 200) {
+    final response3 = await http.get(
+        "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/HK/HKD/en-US/HK-sky/KR-sky/$reformatDate",
+        headers: requestHeaders);
+    if (response.statusCode == 200 &&
+        response2.statusCode == 200 &&
+        response3.statusCode == 200) {
       final data = convert.jsonDecode(response.body);
       final data2 = convert.jsonDecode(response2.body);
-      final quotes = data['Quotes'] + data2['Quotes'] as List;
-      final carriers = data['Carriers'] + data2['Carriers'] as List<dynamic>;
-      final places = data['Places'] + data2['Places'] as List<dynamic>;
-      // final copies = quotes.asMap();
-      // copies.map((index, copy) {
-      //   if (copy['OutboundLeg']['DestinationId'] ==
-      //       quotes[index]['OutboundLeg']['DestinationId']) {
-      //     if (copy['MinPrice'] as int <
-      //         int.parse(quotes[index]['MinPrice'].toString())) {
-      //       copies.remove(copy);
-      //     }
-      //   }
-      //   return MapEntry(index, copy);
-      // });
-      //print(copies);
+      final data3 = convert.jsonDecode(response3.body);
+      final quotes = data['Quotes'] + data2['Quotes'] + data3['Quotes'] as List;
+      final carriers = data['Carriers'] + data2['Carriers'] + data3['Carriers']
+          as List<dynamic>;
+      final places =
+          data['Places'] + data2['Places'] + data3['Places'] as List<dynamic>;
       return quotes.isEmpty
           ? []
           : quotes.map((a) {

@@ -1,20 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 import 'package:hkonline/infrastructure/core/firebase_reference.dart';
 import 'package:hkonline/infrastructure/taxi/taxi_order.dart';
 
-
 class OrderResository {
-   FirebaseFirestore _firestore;
-
-  
+  FirebaseFirestore _firestore;
 
   Future<void> createTaxiOrder(TaxiOrder taxiOrder) async {
     try {
       final userDoc = await _firestore.userDocument();
-            await userDoc.orderCollection.add({
-        'orderID' : taxiOrder.orderID,
+      await userDoc.orderCollection.add({
+        'orderID': taxiOrder.orderID,
         'startPlace': taxiOrder.startPlace,
         'finalPlace': taxiOrder.finalPlace,
         'departureTime': taxiOrder.departureTime,

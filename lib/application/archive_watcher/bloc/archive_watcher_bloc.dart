@@ -25,7 +25,6 @@ class ArchiveWatcherBloc
           .watchAllArchives()
           .listen((record) => add(ArchiveWatcherEvent.archiveReceived(record)),
               onError: (Object err) {
-        print(err.toString());
         add(const ArchiveWatcherEvent.errorReceived());
       });
     }, archiveReceived: (e) async* {
@@ -40,7 +39,6 @@ class ArchiveWatcherBloc
           .listen(
               (record) => add(ArchiveWatcherEvent.existRecordReceived(record)),
               onError: (Object err) {
-        print(err.toString());
         add(const ArchiveWatcherEvent.errorReceived());
       });
     }, existRecordReceived: (e) async* {

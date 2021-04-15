@@ -232,7 +232,7 @@ class _SignInFormState extends State<SignInForm> {
                           const SizedBox(height: 10.0),
                           const Text('以社交媒體登入'),
                           const SizedBox(height: 10.0),
-                          Container(
+                          SizedBox(
                             height: 40,
                             width: 40,
                             child: FloatingActionButton(

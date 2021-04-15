@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hkonline/presentation/personal/airticket_record.dart';
 import 'package:hkonline/presentation/personal/archive_record.dart';
-import 'package:hkonline/presentation/personal/shareride_record.dart';
 
 class PersonalRecord extends StatelessWidget {
   @override

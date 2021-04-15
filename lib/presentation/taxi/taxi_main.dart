@@ -24,12 +24,12 @@ class TaxiMainPage extends StatelessWidget {
         length: 3,
         child: Scaffold(
           appBar: AppBar(
-            bottom: TabBar(
+            bottom: const TabBar(
               indicatorColor: Colors.yellow,
               tabs: [
-                const Text('我想搭單'),
-                const Text('我想搵人'),
-                const Text('聊天室'),
+                Text('我想搭單'),
+                Text('我想搵人'),
+                Text('聊天室'),
               ],
             ),
             title: const Text('的士群組'),

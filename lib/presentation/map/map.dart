@@ -78,7 +78,7 @@ class _MapScreenState extends State<MapScreen> {
 
   @override
   Widget build(BuildContext context) {
-    ThemeProvider themeProvider =
+    final ThemeProvider themeProvider =
         Provider.of<ThemeProvider>(context, listen: false);
     final ImageConfiguration config = createLocalImageConfiguration(context);
     return MultiBlocListener(
@@ -113,7 +113,9 @@ class _MapScreenState extends State<MapScreen> {
                             config,
                             ticket.countryName == 'Japan'
                                 ? 'assets/SmallJP.png'
-                                : 'assets/SmallTW.png'),
+                                : ticket.countryName == 'South Korea'
+                                    ? 'assets/SmallKR.png'
+                                    : 'assets/SmallTW.png'),
                         onTap: () {
                           setState(() {
                             selectedAirticket = ticket;
@@ -211,7 +213,9 @@ class _MapScreenState extends State<MapScreen> {
                           : 'CI';
                   final Marker marker = Marker(
                       markerId: MarkerId(code + place.placeID),
-                      icon: place.type == "restaurant"
+                      icon: place.type == "restaurant" ||
+                              place.type == "bakery" ||
+                              place.type == "meal_takeaway"
                           ? await BitmapDescriptor.fromAssetImage(
                               config, 'assets/SmallRestaurant3.png')
                           : place.type == "cafe"
@@ -253,7 +257,10 @@ class _MapScreenState extends State<MapScreen> {
                   final Marker marker = Marker(
                       markerId: MarkerId(place.placeID),
                       icon: await BitmapDescriptor.fromAssetImage(
-                          config, 'assets/recommend.png'),
+                          config,
+                          place.recommendBy == 'CF'
+                              ? 'assets/SmallColleborative.png'
+                              : 'assets/SmallContentBased.png'),
                       onTap: () {
                         context
                             .read<GeolocationBloc>()

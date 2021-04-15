@@ -34,7 +34,8 @@ class SuggestionAPI extends PlaceAPI {
     }
   }
 
-  Future<Place> fetchSuggestionDetail(String placeid) async {
+  Future<Place> fetchSuggestionDetail(String placeid,
+      {String recommendBy}) async {
     final response = await http.get(
         "https://maps.googleapis.com/maps/api/place/details/json?place_id=$placeid&language=zh-HK&key=$key");
     if (response.statusCode == 200) {
@@ -54,12 +55,7 @@ class SuggestionAPI extends PlaceAPI {
             : [],
         photoReference:
             getImage(result['photos'][0]['photo_reference'].toString()),
-        //     ? getPhotoURL(
-        //             result['photos'][0]['photo_reference'] as String, 400) ??
-        //         'https://koenig-media.raywenderlich.com/uploads/2020/07/FlutterInterviewQuestions-feature.png'
-        //     : 'https://koenig-media.raywenderlich.com/uploads/2020/07/FlutterInterviewQuestions-feature.png',
-        //photoReference:
-        //  'https://koenig-media.raywenderlich.com/uploads/2020/07/FlutterInterviewQuestions-feature.png',
+        recommendBy: recommendBy,
       );
     } else {
       print('error');

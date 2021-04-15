@@ -13,7 +13,7 @@ class IgPostDetailWindow extends StatelessWidget {
         ExtendedNavigator.of(context).push(Routes.igPostDetailPage,
             arguments: IgPostDetailPageArguments(post: post));
       },
-      child: Container(
+      child: SizedBox(
         height: MediaQuery.of(context).size.height * 0.3,
         width: MediaQuery.of(context).size.width * 0.9,
         child: Column(children: [

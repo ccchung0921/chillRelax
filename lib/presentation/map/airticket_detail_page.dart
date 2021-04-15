@@ -68,7 +68,7 @@ class _AirticketDetailPageState extends State<AirticketDetailPage> {
                   )),
                   Row(
                     children: [
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width * 0.5,
                         child: ListTile(
                           leading: Radio<String>(
@@ -86,7 +86,7 @@ class _AirticketDetailPageState extends State<AirticketDetailPage> {
                           ),
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width * 0.5,
                         child: ListTile(
                           leading: Radio<String>(
@@ -109,7 +109,7 @@ class _AirticketDetailPageState extends State<AirticketDetailPage> {
                   const SizedBox(height: 10),
                   Column(
                     children: [
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width * 0.9,
                         child: TextFormField(
                           keyboardType: TextInputType.number,
@@ -166,7 +166,7 @@ class _AirticketDetailPageState extends State<AirticketDetailPage> {
                       const SizedBox(
                         height: 25,
                       ),
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width * 0.9,
                         child: TextFormField(
                           decoration: const InputDecoration(
@@ -183,7 +183,7 @@ class _AirticketDetailPageState extends State<AirticketDetailPage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Container(
+                          SizedBox(
                             width: MediaQuery.of(context).size.width * 0.4,
                             child: TextFormField(
                               keyboardType: TextInputType.number,
@@ -208,7 +208,7 @@ class _AirticketDetailPageState extends State<AirticketDetailPage> {
                             ),
                           ),
                           const SizedBox(width: 20),
-                          Container(
+                          SizedBox(
                             width: MediaQuery.of(context).size.width * 0.4,
                             child: TextFormField(
                               keyboardType: TextInputType.number,
