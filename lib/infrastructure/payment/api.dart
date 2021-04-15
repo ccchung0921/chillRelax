@@ -11,7 +11,7 @@ class Payment {
   final baseURL =
       'https://datastudio.simnectzplatform.com/gateway/SIMNECTZ/bill_payment_transaction//payment/paymentTransaction';
   final authorizationKey =
-      "5e46871f34a6e5748c2c4171cf75a19e2fbd4531b00f69a76bde1cd5";
+      "5e46871f34a6e5748c2c41716d6ab09a94d44424b230587fc6d787b5";
   final token =
       'eyJhbGciOiJIUzUxMiIsInppcCI6IkRFRiJ9.eNo8y00OwiAQhuG7zNoFkBLUpbqwadI7ADNWEn4aWozGeHchNs7yme99A9KDfJop9xc4gkTaG6XtTQrRCWEPhMKojhnDLVdKwg5sKnHNr3NCqsF1aORJZxenzRhjvKrJOtr73xr5NLk46tBkdqGlZVlToDyWYCj_hmy7Viw64ik9e6wv-HwBAAD__w.alc0ibAbJotnPxSQL2wtt9Qo8h0YYzl4WkxOK65PnGy1fK4SDmNRRVEohqOya_K7qOXJOt5Cjdm10cejK3PViA';
   final messageID = '006f7113e5fa48559549c4dfe74e2cd6';
