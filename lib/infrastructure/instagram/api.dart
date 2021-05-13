@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 class InstagramAPI {
   final key =
       'EAAFtYOHkoGUBALiu63FzqLqjAv4WYl3SxIZBBsJBAz8xxqAZB8v5eD0hfnaW6jMIEGK7mM2wxppJpGU5HCpNDMmSEww4CJGZAwWJces1igh31XZBxShsZCPafkwZB2PhZBMTyDm6yUUWcLQXX4Epr28pJEBlIc6IUZBFzjv5L1gg1IpDZCvoWI18p';
-  final googleKey = "AIzaSyCdXWm3q1aKCiuTuZYBMvcefJWG11aWcHY";
+  final googleKey = "AIzaSyBIW-Q2Cse-ggQ7xHJnbQqScUxBQMyIcqM";
   final exhibitionTagID = '17912541967447730';
   final userID = '17841444250709529';
 
